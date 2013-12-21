@@ -1,0 +1,13 @@
+# NetBeans
+/nbproject/private/
+/nbproject/
+
+# Mac
+*~
+.DS_Store
+
+# intellij
+*.iml
+*.ipr
+*.iws
+.idea/
