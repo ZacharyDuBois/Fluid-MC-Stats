@@ -7,9 +7,9 @@
   <head>
     <title>Fluid MC Stats - Install</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/custom.css">
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/custom.css">
     <!-- TODO: Keep file locations relative so the install will work properly (and look properly). -->
   </head>
   <body>
@@ -53,14 +53,14 @@
             </div>
             <?php
             $faultFound = false;
-            if (file_exists("../config.php")) {
+            if (file_exists("../../config.php")) {
               //file exists, check if writable
-              if (!is_writable("../config.php")) {
+              if (!is_writable("../../config.php")) {
                 $faultFound = true;
                 ?>
                 <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i>
-                    Configuration Warning:</strong> config.php is not writable in <?php echo realpath("../config.php"); ?>. Please use command 
-                  <strong>chmod 664 <?php echo realpath("../config.php"); ?></strong> to make the file writable.
+                    Configuration Warning:</strong> config.php is not writable in <?php echo realpath("../../config.php"); ?>. <br/>
+                  Please use command <strong>chmod 666 <?php echo realpath("../../config.php"); ?></strong> to make the file writable.
                 </div>
                 <?php
               }
@@ -68,7 +68,7 @@
               $faultFound = true;
               ?>
               <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i>
-                  Configuration Warning:</strong> config.php is not found in <?php echo realpath("../config.php"); ?>. Please make
+                  Configuration Warning:</strong> config.php is not found in <?php echo realpath("../../config.php"); ?>. Please make
                 sure the file exists and has not been deleted.
               </div>
               <?php
@@ -82,7 +82,7 @@
               </div>
               <?php
             } else {
-              $configFile = fopen("../config.php", $mode)
+              $configFile = fopen("../../config.php", $mode)
               ?>
               <div class="jumbotron">
                 <h1>Welcome!</h1>
@@ -154,6 +154,14 @@
                       <span class="help-block">
                         The password for your MySQL user.
                       </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-3">
+                      <a href="javascript:void(0)">
+                        <button class="btn btn-primary btn-lg" id="mysql-test">Test credentials</button>
+                      </a>
+                      <div id="mysql-result"></div>
                     </div>
                   </div>
                   <h4><i class="fa fa-terminal"></i> Minecraft Server Settings</h4>
@@ -414,8 +422,9 @@
       </div>
     </div>
     <!-- TODO: Keep file locations relative so the install will work properly (and look properly). -->
-    <script src="../js/jquery-2.0.3.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../js/highcharts.js"></script>
+    <script src="../../js/jquery-2.0.3.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../js/highcharts.js"></script>
+    <script src="../../js/install/credentials-test.js"></script>
   </body>
 </html>

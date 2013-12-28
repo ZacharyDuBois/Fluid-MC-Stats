@@ -5,7 +5,7 @@
 <?php
 if (!file_exists('config.php')) {
   $http = ($_SERVER['HTTPS'] ? 'https://' : 'http://');
-  $installLoc = $http . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . "pages/install.php";
+  $installLoc = $http . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . "pages/install/install.php";
   header("Location: " . $installLoc . "");
   die();
 }
