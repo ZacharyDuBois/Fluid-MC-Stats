@@ -101,7 +101,7 @@
                     needs SELECT permissions on the Stats database.</p>
 
                   <div class="form-group">
-                    <label for="mySQLHost" class="col-sm-3 control-label">Host</label>
+                    <label for="mySQLHost" class="col-sm-3 control-label">Host&ast;</label>
 
                     <div class="col-sm-7">
                       <div class="input-group">
@@ -117,7 +117,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="mySQLDatabaseName" class="col-sm-3 control-label">Database</label>
+                    <label for="mySQLDatabaseName" class="col-sm-3 control-label">Database&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="mySQLDatabaseName" placeholder="Stats">
@@ -127,7 +127,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="mySQLDatabasePrefix" class="col-sm-3 control-label">Database Prefix</label>
+                    <label for="mySQLDatabasePrefix" class="col-sm-3 control-label">Database Prefix&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="mySQLDatabasePrefix" placeholder="Stats_">
@@ -137,7 +137,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="mySQLUser" class="col-sm-3 control-label">User</label>
+                    <label for="mySQLUser" class="col-sm-3 control-label">User&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="mySQLUser" placeholder="stats">
@@ -147,7 +147,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="mySQLPassword" class="col-sm-3 control-label">Password</label>
+                    <label for="mySQLPassword" class="col-sm-3 control-label">Password&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="password" class="form-control" id="mySQLPassword" placeholder="Password">
@@ -169,7 +169,7 @@
                   <p>Enter your Minecraft server details below.</p>
 
                   <div class="form-group">
-                    <label for="mcName" class="col-sm-3 control-label">Server Name</label>
+                    <label for="mcName" class="col-sm-3 control-label">Server Name&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="mcName" placeholder="My Amazing Server">
@@ -179,7 +179,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="mcResolveAddr" class="col-sm-3 control-label">Resolvable Address</label>
+                    <label for="mcResolveAddr" class="col-sm-3 control-label">Resolvable Address&ast;</label>
 
                     <div class="col-sm-7">
                       <div class="input-group">
@@ -209,7 +209,7 @@
                   <p>These are the settings that directly change items on the entire interface.</p>
 
                   <div class="form-group">
-                    <label for="fmcsSiteName" class="col-sm-3 control-label">Site Name</label>
+                    <label for="fmcsSiteName" class="col-sm-3 control-label">Site Name&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="fmcsSiteName" placeholder="My Awesome Server Stats">
@@ -232,7 +232,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="fmcsPPP" class="col-sm-3 control-label">Players Per Page</label>
+                    <label for="fmcsPPP" class="col-sm-3 control-label">Players Per Page&ast;</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" id="fmcsPPP">
@@ -249,7 +249,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="fmcsCalcTop" class="col-sm-3 control-label">Calculate Top Players Using</label>
+                    <label for="fmcsCalcTop" class="col-sm-3 control-label">Calculate Top Players Using&ast;</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" id="fmcsCalcTop">
@@ -278,7 +278,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="fmcsNoTP" class="col-sm-3 control-label">Number Of Top Players</label>
+                    <label for="fmcsNoTP" class="col-sm-3 control-label">Number Of Top Players&ast;</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" id="fmcsNoTP">
@@ -369,7 +369,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="fmcsAdvGlobalNeededTime" class="col-sm-3 control-label">Required Global Stats Player Include Time</label>
+                    <label for="fmcsAdvGlobalNeededTime" class="col-sm-3 control-label">Required Global Stats Player Include Time&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600" value="3600">
@@ -379,7 +379,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="fmcsAdvCacheTime" class="col-sm-3 control-label">Cache Time</label>
+                    <label for="fmcsAdvCacheTime" class="col-sm-3 control-label">Cache Time&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="fmcsAdvCacheTime" placeholder="1800" value="1800">
@@ -389,7 +389,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="fmcsAdvAvatarService" class="col-sm-3 control-label">Avatar Service URI</label>
+                    <label for="fmcsAdvAvatarService" class="col-sm-3 control-label">Avatar Service URI&ast;</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="fmcsAdvAvatarService"
