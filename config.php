@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) Develop Gravity and Lolmewn 2013. All Rights Reserved.
+ * Copyright (c) Develop Gravity and Lolmewn 2014. All Rights Reserved.
  */
 
 /**
@@ -35,9 +35,9 @@ $players_per_page = ''; // Number of players listed on each page.
 $player_on_top = ''; //Number of player on top list.
 $custom_footer_text = ''; // Custom text added into the footer.
 $custom_links = array( // Links displayed in navbar and sidebar. Add as many as you need (Only add up to 5 from the auto install).
-    "Develop Gravity" => "http://developgravity.com/",
-    "Lolmewn" => "http://lolmewn.nl/",
-    "Mojang" => "http://mojang.com/",
+  "Develop Gravity" => "http://developgravity.com/",
+  "Lolmewn" => "http://lolmewn.nl/",
+  "Mojang" => "http://mojang.com/",
 );
 
 /**

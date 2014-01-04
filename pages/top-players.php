@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  ~ Copyright (c) Develop Gravity and Lolmewn 2013. All Rights Reserved.
+  ~ Copyright (c) Develop Gravity and Lolmewn 2014. All Rights Reserved.
   -->
 
 <html>
@@ -49,7 +49,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-link"></i> Links <b
-          class="caret"></b></a>
+            class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">Not setup...</a></li>
           <!-- TODO: Links from $custom_links configuration file need to go here. -->
@@ -105,27 +105,32 @@
               <tbody>
               <tr>
                 <th>&num;1</th>
-                <td><a href="player.html"><img src="http://mctar.polardrafting.com/Zachary_DuBois/16" class="img-circle avatar-list-icon"> Zachary_DuBois</a></td>
+                <td><a href="player.html"><img src="http://mctar.polardrafting.com/Zachary_DuBois/16"
+                                               class="img-circle avatar-list-icon"> Zachary_DuBois</a></td>
                 <td>1Wk 1Dy 1H 11Mn 13S</td>
               </tr>
               <tr>
                 <th>&num;2</th>
-                <td><a href="player.html"><img src="http://mctar.polardrafting.com/Lolmewn/16" class="img-circle avatar-list-icon"> Lolmewn</a></td>
+                <td><a href="player.html"><img src="http://mctar.polardrafting.com/Lolmewn/16"
+                                               class="img-circle avatar-list-icon"> Lolmewn</a></td>
                 <td>1Wk 0Dy 7H 34Mn 54S</td>
               </tr>
               <tr>
                 <th>&num;3</th>
-                <td><a href="player.html"><img src="http://mctar.polardrafting.com/SomeGuy/16" class="img-circle avatar-list-icon"> SomeGuy</a></td>
+                <td><a href="player.html"><img src="http://mctar.polardrafting.com/SomeGuy/16"
+                                               class="img-circle avatar-list-icon"> SomeGuy</a></td>
                 <td>6Dy 2H 52Mn 21S</td>
               </tr>
               <tr>
                 <th>&num;4</th>
-                <td><a href="player.html"><img src="http://mctar.polardrafting.com/AnotherGuy/16" class="img-circle avatar-list-icon"> AnotherGuy</a></td>
+                <td><a href="player.html"><img src="http://mctar.polardrafting.com/AnotherGuy/16"
+                                               class="img-circle avatar-list-icon"> AnotherGuy</a></td>
                 <td>4Dy 9H 29Mn 2S</td>
               </tr>
               <tr>
                 <th>&num;5</th>
-                <td><a href="player.html"><img src="http://mctar.polardrafting.com/ThisCoolDude/16" class="img-circle avatar-list-icon"> ThisCoolDude</a></td>
+                <td><a href="player.html"><img src="http://mctar.polardrafting.com/ThisCoolDude/16"
+                                               class="img-circle avatar-list-icon"> ThisCoolDude</a></td>
                 <td>4Dy 11H 59Mn 11S</td>
               </tr>
               </tbody>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  ~ Copyright (c) Develop Gravity and Lolmewn 2013. All Rights Reserved.
+  ~ Copyright (c) Develop Gravity and Lolmewn 2014. All Rights Reserved.
   -->
 
 <html>
@@ -49,7 +49,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-link"></i> Links <b
-          class="caret"></b></a>
+            class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">Not setup...</a></li>
           <!-- TODO: Links from $custom_links configuration file need to go here. -->
