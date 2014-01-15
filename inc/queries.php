@@ -1,3 +1,7 @@
+/**
+* Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+*/
+
 <?php
 
 include_once 'db.php';

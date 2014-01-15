@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  ~ Copyright (c) Develop Gravity and Lolmewn 2014. All Rights Reserved.
+  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
   -->
 
 <html>
