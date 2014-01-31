@@ -8,7 +8,6 @@ $("#install-button").click(function() {
     $("#install-form").find(":input").each(function() {
         if ($(this).is("[needed]")) {
             if (!$(this).val()) {
-                console.log($(this).attr("id") + " is not filled");
                 verified = false;
                 $(this).closest(".form-group").find("label").css("color", "red");
             } else {
@@ -26,6 +25,9 @@ $("#install-button").click(function() {
     }
     $.post("../../pages/install/save-settings.php", $("#install-form").serialize(), function(data) {
         console.log("Got back: " + data);
+        if (data == "Success") {
+            window.location.replace($(location).attr('protocol') + "//" + $(location).attr('host') + $(location).attr("pathname") + "/../../../index.php");
+        }
     });
     return false;
 });
