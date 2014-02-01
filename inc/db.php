@@ -4,7 +4,7 @@
 
 <?php
 
-include_once '../config.php';
+include_once __DIR__ . '../config.php';
 
 if (!isset($mysql_host)) {
   die("MySQL host not set - Config is probably not set up yet.");

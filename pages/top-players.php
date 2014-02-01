@@ -1,3 +1,9 @@
+<?php 
+include_once "../config.php";
+include_once '../inc.db.php';
+
+?>
+
 <!DOCTYPE html>
 <!--
   ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
@@ -5,8 +11,7 @@
 
 <html>
 <head>
-  <title>Fluid MC Stats - Top Players</title>
-  <!-- TODO: Change title dynamicly and replace Fluid MC Stats with $site_name from config.php. -->
+  <title><?php echo $site_name;?> - Top Players</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
@@ -26,19 +31,17 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="../index.html"><i class="fa fa-plus"></i> Fluid MC Stats</a>
-    <!-- TODO: Change Fluid MC Stats to $site_name from config.php -->
-    <!-- TODO: Change fa-plus to $fa_icon from config.php -->
+    <a class="navbar-brand" href="../index.php"><i class="fa <?php echo $fa_icon;?>"></i> <?php echo $site_name;?></a>
   </div>
   <!-- /Mobile -->
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
       <!-- TODO: Apply class active to li when page is current -->
-      <li><a href="server-stats.html"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
-      <li class="active"><a href="top-players.html"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
-      <li><a href="player-list.html"><i class="fa fa-list"></i> Player List</a></li>
+      <li><a href="server-stats.php"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
+      <li class="active"><a href="top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
+      <li><a href="player-list.php"><i class="fa fa-list"></i> Player List</a></li>
     </ul>
     <form class="navbar-form navbar-right" role="search">
       <div class="form-group">
@@ -105,7 +108,7 @@
               <tbody>
               <tr>
                 <th>&num;1</th>
-                <td><a href="player.html"><img src="http://mctar.polardrafting.com/Zachary_DuBois/16"
+                <td><a href="player.php"><img src="http://mctar.polardrafting.com/Zachary_DuBois/16"
                                                class="img-circle avatar-list-icon"> Zachary_DuBois</a></td>
                 <td>1Wk 1Dy 1H 11Mn 13S</td>
               </tr>
