@@ -430,9 +430,9 @@
             </div>
         </div>
         <!-- TODO: Keep file locations relative so the install will work properly (and look properly). -->
-        <script src="../../js/jquery-2.0.3.min.js"></script>
+        <script src="../../js/jquery-2.1.0.min.js"></script>
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
-        <script src="../../js/highcharts.js"></script>
+        <script src="../../js/d3.v3.min.js"></script>
         <script src="../../js/install/credentials-test.js"></script>
         <script src="../../js/install/install.js"></script>
     </body>

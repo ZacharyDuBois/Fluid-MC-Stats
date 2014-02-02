@@ -296,8 +296,8 @@ $player_id = getPlayerId($mysqli, $player);
 <!-- /Footer -->
 
 <!-- TODO: Keep correct paths but local links to avoid XSS -->
-<script src="../js/jquery-2.0.3.min.js"></script>
+<script src="../js/jquery-2.1.0.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../js/highcharts.js"></script>
+<script src="../js/d3.v3.min.js"></script>
 </body>
 </html>
