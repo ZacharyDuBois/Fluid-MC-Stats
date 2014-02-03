@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.html"><i class="fa fa-plus"></i> Fluid MC Stats</a>
+                <a class="navbar-brand" href="../index.php"><i class="fa fa-plus"></i> Fluid MC Stats</a>
                 <!-- TODO: Change Fluid MC Stats to $site_name from config.php -->
                 <!-- TODO: Change fa-plus to $fa_icon from config.php -->
             </div>
@@ -34,11 +34,11 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
                     <!-- TODO: Apply class active to li when page is current -->
-                    <li class="active"><a href="server-stats.html"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
-                    <li><a href="top-players.html"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
-                    <li><a href="player-list.html"><i class="fa fa-list"></i> Player List</a></li>
+                    <li class="active"><a href="server-stats.php"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
+                    <li><a href="top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
+                    <li><a href="player-list.php"><i class="fa fa-list"></i> Player List</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -66,7 +66,7 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <ol class="breadcrumb">
-                            <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
                             <li class="active"><i class="fa fa-hdd-o"></i> Server Stats</li>
                             <!-- TODO: Apply class active to li when page is current -->
                         </ol>
@@ -232,11 +232,11 @@
                         </div>
                         <div class="panel-body">
                             <div class="list-group">
-                                <a href="../index.html" class="list-group-item"><i class="fa fa-home"></i> Home</a>
+                                <a href="../index.php" class="list-group-item"><i class="fa fa-home"></i> Home</a>
                                 <!-- TODO: Apply class active to li when page is current -->
-                                <a href="server-stats.html" class="list-group-item active"><i class="fa fa-hdd-o"></i> Server Stats</a>
-                                <a href="top-players.html" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-                                <a href="player-list.html" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
+                                <a href="server-stats.php" class="list-group-item active"><i class="fa fa-hdd-o"></i> Server Stats</a>
+                                <a href="top-players.php" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
+                                <a href="player-list.php" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
                             </div>
                             <div class="list-group">
                                 <a href="#" class="list-group-item">Not setup...</a>

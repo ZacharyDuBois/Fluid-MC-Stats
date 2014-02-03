@@ -68,7 +68,7 @@ include_once '../inc.db.php';
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <ol class="breadcrumb">
-                            <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
                             <li class="active"><i class="fa fa-bar-chart-o"></i> Top Players</li>
                             <!-- TODO: Apply class active to li when page is current -->
                         </ol>
@@ -113,25 +113,25 @@ include_once '../inc.db.php';
                                         </tr>
                                         <tr>
                                             <th>&num;2</th>
-                                            <td><a href="player.html"><img src="http://mctar.polardrafting.com/Lolmewn/16"
+                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/Lolmewn/16"
                                                                            class="img-circle avatar-list-icon"> Lolmewn</a></td>
                                             <td>1Wk 0Dy 7H 34Mn 54S</td>
                                         </tr>
                                         <tr>
                                             <th>&num;3</th>
-                                            <td><a href="player.html"><img src="http://mctar.polardrafting.com/SomeGuy/16"
+                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/SomeGuy/16"
                                                                            class="img-circle avatar-list-icon"> SomeGuy</a></td>
                                             <td>6Dy 2H 52Mn 21S</td>
                                         </tr>
                                         <tr>
                                             <th>&num;4</th>
-                                            <td><a href="player.html"><img src="http://mctar.polardrafting.com/AnotherGuy/16"
+                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/AnotherGuy/16"
                                                                            class="img-circle avatar-list-icon"> AnotherGuy</a></td>
                                             <td>4Dy 9H 29Mn 2S</td>
                                         </tr>
                                         <tr>
                                             <th>&num;5</th>
-                                            <td><a href="player.html"><img src="http://mctar.polardrafting.com/ThisCoolDude/16"
+                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ThisCoolDude/16"
                                                                            class="img-circle avatar-list-icon"> ThisCoolDude</a></td>
                                             <td>4Dy 11H 59Mn 11S</td>
                                         </tr>
@@ -161,11 +161,11 @@ include_once '../inc.db.php';
                         </div>
                         <div class="panel-body">
                             <div class="list-group">
-                                <a href="../index.html" class="list-group-item"><i class="fa fa-home"></i> Home</a>
+                                <a href="../index.php" class="list-group-item"><i class="fa fa-home"></i> Home</a>
                                 <!-- TODO: Apply class active to li when page is current -->
-                                <a href="server-stats.html" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
-                                <a href="top-players.html" class="list-group-item active"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-                                <a href="player-list.html" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
+                                <a href="server-stats.php" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
+                                <a href="top-players.php" class="list-group-item active"><i class="fa fa-bar-chart-o"></i> Top Players</a>
+                                <a href="player-list.php" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
                             </div>
                             <div class="list-group">
                                 <a href="#" class="list-group-item">Not setup...</a>
