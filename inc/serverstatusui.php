@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . "/../config.php";
 include_once __DIR__ . "/serverstatus.php";
 
 $serverStatus = new serverstatus($mc_server_ip, $mc_server_port);
