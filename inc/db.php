@@ -1,10 +1,10 @@
+<?php
+
 /**
 * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
 */
 
-<?php
-
-include_once __DIR__ . '../config.php';
+include_once __DIR__ . '/../config.php';
 
 if (!isset($mysql_host)) {
   die("MySQL host not set - Config is probably not set up yet.");

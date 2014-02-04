@@ -1,3 +1,15 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include_once __DIR__ . '/../config.php';
+include_once __DIR__ . '/../inc/db.php';
+include_once __DIR__ . '/../inc/queries.php';
+include_once __DIR__ . '/../inc/util.php';
+
+?>
+
 <!DOCTYPE html>
 <!--
   ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
@@ -116,82 +128,28 @@
                                             <th>Last Online</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/Zachary_DuBois/16"
-                                                                           class="img-circle avatar-list-icon"> Zachary_DuBois</a></td>
-                                            <td>24-12-13 &commat; 11:22pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/Lolmewn/16"
-                                                                           class="img-circle avatar-list-icon"> Lolmewn</a></td>
-                                            <td>22-12-13 &commat; 10:56pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/SomeGuy/16"
-                                                                           class="img-circle avatar-list-icon"> SomeGuy</a></td>
-                                            <td>22-12-13 &commat; 9:10pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/AnotherGuy/16"
-                                                                           class="img-circle avatar-list-icon"> AnotherGuy</a></td>
-                                            <td>21-12-13 &commat; 8:19am</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ThisCoolDude/16"
-                                                                           class="img-circle avatar-list-icon"> ThisCoolDude</a></td>
-                                            <td>20-12-13 &commat; 9:34am</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ExampleUser/16"
-                                                                           class="img-circle avatar-list-icon"> Example User</a></td>
-                                            <td>Example Time</td>
-                                        </tr>
+                                        <?php
+                                        include "../inc/pages/player-list-getter.php";
+                                        $players = getPlayerList($mysqli, $mysql_table_prefix, 1);
+                                        while($player = $players->fetch_array()){
+                                            $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
+                                            echo "<tr>";
+                                            echo "<td><a href='player.php?id=" . $player['player_id'] . "'>"
+                                                    . "<img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon' />"
+                                                    . " " . $playerName . "</a></td>";
+                                            echo "<td>";
+                                            if($player['lastjoin'] > $player['lastleave']){
+                                                //online now
+                                                echo "Online now!";
+                                            }else{
+                                                echo "<abbr title='" . $player['lastleave'] . "'>" . nicetime($player['lastleave']) . "</abbr>";
+                                            }
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
