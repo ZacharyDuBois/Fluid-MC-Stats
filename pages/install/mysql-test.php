@@ -1,8 +1,8 @@
-/**
-* Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
-*/
-
 <?php
+/*
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+
 if (!isset($_POST['mh']) || !isset($_POST['mp']) || !isset($_POST['mdb']) || !isset($_POST['mu']) || !isset($_POST['mpa'])) {
   die("Failed to specify all parameters");
 }

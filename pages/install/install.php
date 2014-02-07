@@ -422,7 +422,7 @@
                     }
                     ?>
                     <div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1 Pre-Alpha is &copy; Copyright <a
-                            href="http://developgravity.com/">Develop Gravity</a> and <a href="http://lolmewn.nl">Lolmewn</a>, 2013. All rights
+                            href="http://developgravity.com/">Develop Gravity</a> and <a href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights
                         reserved.
                         <!-- DND: Keep this link here! This is copyrighted content -->
                     </div>

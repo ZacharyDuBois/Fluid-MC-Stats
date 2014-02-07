@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+
 $("#mySQLHostPort, #mcResolveAddrPort, #fmcsAdvCacheTime, #fmcsAdvGlobalNeededTime").keypress(function(event) {
     if (String.fromCharCode(event.keyCode).match(/[^0-9]/g))
         event.preventDefault();
