@@ -50,7 +50,6 @@ if (file_exists("pages/install/")) {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-                    <!-- TODO: Apply class active to li when page is current -->
                     <li><a href="pages/server-stats.php"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
                     <li><a href="pages/top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
                     <li><a href="pages/player-list.php"><i class="fa fa-list"></i> Player List</a></li>

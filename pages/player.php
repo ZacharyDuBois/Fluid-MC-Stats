@@ -100,12 +100,6 @@ $player_id = getPlayerId($mysqli, $player);
                             <h3 class="panel-title"><i class="fa fa-user"></i> Player &dash; <?php echo $player; ?></h3>
                         </div>
                         <div class="panel-body">
-                            <!-- <div class="alert alert-danger">
-                                <p><strong><i class="fa fa-exclamation-triangle"></i> Fatal:</strong> Configuration was not
-                                    setup
-                                    correctly. Possibly you did not set Fluid MC Stats up?</p>
-                            </div> -->
-                            <!-- TODO: Make this error only visible when the config is incorrect or missing -->
                             <p class="make-center">
                                 <img src="http://mctar.polardrafting.com/<?php echo $player; ?>/400" class="img-rounded avatar-player-page">
                             </p>

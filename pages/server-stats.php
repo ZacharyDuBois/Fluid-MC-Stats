@@ -26,9 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php"><i class="fa fa-plus"></i> Fluid MC Stats</a>
-                <!-- TODO: Change Fluid MC Stats to $site_name from config.php -->
-                <!-- TODO: Change fa-plus to $fa_icon from config.php -->
+                <a class="navbar-brand" href="../index.php"><i class="fa <?php echo $fa_icon; ?>"></i> <?php echo $site_name; ?></a>
             </div>
             <!-- /Mobile -->
 

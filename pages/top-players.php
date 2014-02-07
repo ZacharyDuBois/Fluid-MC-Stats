@@ -37,7 +37,6 @@ include_once '../inc.db.php';
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
-                    <!-- TODO: Apply class active to li when page is current -->
                     <li><a href="server-stats.php"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
                     <li class="active"><a href="top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
                     <li><a href="player-list.php"><i class="fa fa-list"></i> Player List</a></li>
@@ -76,7 +75,6 @@ include_once '../inc.db.php';
                         <ol class="breadcrumb">
                             <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
                             <li class="active"><i class="fa fa-bar-chart-o"></i> Top Players</li>
-                            <!-- TODO: Apply class active to li when page is current -->
                         </ol>
                     </div>
                 </div>
@@ -92,12 +90,6 @@ include_once '../inc.db.php';
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Top Players</h3>
                         </div>
                         <div class="panel-body">
-                            <!-- <div class="alert alert-danger">
-                                <p><strong><i class="fa fa-exclamation-triangle"></i> Fatal:</strong> Configuration was not
-                                    setup
-                                    correctly. Possibly you did not set Fluid MC Stats up?</p>
-                            </div> -->
-                            <!-- TODO: Make this error only visible when the config is incorrect or missing -->
                             <p>These are users with current top rankings on the server.</p>
 
                             <div class="table-responsive">
