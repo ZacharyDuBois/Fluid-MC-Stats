@@ -8,14 +8,14 @@ if (file_exists("../config.php")) {
 } else {
     die("Config not found");
 }
-if (!isset($_GET['name'])) {
+if (!isset($_GET['id'])) {
     die("No player specified. <a href='../index.php'>Go back to homepage?</a>");
 }
 include_once '../inc/db.php';
 include_once '../inc/queries.php';
 include_once '../inc/util.php';
-$player = $_GET['name'];
-$player_id = getPlayerId($mysqli, $player);
+$player_id = $_GET['id'];
+$player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 ?>
 <html>
     <head>
