@@ -13,7 +13,6 @@ function nicetime($date) {
     if (empty($date)) {
         return "No date provided";
     }
-    date_default_timezone_set("Europe/Amsterdam"); // Hmm. TODO: Maybe make this configurable...
     $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
     $lengths = array("60", "60", "24", "7", "4.35", "12", "10");
 
