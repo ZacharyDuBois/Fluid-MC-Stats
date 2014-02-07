@@ -231,24 +231,10 @@ $player_id = getPlayerId($mysqli, $player);
                     <!-- /Server status -->
 
                     <!-- Quick Links -->
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-link"></i> Quick Links</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <a href="../index.php" class="list-group-item"><i class="fa fa-home"></i> Home</a>
-                                <!-- TODO: Apply class active to li when page is current -->
-                                <a href="server-stats.php" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
-                                <a href="top-players.php" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-                                <a href="player-list.php" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">Not setup...</a>
-                                <!-- TODO: Links from $custom_links configuration file need to go here. -->
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    $page = "player-list";
+                    include '../inc/quicklinksui.php';
+                    ?>
                     <!-- /Quick Links -->
 
                 </div>
@@ -261,8 +247,11 @@ $player_id = getPlayerId($mysqli, $player);
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="well well-sm">
-                        <!-- TODO: User custom footer text will appear in 'Config defined text here' from config.php -->
-                        <p class="make-center">[Config defined text here] <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
+                        <p class="make-center"><?php
+                            if (!empty($custom_footer_text)) {
+                                echo "[" . $custom_footer_text . "]";
+                            }
+                            ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
                             Pre-Alpha is &copy; Copyright <a href="http://developgravity.com/">Develop Gravity</a> and <a
                                 href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
                         <!-- DND: Keep this link here! This is copyrighted content -->

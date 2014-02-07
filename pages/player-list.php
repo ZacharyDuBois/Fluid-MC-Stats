@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -7,7 +6,6 @@ include_once __DIR__ . '/../config.php';
 include_once __DIR__ . '/../inc/db.php';
 include_once __DIR__ . '/../inc/queries.php';
 include_once __DIR__ . '/../inc/util.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -133,17 +131,17 @@ include_once __DIR__ . '/../inc/util.php';
                                         <?php
                                         include "../inc/pages/player-list-getter.php";
                                         $players = getPlayerList($mysqli, $mysql_table_prefix, 1);
-                                        while($player = $players->fetch_array()){
+                                        while ($player = $players->fetch_array()) {
                                             $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
                                             echo "<tr>";
                                             echo "<td><a href='player.php?id=" . $player['player_id'] . "'>"
-                                                    . "<img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon' />"
-                                                    . " " . $playerName . "</a></td>";
+                                            . "<img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon' />"
+                                            . " " . $playerName . "</a></td>";
                                             echo "<td>";
-                                            if($player['lastjoin'] > $player['lastleave']){
+                                            if ($player['lastjoin'] > $player['lastleave']) {
                                                 //online now
                                                 echo "Online now!";
-                                            }else{
+                                            } else {
                                                 echo "<abbr title='" . $player['lastleave'] . "'>" . nicetime($player['lastleave']) . "</abbr>";
                                             }
                                             echo "</td>";
@@ -194,8 +192,11 @@ include_once __DIR__ . '/../inc/util.php';
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="well well-sm">
-                        <!-- TODO: User custom footer text will appear in 'Config defined text here' from config.php -->
-                        <p class="make-center">[Config defined text here] <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
+                        <p class="make-center"><?php
+                            if (!empty($custom_footer_text)) {
+                                echo "[" . $custom_footer_text . "]";
+                            }
+                            ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
                             Pre-Alpha is &copy; Copyright <a href="http://developgravity.com/">Develop Gravity</a> and <a
                                 href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
                         <!-- DND: Keep this link here! This is copyrighted content -->

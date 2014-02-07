@@ -242,8 +242,11 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="well well-sm">
-                        <!-- TODO: User custom footer text will appear in 'Config defined text here' from config.php -->
-                        <p class="make-center">[Config defined text here] <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
+                        <p class="make-center"><?php
+                            if (!empty($custom_footer_text)) {
+                                echo "[" . $custom_footer_text . "]";
+                            }
+                            ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
                             Pre-Alpha is &copy; Copyright <a href="http://developgravity.com/">Develop Gravity</a> and <a
                                 href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
                         <!-- DND: Keep this link here! This is copyrighted content -->
