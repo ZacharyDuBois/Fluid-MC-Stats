@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+
 include_once __DIR__ . "/../config.php";
 include_once __DIR__ . "/serverstatus.php";
 
@@ -31,7 +35,7 @@ $serverStatus->fetchServerData();
 
 
         <div class="progress progress-striped active">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php
             $percentageFilled = 0;
             if ($serverStatus->isOnline()) {
                 $percentageFilled = $serverStatus->getOnlinePlayerCount() / $serverStatus->getMaxPlayerCount() * 100;

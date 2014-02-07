@@ -60,7 +60,7 @@
                                 ?>
                                 <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i>
                                         Configuration Warning:</strong> config.php is not writable in <?php echo realpath("../../config.php"); ?>. <br/>
-                                    Please use command <strong>chmod 666 <?php echo realpath("../../config.php"); ?></strong> to make the file
+                                    Please use command <code>chmod 666 <?php echo realpath("../../config.php"); ?></code> to make the file
                                     writable.
                                 </div>
                                 <?php
@@ -93,6 +93,7 @@
                                 <h1>Welcome!</h1>
 
                                 <p>to Fluid MC Stats! Get started by filling out the configuration information below and then click Install!</p>
+                                <p>If you are seeing this, then the config tests have passed and you may now configure!</p>
                             </div>
                             <h1><i class="fa fa-gear"></i> Configuration</h1>
 
