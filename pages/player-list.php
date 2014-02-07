@@ -178,24 +178,10 @@ include_once __DIR__ . '/../inc/util.php';
                     <!-- /Server status -->
 
                     <!-- Quick Links -->
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-link"></i> Quick Links</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <a href="../index.php" class="list-group-item"><i class="fa fa-home"></i> Home</a>
-                                <!-- TODO: Apply class active to li when page is current -->
-                                <a href="server-stats.php" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
-                                <a href="top-players.php" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-                                <a href="player-list.php" class="list-group-item active"><i class="fa fa-list"></i> Player List</a>
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">Not setup...</a>
-                                <!-- TODO: Links from $custom_links configuration file need to go here. -->
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    $page = "player-list";
+                    include '../inc/quicklinksui.php';
+                    ?>
                     <!-- /Quick Links -->
 
                 </div>
