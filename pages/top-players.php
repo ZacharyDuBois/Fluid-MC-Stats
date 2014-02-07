@@ -53,8 +53,14 @@ include_once '../inc.db.php';
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-link"></i> Links <b
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Not setup...</a></li>
-                            <!-- TODO: Links from $custom_links configuration file need to go here. -->
+                            <?php
+                            if (empty($custom_links)) {
+                                echo "No links here!";
+                            }
+                            foreach ($custom_links as $key => $link) {
+                                echo "<li><a href='" . $link . "'>" . $key . "</a></li>";
+                            }
+                            ?>
                         </ul>
                     </li>
                 </ul>
