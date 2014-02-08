@@ -1,6 +1,7 @@
 <?php
 include_once "../config.php";
-include_once '../inc.db.php';
+include_once '../inc/db.php';
+include_once '../inc/util.php';
 ?>
 
 <!DOCTYPE html>
@@ -103,6 +104,11 @@ include_once '../inc.db.php';
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            $result = getTopPlayers($mysqli, $mysql_table_prefix, $player_top_calc_stat, 1);
+                                            var_dump($result);
+                                            echo "<tr>";
+                                        ?>
                                         <tr>
                                             <th>&num;1</th>
                                             <td><a href="player.php"><img src="http://mctar.polardrafting.com/Zachary_DuBois/16"
