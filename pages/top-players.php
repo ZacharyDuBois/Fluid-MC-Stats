@@ -49,9 +49,9 @@ ini_set('display_errors', 1);
                     <li class="active"><a href="top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
                     <li><a href="player-list.php"><i class="fa fa-list"></i> Player List</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" role="search">
+                <form class="navbar-form navbar-right" role="search" action="search.php">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Player Name">
+                        <input name='name' type="text" class="form-control" placeholder="Player Name">
                     </div>
                     <button type="submit" class="btn btn-default">Find <i class="fa fa-chevron-right"></i></button>
                 </form>
