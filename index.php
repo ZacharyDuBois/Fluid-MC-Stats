@@ -110,11 +110,11 @@ if (file_exists("pages/install/")) {
 
                                 <p>Get started by searching for your stats on this server or...</p>
 
-                                <form role="search">
+                                <form role="search" action='pages/search.php'>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                         <!-- BUG: Scale is off on group-addon when in jumbotron -->
-                                        <input type="text" class="form-control" placeholder="Username">
+                                        <input name='name' type="text" class="form-control" placeholder="Username">
                                         <span class="input-group-btn">
                                             <button type="submit" class="btn btn-default">
                                                 Find <i class="fa fa-chevron-right"></i>
