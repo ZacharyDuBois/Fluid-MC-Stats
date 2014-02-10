@@ -1,7 +1,14 @@
 <?php
+/*
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
 include_once "../config.php";
 include_once '../inc/db.php';
 include_once '../inc/util.php';
+include_once '../inc/queries.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
@@ -100,52 +107,32 @@ include_once '../inc/util.php';
                                         <tr>
                                             <th>Rank</th>
                                             <th>Player</th>
-                                            <th>Playtime</th>
+                                            <th><?php echo getHumanFriendlyStatName($player_top_calc_stat); ?>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $result = getTopPlayers($mysqli, $mysql_table_prefix, $player_top_calc_stat, 1);
-                                            var_dump($result);
+                                        $page = 1;
+                                        $result = getTopPlayers($mysqli, $mysql_table_prefix, $player_top_calc_stat, $page);
+                                        $i = 1 * $page;
+                                        while (($arr = $result->fetch_array()) != NULL) {
                                             echo "<tr>";
+                                            echo "<th>&num;" . $i++ . "</th>";
+                                            $playerName = getPlayerName($mysqli, $mysql_table_prefix, $arr['player_id']);
+                                            echo "<td><a href='player.php?id=" . $arr['player_id'] . "'><img src='"
+                                                    . $avatar_service_uri . $playerName . "/16' "
+                                                    . "class='img-circle avatar-list-icon'> " . $playerName . "</a></td>";
+                                            echo "<td>" . translateValue($player_top_calc_stat, $arr['value']) . "</td>";
+                                        }
                                         ?>
-                                        <tr>
-                                            <th>&num;1</th>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/Zachary_DuBois/16"
-                                                                          class="img-circle avatar-list-icon"> Zachary_DuBois</a></td>
-                                            <td>1Wk 1Dy 1H 11Mn 13S</td>
-                                        </tr>
-                                        <tr>
-                                            <th>&num;2</th>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/Lolmewn/16"
-                                                                           class="img-circle avatar-list-icon"> Lolmewn</a></td>
-                                            <td>1Wk 0Dy 7H 34Mn 54S</td>
-                                        </tr>
-                                        <tr>
-                                            <th>&num;3</th>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/SomeGuy/16"
-                                                                           class="img-circle avatar-list-icon"> SomeGuy</a></td>
-                                            <td>6Dy 2H 52Mn 21S</td>
-                                        </tr>
-                                        <tr>
-                                            <th>&num;4</th>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/AnotherGuy/16"
-                                                                           class="img-circle avatar-list-icon"> AnotherGuy</a></td>
-                                            <td>4Dy 9H 29Mn 2S</td>
-                                        </tr>
-                                        <tr>
-                                            <th>&num;5</th>
-                                            <td><a href="player.php"><img src="http://mctar.polardrafting.com/ThisCoolDude/16"
-                                                                           class="img-circle avatar-list-icon"> ThisCoolDude</a></td>
-                                            <td>4Dy 11H 59Mn 11S</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <div class="panel-footer">
-                            <em>Last Generated: 18-12-13 10:32pm EDT</em>
-                            <!-- TODO: Make caching and auto regeneration of this page to avoid the slowness. -->
+                            <em>Last Generated: Just now</em>
+                            <!-- TODO: Make caching and auto regeneration of this page to avoid the slowness.
+                            Maybe for later. -->
                         </div>
                     </div>
                 </div>

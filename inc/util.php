@@ -60,32 +60,31 @@ function getTopPlayers($mysqli, $dbPrefix, $stat, $page) {
         case "broken":
         case "placed":
             $query = "SELECT player_id,SUM(amount) AS value FROM " . $dbPrefix . "block WHERE "
-                . "break=" . $stat == "broken" ? "1" : "0"
-                . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "") 
-                . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+                    . "break=" . $stat == "broken" ? "1" : "0"
+                    . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "")
+                    . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
             break;
         case "kill":
             $query = "SELECT player_id,SUM(amount) AS value FROM " . $dbPrefix . "kill "
-                . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "") 
-                . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+                    . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+                    . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
             break;
         case "death":
             $query = "SELECT player_id,SUM(amount) AS value FROM " . $dbPrefix . "death "
-                . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "") 
-                . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+                    . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+                    . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
             break;
         case "move":
             $query = "SELECT player_id,SUM(distance) AS value FROM " . $dbPrefix . "move "
-                . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "") 
-                . " GROUP BY player_id ORDER BY SUM(distance) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+                    . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+                    . " GROUP BY player_id ORDER BY SUM(distance) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
             break;
         default:
             $query = "SELECT player_id,SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM " . $dbPrefix . "player "
-                . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "") 
-                . " GROUP BY player_id ORDER BY SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+                    . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+                    . " GROUP BY player_id ORDER BY SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
     }
     $result = $mysqli->query($query);
-    var_dump($query);
     return $result;
 }
 
@@ -93,8 +92,8 @@ function getTopPlayers($mysqli, $dbPrefix, $stat, $page) {
  * This function converts a stat from the player table to the column name where that stat is stored
  * @param type $stat Stat to look up
  */
-function getDatabaseColumnNameFromPlayerStat($stat){
-    switch($stat){
+function getDatabaseColumnNameFromPlayerStat($stat) {
+    switch ($stat) {
         case "arrows":
         case "toolsbroken":
         case "votes":
@@ -128,4 +127,61 @@ function getDatabaseColumnNameFromPlayerStat($stat){
 function usesSnapshots($mysqli, $dbPrefix) {
     $result = $mysqli->query("SHOW COLUMNS FROM " . $dbPrefix . "player LIKE 'snapshot_name'");
     return (mysqli_num_rows($result)) ? TRUE : FALSE;
+}
+
+function capitalise($sentence) {
+    return ucfirst(strtolower($sentence));
+}
+
+function getHumanFriendlyStatName($stat) {
+    switch ($stat) {
+        case "broken":
+            return "Blocks broken";
+        case "placed":
+            return "Blocks placed";
+        case "arrows":
+            return "Arrows shot";
+        case "exp":
+            return "Experience gained";
+        case "fish":
+            return "Fish cought";
+        case "damage":
+            return "Damage taken";
+        case "consumed":
+            return "Food consumed";
+        case "crafted":
+            return "Items crafted";
+        case "eggs":
+            return "Eggs thrown";
+        case "toolsbroken":
+            return "Tools broken";
+        case "commands":
+            return "Commands performed";
+        case "votes":
+            return "Amount of times voted";
+        case "dropped":
+            return "Items dropped";
+        case "pickedup":
+            return "Items picked up";
+        case "teleport":
+            return "Teleports";
+        default:
+            return capitalise($stat);
+    }
+}
+
+function translateValue($stat, $value) {
+    switch ($stat) {
+        case "playtime":
+            return convert_playtime($value);
+    }
+    return $value;
+}
+
+function convert_playtime($pt) {
+    $days = floor($pt / 86400);
+    $hours = floor(($pt - $days * 86400) / 3600);
+    $mins = floor(($pt - $hours * 3600 - $days * 86400) / 60);
+    $secs = floor($pt - $hours * 3600 - $days * 86400 - $mins * 60);
+    return $days . 'd:' . $hours . 'h:' . $mins . 'm:' . $secs . 's';
 }
