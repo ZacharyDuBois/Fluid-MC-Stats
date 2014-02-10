@@ -101,7 +101,7 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
                         </div>
                         <div class="panel-body">
                             <p class="make-center">
-                                <img src="http://mctar.polardrafting.com/<?php echo $player; ?>/400" class="img-rounded avatar-player-page">
+                                <img src="<?php echo $avatar_service_uri . $player; ?>/400" class="img-rounded avatar-player-page">
                             </p>
 
                             <div class="table-responsive">
