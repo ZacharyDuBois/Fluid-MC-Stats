@@ -24,12 +24,12 @@ function getPlayerName($mysqli, $mysql_table_prefix, $player_id) {
     return $name;
 }
 
-function getPlaytime($mysqli, $playerId, $world = NULL) {
+function getPlaytime($mysqli, $mysql_table_prefix, $player_id, $world = NULL) {
     $query = $mysqli->prepare("SELECT playtime FROM " . $mysql_table_prefix . "player WHERE player_id=?" . ($world == NULL ? "" : " AND world=?"));
     if ($world == NULL) {
-        $query->bind_param("i", $playerId);
+        $query->bind_param("i", $player_id);
     } else {
-        $query->bind_param("is", $playerId, $world);
+        $query->bind_param("is", $player_id, $world);
     }
     $query->execute();
     $playtime = NULL;

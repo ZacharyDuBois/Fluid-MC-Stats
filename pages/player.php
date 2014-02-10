@@ -3,6 +3,8 @@
   ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
 -->
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 if (file_exists("../config.php")) {
     include_once '../config.php';
 } else {
@@ -121,98 +123,98 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
                                     </tr>
                                     <tr>
                                         <th>Playtime</th>
-                                        <td><?php echo nice_time(getPlaytime($mysqli, $playerId)); ?></td>
-                                        <td>1.4 Hours</td>
+                                        <td><?php echo convert_playtime(getPlaytime($mysqli, $mysql_table_prefix, $player_id)); ?></td>
+                                        <td><?php echo convert_playtime(getServerAverage($mysqli, $mysql_table_prefix, "playtime")); ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Travel</th>
-                                        <td>3,965km</td>
-                                        <td>9.2km</td>
+                                        <th>Travel</th> 
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "move") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "move"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Blocks Broken</th>
-                                        <td>154,072 Blocks</td>
-                                        <td>356.6 Blocks</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "broken") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "broken"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Blocks Placed</th>
-                                        <td>44,091 Blocks</td>
-                                        <td>102 Blocks</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "placed") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "placed"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Deaths</th>
-                                        <td>192 Deaths</td>
-                                        <td>0.4 Deaths</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "death") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "death"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Kills</th>
-                                        <td>1,543 Kills</td>
-                                        <td>3.6 Kills</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "kill") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "kill"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Arrows Fired</th>
-                                        <td>5,687 Arrows Fired</td>
-                                        <td>13.2 Arrows Fired</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "arrows") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "arrows"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Collected EXP</th>
-                                        <td>45,955 Orbs</td>
-                                        <td>106.4 Orbs</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "exp") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "exp"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Fish Caught</th>
-                                        <td>489 Fish</td>
-                                        <td>1.1 Fish</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "fish") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "fish"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Total Damage Taken</th>
-                                        <td>19,642 Hits</td>
-                                        <td>45.5 Hits</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "damage") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "damage"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Food Consumed</th>
-                                        <td>8,756 Omnomnoms</td>
-                                        <td>20.3 Omnomnoms</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "consumed") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "consumed"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Crafted Items</th>
-                                        <td>2,833 Items</td>
-                                        <td>6.6 Items</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "crafted") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "crafted"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Eggs Thrown</th>
-                                        <td>19 Eggs</td>
-                                        <td>&#60; 0.1 Eggs</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "eggs") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "eggs"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Tools Broken</th>
-                                        <td>2,704 Broken</td>
-                                        <td>6.3 Broken</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "toolsbroken") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "toolsbroken"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Commands</th>
-                                        <td>3,100 Commands</td>
-                                        <td>7.2 Commands</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "commands") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "commands"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Votes</th>
-                                        <td>76 Votes</td>
-                                        <td>0.2 Votes</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "votes") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "votes"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Items Dropped</th>
-                                        <td>1,762 Items</td>
-                                        <td>4.1 Items</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "dropped") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "dropped"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Items Picked Up</th>
-                                        <td>1,009 Items</td>
-                                        <td>2.3 Items</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "pickedup") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "pickedup"); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Teleports</th>
-                                        <td>16,092 Teleports</td>
-                                        <td>37.3 Teleports</td>
+                                        <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, "teleport") ?></td>
+                                        <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "teleport"); ?></td>
                                     </tr>
                                     </tbody>
                                 </table>
