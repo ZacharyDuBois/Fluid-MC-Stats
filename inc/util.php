@@ -129,30 +129,29 @@ function getPlayerStat($mysqli, $dbPrefix, $player_id, $stat) {
     return $arr['value'];
 }
 
-function getServerAverage($mysqli, $dbPrefix, $stat) {
+function getServerTotal($mysqli, $dbPrefix, $stat){
     $query;
-    $amountOfPlayers = getAmountOfPlayers($mysqli, $dbPrefix);
     switch ($stat) {
         case "broken":
         case "placed":
-            $query = "SELECT SUM(amount)/{$amountOfPlayers} AS value FROM {$dbPrefix}block WHERE "
+            $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}block WHERE "
                     . "break=" . ($stat == "broken" ? "1" : "0")
                     . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
             break;
         case "kill":
-            $query = "SELECT SUM(amount)/{$amountOfPlayers} AS value FROM {$dbPrefix}kill "
+            $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}kill "
                     . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
             break;
         case "death":
-            $query = "SELECT SUM(amount)/{$amountOfPlayers} AS value FROM {$dbPrefix}death "
+            $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}death "
                     . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
             break;
         case "move":
-            $query = "SELECT SUM(distance)/{$amountOfPlayers} AS value FROM {$dbPrefix}move "
+            $query = "SELECT SUM(distance) AS value FROM {$dbPrefix}move "
                     . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
             break;
         default:
-            $query = "SELECT SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ")/{$amountOfPlayers} AS value FROM {$dbPrefix}player "
+            $query = "SELECT SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM {$dbPrefix}player "
                     . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
     }
     $result = $mysqli->query($query);
@@ -160,8 +159,14 @@ function getServerAverage($mysqli, $dbPrefix, $stat) {
     return $arr['value'];
 }
 
-function getAmountOfPlayers($mysqli, $dbPrefix) {
-    $query = "SELECT COUNT(DISTINCT player_id) AS value FROM {$dbPrefix}player";
+function getServerAverage($mysqli, $dbPrefix, $stat, $playtimeLimiter) {
+    $amountOfPlayers = getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter);
+    $serverTotal = getServerTotal($mysqli, $dbPrefix, $stat);
+    return $serverTotal/$amountOfPlayers;
+}
+
+function getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter) {
+    $query = "SELECT COUNT(DISTINCT player_id) AS value FROM {$dbPrefix}player WHERE playtime>={$playtimeLimiter}";
     $result = $mysqli->query($query);
     $arr = $result->fetch_array();
     return $arr['value'];

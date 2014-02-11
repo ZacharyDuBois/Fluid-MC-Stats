@@ -1,3 +1,16 @@
+<?php
+/*
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+include_once "../config.php";
+include_once '../inc/db.php';
+include_once '../inc/util.php';
+include_once '../inc/queries.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
+
 <!DOCTYPE html>
 <!--
   ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
@@ -5,8 +18,7 @@
 
 <html>
     <head>
-        <title>Fluid MC Stats - Server Stats</title>
-        <!-- TODO: Change title dynamicly and replace Fluid MC Stats with $site_name from config.php. -->
+        <title><?php echo $site_name; ?> - Server Stats</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
@@ -33,7 +45,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
-                    <!-- TODO: Apply class active to li when page is current -->
                     <li class="active"><a href="server-stats.php"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
                     <li><a href="top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
                     <li><a href="player-list.php"><i class="fa fa-list"></i> Player List</a></li>
@@ -72,7 +83,6 @@
                         <ol class="breadcrumb">
                             <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
                             <li class="active"><i class="fa fa-hdd-o"></i> Server Stats</li>
-                            <!-- TODO: Apply class active to li when page is current -->
                         </ol>
                     </div>
                 </div>
@@ -88,12 +98,6 @@
                             <h3 class="panel-title"><i class="fa fa-hdd-o"></i> Server Stats</h3>
                         </div>
                         <div class="panel-body">
-                            <!-- <div class="alert alert-danger">
-                                <p><strong><i class="fa fa-exclamation-triangle"></i> Fatal:</strong> Configuration was not
-                                    setup
-                                    correctly. Possibly you did not set Fluid MC Stats up?</p>
-                            </div> -->
-                            <!-- TODO: Make this error only visible when the config is incorrect or missing -->
                             <h3>Current Server Stats</h3>
                             <hr>
                             <div class="table-responsive">
@@ -102,110 +106,169 @@
                                     <thead>
                                         <tr>
                                             <th>Measurement</th>
-                                            <th>Data</th>
-                                            <th>Server Average</th>
+                                            <th>Total</th>
+                                            <th>Average</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th>Players</th>
-                                            <td>432 Players</td>
+                                            <td><?php 
+                                            $amountOfPlayers = getAmountOfPlayers($mysqli, $mysql_table_prefix, $required_global_stats_time);
+                                            echo $amountOfPlayers ?> Players</td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <th>Playtime</th>
-                                            <td>26Dy 11H 26Mn 11S</td>
-                                            <td>1.4 Hours</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "playtime");
+                                                echo "<td>" . convert_playtime($value) . "</td>";
+                                                echo "<td>" . convert_playtime($value / $amountOfPlayers) . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Travel</th>
-                                            <td>3,965km</td>
-                                            <td>9.2km</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "move");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Blocks Broken</th>
-                                            <td>154,072 Blocks</td>
-                                            <td>356.6 Blocks</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "broken");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Blocks Placed</th>
-                                            <td>44,091 Blocks</td>
-                                            <td>102 Blocks</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "placed");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Deaths</th>
-                                            <td>192 Deaths</td>
-                                            <td>0.4 Deaths</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "death");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Kills</th>
-                                            <td>1,543 Kills</td>
-                                            <td>3.6 Kills</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "kill");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Arrows Fired</th>
-                                            <td>5,687 Arrows Fired</td>
-                                            <td>13.2 Arrows Fired</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "arrows");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Collected EXP</th>
-                                            <td>45,955 Orbs</td>
-                                            <td>106.4 Orbs</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "exp");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Fish Caught</th>
-                                            <td>489 Fish</td>
-                                            <td>1.1 Fish</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "fish");
+                                                echo "<td>" . $value . " Fish</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Fish</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Total Damage Taken</th>
-                                            <td>19,642 Hits</td>
-                                            <td>45.5 Hits</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "damage");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Food Consumed</th>
-                                            <td>8,756 Omnomnoms</td>
-                                            <td>20.3 Omnomnoms</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "consumed");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Crafted Items</th>
-                                            <td>2,833 Items</td>
-                                            <td>6.6 Items</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "crafted");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Eggs Thrown</th>
-                                            <td>19 Eggs</td>
-                                            <td>&#60; 0.1 Eggs</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "eggs");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Tools Broken</th>
-                                            <td>2,704 Broken</td>
-                                            <td>6.3 Broken</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "toolsbroken");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Commands</th>
-                                            <td>3,100 Commands</td>
-                                            <td>7.2 Commands</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "commands");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Votes</th>
-                                            <td>76 Votes</td>
-                                            <td>0.2 Votes</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "votes");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Items Dropped</th>
-                                            <td>1,762 Items</td>
-                                            <td>4.1 Items</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "dropped");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Items Picked Up</th>
-                                            <td>1,009 Items</td>
-                                            <td>2.3 Items</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "pickedup");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                         <tr>
                                             <th>Teleports</th>
-                                            <td>16,092 Teleports</td>
-                                            <td>37.3 Teleports</td>
+                                            <?php
+                                                $value = getServerTotal($mysqli, $mysql_table_prefix, "teleport");
+                                                echo "<td>" . $value . "</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                            ?>
                                         </tr>
                                     </tbody>
                                 </table>
