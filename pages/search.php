@@ -137,7 +137,7 @@ $player = $_GET['name'];
                                         }else{
                                             foreach ($players as $player) {
                                                 echo "<tr>";
-                                                echo "<td><a href='player.php?id='" . $player['player_id'] . "'><img src='"
+                                                echo "<td><a href='player.php?id=" . $player['player_id'] . "'><img src='"
                                                         . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> "
                                                         . $player['name'] . "</a></td>";
                                                 $lastjoin = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastjoin");
