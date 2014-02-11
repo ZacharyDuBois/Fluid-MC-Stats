@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="install.html"><i class="fa fa-wrench"></i> Install &amp; Configure</a></li>
-                    <li><a href="http://developgravity.com/">Develop Gravity</a></li>
+                    <li><a href="http://developgravity.com/">DevelopGravity</a></li>
                     <li><a href="http://lolmewn.nl/">Lolmewn</a></li>
                 </ul>
             </div>
@@ -315,7 +315,7 @@
                                         <label for="fmcsLink1Name" class="col-sm-3 control-label">Custom Link 1</label>
 
                                         <div class="col-sm-3">
-                                            <input name="customname1" type="text" class="form-control" id="fmcsLink1Name" placeholder="Develop Gravity">
+                                            <input name="customname1" type="text" class="form-control" id="fmcsLink1Name" placeholder="DevelopGravity">
                                         </div>
                                         <div class="col-sm-6">
                                             <input name="customvalue1" type="text" class="form-control" id="fmcsLink1URL" placeholder="http&colon;//developgravity.com/">
@@ -402,10 +402,10 @@
 
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" id="fmcsAdvAvatarService"
-                                                   placeholder="http&colon;//mctar.polardrafting.com/" value="http://mctar.polardrafting.com/">
+                                                   placeholder="http&colon;//mc-avatar.developgravity.com/" value="http://mc-avatar.developgravity.com/">
                                             <span class="help-block">
                                                 The URI for the avatar service you want to use. The URI must follow <code>http://domain.tld/directory/playername/pixelsize</code>.
-                                                Known supported are <code>http://mctar.polardrafting.com/</code> and <code>https://minotar.net/avatar/</code>.
+                                                Known supported are <code>http://mc-avatar.developgravity.com/</code> and <code>https://minotar.net/avatar/</code>.
                                             </span>
                                         </div>
                                     </div>
@@ -423,7 +423,7 @@
                     }
                     ?>
                     <div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1 Pre-Alpha is &copy; Copyright <a
-                            href="http://developgravity.com/">Develop Gravity</a> and <a href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights
+                            href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights
                         reserved.
                         <!-- DND: Keep this link here! This is copyrighted content -->
                     </div>
