@@ -28,7 +28,7 @@ $serverStatus->fetchServerData();
         <hr>
         <p><strong>Name:</strong> <?php echo $server_name; ?></p>
 
-        <p><strong>IP:</strong> <?php echo $mc_server_ip; ?>&colon;<?php echo $mc_server_port; ?></p>
+        <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
         <?php if ($serverStatus->isOnline()) { ?>
             <p><strong>Players:</strong> <?php echo $serverStatus->getOnlinePlayerCount() . "/" . $serverStatus->getMaxPlayerCount(); ?></p>
         <?php } else if ($serverStatus->isDead()) { ?>
