@@ -14,6 +14,9 @@ $serverStatus->fetchServerData();
         <h3 class="panel-title"><i class="fa fa-hdd-o"></i> Server Status</h3>
     </div>
     <div class="panel-body">
+      <div>
+        <img src="http://minecraft-api.com/v1/logo/?server=<?php echo $mc_server_ip; ?>:<?php echo $mc_server_port; ?>" alt="Server Icon" class="img-circle server-sidebar-icon">
+      </div>
         <?php if ($serverStatus->isOnline()) { ?>
             <h3 class="mc-online"><i class="fa fa-check"></i> Online!</h3>
         <?php } else if ($serverStatus->isDead()) { ?>
@@ -25,7 +28,7 @@ $serverStatus->fetchServerData();
         <hr>
         <p><strong>Name:</strong> <?php echo $server_name; ?></p>
 
-        <p><strong>IP:</strong> <?php echo $mc_server_ip; ?></p>
+        <p><strong>IP:</strong> <?php echo $mc_server_ip; ?>&colon;<?php echo $mc_server_port; ?></p>
         <?php if ($serverStatus->isOnline()) { ?>
             <p><strong>Players:</strong> <?php echo $serverStatus->getOnlinePlayerCount() . "/" . $serverStatus->getMaxPlayerCount(); ?></p>
         <?php } else if ($serverStatus->isDead()) { ?>

@@ -49,3 +49,12 @@ img.avatar-player-page {
   width: 100%;
   max-width: 400px;
 }
+
+img.server-sidebar-icon {
+  height: auto;
+  width: 50%;
+  max-width: 128px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
