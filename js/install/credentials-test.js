@@ -16,10 +16,10 @@ $("#mysql-test").click(function () {
   }).done(function (msg) {
       if (msg === "Success") {
         $("#mysql-test").fadeOut(200, function () {
-          $("#mysql-result").html("<h2><span class='label label-success'>Success!</span></h2>");
+          $("#mysql-result").html("<h4><span class='label label-success'>Success!</span></h4>");
         });
       } else {
-        $("#mysql-result").html("<h2><span class='label label-danger'>Failed: " + msg + "</span></h2>");
+        $("#mysql-result").html("<h4><span class='label label-danger'>Failed: " + msg + "</span></h4>");
       }
     });
   return false;

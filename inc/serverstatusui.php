@@ -9,7 +9,7 @@ include_once __DIR__ . "/serverstatus.php";
 $serverStatus = new serverstatus($mc_server_ip, $mc_server_port);
 $serverStatus->fetchServerData();
 ?>
-<div class="panel panel-info">
+<div class="panel panel-danger">
     <div class="panel-heading">
         <h3 class="panel-title"><i class="fa fa-hdd-o"></i> Server Status</h3>
     </div>

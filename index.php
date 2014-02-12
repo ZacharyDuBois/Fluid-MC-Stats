@@ -18,7 +18,7 @@ if ($mysql_host == '') {
     die("Config misconfigured and install folder is not at default location, can't launch website");
 }
 if (file_exists("pages/install/")) {
-    die("install folder still exists! Due to security reasons, please delete/move it.");
+    die("Security Issues! Please move or delete the installation folder!");
 }
 ?>
 <html>
@@ -105,8 +105,7 @@ if (file_exists("pages/install/")) {
                         <div class="panel-body">
                             <div class="jumbotron">
                                 <h1>Welcome!</h1>
-                                <p>to the new Fluid MC Stats interface for your <?php echo $server_name; ?> powered by <a href="http://developgravity.com/">Develop
-                                        Gravity</a> and <a href="http://lolmewn.nl">Lolmewn</a>.</p>
+                                <p>to the new Fluid MC Stats interface for the <?php echo $server_name; ?> server, powered by <a href="http://developgravity.com/">DevelopGravity</a> and <a href="http://lolmewn.nl">Lolmewn</a>.</p>
 
                                 <p>Get started by searching for your stats on this server or...</p>
 
@@ -154,27 +153,10 @@ if (file_exists("pages/install/")) {
                     <!-- /Server status -->
 
                     <!-- Quick Links -->
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-link"></i> Quick Links</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <a href="index.php" class="list-group-item active"><i class="fa fa-home"></i> Home</a>
-                                <!-- TODO: Apply class active to li when page is current -->
-                                <a href="pages/server-stats.php" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
-                                <a href="pages/top-players.php" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-                                <a href="pages/player-list.php" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
-                            </div>
-                            <div class="list-group">
-                                <?php
-                                foreach ($custom_links as $key => $link) {
-                                    echo "<a href='" . $link . "' class='list-group-item'>" . $key . "</a>";
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    $page = "home";
+                    include 'inc/quicklinksui.php';
+                    ?>
                     <!-- /Quick Links -->
 
                 </div>

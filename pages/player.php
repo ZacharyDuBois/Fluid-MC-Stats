@@ -127,93 +127,93 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
                                         </tr>
                                         <tr>
                                             <th>Travel</th> 
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "move") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "move", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "move") ?> Meters</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "move", $required_global_stats_time); ?> Meters</td>
                                         </tr>
                                         <tr>
                                             <th>Blocks Broken</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "broken") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "broken", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "broken") ?> Blocks</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "broken", $required_global_stats_time); ?> Blocks</td>
                                         </tr>
                                         <tr>
                                             <th>Blocks Placed</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "placed") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "placed", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "placed") ?> Blocks</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "placed", $required_global_stats_time); ?> Blocks</td>
                                         </tr>
                                         <tr>
                                             <th>Deaths</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "death") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "death", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "death") ?> Deaths</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "death", $required_global_stats_time); ?> Deaths</td>
                                         </tr>
                                         <tr>
                                             <th>Kills</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "kill") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "kill", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "kill") ?> Kills</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "kill", $required_global_stats_time); ?> Kills</td>
                                         </tr>
                                         <tr>
                                             <th>Arrows Fired</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "arrows") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "arrows", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "arrows") ?> Arrows</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "arrows", $required_global_stats_time); ?> Arrows</td>
                                         </tr>
                                         <tr>
                                             <th>Collected EXP</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "exp") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "exp", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "exp") ?> EXP</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "exp", $required_global_stats_time); ?> EXP</td>
                                         </tr>
                                         <tr>
                                             <th>Fish Caught</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "fish") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "fish", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "fish") ?> Fish</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "fish", $required_global_stats_time); ?> Fish</td>
                                         </tr>
                                         <tr>
                                             <th>Total Damage Taken</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "damage") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "damage", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "damage") ?> Health</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "damage", $required_global_stats_time); ?> Health</td>
                                         </tr>
                                         <tr>
                                             <th>Food Consumed</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "consumed") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "consumed", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "consumed") ?> Foodz</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "consumed", $required_global_stats_time); ?> Foodz</td>
                                         </tr>
                                         <tr>
                                             <th>Crafted Items</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "crafted") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "crafted", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "crafted") ?> Items</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "crafted", $required_global_stats_time); ?> Items</td>
                                         </tr>
                                         <tr>
                                             <th>Eggs Thrown</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "eggs") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "eggs", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "eggs") ?> Eggs</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "eggs", $required_global_stats_time); ?> Eggs</td>
                                         </tr>
                                         <tr>
                                             <th>Tools Broken</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "toolsbroken") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "toolsbroken", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "toolsbroken") ?> Tools</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "toolsbroken", $required_global_stats_time); ?> Tools</td>
                                         </tr>
                                         <tr>
                                             <th>Commands</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "commands") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "commands", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "commands") ?> Commands</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "commands", $required_global_stats_time); ?> Commands</td>
                                         </tr>
                                         <tr>
                                             <th>Votes</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "votes") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "votes", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "votes") ?> Votes</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "votes", $required_global_stats_time); ?> Votes</td>
                                         </tr>
                                         <tr>
                                             <th>Items Dropped</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "dropped") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "dropped", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "dropped") ?> Items</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "dropped", $required_global_stats_time); ?> Items</td>
                                         </tr>
                                         <tr>
                                             <th>Items Picked Up</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "pickedup") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "pickedup", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "pickedup") ?> Items</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "pickedup", $required_global_stats_time); ?> Items</td>
                                         </tr>
                                         <tr>
                                             <th>Teleports</th>
-                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "teleport") ?></td>
-                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "teleport", $required_global_stats_time); ?></td>
+                                            <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "teleport") ?> Teleports</td>
+                                            <td><?php echo getServerAverage($mysqli, $mysql_table_prefix, "teleport", $required_global_stats_time); ?> Teleports</td>
                                         </tr>
                                     </tbody>
                                 </table>

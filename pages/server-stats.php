@@ -130,56 +130,56 @@ ini_set('display_errors', 1);
                                             <th>Travel</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "move");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Meters</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Meters</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Blocks Broken</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "broken");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Blocks</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Blocks</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Blocks Placed</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "placed");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Blocks</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Blocks</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Deaths</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "death");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Deaths</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Deaths</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Kills</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "kill");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Kills</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Kills</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Arrows Fired</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "arrows");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Arrows</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Arrows</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Collected EXP</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "exp");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " EXP</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " EXP</td>";
                                             ?>
                                         </tr>
                                         <tr>
@@ -194,90 +194,90 @@ ini_set('display_errors', 1);
                                             <th>Total Damage Taken</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "damage");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Health</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Health</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Food Consumed</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "consumed");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Foodz</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Foodz</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Crafted Items</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "crafted");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Items</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Items</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Eggs Thrown</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "eggs");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Eggs</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Eggs</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Tools Broken</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "toolsbroken");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Tools</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Tools</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Commands</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "commands");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Commands</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Commands</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Votes</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "votes");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Votes</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Votes</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Items Dropped</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "dropped");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Items</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Items</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Items Picked Up</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "pickedup");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Items</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Items</td>";
                                             ?>
                                         </tr>
                                         <tr>
                                             <th>Teleports</th>
                                             <?php
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "teleport");
-                                                echo "<td>" . $value . "</td>";
-                                                echo "<td>" . $value / $amountOfPlayers . "</td>";
+                                                echo "<td>" . $value . " Teleports</td>";
+                                                echo "<td>" . $value / $amountOfPlayers . " Teleports</td>";
                                             ?>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <em>*Only includes data of players with more than 1 hour of playtime.</em>
+                            <!--<em>*Only includes data of players with more than 1 hour of playtime.</em>-->
                             <!-- TODO: Above is defined in config.php -->
                         </div>
                         <div class="panel-footer">
-                            <em>Last Generated: 18-12-13 11:01pm EDT</em>
+                            <em>Last Generated: Now</em>
                             <!-- TODO: Make caching and auto regeneration of this page to avoid the slowness. -->
                         </div>
                     </div>

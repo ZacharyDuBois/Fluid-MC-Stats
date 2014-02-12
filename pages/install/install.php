@@ -42,7 +42,7 @@
         <!-- Content -->
         <div class="container content-container">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-danger">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-wrench"></i> Install &amp; Configure</h3>
                     </div>
@@ -119,7 +119,7 @@
                                             </span>
                                         </div>
                                         <div class="col-sm-2">
-                                            <input name="mysql_port" type="text" class="form-control" id="mySQLHostPort" placeholder="3306" needed>
+                                            <input name="mysql_port" type="text" class="form-control" id="mySQLHostPort" placeholder="3306" value="3306" needed>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -165,7 +165,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-offset-3">
                                             <a href="javascript:void(0)">
-                                                <button class="btn btn-primary btn-lg" id="mysql-test">Test credentials</button>
+                                                <button class="btn btn-primary btn-sm" id="mysql-test"><i class="fa fa-check-circle-o"></i> Test MySQL</button>
                                             </a>
 
                                             <div id="mysql-result"></div>
@@ -231,7 +231,7 @@
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">fa&dash;</span>
-                                                <input name="fa_icon" type="text" class="form-control" id="fmcsIcon" placeholder="plus">
+                                                <input name="fa_icon" type="text" class="form-control" id="fmcsIcon" placeholder="plus" value="plus">
                                             </div>
                                             <span class="help-block">
                                                 A suffix for a <a href="http://fontawesome.io">Font
@@ -293,7 +293,10 @@
                                                 <option value="1">1 (Min)</option>
                                                 <option value="3">3</option>
                                                 <option value="5">5</option>
-                                                <option value="10" selected>10 (Max, Default)</option>
+                                                <option value="10" selected>10 (Default)</option>
+                                                <option value="15">15</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50 (Max)</option>
                                             </select>
                                             <span class="help-block">
                                                 The number of players you want to be considered to be &apos;top&apos; players. These will be displayed on the <em>Top
@@ -369,7 +372,8 @@
                                         <label for="fmcsSiteName" class="col-sm-3 control-label">File CDN URI</label>
 
                                         <div class="col-sm-9">
-                                            <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.example.com/">
+                                            <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.example.com/" disabled>
+                                            <!-- TODO: CDN URI -->
                                             <span class="help-block">
                                                 This is for support for hosting static files externally. To use, upload the bootstrap, css, fontawesome, img, and
                                                 js directories to a remote web-server/CDN and put the path to all of them below.
@@ -381,7 +385,8 @@
                                             Time&ast;</label>
 
                                         <div class="col-sm-9">
-                                            <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600" value="3600">
+                                            <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600" value="3600" disabled>
+                                            <!-- TODO: Include time -->
                                             <span class="help-block">
                                                 This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 1 hour.
                                             </span>
@@ -391,7 +396,8 @@
                                         <label for="fmcsAdvCacheTime" class="col-sm-3 control-label">Cache Time&ast;</label>
 
                                         <div class="col-sm-9">
-                                            <input name="cache_time" type="text" class="form-control" id="fmcsAdvCacheTime" placeholder="1800" value="1800">
+                                            <input name="cache_time" type="text" class="form-control" id="fmcsAdvCacheTime" placeholder="1800" value="1800" disabled>
+                                            <!-- TODO: Make cache -->
                                             <span class="help-block">
                                                 The amount of time supported pages are cached. Single player pages will not be cached. Defaults to 30 minutes.
                                             </span>

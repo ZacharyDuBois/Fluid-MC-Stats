@@ -131,7 +131,7 @@ include_once __DIR__ . '/../inc/util.php';
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody> <!-- ZACH NTS: Add in tooltips instead of abbr -->
                                         <?php
                                         include "../inc/pages/player-list-getter.php";
                                         $players = getPlayerList($mysqli, $mysql_table_prefix, 1);

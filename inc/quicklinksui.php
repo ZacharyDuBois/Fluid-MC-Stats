@@ -1,4 +1,4 @@
-<div class="panel panel-info">
+<div class="panel panel-danger">
     <div class="panel-heading">
         <h3 class="panel-title"><i class="fa fa-link"></i> Quick Links</h3>
     </div>
