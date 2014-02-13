@@ -102,15 +102,10 @@ include_once __DIR__ . '/../inc/util.php';
                             <h3 class="panel-title"><i class="fa fa-list"></i> Player List</h3>
                         </div>
                         <div class="panel-body">
-                            <!-- <div class="alert alert-danger">
-                                <p><strong><i class="fa fa-exclamation-triangle"></i> Fatal:</strong> Configuration was not
-                                    setup
-                                    correctly. Possibly you did not set Fluid MC Stats up?</p>
-                            </div> -->
                             <!-- TODO: Make this error only visible when the config is incorrect or missing -->
                             <p>This is a list of all players that have played on the server.</p>
 
-                            <form role="search">
+                            <form role="search" action='search.php'>
                                 <div class="input-group input-group-lg">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                     <!-- BUG: Scale is off on group-addon when in jumbotron -->
