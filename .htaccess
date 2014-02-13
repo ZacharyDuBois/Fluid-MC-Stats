@@ -16,6 +16,9 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ $1/ [L,R=301]
+
+# Redirect them index.php users....
+RewriteRule ^index.php$ / [L,R=301]
 # END Fluid MC Stats
 
 # BEGIN Security Features
