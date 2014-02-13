@@ -4,10 +4,10 @@
     </div>
     <div class="panel-body">
         <div class="list-group">
-            <a href="../index.php" class="list-group-item<?php if($page == "home") echo " active";?>"><i class="fa fa-home"></i> Home</a>
-            <a href="../pages/server-stats.php" class="list-group-item<?php if($page == "server-stats") echo " active";?>"><i class="fa fa-hdd-o"></i> Server Stats</a>
-            <a href="../pages/top-players.php" class="list-group-item<?php if($page == "top-players") echo " active";?>"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-            <a href="../pages/player-list.php" class="list-group-item<?php if($page == "player-list") echo " active";?>"><i class="fa fa-list"></i> Player List</a>
+            <a href="<?php if($page != "home") echo "../" ?>index.php" class="list-group-item<?php if($page == "home") echo " active";?>"><i class="fa fa-home"></i> Home</a>
+            <a href="<?php if($page != "home") echo "../" ?>pages/server-stats.php" class="list-group-item<?php if($page == "server-stats") echo " active";?>"><i class="fa fa-hdd-o"></i> Server Stats</a>
+            <a href="<?php if($page != "home") echo "../" ?>pages/top-players.php" class="list-group-item<?php if($page == "top-players") echo " active";?>"><i class="fa fa-bar-chart-o"></i> Top Players</a>
+            <a href="<?php if($page != "home") echo "../" ?>pages/player-list.php" class="list-group-item<?php if($page == "player-list") echo " active";?>"><i class="fa fa-list"></i> Player List</a>
         </div>
         <div class="list-group">
             <?php
