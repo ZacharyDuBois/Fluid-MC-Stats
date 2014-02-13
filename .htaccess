@@ -11,10 +11,11 @@ RewriteRule ^player/([0-9]+)/$ pages/player.php?id=$1
 RewriteRule ^search/([A-Za-z0-9_]+)/$ pages/search.php?name=$1
 
 # Add trailing slash
-RewriteRule ^(server-stats|top-players|player-list|player|search)$ /$1/ [R=301]
-#RewriteRule ^player-list/([0-9]+)$ player-list/$1/ [R=301]
-#RewriteRule ^player/([0-9]+)$ player/$1/ [R=301]
-#RewriteRule ^search/([A-Za-z0-9_]+)$ search/$1/ [R=301]
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ $1/ [L,R=301]
 # END Fluid MC Stats
 
 # BEGIN Security Features
