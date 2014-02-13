@@ -102,13 +102,11 @@ include_once __DIR__ . '/../inc/util.php';
                             <h3 class="panel-title"><i class="fa fa-list"></i> Player List</h3>
                         </div>
                         <div class="panel-body">
-                            <!-- TODO: Make this error only visible when the config is incorrect or missing -->
                             <p>This is a list of all players that have played on the server.</p>
 
                             <form role="search" action='search.php'>
                                 <div class="input-group input-group-lg">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <!-- BUG: Scale is off on group-addon when in jumbotron -->
                                     <input type="text" class="form-control" placeholder="Find A Player">
                                     <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">

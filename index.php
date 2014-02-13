@@ -87,7 +87,6 @@ if (file_exists("pages/install/")) {
                     <div class="col-md-10 col-md-offset-1">
                         <ol class="breadcrumb">
                             <li class="active"><i class="fa fa-home"></i> Home</li>
-                            <!-- TODO: Apply class active to li when page is current -->
                         </ol>
                     </div>
                 </div>
@@ -112,7 +111,6 @@ if (file_exists("pages/install/")) {
                                 <form role="search" action='pages/search.php'>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                        <!-- BUG: Scale is off on group-addon when in jumbotron -->
                                         <input name='name' type="text" class="form-control" placeholder="Username">
                                         <span class="input-group-btn">
                                             <button type="submit" class="btn btn-default">
@@ -125,7 +123,6 @@ if (file_exists("pages/install/")) {
 
                                 <div class="list-group">
                                     <a href="index.php" class="list-group-item active"><i class="fa fa-home"></i> Home</a>
-                                    <!-- TODO: Apply class active to li when page is current -->
                                     <a href="pages/server-stats.php" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
                                     <a href="pages/top-players.php" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
                                     <a href="pages/player-list.php" class="list-group-item"><i class="fa fa-list"></i> Player List</a>

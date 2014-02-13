@@ -106,7 +106,6 @@ $player = $_GET['name'];
                             <form role="search" action='search.php'>
                                 <div class="input-group input-group-lg">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <!-- BUG: Scale is off on group-addon when in jumbotron -->
                                     <input name='name' type="text" class="form-control" placeholder="Find A Player">
                                     <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
