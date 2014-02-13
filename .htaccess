@@ -1,0 +1,32 @@
+#
+# Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+#
+
+# BEGIN Fluid MC Stats
+RewriteEngine on
+RewriteBase /
+RewriteRule ^(server-stats|top-players|player-list|player|search)/$ pages/$1.php
+RewriteRule ^player-list/([0-9]+)/$ pages/player-list.php?page=$1
+RewriteRule ^player/([0-9]+)/$ pages/player.php?id=$1
+RewriteRule ^search/([A-Za-z0-9_]+)/$ pages/search.php?name=$1
+
+# Add trailing slash
+RewriteRule ^(server-stats|top-players|player-list|player|search)$ /$1/ [R=301]
+#RewriteRule ^player-list/([0-9]+)$ player-list/$1/ [R=301]
+#RewriteRule ^player/([0-9]+)$ player/$1/ [R=301]
+#RewriteRule ^search/([A-Za-z0-9_]+)$ search/$1/ [R=301]
+# END Fluid MC Stats
+
+# BEGIN Security Features
+<files config.php>
+order allow,deny
+deny from all
+</files>
+
+# Deny all .hta* files.
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+# END Security Features
