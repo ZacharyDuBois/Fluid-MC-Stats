@@ -11,7 +11,19 @@ if (!isset($_GET['name'])) {
 }
 include_once '../inc/db.php';
 include_once '../inc/util.php';
-$player = $_GET['name'];
+
+$playerName = $_GET['name'];
+
+$pagenr = 1;
+if (isset($_GET['page'])) {
+    $pagenr = $_GET['page'];
+}
+
+$totalPlayers = findPlayerAmount($mysqli, $mysql_table_prefix, $playerName);
+$totalPages = (int) ($totalPlayers / 15) + ($totalPlayers % 15 != 0 ? 1 : 0);
+if ($pagenr > $totalPages) {
+    $pagenr = $totalPages;
+}
 ?>
 
 <!DOCTYPE html>
@@ -128,40 +140,51 @@ $player = $_GET['name'];
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $players = findPlayer($mysqli, $mysql_table_prefix, $player);
+                                        $players = findPlayer($mysqli, $mysql_table_prefix, $playerName, $pagenr);
                                         if (empty($players)) {
                                             ?>
-                                            <tr><th colspan='2'><p class="make-center">>No players found having '<?php echo $player ?>' in their name</p></th></tr>
+                                            <tr><th colspan='2'><p class="make-center">>No players found having '<?php echo $playerName ?>' in their name</p></th></tr>
                                         <?php
-                                        }else{
-                                            foreach ($players as $player) {
-                                                echo "<tr>";
-                                                echo "<td><a href='player.php?id=" . $player['player_id'] . "'><img src='"
-                                                        . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> "
-                                                        . $player['name'] . "</a></td>";
-                                                $lastjoin = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastjoin");
-                                                $lastleave = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastleave");
-                                                if($lastjoin > $lastleave){
-                                                    echo "<td>Online now!</td>";
-                                                }else{
-                                                    echo "<td>" . date('Y-m-d H:i:s', $lastleave) . "</td>";
-                                                }
-                                                echo "</tr>";
+                                    } else {
+                                        foreach ($players as $player) {
+                                            echo "<tr>";
+                                            echo "<td><a href='player.php?id=" . $player['player_id'] . "'><img src='"
+                                            . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> "
+                                            . $player['name'] . "</a></td>";
+                                            $lastjoin = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastjoin");
+                                            $lastleave = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastleave");
+                                            if ($lastjoin > $lastleave) {
+                                                echo "<td>Online now!</td>";
+                                            } else {
+                                                echo "<td>" . date('Y-m-d H:i:s', $lastleave) . "</td>";
                                             }
+                                            echo "</tr>";
                                         }
+                                    }
                                     ?>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="make-center">
                                 <ul class="pagination pagination-lg">
-                                    <li class="disabled"><a href="#">&laquo;</a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&raquo;</a></li>
+                                    <li<?php if ($pagenr == 1) echo ' class="disabled"'; ?>><a href="#">&laquo;</a></li> <!-- Only disable when page one -->
+                                    <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr == 1 || $pagenr == 2 ? "1" : $pagenr - 2 ?></a></li>
+                                    <?php if ($totalPages > 2) { ?>
+                                        <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr == 1  || $pagenr == 2 ? "2" : $pagenr - 1; ?></a></li>
+                                    <?php } 
+                                    echo $pagenr . " " . $totalPages;
+                                    echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3");
+                                    ?>
+                                    <?php if ($totalPages > 3) { ?>
+                                        <li<?php if ($pagenr != 1 && $pagenr != 2 && $pagenr != $totalPages && $pagenr != $totalPages - 1) echo ' class="active"'; ?>><a href="#"><?php echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3") ?></a></li>
+                                    <?php } ?>
+                                    <?php if ($totalPages > 4) { ?>
+                                        <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="#">2</a></li>
+                                    <?php } ?>
+                                    <?php if ($totalPages > 5) { ?>
+                                        <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="#">2</a></li>
+                                    <?php } ?>
+                                    <li<?php if ($pagenr == $totalPages) echo ' class="disabled"'; ?>><a href="#">&raquo;</a></li>
                                 </ul>
                             </div>
                         </div>
