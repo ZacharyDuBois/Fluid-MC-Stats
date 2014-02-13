@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -139,7 +143,7 @@ include_once __DIR__ . '/../inc/util.php';
                                             $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
                                             echo "<tr>";
                                             echo "<td><a href='player.php?id=" . $player['player_id'] . "'>"
-                                            . "<img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon' />"
+                                            . "<img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon'>"
                                             . " " . $playerName . "</a></td>";
                                             echo "<td>";
                                             if ($player['lastjoin'] > $player['lastleave']) {
