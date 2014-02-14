@@ -127,9 +127,9 @@ if ($pagenr > $totalPages) {
                             <div class="make-center">
                                 <ul class="pagination pagination-lg">
                                     <li<?php if ($pagenr == 1) echo ' class="disabled"'; ?>><a href="#">&laquo;</a></li> <!-- Only disable when page one -->
-                                    <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr == 1 || $pagenr == 2 ? "1" : $pagenr - 2 ?></a></li>
+                                    <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr <= 2 ? "1" : ($totalPages - $pagenr <= 1 ? $totalPages - 4 : $pagenr - 2) ?></a></li>
                                     <?php if ($totalPages > 2) { ?>
-                                        <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr == 1  || $pagenr == 2 ? "2" : $pagenr - 1; ?></a></li>
+                                        <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr <= 2 ? "2" : ($totalPages - $pagenr <= 1 ? $totalPages - 3 : $pagenr - 1) ?></a></li>
                                     <?php } 
                                     echo $pagenr . " " . $totalPages;
                                     echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3");
@@ -138,10 +138,10 @@ if ($pagenr > $totalPages) {
                                         <li<?php if ($pagenr != 1 && $pagenr != 2 && $pagenr != $totalPages && $pagenr != $totalPages - 1) echo ' class="active"'; ?>><a href="#"><?php echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3") ?></a></li>
                                     <?php } ?>
                                     <?php if ($totalPages > 4) { ?>
-                                        <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="#">2</a></li>
+                                        <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr <= 2 ? "4" : ($totalPages - $pagenr <= 1 ? $totalPages - 1 : $pagenr + 1)?></a></li>
                                     <?php } ?>
                                     <?php if ($totalPages > 5) { ?>
-                                        <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="#">2</a></li>
+                                        <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="#"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2)?></a></li>
                                     <?php } ?>
                                     <li<?php if ($pagenr == $totalPages) echo ' class="disabled"'; ?>><a href="#">&raquo;</a></li>
                                 </ul>
