@@ -20,6 +20,8 @@ RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ $1/ [L,R=301]
 
 # Redirect them index.php users....
+# If using a subdirecotry, please change the / to the directory. Ex RewriteRule index.php$ /directory/ [L,R=301]
+# This is only a temporary fix. A better fix will be issued at a later date.
 RewriteRule index.php$ / [L,R=301]
 
 # TODO: Make redirect from pages/*.php to /FILENAME/
