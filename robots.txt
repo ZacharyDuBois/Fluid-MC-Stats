@@ -1,7 +1,4 @@
 # Fluid MC Stats Robots TXT
 User-agent: *
 Disallow: /inc/
-Disallow: /pages/
-Disallow: /pages/
-Disallow: /config.php
-Disallow: /search/
+Disallow: /pages/install/
