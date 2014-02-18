@@ -3,26 +3,28 @@
 #
 
 # BEGIN Fluid MC Stats
-RewriteEngine on
-RewriteBase /
+# Disabled for now. Comming in Fluid MC Stats Beta v0.3.0.
+# TODO: Work on these
+#RewriteEngine on
+#RewriteBase /
 # Creates /server-stats/, /top-players/, /player-list/, /player/, /search/,
-RewriteRule ^(server-stats|top-players|player-list|player|search)/$ pages/$1.php
+#RewriteRule ^(server-stats|top-players|player-list|player|search)/$ pages/$1.php
 # Creates /player-list/PAGENUMBER/
-RewriteRule ^player-list/([1-9]+)/$ pages/player-list.php?page=$1
+#RewriteRule ^player-list/([1-9]+)/$ pages/player-list.php?page=$1
 # Creates /player/ID/
-RewriteRule ^player/([1-9]+)/$ pages/player.php?id=$1
+#RewriteRule ^player/([1-9]+)/$ pages/player.php?id=$1
 # Creates /search/SEARCHTERM/
-RewriteRule ^search/([A-Za-z0-9_]+)/$ pages/search.php?name=$1
+#RewriteRule ^search/([A-Za-z0-9_]+)/$ pages/search.php?name=$1
 
 # Add trailing slash
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*)$ $1/ [L,R=301]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_URI} !(.*)/$
+#RewriteRule ^(.*)$ $1/ [L,R=301]
 
 # Redirect them index.php users....
 # If using a subdirecotry, please change the / to the directory. Ex RewriteRule index.php$ /directory/ [L,R=301]
 # This is only a temporary fix. A better fix will be issued at a later date.
-RewriteRule index.php$ / [L,R=301]
+#RewriteRule index.php$ / [L,R=301]
 
 # TODO: Make redirect from pages/*.php to /FILENAME/
 
