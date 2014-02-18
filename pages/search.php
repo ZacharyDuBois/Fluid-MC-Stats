@@ -42,9 +42,9 @@ if ($pagenr > $totalPages) {
     <body>
 
         <!-- Navbar -->
-        <?php 
+        <?php
         $page = "player-list"; //for having an active element in navbar and quick links
-        include "../inc/navbar.php"; 
+        include "../inc/navbar.php";
         ?>
         <!-- /Navbar -->
 
@@ -97,7 +97,7 @@ if ($pagenr > $totalPages) {
                                             <th>Last Online</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="search-list">
                                         <?php
                                         $players = findPlayer($mysqli, $mysql_table_prefix, $playerName, $pagenr);
                                         if (empty($players)) {
@@ -130,16 +130,16 @@ if ($pagenr > $totalPages) {
                                     <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "1" : ($totalPages - $pagenr <= 1 ? $totalPages - 4 : $pagenr - 2) ?></a></li>
                                     <?php if ($totalPages > 2) { ?>
                                         <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "2" : ($totalPages - $pagenr <= 1 ? $totalPages - 3 : $pagenr - 1) ?></a></li>
-                                    <?php } 
+                                    <?php }
                                     ?>
                                     <?php if ($totalPages > 3) { ?>
                                         <li<?php if ($pagenr != 1 && $pagenr != 2 && $pagenr != $totalPages && $pagenr != $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3") ?></a></li>
                                     <?php } ?>
                                     <?php if ($totalPages > 4) { ?>
-                                        <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "4" : ($totalPages - $pagenr <= 1 ? $totalPages - 1 : $pagenr + 1)?></a></li>
+                                        <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "4" : ($totalPages - $pagenr <= 1 ? $totalPages - 1 : $pagenr + 1) ?></a></li>
                                     <?php } ?>
                                     <?php if ($totalPages > 5) { ?>
-                                        <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2)?></a></li>
+                                        <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2) ?></a></li>
                                     <?php } ?>
                                     <li<?php if ($pagenr == $totalPages) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">&raquo;</a></li>
                                 </ul>
@@ -154,9 +154,9 @@ if ($pagenr > $totalPages) {
 
 
                     <!-- Server status -->
-                    <?php 
-                    include "../inc/serverstatusui.php"; 
-                    
+                    <?php
+                    include "../inc/serverstatusui.php";
+
                     include '../inc/quicklinksui.php';
                     ?>
                     <!-- /Quick Links -->

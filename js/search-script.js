@@ -3,17 +3,34 @@ function isNumber(o) {
 }
 
 function fetchPage(e) {
+    var page;
     if (isNumber(e)) {
-        var players;
-        //instantly fetch page
-        $.post(
-                "../inc/ajax/search.php",
-                {
-                    page: 0,
-                    finder: "l"
-                },
-                function(msg) {
-                    players = msg;
-                }, "json");
+        page = e;
+    }else{
+        
     }
+    var players;
+    $.post("../inc/ajax/search.php",
+            {
+                page: page,
+                finder: "l"
+            },
+    function(msg) {
+        $('#search-list').empty();
+        players = msg;
+        for (var player in players) {
+            console.log(player);
+            $("#search-list")
+                    .append($('<tr>')
+                            .append($('<td>')
+                                    .append($('<a>')
+                                            .attr('href', 'player.php?id=\'' + player['id'] + "'")
+                                            ).append($('<img>')
+
+                                    )
+                                    )
+                            );
+        }
+    }, "json");
+
 }
