@@ -86,8 +86,8 @@ if ($pagenr > $totalPages) {
                                 </div>
                             </form>
                             <ul class="pager">
-                                <li class="previous disabled"><a href="#">&larr; Older</a></li>
-                                <li class="next"><a href="#">Newer &rarr;</a></li>
+                                <li class="previous<?php if ($pagenr == 1) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr - 1 ?>)">&larr; Older</a></li>
+                                <li class="next<?php if ($pagenr == $totalPages) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">Newer &rarr;</a></li>
                             </ul>
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped table-bordered">

@@ -76,7 +76,23 @@ function fetchPage(e) {
                 }
                 pagination.append($("<li>").addClass(page === totalPages ? "disabled" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ")").html("&raquo;")));
                 
+                var older = $(".previous");
+                if(page === 1){
+                    older.addClass("disabled");
+                }else{
+                    older.removeClass("disabled");
+                }
+                older.empty();
+                older.append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page - 1) + ")").html("&larr; Older"));
                 
+                var newer = $(".next");
+                if(page === totalPages){
+                    newer.addClass("disabled");
+                }else{
+                    newer.removeClass("disabled");
+                }
+                newer.empty();
+                newer.append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ")").html("Newer &rarr;"));
 
             }); //end of done function and ajax call
 }
