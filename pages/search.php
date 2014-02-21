@@ -115,7 +115,7 @@ if ($pagenr > $totalPages) {
                                             if ($lastjoin > $lastleave) {
                                                 echo "<td>Online now!</td>";
                                             } else {
-                                                echo "<td>" . date('Y-m-d H:i:s', $lastleave) . "</td>";
+                                                echo "<td>" . date('d/m/Y h:i:s A', $lastleave) . "</td>";
                                             }
                                             echo "</tr>";
                                         }
