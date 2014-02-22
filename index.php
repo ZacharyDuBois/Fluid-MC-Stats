@@ -136,8 +136,8 @@ if (file_exists("pages/install/")) {
         <!-- /Footer -->
 
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
-        <script src="js/jquery-2.1.0.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/d3.v3.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); }?>js/jquery-2.1.0.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); }?>bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); }?>js/d3.v3.min.js"></script>
     </body>
 </html>

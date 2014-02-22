@@ -170,11 +170,11 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
         <!-- /Footer -->
 
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
-        <script src="../js/jquery-2.1.0.min.js"></script>
-        <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <script src="../js/d3.v3.min.js"></script>
-        <script src='../js/jquery.timeago.js'></script>
-        <script src='../js/player-list-script.js'></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/jquery-2.1.0.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/d3.v3.min.js"></script>
+        <script src='<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/jquery.timeago.js'></script>
+        <script src='<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/player-list-script.js'></script>
         <script type="text/javascript">
                                         jQuery(document).ready(function() {
                                             jQuery("abbr.timeago").timeago();

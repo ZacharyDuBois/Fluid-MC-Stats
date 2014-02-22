@@ -186,9 +186,9 @@ if ($pagenr > $totalPages) {
         </div>
 
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
-        <script src="../js/jquery-2.1.0.min.js"></script>
-        <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <script src="../js/d3.v3.min.js"></script>
-        <script src="../js/search-script.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/jquery-2.1.0.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/d3.v3.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/search-script.js"></script>
     </body>
 </html>

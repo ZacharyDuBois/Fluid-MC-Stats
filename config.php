@@ -30,7 +30,7 @@ $mc_server_disp_addr = ''; // A 'nice' address for your Minecraft server. This w
  */
 $site_name = ''; // Name that will appear in page title and navbar.
 $fa_icon = ''; // The FontAwesome icon you want to be next to your web end title. Use ending only. Ex: Icon you want to use "fa-bookmark-o" Just enter "bookmark-o".
-$avatar_service_uri = ''; // URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mctar.polardrafting.com/ for ours.
+$avatar_service_uri = ''; // URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mc-avatar.developgravity.com/ for ours.
 $players_per_page = ''; // Number of players listed on each page.
 $player_top_calc_stat = ''; // Stat that gets used to sort the players
 $player_on_top = ''; //Number of player on top list.
@@ -46,10 +46,12 @@ $custom_links = array( // Links displayed in navbar and sidebar. Add as many as 
  */
 
 /**
- * Custom URL incase you want to use a different server for file hosting. Leave blank for using the same server.
+ * Custom URL in case you want to use a different server for file hosting. Leave blank for using the same server.
  * To use, upload the img, font-awesome, bootstrap, css, js, and less directories to the server of your choice and put the URI to them below.
  * It is recommended not to delete these directories off of this server in-case we forget to implement this in some files.
  * These are also still required to be on the local server as the install requires them.
+ * You are allowed to use our CDN, please don't use it for popular sites :)
+ * $custom_hosted_uri = 'http://static.accountproductions.com/FluidMCStats/';
  */
 $custom_hosted_uri = '';
 

@@ -372,11 +372,11 @@
                                         <label for="fmcsSiteName" class="col-sm-3 control-label">File CDN URI</label>
 
                                         <div class="col-sm-9">
-                                            <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.example.com/" disabled>
+                                            <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.accountproductions.com/FluidMCStats/">
                                             <!-- TODO: CDN URI -->
                                             <span class="help-block">
-                                                This is for support for hosting static files externally. To use, upload the bootstrap, css, fontawesome, img, and
-                                                js directories to a remote web-server/CDN and put the path to all of them below.
+                                                This is for support for hosting static files externally. To use, upload the <code>bootstrap</code>, <code>css</code>, <code>fontawesome</code>, <code>img</code>, and
+                                              <code>js</code> directories to a remote web-server/CDN and put the path to all of them below. Be sure to include the trailing slash.
                                             </span>
                                         </div>
                                     </div>
