@@ -17,7 +17,7 @@ $finder = $_GET['finder'];
 
 $totalPlayers = findPlayerAmount($mysqli, $mysql_table_prefix, $finder);
 $totalPages = (int) ($totalPlayers / 15) + ($totalPlayers % 15 != 0 ? 1 : 0);
-if ($page > $totalPages) {
+if ($page > $totalPages && $totalPages != 0) {
     $page = $totalPages;
 }
 

@@ -267,7 +267,10 @@ function convert_playtime($pt) {
 
 function findPlayer($mysqli, $dbPrefix, $player, $page = 1) {
     $query = "SELECT player_id,name FROM {$dbPrefix}players WHERE name LIKE ? LIMIT 15 OFFSET " . (($page - 1) * 15);
-    $ps = $mysqli->prepare($query);
+    $ps;
+    if(!($ps = $mysqli->prepare($query))){
+        die("Couldn't prepare statement: " . $mysqli->error);
+    }
     $player = '%' . $player . '%';
     $ps->bind_param("s", $player);
     $ps->execute();

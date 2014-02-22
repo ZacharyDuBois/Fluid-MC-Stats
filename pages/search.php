@@ -21,7 +21,7 @@ if (isset($_GET['page'])) {
 
 $totalPlayers = findPlayerAmount($mysqli, $mysql_table_prefix, $playerName);
 $totalPages = (int) ($totalPlayers / 15) + ($totalPlayers % 15 != 0 ? 1 : 0);
-if ($pagenr > $totalPages) {
+if ($pagenr > $totalPages && $totalPages != 0) {
     $pagenr = $totalPages;
 }
 ?>
@@ -102,7 +102,7 @@ if ($pagenr > $totalPages) {
                                         $players = findPlayer($mysqli, $mysql_table_prefix, $playerName, $pagenr);
                                         if (empty($players)) {
                                             ?>
-                                            <tr><th colspan='2'><p class="make-center">>No players found having '<?php echo $playerName ?>' in their name</p></th></tr>
+                                            <tr><th colspan='2'><p class="make-center">No players found having '<?php echo $playerName ?>' in their name</p></th></tr>
                                         <?php
                                     } else {
                                         foreach ($players as $player) {
