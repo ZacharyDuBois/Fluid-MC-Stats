@@ -1,12 +1,18 @@
-function fetchPage(e) {
+function fetchPage(pageNr){
+    return fetchPage(pageNr, null);
+}
+
+function fetchPage(pageNr, element) {
     var page;
-    if (/^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/.test(e)) { //is a number
-        page = e;
+    if (/^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/.test(pageNr)) { //is a number
+        page = pageNr;
     } else { //is clicked element
-        page = $(e).text();
+        page = $(pageNr).text();
+    }
+    if (element !== null && $(element).parent().hasClass('disabled')) {
+        return false;
     }
     var players;
-    console.log("Getting players at page " + page);
     $.ajax({
         type: "GET",
         url: "../inc/ajax/player-list.php",
@@ -62,7 +68,7 @@ function fetchPage(e) {
                 console.log("Current page: " + page);
                 var pagination = $(".pagination");
                 pagination.empty();
-                pagination.append($("<li>").addClass(page === 1 ? "disabled" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page - 1) + ")").html("&laquo;")));
+                pagination.append($("<li>").addClass(page === 1 ? "disabled" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page - 1) + ", this)").html("&laquo;")));
                 pagination.append($("<li>").addClass(page === 1 ? "active" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(this)").html(page <= 2 ? "1" : ((totalPages - page <= 1) ? (totalPages - 4) : (page - 2)))));
                 if (totalPages > 2) {
                     pagination.append($("<li>").addClass(page === 2 ? "active" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(this)").html(page <= 2 ? "2" : ((totalPages - page <= 1) ? (totalPages - 3) : (page - 1)))));
@@ -76,7 +82,7 @@ function fetchPage(e) {
                 if (totalPages > 5) {
                     pagination.append($("<li>").addClass(page === totalPages ? "active" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(this)").html(page <= 2 ? "5" : ((totalPages - page <= 1) ? (totalPages) : (page + 2)))));
                 }
-                pagination.append($("<li>").addClass(page === totalPages || totalPages === 0 ? "disabled" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ")").html("&raquo;")));
+                pagination.append($("<li>").addClass(page === totalPages || totalPages === 0 ? "disabled" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ", this)").html("&raquo;")));
 
                 var older = $(".previous");
                 if (page === 1) {
@@ -85,7 +91,7 @@ function fetchPage(e) {
                     older.removeClass("disabled");
                 }
                 older.empty();
-                older.append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page - 1) + ")").html("&larr; Older"));
+                older.append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page - 1) + ", this)").html("&larr; Older"));
 
                 var newer = $(".next");
                 if (page === totalPages) {
@@ -94,7 +100,7 @@ function fetchPage(e) {
                     newer.removeClass("disabled");
                 }
                 newer.empty();
-                newer.append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ")").html("Newer &rarr;"));
+                newer.append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ", this)").html("Newer &rarr;"));
 
             }); //end of done function and ajax call
 }
