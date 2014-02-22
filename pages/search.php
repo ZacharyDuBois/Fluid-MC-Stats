@@ -87,7 +87,7 @@ if ($pagenr > $totalPages && $totalPages != 0) {
                             </form>
                             <ul class="pager">
                                 <li class="previous<?php if ($pagenr == 1) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr - 1 ?>)">&larr; Older</a></li>
-                                <li class="next<?php if ($pagenr == $totalPages) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">Newer &rarr;</a></li>
+                                <li class="next<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">Newer &rarr;</a></li>
                             </ul>
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped table-bordered">
@@ -141,7 +141,7 @@ if ($pagenr > $totalPages && $totalPages != 0) {
                                     <?php if ($totalPages > 5) { ?>
                                         <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2) ?></a></li>
                                     <?php } ?>
-                                    <li<?php if ($pagenr == $totalPages) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">&raquo;</a></li>
+                                    <li<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">&raquo;</a></li>
                                 </ul>
                             </div>
                         </div>

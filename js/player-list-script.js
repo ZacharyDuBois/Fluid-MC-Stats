@@ -76,7 +76,7 @@ function fetchPage(e) {
                 if (totalPages > 5) {
                     pagination.append($("<li>").addClass(page === totalPages ? "active" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(this)").html(page <= 2 ? "5" : ((totalPages - page <= 1) ? (totalPages) : (page + 2)))));
                 }
-                pagination.append($("<li>").addClass(page === totalPages ? "disabled" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ")").html("&raquo;")));
+                pagination.append($("<li>").addClass(page === totalPages || totalPages === 0 ? "disabled" : "").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "fetchPage(" + (page + 1) + ")").html("&raquo;")));
 
                 var older = $(".previous");
                 if (page === 1) {
