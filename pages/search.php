@@ -173,7 +173,7 @@ if ($pagenr > $totalPages) {
                     <div class="well well-sm">
                         <p class="make-center"><?php
                             if (!empty($custom_footer_text)) {
-                                echo "[" . $custom_footer_text . "]";
+                                echo $custom_footer_text;
                             }
                             ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
                             Pre-Alpha is &copy; Copyright <a href="http://accountproductions.com/">AccountProductions</a> and <a
