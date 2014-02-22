@@ -283,7 +283,7 @@ function findPlayer($mysqli, $dbPrefix, $player, $page = 1) {
 }
 
 function findPlayerAmount($mysqli, $dbPrefix, $player){
-    $query = "SELECT COUNT(*) FROM {$dbPrefix}players WHERE name LIKE ?";
+    $query = "SELECT COUNT(*) FROM {$dbPrefix}players " . ($player != NULL ? "WHERE name LIKE ?" : "");
     $ps = $mysqli->prepare($query);
     $player = '%' . $player . '%';
     $ps->bind_param("s", $player);
