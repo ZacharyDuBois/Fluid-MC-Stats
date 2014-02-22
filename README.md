@@ -2,12 +2,14 @@
 
 A web interface for the [Lolmewn Stats plugin on Bukkit Dev](http://pieuniversity.com/ILBg2).
 
-Coded by [DevelopGravity](http://accountproductions.com) and [Lolmewn](http://pieuniversity.com/R2CMf).
+Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://pieuniversity.com/R2CMf).
+
+- [Official Website](http://developgravity.com/projects/fluid-mc-stats/)
 
 # Requirements
 
-- LAMP Server (Linux, Apache, MySQL/MariaDB, PHP) Create one [here](http://pieuniversity.com/-CP5d) for $5/month.
-- RewriteRules enabled
+- L*MP Server (Linux, Apache/Nginx, MySQL/MariaDB, PHP) Create one [here](http://pieuniversity.com/-CP5d) for $5/month.
+- RewriteRules enabled.
 - A Minecraft server running the [Stats latest plugin](http://pieuniversity.com/ILBg2).
 
 # License
