@@ -74,6 +74,9 @@ ini_set('display_errors', 1);
                                         $page = 1;
                                         $result = getTopPlayers($mysqli, $mysql_table_prefix, $player_top_calc_stat, $page);
                                         $i = 1 * $page;
+                                        if(!$result){
+                                            echo $mysqli->error;
+                                        }
                                         while (($arr = $result->fetch_array()) != NULL) {
                                             echo "<tr>";
                                             echo "<th>&num;" . $i++ . "</th>";

@@ -177,6 +177,9 @@ function getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter) {
  * @param type $stat Stat to look up
  */
 function getDatabaseColumnNameFromPlayerStat($stat) {
+    if($stat == ""){
+        return "playtime"; //probably misconfigured, go for the safest option.
+    }
     switch ($stat) {
         case "exp":
             return "xpgained";
