@@ -44,3 +44,13 @@
   satisfy all
 </files>
 # END Security Features
+
+
+# Comment out this block for a bit more security if you are not using CDN functions.
+# BEGIN Access Origin
+<FilesMatch "\.(ttf|otf|eot|woff|svg)$">
+   <IfModule mod_headers.c>
+     Header set Access-Control-Allow-Origin "*"
+   </IfModule>
+</FilesMatch>
+# END Access Origin
