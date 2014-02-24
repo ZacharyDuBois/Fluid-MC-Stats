@@ -34,9 +34,9 @@ if ($pagenr > $totalPages && $totalPages != 0) {
     <head>
         <title><?php echo $site_name ?> - Search</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../css/custom.css">
+        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>css/custom.css" rel="stylesheet">
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
     </head>
     <body>
