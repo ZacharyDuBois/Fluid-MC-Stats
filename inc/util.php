@@ -155,6 +155,9 @@ function getServerTotal($mysqli, $dbPrefix, $stat){
                     . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
     }
     $result = $mysqli->query($query);
+    if(!$result){
+        return $mysqli->error;
+    }
     $arr = $result->fetch_array();
     return $arr['value'];
 }
