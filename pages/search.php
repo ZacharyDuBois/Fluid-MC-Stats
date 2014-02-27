@@ -47,6 +47,8 @@ if ($pagenr > $totalPages && $totalPages != 0) {
         include "../inc/navbar.php";
         ?>
         <!-- /Navbar -->
+        
+        <div class="hidden" id="key"><?php echo $playerName; ?></div>
 
         <!-- Location -->
         <div class="container content-container">

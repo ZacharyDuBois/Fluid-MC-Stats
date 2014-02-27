@@ -13,13 +13,14 @@ function fetchPage(pageNr, element) {
         return false;
     }
     var players;
+    var finder = $("#key").text();
     $.ajax({
         type: "GET",
         url: "../inc/ajax/search.php",
         dataType: 'json',
         data: {
             page: page,
-            finder: "l"
+            finder: finder
         }
     })
             .done(function(msg) {
