@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="install.html"><i class="fa fa-plus"></i> Fluid MC Stats</a>
+                <a class="navbar-brand" href="install.php"><i class="fa fa-plus"></i> Fluid MC Stats</a>
             </div>
             <!-- /Mobile -->
 
@@ -243,7 +243,7 @@
                                         <label for="fmcsPPP" class="col-sm-3 control-label">Players Per Page&ast;</label>
 
                                         <div class="col-sm-9">
-                                            <select name="player_per_page" class="form-control" id="fmcsPPP" needed>
+                                            <select name="players_per_page" class="form-control" id="fmcsPPP" needed>
                                                 <option value="5">5 (Min)</option>
                                                 <option value="10">10</option>
                                                 <option value="15" selected>15 (Recommended)</option>
@@ -260,7 +260,7 @@
                                         <label for="fmcsCalcTop" class="col-sm-3 control-label">Calculate Top Players Using&ast;</label>
 
                                         <div class="col-sm-9">
-                                            <select name="" class="form-control" id="fmcsCalcTop" needed>
+                                            <select name="player_top_calc_stat" class="form-control" id="fmcsCalcTop" needed>
                                                 <option value="playtime" selected>Playtime</option>
                                                 <option value="broken">Blocks Broken</option>
                                                 <option value="placed">Blocks Placed</option>
@@ -407,7 +407,7 @@
                                         <label for="fmcsAdvAvatarService" class="col-sm-3 control-label">Avatar Service URI&ast;</label>
 
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="fmcsAdvAvatarService"
+                                            <input name="avatar_service_uri" type="text" class="form-control" id="fmcsAdvAvatarService"
                                                    placeholder="http&colon;//mc-avatar.developgravity.com/" value="http://mc-avatar.developgravity.com/">
                                             <span class="help-block">
                                                 The URI for the avatar service you want to use. The URI must follow <code>http://domain.tld/directory/playername/pixelsize</code>.

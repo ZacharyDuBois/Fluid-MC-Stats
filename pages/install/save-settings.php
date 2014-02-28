@@ -6,7 +6,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$file = "../../config.php";
+$file = "../config.php";
 
 $reading = fopen($file, 'r');
 $writing = fopen($file . ".tmp", 'w');
