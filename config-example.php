@@ -40,6 +40,7 @@ $custom_links = array( // Links displayed in navbar and sidebar. Add as many as 
   "Lolmewn" => "http://lolmewn.nl/",
   "Mojang" => "http://mojang.com/",
 );
+$custom_server_icon = ''; // The URL to a custom image to use as the server icon. If not set, we will use the server-icon.png on your Minecraft server.
 
 /**
  * Advanced User's Options
