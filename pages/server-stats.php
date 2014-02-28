@@ -80,6 +80,9 @@ ini_set('display_errors', 1);
                                         <tr>
                                             <th>Playtime</th>
                                             <?php
+                                            if($amountOfPlayers == 0){
+                                                $amountOfPlayers = 1; //avoid division by 0, just divide by 1 instead lol
+                                            }
                                                 $value = getServerTotal($mysqli, $mysql_table_prefix, "playtime");
                                                 echo "<td>" . convert_playtime($value) . "</td>";
                                                 echo "<td>" . convert_playtime($value / $amountOfPlayers) . "</td>";
