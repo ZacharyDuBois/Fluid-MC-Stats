@@ -205,11 +205,22 @@
                                         <label for="mcDispAddr" class="col-sm-3 control-label">Display Address</label>
 
                                         <div class="col-sm-9">
-                                            <input name="mc_server_disp_addr" type="text" class="form-control" id="mcDispAddr" placeholder="play.example.com">
+                                            <input name="mc_server_disp_addr" type="text" class="form-control" id="mcDispAddr" placeholder="play.example.com" needed>
                                             <span class="help-block">
                                                 This is the address you would like people to connect with. It will be displayed on the interface.
                                             </span>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="mcCustomIcon" class="col-sm-3 control-label">Custom Server Icon</label>
+
+                                      <div class="col-sm-9">
+                                        <input name="mc_custom_icon" type="text" class="form-control" id="mcCustomIcon" placeholder="http&colon;//example.com/MyHDIcon.png">
+                                            <span class="help-block">
+                                                Use your own icon instead of the <code>server-icon.png</code> located on the Minecraft server. Must be square. If not set,
+                                                we will use the Minecraft server's icon.
+                                            </span>
+                                      </div>
                                     </div>
                                     <h4><i class="fa fa-globe"></i> Fluid MC Stats Interface Settings</h4>
 
@@ -231,7 +242,7 @@
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">fa&dash;</span>
-                                                <input name="fa_icon" type="text" class="form-control" id="fmcsIcon" placeholder="plus" value="plus">
+                                                <input name="fa_icon" type="text" class="form-control" id="fmcsIcon" placeholder="plus" value="plus" needed>
                                             </div>
                                             <span class="help-block">
                                                 A suffix for a <a href="http://fontawesome.io">Font
