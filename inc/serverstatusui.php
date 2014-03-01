@@ -15,7 +15,7 @@ $serverStatus->fetchServerData();
     </div>
     <div class="panel-body">
       <div>
-        <img src="http://minecraft-api.com/v1/logo/?server=<?php echo $mc_server_ip; ?>:<?php echo $mc_server_port; ?>" alt="Server Icon" class="img-circle server-sidebar-icon">
+        <img src="<?php if (!empty($mc_custom_icon)) { echo($mc_custom_icon); } else { echo "http://minecraft-api.com/v1/logo/?server=" . $mc_server_ip . ":" . $mc_server_port; }?>" alt="Server Icon" class="img-circle server-sidebar-icon">
       </div>
         <?php if ($serverStatus->isOnline()) { ?>
             <h3 class="mc-online"><i class="fa fa-check"></i> Online!</h3>
