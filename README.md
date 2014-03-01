@@ -9,13 +9,12 @@ Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://pieuni
 # Requirements
 
 - LAMP Server (Linux, Apache, MySQL/MariaDB, PHP) Create one [here](http://pieuniversity.com/-CP5d) for $5/month.
-- RewriteRules enabled.
+- RewriteRules enabled (Coming Soon!).
 - A Minecraft server running the [Stats latest plugin](http://pieuniversity.com/ILBg2).
 
 # Notices
 
-- At the moment, Nginx is not supported for CDN functionality. - Zachary (WIP)
-- Currently, due to CORS, Firefox is not loading font files. Thus, icons are not displayed. - Zachary (WIP)
+- If you are using Nginx, we will not answer support unless the problem you have is reproducible in Apache.
 
 # License
 
