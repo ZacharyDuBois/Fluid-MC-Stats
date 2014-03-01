@@ -173,13 +173,15 @@ if ($pagenr > $totalPages && $totalPages != 0) {
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="well well-sm">
-                        <p class="make-center"><?php
-                            if (!empty($custom_footer_text)) {
-                                echo $custom_footer_text;
-                            }
-                            ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
-                            Pre-Alpha is &copy; Copyright <a href="http://accountproductions.com/">AccountProductions</a> and <a
-                                href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
+                        <p class="make-center">
+                          <?php
+                          if (!empty($custom_footer_text)) {
+                            echo $custom_footer_text;
+                          }
+                          ?>
+                          <i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo $fmcs_version ?> is &copy; Copyright
+                          <a href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>,
+                          2014. All rights reserved.</p>
                         <!-- DND: Keep this link here! This is copyrighted content -->
                     </div>
                 </div>
