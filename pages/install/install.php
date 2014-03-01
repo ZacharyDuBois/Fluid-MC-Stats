@@ -31,7 +31,7 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="install.html"><i class="fa fa-wrench"></i> Install &amp; Configure</a></li>
+                    <li class="active"><a href="install.php"><i class="fa fa-wrench"></i> Install &amp; Configure</a></li>
                     <li><a href="http://developgravity.com/">DevelopGravity</a></li>
                     <li><a href="http://lolmewn.nl/">Lolmewn</a></li>
                 </ul>
@@ -441,7 +441,7 @@
                     ?>
                     <div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1 Pre-Alpha is &copy; Copyright <a
                             href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights
-                        reserved.
+                            reserved.
                         <!-- DND: Keep this link here! This is copyrighted content -->
                     </div>
                 </div>

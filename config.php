@@ -45,6 +45,8 @@ $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If
  * Advanced User's Options
  */
 
+/* DO NOT EDIT BELOW THIS LINE! */
+
 /**
  * Custom URL in case you want to use a different server for file hosting. Leave blank for using the same server.
  * To use, upload the img, font-awesome, bootstrap, css, js, and less directories to the server of your choice and put the URI to them below.
@@ -64,3 +66,6 @@ $required_global_stats_time = '3600'; // 1 Hour
  * Specify Cache Time, in seconds, for supported pages. Leave blank to disable.
  */
 $cache_time = '86400'; // 1 Day
+
+/* NEVER EDIT THIS */
+$fmcs_version = 'Pre-Alpha 0.0.1';
