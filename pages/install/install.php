@@ -439,7 +439,7 @@
                         <?php
                     }
                     ?>
-                    <div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1 Pre-Alpha is &copy; Copyright <a
+                    <div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats Beta v0.1.0 is &copy; Copyright <a
                             href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights
                             reserved.
                         <!-- DND: Keep this link here! This is copyrighted content -->

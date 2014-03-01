@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+
 function fetchPage(pageNr) {
     return fetchPage(pageNr, null);
 }

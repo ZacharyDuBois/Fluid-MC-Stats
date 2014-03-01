@@ -1,4 +1,7 @@
 <?php
+/**
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
 
 header('Content-Type: application/json');
 error_reporting(E_ALL);
