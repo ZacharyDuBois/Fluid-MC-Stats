@@ -1,16 +1,16 @@
 # Fluid MC Stats
 
-A web interface for the [Lolmewn Stats plugin on Bukkit Dev](http://pieuniversity.com/ILBg2).
+A web interface for the [Lolmewn Stats plugin on Bukkit Dev](http://accpro.ws/ILBg2).
 
-Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://pieuniversity.com/R2CMf).
+Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://accpro.ws/R2CMf).
 
 - [Official Website](http://developgravity.com/projects/fluid-mc-stats/)
 
 # Requirements
 
-- LAMP Server (Linux, Apache, MySQL/MariaDB, PHP) Create one [here](http://pieuniversity.com/-CP5d) for $5/month.
+- LAMP Server (Linux, Apache, MySQL/MariaDB, PHP) Create one [here](http://accpro.ws/-CP5d) for $5/month.
 - RewriteRules enabled (Coming Soon!).
-- A Minecraft server running the [Stats latest plugin](http://pieuniversity.com/ILBg2).
+- A Minecraft server running the [Stats latest plugin](http://accpro.ws/ILBg2).
 
 # Notices
 
