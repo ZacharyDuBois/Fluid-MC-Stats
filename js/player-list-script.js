@@ -41,16 +41,23 @@ function fetchPage(pageNr, element) {
                     }
                     var player = players[index];
                     var online;
-                    var t = player['lastleave'].split(/[- :]/);
+                    var t = player['lastjoin'].split(/[- :]/);
                     var lastjoin = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
-                    t = player['lastjoin'].split(/[- :]/);
+                    t = player['lastleave'].split(/[- :]/);
                     var lastleave = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
                     if (lastjoin > lastleave) {
                         online = "Online now!";
+                    } else if (parseInt(t[0]) === 0) {
+                        online = "Not recorded";
                     } else {
                         online = lastleave.toLocaleString();
                     }
-
+                    var lastOnTd = $("<td>");
+                    if(parseInt(t[0]) === 0){
+                        lastOnTd.text(online);
+                    }else{
+                        lastOnTd.append($("<abbr>").addClass("timeago").attr("title", lastleave.toISOString()).text(online));
+                    }
                     $("#player-list")
                             .append($('<tr>')
                                     .append($('<td>')
@@ -61,8 +68,7 @@ function fetchPage(pageNr, element) {
                                                             .addClass("img-rounded").addClass("avatar-list-icon")
                                                             ).append(" " + player["name"])
                                                     )
-                                            ).append($('<td>').append($("<abbr>").addClass("timeago").attr("title", lastleave.toISOString()))
-                                    )
+                                            ).append(lastOnTd)
                                     );
                 }); //end of each loop
                 jQuery("abbr.timeago").timeago();

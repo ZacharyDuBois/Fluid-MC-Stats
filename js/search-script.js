@@ -44,8 +44,16 @@ function fetchPage(pageNr, element) {
                     var lastleave = new Date(1000 * player['lastleave']);
                     if (lastjoin > lastleave) {
                         online = "Online now!";
+                    } else if (lastleave === 0) {
+                        online = "Not recorded";
                     } else {
                         online = lastleave.toLocaleString();
+                    }
+                    var lastOnTd = $("<td>");
+                    if(parseInt(t[0]) === 0){
+                        lastOnTd.text(online);
+                    }else{
+                        lastOnTd.append($("<abbr>").addClass("timeago").attr("title", lastleave.toISOString()).text(online));
                     }
 
                     $("#search-list")
@@ -58,10 +66,10 @@ function fetchPage(pageNr, element) {
                                                             .addClass("img-rounded").addClass("avatar-list-icon")
                                                             ).append(" " + player["name"])
                                                     )
-                                            ).append($('<td>').append(online)
-                                    )
+                                            ).append(lastOnTd)
                                     );
                 }); //end of each loop
+                jQuery("abbr.timeago").timeago();
                 page = parseInt(page);
                 totalPages = parseInt(totalPages);
                 console.log("Total pages : " + totalPages);

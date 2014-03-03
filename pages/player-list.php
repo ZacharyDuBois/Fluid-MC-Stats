@@ -23,17 +23,29 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
     <head>
         <title><?php echo $site_name ?> - Player List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>css/custom.css" rel="stylesheet">
+        <link href="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php if (!empty($custom_hosted_uri)) {
+            echo($custom_hosted_uri);
+        } else {
+            echo "../";
+        } ?>css/custom.css" rel="stylesheet">
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
     </head>
     <body>
 
-        <?php
-        $page = "player-list";
-        include "../inc/navbar.php";
-        ?>
+<?php
+$page = "player-list";
+include "../inc/navbar.php";
+?>
 
         <!-- Location -->
         <div class="container content-container">
@@ -87,7 +99,7 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
                                     <tbody id='player-list'> <!-- ZACH NTS: Add in tooltips instead of abbr (don't forget to do it in player-list-search.js too then -->
                                         <?php
                                         include "../inc/pages/player-list-getter.php";
-                                        $players = getPlayerList($mysqli, $mysql_table_prefix, 1);
+                                        $players = getPlayerList($mysqli, $mysql_table_prefix, $pagenr);
                                         while ($player = $players->fetch_array()) {
                                             $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
                                             echo "<tr>";
@@ -98,7 +110,11 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
                                                 //online now
                                                 echo "Online now!";
                                             } else {
-                                                echo "<abbr class='timeago' title='" . date("c", strtotime($player['lastleave'])) . "'>" . nicetime($player['lastleave']) . "</abbr>";
+                                                if ($player['lastleave'] == "0000-00-00 00:00:00") {
+                                                    echo "Not recorded";
+                                                } else {
+                                                    echo "<abbr class='timeago' title='" . date("c", strtotime($player['lastleave'])) . "'>" . $player['lastleave'] . "</abbr>";
+                                                }
                                             }
                                             echo "</td>";
                                             echo "</tr>";
@@ -113,17 +129,17 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
                                     <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "1" : ($totalPages - $pagenr <= 1 ? $totalPages - 4 : $pagenr - 2) ?></a></li>
                                     <?php if ($totalPages > 2) { ?>
                                         <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "2" : ($totalPages - $pagenr <= 1 ? $totalPages - 3 : $pagenr - 1) ?></a></li>
-                                    <?php }
-                                    ?>
-                                    <?php if ($totalPages > 3) { ?>
+<?php }
+?>
+<?php if ($totalPages > 3) { ?>
                                         <li<?php if ($pagenr != 1 && $pagenr != 2 && $pagenr != $totalPages && $pagenr != $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3") ?></a></li>
-                                    <?php } ?>
-                                    <?php if ($totalPages > 4) { ?>
+<?php } ?>
+<?php if ($totalPages > 4) { ?>
                                         <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "4" : ($totalPages - $pagenr <= 1 ? $totalPages - 1 : $pagenr + 1) ?></a></li>
-                                    <?php } ?>
-                                    <?php if ($totalPages > 5) { ?>
+<?php } ?>
+<?php if ($totalPages > 5) { ?>
                                         <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2) ?></a></li>
-                                    <?php } ?>
+<?php } ?>
                                     <li<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">&raquo;</a></li>
                                 </ul>
                             </div>
@@ -137,11 +153,11 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
 
 
                     <!-- Server status -->
-                    <?php
-                    include "../inc/serverstatusui.php";
+<?php
+include "../inc/serverstatusui.php";
 
-                    include '../inc/quicklinksui.php';
-                    ?>
+include '../inc/quicklinksui.php';
+?>
                     <!-- /Quick Links -->
 
                 </div>
@@ -155,10 +171,10 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
                 <div class="col-md-10 col-md-offset-1">
                     <div class="well well-sm">
                         <p class="make-center"><?php
-                            if (!empty($custom_footer_text)) {
-                                echo $custom_footer_text;
-                            }
-                            ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
+if (!empty($custom_footer_text)) {
+    echo $custom_footer_text;
+}
+?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
                             Pre-Alpha is &copy; Copyright <a href="http://accountproductions.com/">AccountProductions</a> and <a
                                 href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
                         <!-- DND: Keep this link here! This is copyrighted content -->
@@ -169,11 +185,31 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
         <!-- /Footer -->
 
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
-        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/jquery-2.1.0.min.js"></script>
-        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>bootstrap/js/bootstrap.min.js"></script>
-        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/d3.v3.min.js"></script>
-        <script src='<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/jquery.timeago.js'></script>
-        <script src='<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/player-list-script.js'></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/jquery-2.1.0.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/d3.v3.min.js"></script>
+        <script src='<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/jquery.timeago.js'></script>
+        <script src='<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/player-list-script.js'></script>
         <script type="text/javascript">
                                         jQuery(document).ready(function() {
                                             jQuery("abbr.timeago").timeago();

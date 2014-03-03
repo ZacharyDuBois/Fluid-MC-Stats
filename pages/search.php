@@ -34,20 +34,32 @@ if ($pagenr > $totalPages && $totalPages != 0) {
     <head>
         <title><?php echo $site_name ?> - Search</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>css/custom.css" rel="stylesheet">
+        <link href="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php if (!empty($custom_hosted_uri)) {
+            echo($custom_hosted_uri);
+        } else {
+            echo "../";
+        } ?>css/custom.css" rel="stylesheet">
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
     </head>
     <body>
 
         <!-- Navbar -->
-        <?php
-        $page = "player-list"; //for having an active element in navbar and quick links
-        include "../inc/navbar.php";
-        ?>
+<?php
+$page = "player-list"; //for having an active element in navbar and quick links
+include "../inc/navbar.php";
+?>
         <!-- /Navbar -->
-        
+
         <div class="hidden" id="key"><?php echo $playerName; ?></div>
 
         <!-- Location -->
@@ -100,10 +112,10 @@ if ($pagenr > $totalPages && $totalPages != 0) {
                                         </tr>
                                     </thead>
                                     <tbody id="search-list">
-                                        <?php
-                                        $players = findPlayer($mysqli, $mysql_table_prefix, $playerName, $pagenr);
-                                        if (empty($players)) {
-                                            ?>
+                                    <?php
+                                    $players = findPlayer($mysqli, $mysql_table_prefix, $playerName, $pagenr);
+                                    if (empty($players)) {
+                                        ?>
                                             <tr><th colspan='2'><p class="make-center">No players found having '<?php echo $playerName ?>' in their name</p></th></tr>
                                         <?php
                                     } else {
@@ -116,7 +128,11 @@ if ($pagenr > $totalPages && $totalPages != 0) {
                                             if ($lastjoin > $lastleave) {
                                                 echo "<td>Online now!</td>";
                                             } else {
-                                                echo "<td>" . date('d/m/Y h:i:s A', $lastleave) . "</td>";
+                                                if ($lastleave == 0) {
+                                                    echo "<td>Not recorded</td>";
+                                                } else {
+                                                    echo "<td><abbr class='timeago' title='" . date("c", $lastleave) . "'>" . $lastleave . "</abbr></td>";
+                                                }
                                             }
                                             echo "</tr>";
                                         }
@@ -131,17 +147,17 @@ if ($pagenr > $totalPages && $totalPages != 0) {
                                     <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "1" : ($totalPages - $pagenr <= 1 ? $totalPages - 4 : $pagenr - 2) ?></a></li>
                                     <?php if ($totalPages > 2) { ?>
                                         <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "2" : ($totalPages - $pagenr <= 1 ? $totalPages - 3 : $pagenr - 1) ?></a></li>
-                                    <?php }
-                                    ?>
-                                    <?php if ($totalPages > 3) { ?>
+<?php }
+?>
+<?php if ($totalPages > 3) { ?>
                                         <li<?php if ($pagenr != 1 && $pagenr != 2 && $pagenr != $totalPages && $pagenr != $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3") ?></a></li>
-                                    <?php } ?>
-                                    <?php if ($totalPages > 4) { ?>
+<?php } ?>
+<?php if ($totalPages > 4) { ?>
                                         <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "4" : ($totalPages - $pagenr <= 1 ? $totalPages - 1 : $pagenr + 1) ?></a></li>
-                                    <?php } ?>
-                                    <?php if ($totalPages > 5) { ?>
+<?php } ?>
+<?php if ($totalPages > 5) { ?>
                                         <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2) ?></a></li>
-                                    <?php } ?>
+<?php } ?>
                                     <li<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>, this)">&raquo;</a></li>
                                 </ul>
                             </div>
@@ -155,11 +171,11 @@ if ($pagenr > $totalPages && $totalPages != 0) {
 
 
                     <!-- Server status -->
-                    <?php
-                    include "../inc/serverstatusui.php";
+<?php
+include "../inc/serverstatusui.php";
 
-                    include '../inc/quicklinksui.php';
-                    ?>
+include '../inc/quicklinksui.php';
+?>
                     <!-- /Quick Links -->
 
                 </div>
@@ -172,6 +188,15 @@ if ($pagenr > $totalPages && $totalPages != 0) {
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="well well-sm">
+<<<<<<< HEAD
+                        <p class="make-center"><?php
+if (!empty($custom_footer_text)) {
+    echo $custom_footer_text;
+}
+?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
+                            Pre-Alpha is &copy; Copyright <a href="http://accountproductions.com/">AccountProductions</a> and <a
+                                href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
+=======
                         <p class="make-center">
                           <?php
                           if (!empty($custom_footer_text)) {
@@ -181,6 +206,7 @@ if ($pagenr > $totalPages && $totalPages != 0) {
                           <i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo $fmcs_version ?> is &copy; Copyright
                           <a href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>,
                           2014. All rights reserved.</p>
+>>>>>>> 677da92ae77fb9bfad77ff5c7d491420218f1ffb
                         <!-- DND: Keep this link here! This is copyrighted content -->
                     </div>
                 </div>
@@ -189,9 +215,35 @@ if ($pagenr > $totalPages && $totalPages != 0) {
         </div>
 
         <!-- TODO: Keep correct paths but local links to avoid XSS -->
-        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/jquery-2.1.0.min.js"></script>
-        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>bootstrap/js/bootstrap.min.js"></script>
-        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/d3.v3.min.js"></script>
-        <script src="<?php if (!empty($custom_hosted_uri)) { echo($custom_hosted_uri); } else { echo "../"; }?>js/search-script.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/jquery-2.1.0.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/d3.v3.min.js"></script>
+        <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/search-script.js"></script>
+        <script src='<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+} else {
+    echo "../";
+} ?>js/jquery.timeago.js'></script>
+        <script type="text/javascript">
+                                        jQuery(document).ready(function() {
+                                            jQuery("abbr.timeago").timeago();
+                                        });
+        </script>
     </body>
 </html>
