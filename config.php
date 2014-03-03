@@ -30,7 +30,7 @@ $mc_server_disp_addr = ''; // A 'nice' address for your Minecraft server. This w
  */
 $site_name = ''; // Name that will appear in page title and navbar.
 $fa_icon = ''; // The FontAwesome icon you want to be next to your web end title. Use ending only. Ex: Icon you want to use "fa-bookmark-o" Just enter "bookmark-o".
-$avatar_service_uri = ''; // URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mc-avatar.developgravity.com/ for ours.
+$avatar_service_uri = ''; // URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mctar.ws/ for ours.
 $players_per_page = ''; // Number of players listed on each page.
 $player_top_calc_stat = ''; // Stat that gets used to sort the players
 $player_on_top = ''; //Number of player on top list.
@@ -53,7 +53,7 @@ $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If
  * It is recommended not to delete these directories off of this server in-case we forget to implement this in some files.
  * These are also still required to be on the local server as the install requires them.
  * You are allowed to use our CDN, please don't use it for popular sites :)
- * $custom_hosted_uri = 'http://static.accountproductions.com/FluidMCStats/';
+ * $custom_hosted_uri = 'http://static.apservers.io/FluidMCStats/';
  */
 $custom_hosted_uri = '';
 

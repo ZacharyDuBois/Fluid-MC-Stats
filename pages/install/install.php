@@ -383,7 +383,7 @@
                                         <label for="fmcsSiteName" class="col-sm-3 control-label">File CDN URI</label>
 
                                         <div class="col-sm-9">
-                                            <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.accountproductions.com/FluidMCStats/" disabled>
+                                            <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.apservers.io/FluidMCStats/" disabled>
                                             <!-- TODO: CDN URI -->
                                             <span class="help-block">
                                                 This is for support for hosting static files externally. To use, upload the <code>bootstrap</code>, <code>css</code>, <code>fontawesome</code>, <code>img</code>, and
@@ -419,10 +419,10 @@
 
                                         <div class="col-sm-9">
                                             <input name="avatar_service_uri" type="text" class="form-control" id="fmcsAdvAvatarService"
-                                                   placeholder="http&colon;//mc-avatar.developgravity.com/" value="http://mc-avatar.developgravity.com/">
+                                                   placeholder="http&colon;//mctar.ws/" value="http://mctar.ws/">
                                             <span class="help-block">
                                                 The URI for the avatar service you want to use. The URI must follow <code>http://domain.tld/directory/playername/pixelsize</code>.
-                                                Known supported are <code>http://mc-avatar.developgravity.com/</code> and <code>https://minotar.net/avatar/</code>.
+                                                Known supported are <code>http://mctar.ws/</code> and <code>https://minotar.net/avatar/</code>.
                                             </span>
                                         </div>
                                     </div>
