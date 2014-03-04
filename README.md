@@ -5,6 +5,7 @@ A web interface for the [Lolmewn Stats plugin on Bukkit Dev](http://accpro.ws/IL
 Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://accpro.ws/R2CMf).
 
 - [Official Website](http://developgravity.com/projects/fluid-mc-stats/)
+- [Official Forums](http://developgravity.com/forums/board/project-forums/fluid-mc-stats/)
 
 # Requirements
 
