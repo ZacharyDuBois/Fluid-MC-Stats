@@ -68,4 +68,4 @@ $required_global_stats_time = '3600'; // 1 Hour
 $cache_time = '86400'; // 1 Day
 
 /* NEVER EDIT THIS */
-$fmcs_version = 'Beta v0.1.0';
+$fmcs_version = 'Beta v0.1.1';
