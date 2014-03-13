@@ -187,7 +187,7 @@ function getDatabaseColumnNameFromPlayerStat($stat) {
         case "exp":
             return "xpgained";
         case "fish":
-            return "fishcatch";
+            return "fishcatched";
         case "damage":
             return "damagetaken";
         case "consumed":
