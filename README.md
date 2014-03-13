@@ -22,9 +22,9 @@ Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://accpro
 
 # News
 
-- (12-03-14) | [Fluid MC Stats Beta v0.1.1 Update Notes](http://developgravity.com/2014/03/fluid-mc-stats-beta-v0-1-1-update-notes/)
-- (09-03-14) | [Notice to Our Minecraft Avatar Service Users](http://developgravity.com/2014/03/notice-to-our-minecraft-avatar-service-users/)
-- (01-03-14) | [Fluid MC Stats Beta v0.1.0 Is Now Out](http://developgravity.com/2014/03/fluid-mc-stats-beta-v0-1-0-is-now-out/)
+- 12-03-14 [Fluid MC Stats Beta v0.1.1 Update Notes](http://developgravity.com/2014/03/fluid-mc-stats-beta-v0-1-1-update-notes/)
+- 09-03-14 [Notice to Our Minecraft Avatar Service Users](http://developgravity.com/2014/03/notice-to-our-minecraft-avatar-service-users/)
+- 01-03-14 [Fluid MC Stats Beta v0.1.0 Is Now Out](http://developgravity.com/2014/03/fluid-mc-stats-beta-v0-1-0-is-now-out/)
 
 *Want to get email updates about changes? Go to [developgravity.com](http://developgravity.com) and add your email to the list via the sidebar!*
 
