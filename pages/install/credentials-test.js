@@ -14,14 +14,13 @@ $("#mysql-test").click(function () {
       mpa: $("#mySQLPassword").val()
     }
   }).done(function (msg) {
-      if (msg === "Success") {
-        $("#mysql-test").fadeOut(200, function () {
-          $("#mysql-result").html("<h4><span class='label label-success'>Success!</span></h4>");
-        });
-      } else {
-        $("#mysql-result").html("<h4><span class='label label-danger'>Failed: " + msg + "</span></h4>");
-      }
-    });
+    if (msg === "Success") {
+      $("#mysql-test").fadeOut(200, function () {
+        $("#mysql-result").html("<h4><span class='label label-success'>Success!</span></h4>");
+      });
+    } else {
+      $("#mysql-result").html("<h4><span class='label label-danger'>Failed: " + msg + "</span></h4>");
+    }
+  });
   return false;
 });
-
