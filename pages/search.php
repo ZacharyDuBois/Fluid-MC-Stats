@@ -194,7 +194,6 @@ include "../inc/navbar.php";
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="well well-sm">
-        <<<<<<< HEAD
         <p class="make-center"><?php
           if (!empty($custom_footer_text)) {
             echo $custom_footer_text;
@@ -202,17 +201,6 @@ include "../inc/navbar.php";
           ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
           Pre-Alpha is &copy; Copyright <a href="http://accountproductions.com/">AccountProductions</a> and <a
             href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
-        =======
-        <p class="make-center">
-          <?php
-          if (!empty($custom_footer_text)) {
-            echo $custom_footer_text;
-          }
-          ?>
-          <i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo $fmcs_version ?> is &copy; Copyright
-          <a href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>,
-          2014. All rights reserved.</p>
-        >>>>>>> 677da92ae77fb9bfad77ff5c7d491420218f1ffb
         <!-- DND: Keep this link here! This is copyrighted content -->
       </div>
     </div>
