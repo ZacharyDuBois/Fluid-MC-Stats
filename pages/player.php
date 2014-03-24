@@ -38,7 +38,6 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
   } else {
     echo "../";
   } ?>css/custom.css" rel="stylesheet">
-  <!-- TODO: Keep correct paths but local links to avoid XSS -->
 </head>
 <body>
 
@@ -233,7 +232,6 @@ include "../inc/navbar.php";
 </div>
 
 
-<!-- TODO: Keep correct paths but local links to avoid XSS -->
 <script src="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
 } else {

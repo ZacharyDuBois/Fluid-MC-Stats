@@ -34,7 +34,6 @@ if (file_exists("pages/install/")) {
   <link href="<?php if (!empty($custom_hosted_uri)) {
     echo($custom_hosted_uri);
   } ?>css/custom.css" rel="stylesheet">
-  <!-- TODO: Keep correct paths but local links to avoid XSS -->
 </head>
 <body>
 
@@ -143,7 +142,6 @@ include 'inc/navbar.php';
 </div>
 <!-- /Footer -->
 
-<!-- TODO: Keep correct paths but local links to avoid XSS -->
 <script src="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
 } ?>js/jquery-2.1.0.min.js"></script>
