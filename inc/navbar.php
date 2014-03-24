@@ -14,18 +14,18 @@ include_once __DIR__ . '/../config.php';
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="<?php if ($page != "home") echo "../" ?>index.php"><i class="fa <?php echo $fa_icon; ?>"></i> <?php echo $site_name; ?></a>
+    <a class="navbar-brand" href="<?php if ($navPage != "home") echo "../" ?>index.php"><i class="fa <?php echo $fa_icon; ?>"></i> <?php echo $site_name; ?></a>
   </div>
   <!-- /Mobile -->
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li<?php if ($page == "home") echo " class='active'" ?>><a href="<?php if ($page != "home") echo "../" ?>index.php"><i class="fa fa-home"></i> Home</a></li>
-      <li<?php if ($page == "server-stats") echo " class='active'" ?>><a href="<?php if ($page == "home") echo "pages/" ?>server-stats.php"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
-      <li<?php if ($page == "top-players") echo " class='active'" ?>><a href="<?php if ($page == "home") echo "pages/" ?>top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
-      <li<?php if ($page == "player-list") echo " class='active'" ?>><a href="<?php if ($page == "home") echo "pages/" ?>player-list.php"><i class="fa fa-list"></i> Player List</a></li>
+      <li<?php if ($navPage == "home") echo " class='active'" ?>><a href="<?php if ($navPage != "home") echo "../" ?>index.php"><i class="fa fa-home"></i> Home</a></li>
+      <li<?php if ($navPage == "server-stats") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>server-stats.php"><i class="fa fa-hdd-o"></i> Server Stats</a></li>
+      <li<?php if ($navPage == "top-players") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>top-players.php"><i class="fa fa-bar-chart-o"></i> Top Players</a></li>
+      <li<?php if ($navPage == "player-list") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>player-list.php"><i class="fa fa-list"></i> Player List</a></li>
     </ul>
-    <form class="navbar-form navbar-right" role="search" action="<?php if ($page == "home") echo "pages/" ?>search.php">
+    <form class="navbar-form navbar-right" role="search" action="<?php if ($navPage == "home") echo "pages/" ?>search.php">
       <div class="form-group">
         <input name='name' type="text" class="form-control" placeholder="Player Name">
       </div>

@@ -14,6 +14,9 @@ if (!isset($_GET['id'])) {
 include_once '../inc/db.php';
 include_once '../inc/queries.php';
 include_once '../inc/util.php';
+
+$page = "player-list";
+
 $player_id = $_GET['id'];
 $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 ?>
@@ -41,7 +44,6 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 
 <!-- Navbar -->
 <?php
-$page = "player-list"; //for having an active element in navbar and quick links
 include "../inc/navbar.php";
 ?>
 <!-- /Navbar -->

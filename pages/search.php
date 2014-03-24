@@ -10,6 +10,8 @@ if (!isset($_GET['name'])) {
 include_once '../inc/db.php';
 include_once '../inc/util.php';
 
+$navPage = "search";
+
 $playerName = $_GET['name'];
 
 $pagenr = 1;
@@ -52,7 +54,6 @@ if ($pagenr > $totalPages && $totalPages != 0) {
 
 <!-- Navbar -->
 <?php
-$page = "player-list"; //for having an active element in navbar and quick links
 include "../inc/navbar.php";
 ?>
 <!-- /Navbar -->

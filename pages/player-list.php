@@ -7,6 +7,8 @@ include_once __DIR__ . '/../inc/db.php';
 include_once __DIR__ . '/../inc/queries.php';
 include_once __DIR__ . '/../inc/util.php';
 
+$navPage = "player-list";
+
 $pagenr = isset($_GET['page']) ? $_GET['page'] : 1;
 $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
 ?>
@@ -39,7 +41,6 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
 <body>
 
 <?php
-$page = "player-list";
 include "../inc/navbar.php";
 ?>
 

@@ -8,6 +8,9 @@ if (!file_exists('config.php')) {
   die();
 }
 include 'config.php';
+
+$navPage = "home";
+
 if ($mysql_host == '' && file_exists("pages/install/")) {
   $http = ($_SERVER['HTTPS'] ? 'https://' : 'http://');
   $installLoc = $http . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . "pages/install/install.php";
@@ -39,7 +42,6 @@ if (file_exists("pages/install/")) {
 
 <!-- Navbar -->
 <?php
-$page = "home";
 include 'inc/navbar.php';
 ?>
 <!-- /Navbar -->
