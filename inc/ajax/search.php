@@ -4,12 +4,10 @@
  */
 
 header('Content-Type: application/json');
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
-include __DIR__ . "/../../config.php";
-include __DIR__ . "/../db.php";
-include __DIR__ . "/../util.php";
+include __DIR__ . '/../../config.php';
+include __DIR__ . '/../db.php';
+include __DIR__ . '/../util.php';
 
 if (!isset($_GET['page']) || !isset($_GET['finder'])) {
   die(json_encode("POST not correct, " . var_dump($_GET)));

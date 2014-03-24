@@ -29,7 +29,7 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
 <body>
 
 <?php
-include "../inc/navbar.php";
+include '../inc/navbar.php';
 ?>
 
 <!-- Location -->
@@ -143,7 +143,7 @@ include "../inc/navbar.php";
 
       <!-- Server status -->
       <?php
-      include "../inc/serverstatusui.php";
+      include '../inc/serverstatusui.php';
 
       include '../inc/quicklinksui.php';
       ?>

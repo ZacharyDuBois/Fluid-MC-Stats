@@ -2,7 +2,7 @@
 /*
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
-include_once "../config.php";
+include_once '../config.php';
 include_once '../inc/db.php';
 include_once '../inc/util.php';
 include_once '../inc/queries.php';
@@ -27,7 +27,7 @@ $navPage = "top-players";
 
 <!-- Navbar -->
 <?php
-include "../inc/navbar.php";
+include '../inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -102,7 +102,7 @@ include "../inc/navbar.php";
 
       <!-- Server status -->
       <?php
-      include "../inc/serverstatusui.php";
+      include '../inc/serverstatusui.php';
       include '../inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->

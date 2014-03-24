@@ -53,9 +53,9 @@
 </div>
 <?php
 $faultFound = false;
-if (file_exists("../../config.php")) {
+if (file_exists('../../config.php')) {
   //file exists, check if writable
-  if (!is_writable("../../config.php")) {
+  if (!is_writable('../../config.php')) {
     $faultFound = true;
     ?>
     <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i>
@@ -87,7 +87,7 @@ if ($faultFound) {
   </div>
 <?php
 } else {
-$configFile = fopen("../../config.php", $mode)
+$configFile = fopen('../../config.php', $mode)
 ?>
 <div class="jumbotron">
   <h1>Welcome!</h1>

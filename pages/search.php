@@ -1,5 +1,8 @@
 <?php
-if (file_exists("../config.php")) {
+/**
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+if (file_exists('../config.php')) {
   include_once '../config.php';
 } else {
   die("Config not found");
@@ -164,7 +167,7 @@ include "../inc/navbar.php";
 
       <!-- Server status -->
       <?php
-      include "../inc/serverstatusui.php";
+      include '../inc/serverstatusui.php';
 
       include '../inc/quicklinksui.php';
       ?>
@@ -175,22 +178,6 @@ include "../inc/navbar.php";
 
   </div>
   <!-- /Content -->
-
-  <!-- Footer -->
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="well well-sm">
-        <p class="make-center"><?php
-          if (!empty($custom_footer_text)) {
-            echo $custom_footer_text;
-          }
-          ?> <i class="fa fa-info-circle"></i> Fluid MC Stats v0.0.1
-          Pre-Alpha is &copy; Copyright <a href="http://accountproductions.com/">AccountProductions</a> and <a
-            href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights reserved.</p>
-        <!-- DND: Keep this link here! This is copyrighted content -->
-      </div>
-    </div>
-  </div>
 
   <!-- Footer -->
   <?php

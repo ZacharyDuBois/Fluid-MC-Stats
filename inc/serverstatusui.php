@@ -3,8 +3,8 @@
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
 
-include_once "../config.php";
-include_once "serverstatus.php";
+include_once '../config.php';
+include_once 'serverstatus.php';
 
 $serverStatus = new serverstatus($mc_server_ip, $mc_server_port);
 $serverStatus->fetchServerData();

@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<!--
-  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
--->
 <?php
+/**
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
 if (file_exists("../config.php")) {
   include_once '../config.php';
 } else {
@@ -20,6 +19,10 @@ $navPage = "player";
 $player_id = $_GET['id'];
 $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 ?>
+<!DOCTYPE html>
+<!--
+  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+-->
 <html>
 <head>
   <!-- Header -->
@@ -32,7 +35,7 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 
 <!-- Navbar -->
 <?php
-include "../inc/navbar.php";
+include '../inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -187,7 +190,7 @@ include "../inc/navbar.php";
 
       <!-- Server status -->
       <?php
-      include "../inc/serverstatusui.php";
+      include '../inc/serverstatusui.php';
 
       include '../inc/quicklinksui.php';
       ?>

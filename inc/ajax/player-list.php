@@ -4,14 +4,12 @@
  */
 
 header('Content-Type: application/json');
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
-include __DIR__ . "/../../config.php";
-include __DIR__ . "/../db.php";
-include __DIR__ . "/../util.php";
-include __DIR__ . "/../pages/player-list-getter.php";
-include __DIR__ . "/../queries.php";
+include __DIR__ . '/../../config.php';
+include __DIR__ . '/../db.php';
+include __DIR__ . '/../util.php';
+include __DIR__ . '/../pages/player-list-getter.php';
+include __DIR__ . '/../queries.php';
 
 if (!isset($_GET['page'])) {
   die(json_encode("POST not correct, " . var_dump($_GET)));
