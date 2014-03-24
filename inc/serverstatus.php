@@ -3,7 +3,7 @@
 /**
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
-class serverstatus
+class serverStatus
 {
 
   private $serverAddress;
@@ -22,21 +22,37 @@ class serverstatus
 
   function isOnline()
   {
-    return $this->serverData['status'];
+    if (isset ($this->serverData['status'])) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   function isDead()
   {
-    return array_key_exists("error", $this->serverData);
+    if (isset ($this->serverData['status'])) {
+      return false;
+    } else {
+      return array_key_exists("error", $this->serverData);
+    }
   }
 
   function getOnlinePlayerCount()
   {
-    return $this->serverData['players']['online'];
+    if (isset ($this->serverData['status'])) {
+      return $this->serverData['players']['online'];
+    } else {
+      return false;
+    }
   }
 
   function getMaxPlayerCount()
   {
-    return $this->serverData['players']['max'];
+    if (isset ($this->serverData['status'])) {
+      return $this->serverData['players']['max'];
+    } else {
+      return false;
+    }
   }
 }

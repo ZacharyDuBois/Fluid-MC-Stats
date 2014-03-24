@@ -21,12 +21,12 @@ $serverStatus->fetchServerData();
         echo "http://minecraft-api.com/v1/logo/?server=" . $mc_server_ip . ":" . $mc_server_port;
       } ?>" alt="Server Icon" class="img-circle server-sidebar-icon">
     </div>
-    <?php if ($serverStatus->isOnline()) { ?>
+    <?php if ($serverStatus->isOnline() == true) { ?>
       <h3 class="mc-online"><i class="fa fa-check"></i> Online!</h3>
-    <?php } else if ($serverStatus->isDead()) { ?>
-      <h3 class="mc-unknown"><i class="fa fa-question-circle"></i> Unknown</h3>
+    <?php } else if ($serverStatus->isDead() == true) { ?>
+      <h3 class="mc-offline"><i class="fa fa-times-circle-o"></i> Offline</h3>
     <?php } else { ?>
-      <h3 class="mc-unknown"><i class="fa fa-frown-o"></i> Unknown</h3>
+      <h3 class="mc-unknown"><i class="fa fa-question-circle"></i> Unknown</h3>
     <?php
     }
     ?>
@@ -34,10 +34,14 @@ $serverStatus->fetchServerData();
     <p><strong>Name:</strong> <?php echo $server_name; ?></p>
 
     <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
-    <?php if ($serverStatus->isOnline()) { ?>
+    <?php if ($serverStatus->isOnline() == true) { ?>
       <p><strong>Players:</strong> <?php echo $serverStatus->getOnlinePlayerCount() . "/" . $serverStatus->getMaxPlayerCount(); ?></p>
-    <?php } else if ($serverStatus->isDead()) { ?>
+    <?php } else if ($serverStatus->isDead() == true) { ?>
       <p><strong>Players:</strong> ?/?</p>
+    <?php
+    } else {
+      ?>
+      <p><strong>Players:</strong> Unknown</p>
     <?php
     }
     ?>
@@ -46,7 +50,7 @@ $serverStatus->fetchServerData();
     <div class="progress progress-striped active">
       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php
       $percentageFilled = 0;
-      if ($serverStatus->isOnline()) {
+      if ($serverStatus->isOnline() == true) {
         $percentageFilled = $serverStatus->getOnlinePlayerCount() / $serverStatus->getMaxPlayerCount() * 100;
       }
       echo $percentageFilled;
