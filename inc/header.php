@@ -19,6 +19,9 @@ include_once '../config.php';
   } else {
     echo("Unknown Title");
   } ?></title>
+<meta charset="utf-8">
+<meta name="description" content="A Minecraft Stats Interface">
+<meta name="author" content="AccountProductions, DevelopGravity, and Lolmewn">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
