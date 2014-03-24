@@ -203,38 +203,11 @@ include "../inc/navbar.php";
       </div>
     </div>
   </div>
-  <!-- /Footer -->
-</div>
 
-<script src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} else {
-  echo "../";
-} ?>js/jquery-2.1.0.min.js"></script>
-<script src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} else {
-  echo "../";
-} ?>bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} else {
-  echo "../";
-} ?>js/d3.v3.min.js"></script>
-<script src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} else {
-  echo "../";
-} ?>js/search-script.js"></script>
-<script src='<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} else {
-  echo "../";
-} ?>js/jquery.timeago.js'></script>
-<script type="text/javascript">
-  jQuery(document).ready(function () {
-    jQuery("abbr.timeago").timeago();
-  });
-</script>
+  <!-- Footer -->
+  <?php
+  include '../inc/footer.php';
+  ?>
+  <!-- /Footer -->
 </body>
 </html>
