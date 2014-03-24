@@ -6,9 +6,6 @@ include_once "../config.php";
 include_once '../inc/db.php';
 include_once '../inc/util.php';
 include_once '../inc/queries.php';
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>

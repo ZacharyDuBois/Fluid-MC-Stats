@@ -3,8 +3,6 @@
   ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
 -->
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 if (file_exists("../config.php")) {
   include_once '../config.php';
 } else {
