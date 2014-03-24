@@ -20,23 +20,11 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
 
 <html>
 <head>
-  <title><?php echo $site_name ?> - Player List</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } else {
-    echo "../";
-  } ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } else {
-    echo "../";
-  } ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } else {
-    echo "../";
-  } ?>css/custom.css" rel="stylesheet">
+  <!-- Header -->
+  <?php
+  include '../inc/header.php';
+  ?>
+  <!-- /Header -->
 </head>
 <body>
 

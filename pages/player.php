@@ -15,30 +15,18 @@ include_once '../inc/db.php';
 include_once '../inc/queries.php';
 include_once '../inc/util.php';
 
-$page = "player-list";
+$navPage = "player";
 
 $player_id = $_GET['id'];
 $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 ?>
 <html>
 <head>
-  <title><?php echo $site_name; ?> - Player - <?php echo $player; ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } else {
-    echo "../";
-  } ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } else {
-    echo "../";
-  } ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } else {
-    echo "../";
-  } ?>css/custom.css" rel="stylesheet">
+  <!-- Header -->
+  <?php
+  include '../inc/header.php';
+  ?>
+  <!-- /Header -->
 </head>
 <body>
 

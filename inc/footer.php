@@ -27,21 +27,21 @@ include_once __DIR__ . '/../config.php';
 <!-- SCRIPTS -->
 <script src="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
-} else if ($navPage != "home") {
+} elseif ($navPage != "home") {
   echo "../";
 } else {
   echo("");
 } ?>js/jquery-2.1.0.min.js"></script>
 <script src="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
-} else if ($navPage != "home") {
+} elseif ($navPage != "home") {
   echo "../";
 } else {
   echo("");
 } ?>bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
-} else if ($navPage != "home") {
+} elseif ($navPage != "home") {
   echo "../";
 } else {
   echo("");
@@ -49,7 +49,7 @@ include_once __DIR__ . '/../config.php';
 <?php if ($navPage == "search") { ?>
   <script src="<?php if (!empty($custom_hosted_uri)) {
     echo($custom_hosted_uri);
-  } else if ($navPage != "home") {
+  } elseif ($navPage != "home") {
     echo "../";
   } else {
     echo("");
@@ -58,7 +58,7 @@ include_once __DIR__ . '/../config.php';
 <?php if ($navPage == "player-list") { ?>
   <script src="<?php if (!empty($custom_hosted_uri)) {
     echo($custom_hosted_uri);
-  } else if ($navPage != "home") {
+  } elseif ($navPage != "home") {
     echo "../";
   } else {
     echo("");

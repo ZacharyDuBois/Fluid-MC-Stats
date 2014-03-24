@@ -3,8 +3,8 @@
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
 
-include_once __DIR__ . "/../config.php";
-include_once __DIR__ . "/serverstatus.php";
+include_once "../config.php";
+include_once "serverstatus.php";
 
 $serverStatus = new serverstatus($mc_server_ip, $mc_server_port);
 $serverStatus->fetchServerData();
@@ -23,7 +23,7 @@ $serverStatus->fetchServerData();
     </div>
     <?php if ($serverStatus->isOnline() == true) { ?>
       <h3 class="mc-online"><i class="fa fa-check"></i> Online!</h3>
-    <?php } else if ($serverStatus->isDead() == true) { ?>
+    <?php } elseif ($serverStatus->isDead() == true) { ?>
       <h3 class="mc-offline"><i class="fa fa-times-circle-o"></i> Offline</h3>
     <?php } else { ?>
       <h3 class="mc-unknown"><i class="fa fa-question-circle"></i> Unknown</h3>
@@ -36,7 +36,7 @@ $serverStatus->fetchServerData();
     <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
     <?php if ($serverStatus->isOnline() == true) { ?>
       <p><strong>Players:</strong> <?php echo $serverStatus->getOnlinePlayerCount() . "/" . $serverStatus->getMaxPlayerCount(); ?></p>
-    <?php } else if ($serverStatus->isDead() == true) { ?>
+    <?php } elseif ($serverStatus->isDead() == true) { ?>
       <p><strong>Players:</strong> ?/?</p>
     <?php
     } else {

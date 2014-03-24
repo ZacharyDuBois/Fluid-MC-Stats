@@ -2,7 +2,7 @@
 /**
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
-include_once __DIR__ . '/../config.php';
+include_once '../config.php';
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
