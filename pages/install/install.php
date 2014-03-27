@@ -115,9 +115,9 @@ $configFile = fopen('../../config.php', $mode)
       <input name="mysql_host" type="text" class="form-control" id="mySQLHost" placeholder="Hostname" needed>
       <span class="input-group-addon">&colon;</span>
     </div>
-                                            <span class="help-block">
-                                                This is the hostname or IP of where your MySQL database is located.
-                                            </span>
+    <span class="help-block">
+      This is the hostname or IP of where your MySQL database is located.
+    </span>
   </div>
   <div class="col-sm-2">
     <input name="mysql_port" type="text" class="form-control" id="mySQLHostPort" placeholder="3306" value="3306" needed>
@@ -128,9 +128,9 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <input name="mysql_database" type="text" class="form-control" id="mySQLDatabaseName" placeholder="Stats" needed>
-                                            <span class="help-block">
-                                                This is the Stats database name.
-                                            </span>
+    <span class="help-block">
+      This is the Stats database name.
+    </span>
   </div>
 </div>
 <div class="form-group">
@@ -138,9 +138,9 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <input name="mysql_table_prefix" type="text" class="form-control" id="mySQLDatabasePrefix" placeholder="Stats_" needed>
-                                            <span class="help-block">
-                                                This is the prefix for the stats tables in your database. The default is <code>Stats_</code>.
-                                            </span>
+    <span class="help-block">
+      This is the prefix for the stats tables in your database. The default is <code>Stats_</code>.
+    </span>
   </div>
 </div>
 <div class="form-group">
@@ -148,9 +148,9 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <input name="mysql_user" type="text" class="form-control" id="mySQLUser" placeholder="stats" needed>
-                                            <span class="help-block">
-                                                The MySQL user for your database. This user only needs SELECT permissions of the database.
-                                            </span>
+    <span class="help-block">
+      The MySQL user for your database. This user only needs SELECT permissions of the database.
+    </span>
   </div>
 </div>
 <div class="form-group">
@@ -158,9 +158,9 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <input name="mysql_pwd" type="password" class="form-control" id="mySQLPassword" placeholder="Password" needed>
-                                            <span class="help-block">
-                                                The password for your MySQL user.
-                                            </span>
+    <span class="help-block">
+      The password for your MySQL user.
+    </span>
   </div>
 </div>
 <div class="form-group">
