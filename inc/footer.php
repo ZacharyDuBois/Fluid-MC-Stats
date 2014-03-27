@@ -17,6 +17,7 @@ include_once __DIR__ . '/../config.php';
         <i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo $fmcs_version ?> is &copy; Copyright
         <a href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>,
         2014. All rights reserved.</p>
+        <p>We love feedback, please <a href="http://accpro.ws/4tbNe">give us some</a>!</p>
       <!-- DND: Keep this link here! This is copyrighted content -->
     </div>
   </div>
@@ -72,5 +73,7 @@ include_once __DIR__ . '/../config.php';
   </script>
 <?php } ?>
 <!-- /SCRIPTS -->
+
+<!-- Antilitic codes normally would be here. Gaug.es and Google Analytics -->
 
 <!-- /body would be here -->
