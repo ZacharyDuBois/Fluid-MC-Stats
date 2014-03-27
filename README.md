@@ -28,6 +28,10 @@ Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://accpro
 
 *Want to get email updates about changes? Go to [developgravity.com](http://developgravity.com) and add your email to the list via the sidebar!*
 
+# Feedback
+
+Feedback is greatly appreciated and can help us come up with ideas for feature releases. If you would like to provide some feedback, please fill out the [survey](http://accpro.ws/4tbNe).
+
 # License
 
 All rights reserved. You may not remove branding (AccountProductions, DevelopGravity, Lolmewn, and their respected links) or modify it other than editing the configuration. See `LICENSE.md` for more information.
