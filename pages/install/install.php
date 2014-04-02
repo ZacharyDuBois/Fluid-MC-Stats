@@ -385,10 +385,10 @@ $configFile = fopen('../../config.php', $mode)
   <label for="fmcsSiteName" class="col-sm-3 control-label">File CDN URI</label>
 
   <div class="col-sm-9">
-    <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.apservers.io/FluidMCStats/" disabled>
+    <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.apservers.io/Fluid-MC-Stats/<?php echo($fmcs_version_number); ?>/">
     <!-- TODO: CDN URI -->
     <span class="help-block">
-      This is for support for hosting static files externally. To use, upload the <code>bootstrap</code>, <code>css</code>, <code>fontawesome</code>, <code>img</code>, and
+      This is for support for hosting static files externally. To use, upload the <code>bootstrap</code>, <code>css</code>, <code>font-awesome</code>, <code>img</code>, and
       <code>js</code> directories to a remote web-server/CDN and put the path to all of them below. Be sure to include the trailing slash.
     </span>
   </div>
@@ -398,7 +398,7 @@ $configFile = fopen('../../config.php', $mode)
     Time&ast;</label>
 
   <div class="col-sm-9">
-    <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600" value="3600" disabled>
+    <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600" value="3600">
     <!-- TODO: Include time -->
     <span class="help-block">
       This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 1 hour.
@@ -413,6 +413,8 @@ $configFile = fopen('../../config.php', $mode)
     <!-- TODO: Make cache -->
     <span class="help-block">
       The amount of time supported pages are cached. Single player pages will not be cached. Defaults to 30 minutes.
+      <br>
+      <em>THIS IS NOT DONE YET</em>
     </span>
   </div>
 </div>
