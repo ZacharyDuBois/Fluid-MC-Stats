@@ -53,7 +53,7 @@ $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If
  * It is recommended not to delete these directories off of this server in-case we forget to implement this in some files.
  * These are also still required to be on the local server as the install requires them.
  * You are allowed to use our CDN, please don't use it for popular sites :)
- * $custom_hosted_uri = 'http://static.apservers.io/FluidMCStats/';
+ * $custom_hosted_uri = 'http://static.apservers.io/Fluid-MC-Stats/VersionNumber/';
  */
 $custom_hosted_uri = '';
 
@@ -66,6 +66,3 @@ $required_global_stats_time = '3600'; // 1 Hour
  * Specify Cache Time, in seconds, for supported pages. Leave blank to disable.
  */
 $cache_time = '86400'; // 1 Day
-
-/* NEVER EDIT THIS */
-$fmcs_version = 'Beta v0.1.1';

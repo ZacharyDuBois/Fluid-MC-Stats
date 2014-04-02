@@ -87,12 +87,13 @@ if ($faultFound) {
   </div>
 <?php
 } else {
+include '../../inc/version.php';
 $configFile = fopen('../../config.php', $mode)
 ?>
 <div class="jumbotron">
   <h1>Welcome!</h1>
 
-  <p>to Fluid MC Stats! Get started by filling out the configuration information below and then click Install!</p>
+  <p>to Fluid MC Stats <?php echo($fmcs_version); ?>! Get started by filling out the configuration information below and then click Install!</p>
 
   <p>If you are seeing this, then the config tests have passed and you may now configure!</p>
 </div>
