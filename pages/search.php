@@ -57,8 +57,8 @@ include "../inc/navbar.php";
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
-          <li><a href="player-list.php"><i class="fa fa-list"></i> Player List</a></li>
+          <li><a href="../index.php" title="Home"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="player-list.php" title="Player List"><i class="fa fa-list"></i> Player List</a></li>
           <li class="active"><i class="fa fa-search"></i> Search</li>
         </ol>
       </div>
@@ -112,7 +112,7 @@ include "../inc/navbar.php";
               } else {
                 foreach ($players as $player) {
                   echo "<tr>";
-                  echo "<td><img src='" . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "'>"
+                  echo "<td><img src='" . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
                     . $player['name'] . "</a></td>";
                   $lastjoin = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastjoin");
                   $lastleave = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastleave");

@@ -9,15 +9,15 @@
   </div>
   <div class="panel-body">
     <div class="list-group">
-      <a href="<?php if ($navPage != "home") echo "../" ?>index.php" class="list-group-item<?php if ($navPage == "home") echo " active"; ?>"><i class="fa fa-home"></i> Home</a>
-      <a href="<?php if ($navPage != "home") echo "../" ?>pages/server-stats.php" class="list-group-item<?php if ($navPage == "server-stats") echo " active"; ?>"><i class="fa fa-hdd-o"></i> Server Stats</a>
-      <a href="<?php if ($navPage != "home") echo "../" ?>pages/top-players.php" class="list-group-item<?php if ($navPage == "top-players") echo " active"; ?>"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-      <a href="<?php if ($navPage != "home") echo "../" ?>pages/player-list.php" class="list-group-item<?php if ($navPage == "player-list") echo " active"; ?>"><i class="fa fa-list"></i> Player List</a>
+      <a href="<?php if ($navPage != "home") echo "../" ?>index.php" title="Home" class="list-group-item<?php if ($navPage == "home") echo " active"; ?>"><i class="fa fa-home"></i> Home</a>
+      <a href="<?php if ($navPage != "home") echo "../" ?>pages/server-stats.php" title="Server Stats" class="list-group-item<?php if ($navPage == "server-stats") echo " active"; ?>"><i class="fa fa-hdd-o"></i> Server Stats</a>
+      <a href="<?php if ($navPage != "home") echo "../" ?>pages/top-players.php" title="Top Players" class="list-group-item<?php if ($navPage == "top-players") echo " active"; ?>"><i class="fa fa-bar-chart-o"></i> Top Players</a>
+      <a href="<?php if ($navPage != "home") echo "../" ?>pages/player-list.php" title="Player List" class="list-group-item<?php if ($navPage == "player-list") echo " active"; ?>"><i class="fa fa-list"></i> Player List</a>
     </div>
     <div class="list-group">
       <?php
       foreach ($custom_links as $key => $link) {
-        echo "<a href='" . $link . "' class='list-group-item'>" . $key . "</a>";
+        echo "<a href='" . $link . "' title='" . $key . "' class='list-group-item'>" . $key . "</a>";
       }
       ?>
     </div>

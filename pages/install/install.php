@@ -25,15 +25,15 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="install.php"><i class="fa fa-plus"></i> Fluid MC Stats</a>
+    <a class="navbar-brand" href="install.php" title="Install"><i class="fa fa-plus"></i> Fluid MC Stats</a>
   </div>
   <!-- /Mobile -->
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="install.php"><i class="fa fa-wrench"></i> Install &amp; Configure</a></li>
-      <li><a href="http://developgravity.com/">DevelopGravity</a></li>
-      <li><a href="http://lolmewn.nl/">Lolmewn</a></li>
+      <li class="active"><a href="install.php" title="Install"><i class="fa fa-wrench"></i> Install &amp; Configure</a></li>
+      <li><a href="http://developgravity.com/" title="DevelopGravity">DevelopGravity</a></li>
+      <li><a href="http://lolmewn.nl/" title="Lolmwen&apos;s Website">Lolmewn</a></li>
     </ul>
   </div>
 </nav>
@@ -440,8 +440,8 @@ $configFile = fopen('../../config.php', $mode)
 <?php
 }
 ?>
-<div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats Beta v0.1.1 is &copy; Copyright <a
-    href="http://accountproductions.com/">AccountProductions</a> and <a href="http://lolmewn.nl">Lolmewn</a>, 2014. All rights
+<div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo($fmcs_version); ?> is &copy; Copyright <a
+    href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a> and <a href="http://lolmewn.nl" title="Lolmwen&apos;s Website">Lolmewn</a>, 2014. All rights
   reserved.
   <!-- DND: Keep this link here! This is copyrighted content -->
 </div>

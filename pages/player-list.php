@@ -38,7 +38,7 @@ include '../inc/navbar.php';
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="../index.php" title="Home"><i class="fa fa-home"></i> Home</a></li>
           <li class="active"><i class="fa fa-list"></i> Player List</li>
         </ol>
       </div>
@@ -88,7 +88,7 @@ include '../inc/navbar.php';
               while ($player = $players->fetch_array()) {
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
                 echo "<tr>";
-                echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "'>"
+                echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
                   . $playerName . "</a></td>";
                 echo "<td>";
                 if ($player['lastjoin'] > $player['lastleave']) {

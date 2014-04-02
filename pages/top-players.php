@@ -37,7 +37,7 @@ include '../inc/navbar.php';
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="../index.php" title="Home"><i class="fa fa-home"></i> Home</a></li>
           <li class="active"><i class="fa fa-bar-chart-o"></i> Top Players</li>
         </ol>
       </div>
@@ -80,7 +80,7 @@ include '../inc/navbar.php';
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $arr['player_id']);
                 echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' "
                   . "class='img-circle avatar-list-icon'> <a href='player.php?id="
-                  . $arr['player_id'] . "'> " . $playerName . "</a></td>";
+                  . $arr['player_id'] . "' title='" . $playerName . "&apos;s Stats'> " . $playerName . "</a></td>";
                 echo "<td>" . translateValue($player_top_calc_stat, $arr['value']) . "</td>";
               }
               ?>

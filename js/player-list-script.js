@@ -62,12 +62,13 @@ function fetchPage(pageNr, element) {
           .append($('<tr>')
             .append($('<td>')
               .append($('<img>')
-                .attr('src', 'http://mctar.ws/' + player["name"] + "/16")//TODO make this dynamic
+                .attr('src', 'http://mctar.ws/' + player["name"] + "/16") //TODO make this dynamic
                 .addClass("img-rounded").addClass("avatar-list-icon")
               )
               .append(" ")
               .append($('<a>')
                 .attr('href', 'player.php?id=\'' + player['player_id'] + "'")
+                .attr('title', player["name"] + "&apos;s Stats")
                 .append(player["name"])
               )
             ).append(lastOnTd)

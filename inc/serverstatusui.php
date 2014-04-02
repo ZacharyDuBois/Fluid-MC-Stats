@@ -19,7 +19,7 @@ $serverStatus->fetchServerData();
         echo($mc_custom_icon);
       } else {
         echo "http://minecraft-api.com/v1/logo/?server=" . $mc_server_ip . ":" . $mc_server_port;
-      } ?>" alt="Server Icon" class="img-circle server-sidebar-icon">
+      } ?>" alt="<?php echo $server_name; ?>&apos;s Icon" class="img-circle server-sidebar-icon">
     </div>
     <?php if ($serverStatus->isOnline() == true) { ?>
       <h3 class="mc-online"><i class="fa fa-check"></i> Online!</h3>

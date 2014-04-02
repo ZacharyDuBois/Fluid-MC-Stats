@@ -45,8 +45,8 @@ include '../inc/navbar.php';
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php">Home</a></li>
-          <li><a href="player-list.php">Player List</a></li>
+          <li><a href="../index.php" title="Home">Home</a></li>
+          <li><a href="player-list.php" title="Player List">Player List</a></li>
           <li class="active"><i class="fa fa-user"></i> <?php echo $player ?></li>
         </ol>
       </div>
@@ -64,7 +64,7 @@ include '../inc/navbar.php';
         </div>
         <div class="panel-body">
           <p class="make-center">
-            <img src="<?php echo $avatar_service_uri . $player; ?>/400" class="img-rounded avatar-player-page">
+            <img src="<?php echo $avatar_service_uri . $player; ?>/400" alt="<?php echo($player); ?>&apos;s Head" class="img-rounded avatar-player-page">
           </p>
 
           <div class="table-responsive">
