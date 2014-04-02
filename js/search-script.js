@@ -50,7 +50,7 @@ function fetchPage(pageNr, element) {
           online = lastleave.toLocaleString();
         }
         var lastOnTd = $("<td>");
-        if (parseInt(t[0]) === 0) {
+        if (parseInt([0]) === 0) {
           lastOnTd.text(online);
         } else {
           lastOnTd.append($("<abbr>").addClass("timeago").attr("title", lastleave.toISOString()).text(online));
