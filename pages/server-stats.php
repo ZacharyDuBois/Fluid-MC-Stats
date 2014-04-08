@@ -90,8 +90,8 @@ include "../inc/navbar.php";
             <th>Travel</th>
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "move");
-            echo "<td>" . $value . " Meters</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Meters</td>";
+            echo "<td>" . round($value, 2) . " Meters</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Meters</td>";
             ?>
           </tr>
           <tr>
@@ -99,7 +99,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "broken");
             echo "<td>" . $value . " Blocks</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Blocks</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Blocks</td>";
             ?>
           </tr>
           <tr>
@@ -107,7 +107,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "placed");
             echo "<td>" . $value . " Blocks</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Blocks</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Blocks</td>";
             ?>
           </tr>
           <tr>
@@ -115,7 +115,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "death");
             echo "<td>" . $value . " Deaths</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Deaths</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Deaths</td>";
             ?>
           </tr>
           <tr>
@@ -123,7 +123,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "kill");
             echo "<td>" . $value . " Kills</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Kills</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Kills</td>";
             ?>
           </tr>
           <tr>
@@ -131,7 +131,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "arrows");
             echo "<td>" . $value . " Arrows</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Arrows</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Arrows</td>";
             ?>
           </tr>
           <tr>
@@ -139,7 +139,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "exp");
             echo "<td>" . $value . " EXP</td>";
-            echo "<td>" . $value / $amountOfPlayers . " EXP</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " EXP</td>";
             ?>
           </tr>
           <tr>
@@ -147,7 +147,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "fish");
             echo "<td>" . $value . " Fish</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Fish</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Fish</td>";
             ?>
           </tr>
           <tr>
@@ -155,7 +155,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "damage");
             echo "<td>" . $value . " Health</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Health</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Health</td>";
             ?>
           </tr>
           <tr>
@@ -163,7 +163,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "consumed");
             echo "<td>" . $value . " Foodz</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Foodz</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Foodz</td>";
             ?>
           </tr>
           <tr>
@@ -171,7 +171,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "crafted");
             echo "<td>" . $value . " Items</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Items</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Items</td>";
             ?>
           </tr>
           <tr>
@@ -179,7 +179,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "eggs");
             echo "<td>" . $value . " Eggs</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Eggs</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Eggs</td>";
             ?>
           </tr>
           <tr>
@@ -187,7 +187,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "toolsbroken");
             echo "<td>" . $value . " Tools</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Tools</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Tools</td>";
             ?>
           </tr>
           <tr>
@@ -195,7 +195,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "commands");
             echo "<td>" . $value . " Commands</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Commands</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Commands</td>";
             ?>
           </tr>
           <tr>
@@ -203,7 +203,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "votes");
             echo "<td>" . $value . " Votes</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Votes</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Votes</td>";
             ?>
           </tr>
           <tr>
@@ -211,7 +211,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "dropped");
             echo "<td>" . $value . " Items</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Items</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Items</td>";
             ?>
           </tr>
           <tr>
@@ -219,7 +219,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "pickedup");
             echo "<td>" . $value . " Items</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Items</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Items</td>";
             ?>
           </tr>
           <tr>
@@ -227,7 +227,7 @@ include "../inc/navbar.php";
             <?php
             $value = getServerTotal($mysqli, $mysql_table_prefix, "teleport");
             echo "<td>" . $value . " Teleports</td>";
-            echo "<td>" . $value / $amountOfPlayers . " Teleports</td>";
+            echo "<td>" . round($value / $amountOfPlayers, 2) . " Teleports</td>";
             ?>
           </tr>
           </tbody>
