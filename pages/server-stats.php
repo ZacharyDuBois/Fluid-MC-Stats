@@ -236,10 +236,6 @@ include "../inc/navbar.php";
       <!--<em>*Only includes data of players with more than 1 hour of playtime.</em>-->
       <!-- TODO: Above is defined in config.php -->
     </div>
-    <div class="panel-footer">
-      <em>Last Generated: Now</em>
-      <!-- TODO: Make caching and auto regeneration of this page to avoid the slowness. -->
-    </div>
   </div>
 </div>
 <!-- /Main Content -->

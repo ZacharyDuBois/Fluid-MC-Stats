@@ -88,11 +88,6 @@ include '../inc/navbar.php';
             </table>
           </div>
         </div>
-        <div class="panel-footer">
-          <em>Last Generated: Just now</em>
-          <!-- TODO: Make caching and auto regeneration of this page to avoid the slowness.
-          Maybe for later. -->
-        </div>
       </div>
     </div>
     <!-- /Main Content -->
