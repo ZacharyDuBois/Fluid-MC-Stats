@@ -88,7 +88,7 @@ include '../inc/navbar.php';
               while ($player = $players->fetch_array()) {
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
                 echo "<tr>";
-                echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
+                echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "' title='" . $playerName . "&apos;s Stats'>"
                   . $playerName . "</a></td>";
                 echo "<td>";
                 if ($player['lastjoin'] > $player['lastleave']) {
