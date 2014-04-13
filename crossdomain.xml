@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <cross-domain-policy>
-  <allow-access-from domain="static.apservers.io" />
+  <allow-access-from domain="static.apservers.io"/>
   <!--Always allow access from static.apservers.io for one-click CDN.-->
 
   <!--<allow-access-from domain="sub.yourdomain.tld" />-->
   <!--If you are having CSS/Font/JS loading issues when using a CDN, add your CDN domain to the commented out line and then uncomment.-->
 </cross-domain-policy>
+
+  <!--
+    ~ Make sure you always have the files being served as the right content-type applied to them. On AWS CloudFront,
+    ~ you will need to make sure your CSS have the content type of `text/css` and JS files have `text/javascript`.
+  -->

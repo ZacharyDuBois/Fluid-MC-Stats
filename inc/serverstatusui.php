@@ -56,7 +56,6 @@ $serverStatus->fetchServerData();
       echo $percentageFilled;
       ?>" aria-valuemin="0"
            aria-valuemax="100" style="width: <?php echo $percentageFilled; ?>%">
-        <!-- TODO: Change value to reflect current online players -->
         <span class="sr-only"><?php echo $percentageFilled; ?>% Complete</span>
       </div>
     </div>

@@ -58,7 +58,7 @@ include "../inc/navbar.php";
       <hr>
       <div class="table-responsive">
         <table class="table table-hover table-striped table-bordered">
-          <!-- TODO: Unit conversions + Plural wording + Rounding to nearest tenth for all units & words. -->
+          <!-- TODO: Unit conversions + Plural wording & words. -->
           <thead>
           <tr>
             <th>Measurement</th>
@@ -234,7 +234,6 @@ include "../inc/navbar.php";
         </table>
       </div>
       <!--<em>*Only includes data of players with more than 1 hour of playtime.</em>-->
-      <!-- TODO: Above is defined in config.php -->
     </div>
   </div>
 </div>

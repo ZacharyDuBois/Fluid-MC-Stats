@@ -58,7 +58,7 @@ include '../inc/navbar.php';
 
           <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered">
-              <!-- TODO: Unit conversions + Plural wording + Rounding to nearest tenth for all units & words. -->
+              <!-- TODO: Unit conversions + Plural wording & words. -->
               <thead>
               <tr>
                 <th>Rank</th>

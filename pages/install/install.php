@@ -10,7 +10,6 @@
   <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../css/custom.css">
-  <!-- TODO: Keep file locations relative so the install will work properly (and look properly). -->
 </head>
 <body>
 
@@ -386,7 +385,6 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.apservers.io/Fluid-MC-Stats/<?php echo($fmcs_version_number); ?>/">
-    <!-- TODO: CDN URI -->
     <span class="help-block">
       This is for support for hosting static files externally. To use, upload the <code>bootstrap</code>, <code>css</code>, <code>font-awesome</code>, <code>img</code>, and
       <code>js</code> directories to a remote web-server/CDN and put the path to all of them below. Be sure to include the trailing slash.
@@ -399,7 +397,6 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600" value="3600">
-    <!-- TODO: Include time -->
     <span class="help-block">
       This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 1 hour.
     </span>
@@ -451,7 +448,6 @@ $configFile = fopen('../../config.php', $mode)
 </div>
 </div>
 </div>
-<!-- TODO: Keep file locations relative so the install will work properly (and look properly). -->
 <script src="../../js/jquery-2.1.0.min.js"></script>
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <script src="../../js/d3.v3.min.js"></script>

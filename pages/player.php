@@ -69,7 +69,7 @@ include '../inc/navbar.php';
 
           <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered">
-              <!-- TODO: Unit conversions + Plural wording + Rounding to nearest tenth for all units & words. -->
+              <!-- TODO: Unit conversions + Plural wording & words. -->
               <?php
               $amountOfPlayers = getAmountOfPlayers($mysqli, $mysql_table_prefix, $required_global_stats_time);
               ?>
