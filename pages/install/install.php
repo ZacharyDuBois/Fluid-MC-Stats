@@ -396,7 +396,7 @@ $configFile = fopen('../../config.php', $mode)
     Time&ast;</label>
 
   <div class="col-sm-9">
-    <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600" value="3600">
+    <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600 (1 Hour)" value="3600">
     <span class="help-block">
       This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 1 hour.
     </span>
