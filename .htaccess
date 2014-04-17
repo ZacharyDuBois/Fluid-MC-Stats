@@ -5,31 +5,6 @@
 # NOTE: Do not edit, change, delete, or `attempt to fix this file`. We will not provide support for it.
 
 # BEGIN Fluid MC Stats
-# Disabled for now. Comming in Fluid MC Stats Beta v0.3.0.
-# TODO: Work on these
-#RewriteEngine on
-#RewriteBase /
-# Creates /server-stats/, /top-players/, /player-list/, /player/, /search/,
-#RewriteRule ^(server-stats|top-players|player-list|player|search)/$ pages/$1.php
-# Creates /player-list/PAGENUMBER/
-#RewriteRule ^player-list/([1-9]+)/$ pages/player-list.php?page=$1
-# Creates /player/ID/
-#RewriteRule ^player/([1-9]+)/$ pages/player.php?id=$1
-# Creates /search/SEARCHTERM/
-#RewriteRule ^search/([A-Za-z0-9_]+)/$ pages/search.php?name=$1
-
-# Add trailing slash
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_URI} !(.*)/$
-#RewriteRule ^(.*)$ $1/ [L,R=301]
-
-# Redirect them index.php users....
-# If using a subdirecotry, please change the / to the directory. Ex RewriteRule index.php$ /directory/ [L,R=301]
-# This is only a temporary fix. A better fix will be issued at a later date.
-#RewriteRule index.php$ / [L,R=301]
-
-# TODO: Make redirect from pages/*.php to /FILENAME/
-
 # END Fluid MC Stats
 
 # BEGIN Security Features
@@ -45,14 +20,18 @@
   deny from all
   satisfy all
 </files>
-# END Security Features
 
-# Moved to Beta v0.2.0
-# Comment out this block for a bit more security if you are not using CDN functions.
-# BEGIN Access Origin
-#<FilesMatch "\.(ttf|otf|eot|woff|svg)$">
-#  <IfModule mod_headers.c>
-#    Header set Access-Control-Allow-Origin "*"
-#   </IfModule>
-#</FilesMatch>
-# END Access Origin
+# Deny access to version file
+<files inc/version.php>
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
+
+# Deny access to security file
+<files inc/security.php>
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
+# END Security Features
