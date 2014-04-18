@@ -51,6 +51,10 @@
   If you don't like it, open a issue and we may try and fix it.
 </div>
 <?php
+/*
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
+
 $faultFound = false;
 if (file_exists('../../config.php')) {
   //file exists, check if writable
