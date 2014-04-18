@@ -2,12 +2,13 @@
 /**
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
-include_once __DIR__ . '/../config.php';
-include_once __DIR__ . '/../inc/db.php';
-include_once __DIR__ . '/../inc/queries.php';
-include_once __DIR__ . '/../inc/util.php';
 
-$navPage = "player-list";
+$navPage = "search";
+
+include_once '../config.php';
+include_once '../inc/db.php';
+include_once '../inc/queries.php';
+include_once '../inc/util.php';
 
 $pagenr = isset($_GET['page']) ? $_GET['page'] : 1;
 $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);

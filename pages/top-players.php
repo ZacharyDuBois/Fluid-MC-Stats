@@ -2,12 +2,14 @@
 /*
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
+
+$navPage = "top-players";
+
 include_once '../config.php';
 include_once '../inc/db.php';
 include_once '../inc/util.php';
 include_once '../inc/queries.php';
 
-$navPage = "top-players";
 ?>
 
 <!DOCTYPE html>

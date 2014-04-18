@@ -31,7 +31,6 @@ $mc_server_disp_addr = ''; // A 'nice' address for your Minecraft server. This w
 $site_name = ''; // Name that will appear in page title and navbar.
 $fa_icon = ''; // The FontAwesome icon you want to be next to your web end title. Use ending only. Ex: Icon you want to use "fa-bookmark-o" Just enter "bookmark-o".
 $avatar_service_uri = ''; // URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mctar.ws/ for ours.
-$players_per_page = ''; // Number of players listed on each page.
 $player_top_calc_stat = ''; // Stat that gets used to sort the players
 $player_on_top = ''; //Number of player on top list.
 $custom_footer_text = ''; // Custom text added into the footer.
@@ -61,8 +60,3 @@ $custom_hosted_uri = '';
  * Specify required time, in seconds, players need to be included in global stats generation.
  */
 $required_global_stats_time = '3600'; // 1 Hour
-
-/**
- * Specify Cache Time, in seconds, for supported pages. Leave blank to disable.
- */
-$cache_time = '86400'; // 1 Day

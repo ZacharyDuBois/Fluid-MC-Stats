@@ -2,19 +2,16 @@
 /**
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
-if (file_exists("../config.php")) {
-  include_once '../config.php';
-} else {
-  die("Config not found");
-}
+
+$navPage = "player";
+
 if (!isset($_GET['id'])) {
-  die("No player specified. <a href='../index.php'>Go back to homepage?</a>");
+  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='../index.php' title='Back'>Go Home</a>?</p>");
+  die();
 }
 include_once '../inc/db.php';
 include_once '../inc/queries.php';
 include_once '../inc/util.php';
-
-$navPage = "player";
 
 $player_id = $_GET['id'];
 $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);

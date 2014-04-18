@@ -3,10 +3,14 @@
   ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
 -->
 <?php
-include 'inc/security.php';
-include 'config.php';
+/*
+ * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ */
 
 $navPage = "home";
+
+include 'inc/security.php';
+include 'config.php';
 ?>
 <html>
 <head>

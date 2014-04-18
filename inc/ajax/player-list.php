@@ -5,11 +5,11 @@
 
 header('Content-Type: application/json');
 
-include __DIR__ . '/../../config.php';
-include __DIR__ . '/../db.php';
-include __DIR__ . '/../util.php';
-include __DIR__ . '/../pages/player-list-getter.php';
-include __DIR__ . '/../queries.php';
+include '../../config.php';
+include '../db.php';
+include '../util.php';
+include '../pages/player-list-getter.php';
+include '../queries.php';
 
 if (!isset($_GET['page'])) {
   die(json_encode("POST not correct, " . var_dump($_GET)));

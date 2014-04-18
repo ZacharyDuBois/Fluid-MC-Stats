@@ -252,23 +252,6 @@ $configFile = fopen('../../config.php', $mode)
   </div>
 </div>
 <div class="form-group">
-  <label for="fmcsPPP" class="col-sm-3 control-label">Players Per Page&ast;</label>
-
-  <div class="col-sm-9">
-    <select name="players_per_page" class="form-control" id="fmcsPPP" needed>
-      <option value="5">5 (Min)</option>
-      <option value="10">10</option>
-      <option value="15" selected>15 (Recommended)</option>
-      <option value="20">20</option>
-      <option value="25">25</option>
-      <option value="30">30 (Max)</option>
-    </select>
-    <span class="help-block">
-      The number of players to a page that you want display. Slower web-server should have this set lower. Faster ones can have it higher.
-    </span>
-  </div>
-</div>
-<div class="form-group">
   <label for="fmcsCalcTop" class="col-sm-3 control-label">Calculate Top Players Using&ast;</label>
 
   <div class="col-sm-9">
@@ -399,19 +382,6 @@ $configFile = fopen('../../config.php', $mode)
     <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600 (1 Hour)" value="3600">
     <span class="help-block">
       This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 1 hour.
-    </span>
-  </div>
-</div>
-<div class="form-group">
-  <label for="fmcsAdvCacheTime" class="col-sm-3 control-label">Cache Time&ast;</label>
-
-  <div class="col-sm-9">
-    <input name="cache_time" type="text" class="form-control" id="fmcsAdvCacheTime" placeholder="1800" value="1800" disabled>
-    <!-- TODO: Make cache -->
-    <span class="help-block">
-      The amount of time supported pages are cached. Single player pages will not be cached. Defaults to 30 minutes.
-      <br>
-      <em>THIS IS NOT DONE YET</em>
     </span>
   </div>
 </div>
