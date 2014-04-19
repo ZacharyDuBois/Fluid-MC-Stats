@@ -3,7 +3,7 @@
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
 
-$navPage = "search";
+$navPage = "player-list";
 
 include_once '../config.php';
 include_once '../inc/db.php';
