@@ -66,6 +66,13 @@ include 'version.php';
     echo("");
   } ?>js/player-list-script.js"></script>
 <?php } ?>
+  <script type="text/javascript" src="<?php if (!empty($custom_hosted_uri)) {
+  echo($custom_hosted_uri);
+} elseif ($navPage != "home") {
+  echo "../";
+} else {
+  echo("");
+} ?>js/jquery.timeago.js"></script>
 <?php if ($navPage == "search" or $navPage == "player-list") { ?>
   <script type="text/javascript">
     jQuery(document).ready(function () {
