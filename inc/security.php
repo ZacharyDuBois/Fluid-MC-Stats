@@ -8,12 +8,12 @@ if (!file_exists(__DIR__ . '/../config.php')) {
   die();
 }
 // Then include it.
-include '../config.php';
+include __DIR__ . '/../config.php';
 
 // Check if MySQL has been set and the install folder exists so we can redirect safely.
-if ($mysql_host == '' && file_exists("../pages/install/")) {
+if ($mysql_host == '' && file_exists(__DIR__ . "/../pages/install/")) {
   $http = ($_SERVER['HTTPS'] ? 'https://' : 'http://');
-  $installLoc = $http . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . "../pages/install/install.php";
+  $installLoc = $http . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . __DIR__ . "/../pages/install/install.php";
   header("Location: " . $installLoc);
   die();
 }
@@ -25,7 +25,7 @@ if ($mysql_host == '') {
 }
 
 // If install exists, return an error.
-if (file_exists("pages/install/")) {
+if (file_exists(__DIR__ . "/../pages/install/")) {
   echo "<p style='color: #f00; padding: 20px;'>Oh No! The install folder still exists! Please remove the folder before continuing!</p>";
   die();
 }
