@@ -2,6 +2,7 @@
 /**
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
+
 // Check if config exists.
 if (!file_exists(__DIR__ . '/../config.php')) {
   echo "<p style='color: #f00; padding: 20px;'>The configurations file is missing! Please reinstall or find the issue!</p>";

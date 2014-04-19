@@ -2,6 +2,7 @@
 /**
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
+
 include_once '../config.php';
 ?>
 <title><?php echo $site_name; ?> - <?php if ($navPage == "home") {

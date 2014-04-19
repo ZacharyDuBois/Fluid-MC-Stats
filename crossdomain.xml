@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
+<!--
+  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+  -->
+
 <cross-domain-policy>
   <allow-access-from domain="static.apservers.io"/>
   <!--Always allow access from static.apservers.io for one-click CDN.-->
