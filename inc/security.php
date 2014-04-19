@@ -13,7 +13,7 @@ include __DIR__ . '/../config.php';
 // Check if MySQL has been set and the install folder exists so we can redirect safely.
 if ($mysql_host == '' && file_exists(__DIR__ . "/../pages/install/")) {
   $http = ($_SERVER['HTTPS'] ? 'https://' : 'http://');
-  $installLoc = $http . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . __DIR__ . "/../pages/install/install.php";
+  $installLoc = $http . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . "/pages/install/install.php";
   header("Location: " . $installLoc);
   die();
 }
