@@ -24,6 +24,7 @@ Coded by [DevelopGravity](http://developgravity.com) and [Lolmewn](http://accpro
 
 # News
 
+- 14-04-22 [Fluid MC Stats Beta v0.1.3 Update Notes](http://developgravity.com/2014/04/fluid-mc-stats-beta-v0-1-3-update-notes/)
 - 14-04-19 [Fluid MC Stats Beta v0.1.2 Update Notes](http://developgravity.com/2014/04/fluid-mc-stats-beta-v0-1-2-update-notes/)
 - 14-03-12 [Fluid MC Stats Beta v0.1.1 Update Notes](http://developgravity.com/2014/03/fluid-mc-stats-beta-v0-1-1-update-notes/)
 - 14-03-09 [Notice to Our Minecraft Avatar Service Users](http://developgravity.com/2014/03/notice-to-our-minecraft-avatar-service-users/)
