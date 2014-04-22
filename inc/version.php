@@ -4,5 +4,5 @@
  */
 
 /* NEVER EDIT THIS */
-$fmcs_version = 'MASTER';
-$fmcs_version_number = 'M';
+$fmcs_version = 'Beta v0.1.2';
+$fmcs_version_number = '0.1.2';

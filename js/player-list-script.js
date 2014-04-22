@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
  */
 
@@ -64,15 +64,15 @@ function fetchPage(pageNr, element) {
               .append($('<img>')
                 .attr('src', 'http://mctar.ws/' + player["name"] + "/16") //TODO make this dynamic
                 .addClass("img-rounded").addClass("avatar-list-icon")
-              )
+            )
               .append(" ")
               .append($('<a>')
-                .attr('href', 'player.php?id=\'' + player['player_id'] + "'")
+                .attr('href', 'player.php?id=' + player['player_id'])
                 .attr('title', player["name"] + "&apos;s Stats")
                 .append(player["name"])
-              )
-            ).append(lastOnTd)
-          );
+            )
+          ).append(lastOnTd)
+        );
       }); //end of each loop
       jQuery("abbr.timeago").timeago();
       page = parseInt(page);
