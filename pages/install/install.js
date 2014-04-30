@@ -3,7 +3,7 @@
  */
 
 $("#mySQLHostPort, #mcResolveAddrPort, #fmcsAdvCacheTime, #fmcsAdvGlobalNeededTime").keypress(function (event) {
-  if (String.fromCharCode(event.keyCode).match(/[^0-9]/g))
+  if (String.fromCharCode(event.which).match(/[^0-9]/g) && event.keyCode != 8)
     event.preventDefault();
 });
 
