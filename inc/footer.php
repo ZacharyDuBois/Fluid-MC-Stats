@@ -19,7 +19,7 @@ include 'version.php';
         <i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo $fmcs_version ?> is &copy; Copyright
         <a href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a> and <a href="http://lolmewn.nl" title="Lolmewn&apos;s Website">Lolmewn</a>,
         2014. All rights reserved.</p>
-        <p class="make-center">We love feedback, please <a href="http://accpro.ws/4tbNe" title="Feedback">give us some</a>!</p>
+        <!--<p class="make-center">We love feedback, please <a href="http://accpro.ws/4tbNe" title="Feedback">give us some</a>!</p>-->
         <!-- DND: Keep this link here! This is copyrighted content -->
     </div>
   </div>
