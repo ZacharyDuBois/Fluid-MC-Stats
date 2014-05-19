@@ -394,10 +394,10 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <input name="avatar_service_uri" type="text" class="form-control" id="fmcsAdvAvatarService"
-           placeholder="http&colon;//mctar.ws/" value="http://mctar.ws/">
+           placeholder="https&colon;//minotar.net/avatar/" value="https://minotar.net/avatar/">
     <span class="help-block">
       The URI for the avatar service you want to use. The URI must follow <code>http://domain.tld/directory/playername/pixelsize</code>.
-      Known supported are <code>http://mctar.ws/</code> and <code>https://minotar.net/avatar/</code>.
+      Known supported are <code>http://mctar.ws/</code> <span class="label label-danger">Offline For Now</span> and <code>https://minotar.net/avatar/</code>.
     </span>
   </div>
 </div>
