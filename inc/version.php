@@ -4,5 +4,5 @@
  */
 
 /* NEVER EDIT THIS */
-$fmcs_version = 'Beta v0.1.4';
-$fmcs_version_number = '0.1.4';
+$fmcs_version = 'MASTER'; // Set to MASTER or TYPE major.minor.fix
+$fmcs_version_number = 'M'; // Set to M or major.minor.fix
