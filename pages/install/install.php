@@ -116,7 +116,7 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-7">
     <div class="input-group">
-      <input name="mysql_host" type="text" class="form-control" id="mySQLHost" placeholder="Hostname" needed>
+      <input name="mysql_host" type="text" class="form-control" id="mySQLHost" placeholder="Hostname" value="localhost" needed>
       <span class="input-group-addon">&colon;</span>
     </div>
     <span class="help-block">
@@ -141,7 +141,7 @@ $configFile = fopen('../../config.php', $mode)
   <label for="mySQLDatabasePrefix" class="col-sm-3 control-label">Database Prefix&ast;</label>
 
   <div class="col-sm-9">
-    <input name="mysql_table_prefix" type="text" class="form-control" id="mySQLDatabasePrefix" placeholder="Stats_" needed>
+    <input name="mysql_table_prefix" type="text" class="form-control" id="mySQLDatabasePrefix" placeholder="Stats_" value="Stats_" needed>
     <span class="help-block">
       This is the prefix for the stats tables in your database. The default is <code>Stats_</code>.
     </span>
