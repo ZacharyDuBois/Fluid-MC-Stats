@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 include_once '../config.php';
@@ -20,8 +20,8 @@ include_once '../config.php';
   } else {
     echo("Unknown Title");
   } ?></title>
-  <!-- Some SEO and META -->
-  <meta charset="utf-8">
+<!-- Some SEO and META -->
+<meta charset="utf-8">
 
 <?php if ($navPage == "home") { ?>
   <meta name="description" content="A Minecraft server statistics interface for <?php echo($server_name); ?>. Powered by Fluid MC Stats.">
@@ -39,26 +39,26 @@ include_once '../config.php';
   <meta name="description" content="Unknown page. Powered by Fluid MC Stats.">
 <?php } ?>
 
-  <meta name="author" content="AccountProductions, DevelopGravity, Lolmewn, and <?php echo($server_name); ?>">
+<meta name="author" content="AccountProductions, DevelopGravity, Lolmewn, and <?php echo($server_name); ?>">
 <!-- /Some SEO and META -->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="<?php if (!empty($custom_hosted_uri)) {
+<link href="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
 } elseif ($navPage != "home") {
   echo "../";
 } else {
   echo("");
 } ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
+<link href="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
 } elseif ($navPage != "home") {
   echo "../";
 } else {
   echo("");
 } ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="<?php if (!empty($custom_hosted_uri)) {
+<link href="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
 } elseif ($navPage != "home") {
   echo "../";

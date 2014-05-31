@@ -41,4 +41,4 @@ Feedback is greatly appreciated and can help us come up with ideas for feature r
 All rights reserved. You may not remove branding (AccountProductions, DevelopGravity, Lolmewn, and their respected links) or modify it other than editing the configuration. See `LICENSE.md` for more information.
 
 
-Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.

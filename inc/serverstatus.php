@@ -1,8 +1,8 @@
 <?php
-/**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
- */
 
+/**
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
+ */
 class serverStatus
 {
 
@@ -17,6 +17,7 @@ class serverStatus
   function fetchServerData()
   {
     $this->serverData = json_decode(file_get_contents('http://minecraft-api.com/v1/get/?server=' . $this->serverAddress), true);
+
     return $this->serverData;
   }
 

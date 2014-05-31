@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 $file = "../../config.php";

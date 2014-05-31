@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+  ~ Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
 -->
 
 <html>
@@ -19,10 +19,7 @@
   <!-- Mobile -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+      <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="install.php" title="Install"><i class="fa fa-plus"></i> Fluid MC Stats</a>
   </div>
@@ -46,13 +43,12 @@
   <h3 class="panel-title"><i class="fa fa-wrench"></i> Install &amp; Configure</h3>
 </div>
 <div class="panel-body">
-<div class="alert alert-warning"><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take a backup
-  of everything before connecting you're database. Also note, this is pre-alpha software. You cannot complain about it.
-  If you don't like it, open a issue and we may try and fix it.
+<div class="alert alert-warning"><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take a backup of everything before connecting you're database. Also
+  note, this is pre-alpha software. You cannot complain about it. If you don't like it, open a issue and we may try and fix it.
 </div>
 <?php
 /*
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 $faultFound = false;
@@ -61,20 +57,16 @@ if (file_exists('../../config.php')) {
   if (!is_writable('../../config.php')) {
     $faultFound = true;
     ?>
-    <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i>
-        Configuration Warning:</strong> config.php is not writable in <?php echo realpath("../../config.php"); ?>. <br/>
-      Please use command <code>chmod 666 <?php echo realpath("../../config.php"); ?></code> to make the file
-      writable.
+    <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not writable
+      in <?php echo realpath("../../config.php"); ?>. <br/> Please use command <code>chmod 666 <?php echo realpath("../../config.php"); ?></code> to make the file writable.
     </div>
   <?php
   }
 } else {
   $faultFound = true;
   ?>
-  <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i>
-      Configuration Warning:</strong> config.php is not found in <?php echo realpath("../../config.php"); ?>. Please
-    make
-    sure the file exists and has not been deleted.
+  <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not found
+    in <?php echo realpath("../../config.php"); ?>. Please make sure the file exists and has not been deleted.
   </div>
 <?php
 }
@@ -108,16 +100,14 @@ $configFile = fopen('../../config.php', $mode)
 <form class="form-horizontal" role="form" autocomplete="off" id="install-form">
 <h4><i class="fa fa-hdd-o"></i> Database</h4>
 
-<p>Enter the database details to your the MySQL server where your stats data is stored. Please note that the user only
-  needs SELECT permissions on the Stats database.</p>
+<p>Enter the database details to your the MySQL server where your stats data is stored. Please note that the user only needs SELECT permissions on the Stats database.</p>
 
 <div class="form-group">
   <label for="mySQLHost" class="col-sm-3 control-label">Host&ast;</label>
 
   <div class="col-sm-7">
     <div class="input-group">
-      <input name="mysql_host" type="text" class="form-control" id="mySQLHost" placeholder="Hostname" value="localhost" needed>
-      <span class="input-group-addon">&colon;</span>
+      <input name="mysql_host" type="text" class="form-control" id="mySQLHost" placeholder="Hostname" value="localhost" needed> <span class="input-group-addon">&colon;</span>
     </div>
     <span class="help-block">
       This is the hostname or IP of where your MySQL database is located.
@@ -195,8 +185,7 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-7">
     <div class="input-group">
-      <input name="mc_server_ip" type="text" class="form-control" id="mcResolveAddr" placeholder="play.example.com" needed>
-      <span class="input-group-addon">&colon;</span>
+      <input name="mc_server_ip" type="text" class="form-control" id="mcResolveAddr" placeholder="play.example.com" needed> <span class="input-group-addon">&colon;</span>
     </div>
     <span class="help-block">
       This is an address that you can connect with. It must be a A, AAAA, CNAME, or IP.
@@ -246,12 +235,10 @@ $configFile = fopen('../../config.php', $mode)
 
   <div class="col-sm-9">
     <div class="input-group">
-      <span class="input-group-addon">fa&dash;</span>
-      <input name="fa_icon" type="text" class="form-control" id="fmcsIcon" placeholder="plus" value="plus" needed>
+      <span class="input-group-addon">fa&dash;</span> <input name="fa_icon" type="text" class="form-control" id="fmcsIcon" placeholder="plus" value="plus" needed>
     </div>
     <span class="help-block">
-      A suffix for a <a href="http://fontawesome.io">Font
-        Awesome</a> icon. Like <code>fa-lemon-o</code> would be <code>lemon-o</code>.
+      A suffix for a <a href="http://fontawesome.io">Font Awesome</a> icon. Like <code>fa-lemon-o</code> would be <code>lemon-o</code>.
     </span>
   </div>
 </div>
@@ -298,8 +285,7 @@ $configFile = fopen('../../config.php', $mode)
       <option value="50">50 (Max)</option>
     </select>
     <span class="help-block">
-      The number of players you want to be considered to be &apos;top&apos; players. These will be displayed on the <em>Top
-        Players</em> page.
+      The number of players you want to be considered to be &apos;top&apos; players. These will be displayed on the <em>Top Players</em> page.
     </span>
   </div>
 </div>
@@ -371,7 +357,8 @@ $configFile = fopen('../../config.php', $mode)
   <label for="fmcsSiteName" class="col-sm-3 control-label">File CDN URI</label>
 
   <div class="col-sm-9">
-    <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN" placeholder="http&colon;//static.apservers.io/Fluid-MC-Stats/<?php echo($fmcs_version_number); ?>/">
+    <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN"
+           placeholder="http&colon;//static.apservers.io/Fluid-MC-Stats/<?php echo($fmcs_version_number); ?>/">
     <span class="help-block">
       This is for support for hosting static files externally. To use, upload the <code>bootstrap</code>, <code>css</code>, <code>font-awesome</code>, <code>img</code>, and
       <code>js</code> directories to a remote web-server/CDN and put the path to all of them below. Be sure to include the trailing slash.
@@ -379,8 +366,7 @@ $configFile = fopen('../../config.php', $mode)
   </div>
 </div>
 <div class="form-group">
-  <label for="fmcsAdvGlobalNeededTime" class="col-sm-3 control-label">Required Global Stats Player Include
-    Time&ast;</label>
+  <label for="fmcsAdvGlobalNeededTime" class="col-sm-3 control-label">Required Global Stats Player Include Time&ast;</label>
 
   <div class="col-sm-9">
     <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime" placeholder="3600 (1 Hour)" value="3600" needed>
@@ -415,9 +401,8 @@ $configFile = fopen('../../config.php', $mode)
 }
 ?>
 <div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo($fmcs_version); ?> is &copy; Copyright <a
-    href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a> and <a href="http://lolmewn.nl" title="Lolmwen&apos;s Website">Lolmewn</a>, 2014. All rights
-  reserved.
-  <!-- DND: Keep this link here! This is copyrighted content -->
+      href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a> and <a href="http://lolmewn.nl" title="Lolmwen&apos;s Website">Lolmewn</a>, 2014.
+  All rights reserved.<!-- DND: Keep this link here! This is copyrighted content -->
 </div>
 </div>
 </div>

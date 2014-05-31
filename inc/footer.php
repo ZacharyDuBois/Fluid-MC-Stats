@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 include_once __DIR__ . '/../config.php';
@@ -16,11 +16,10 @@ include 'version.php';
           echo $custom_footer_text;
         }
         ?>
-        <i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo $fmcs_version ?> is &copy; Copyright
-        <a href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a> and <a href="http://lolmewn.nl" title="Lolmewn&apos;s Website">Lolmewn</a>,
-        2014. All rights reserved.</p>
-        <!--<p class="make-center">We love feedback, please <a href="http://accpro.ws/4tbNe" title="Feedback">give us some</a>!</p>-->
-        <!-- DND: Keep this link here! This is copyrighted content -->
+        <i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo $fmcs_version ?> is &copy; Copyright <a href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a>
+        and <a href="http://lolmewn.nl" title="Lolmewn&apos;s Website">Lolmewn</a>, 2014. All rights reserved.</p>
+      <!--<p class="make-center">We love feedback, please <a href="http://accpro.ws/4tbNe" title="Feedback">give us some</a>!</p>-->
+      <!-- DND: Keep this link here! This is copyrighted content -->
     </div>
   </div>
 </div>
@@ -67,7 +66,7 @@ include 'version.php';
     echo("");
   } ?>js/player-list-script.js"></script>
 <?php } ?>
-  <script type="text/javascript" src="<?php if (!empty($custom_hosted_uri)) {
+<script type="text/javascript" src="<?php if (!empty($custom_hosted_uri)) {
   echo($custom_hosted_uri);
 } elseif ($navPage != "home") {
   echo "../";

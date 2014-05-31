@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 $navPage = "top-players";
@@ -14,7 +14,7 @@ include_once '../inc/queries.php';
 
 <!DOCTYPE html>
 <!--
-  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+  ~ Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
 -->
 
 <html>
@@ -76,13 +76,13 @@ include '../inc/navbar.php';
               if (!$result) {
                 echo $mysqli->error;
               }
-              while (($arr = $result->fetch_array()) != NULL) {
+              while (($arr = $result->fetch_array()) != null) {
                 echo "<tr>";
                 echo "<th>&num;" . $i++ . "</th>";
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $arr['player_id']);
                 echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' "
-                  . "class='img-circle avatar-list-icon'> <a href='player.php?id="
-                  . $arr['player_id'] . "' title='" . $playerName . "&apos;s Stats'> " . $playerName . "</a></td>";
+                    . "class='img-circle avatar-list-icon'> <a href='player.php?id="
+                    . $arr['player_id'] . "' title='" . $playerName . "&apos;s Stats'> " . $playerName . "</a></td>";
                 echo "<td>" . translateValue($player_top_calc_stat, $arr['value']) . "</td>";
               }
               ?>

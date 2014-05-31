@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 $navPage = "search";
@@ -28,7 +28,7 @@ if ($pagenr > $totalPages && $totalPages != 0) {
 
 <!DOCTYPE html>
 <!--
-  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+  ~ Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
 -->
 <html>
 <head>
@@ -76,8 +76,7 @@ include "../inc/navbar.php";
 
           <form role="search" action='search.php'>
             <div class="input-group input-group-lg">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input name='name' type="text" class="form-control" placeholder="Find A Player">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span> <input name='name' type="text" class="form-control" placeholder="Find A Player">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">
                   Find <i class="fa fa-chevron-right"></i>
@@ -87,7 +86,8 @@ include "../inc/navbar.php";
           </form>
           <ul class="pager">
             <li class="previous<?php if ($pagenr == 1) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr - 1 ?>)">&larr; Older</a></li>
-            <li class="next<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>)">Newer &rarr;</a></li>
+            <li class="next<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' disabled'; ?>"><a href="javascript:void(0)"
+                                                                                                          onclick="fetchPage(<?php echo $pagenr + 1 ?>)">Newer &rarr;</a></li>
           </ul>
           <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered">
@@ -110,7 +110,7 @@ include "../inc/navbar.php";
                 foreach ($players as $player) {
                   echo "<tr>";
                   echo "<td><img src='" . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
-                    . $player['name'] . "</a></td>";
+                      . $player['name'] . "</a></td>";
                   $lastjoin = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastjoin");
                   $lastleave = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastleave");
                   if ($lastjoin > $lastleave) {
@@ -133,9 +133,13 @@ include "../inc/navbar.php";
             <ul class="pagination pagination-lg">
               <li<?php if ($pagenr == 1) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr - 1 ?>, this)">&laquo;</a></li>
               <!-- Only disable when page one -->
-              <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "1" : ($totalPages - $pagenr <= 1 ? $totalPages - 4 : $pagenr - 2) ?></a></li>
+              <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="javascript:void(0)"
+                                                                       onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "1" : ($totalPages - $pagenr <= 1 ? $totalPages - 4 : $pagenr - 2) ?></a>
+              </li>
               <?php if ($totalPages > 2) { ?>
-                <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "2" : ($totalPages - $pagenr <= 1 ? $totalPages - 3 : $pagenr - 1) ?></a></li>
+                <li<?php if ($pagenr == 2) echo ' class="active"'; ?>><a href="javascript:void(0)"
+                                                                         onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "2" : ($totalPages - $pagenr <= 1 ? $totalPages - 3 : $pagenr - 1) ?></a>
+                </li>
               <?php
               }
               ?>
@@ -145,12 +149,17 @@ include "../inc/navbar.php";
                 </li>
               <?php } ?>
               <?php if ($totalPages > 4) { ?>
-                <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "4" : ($totalPages - $pagenr <= 1 ? $totalPages - 1 : $pagenr + 1) ?></a></li>
+                <li<?php if ($pagenr == $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)"
+                                                                                       onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "4" : ($totalPages - $pagenr <= 1 ? $totalPages - 1 : $pagenr + 1) ?></a>
+                </li>
               <?php } ?>
               <?php if ($totalPages > 5) { ?>
-                <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="javascript:void(0)" onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2) ?></a></li>
+                <li<?php if ($pagenr == $totalPages) echo ' class="active"'; ?>><a href="javascript:void(0)"
+                                                                                   onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2) ?></a>
+                </li>
               <?php } ?>
-              <li<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr + 1 ?>, this)">&raquo;</a></li>
+              <li<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' class="disabled"'; ?>><a href="javascript:void(0)"
+                                                                                                       onclick="fetchPage(<?php echo $pagenr + 1 ?>, this)">&raquo;</a></li>
             </ul>
           </div>
         </div>

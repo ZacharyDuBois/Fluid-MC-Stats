@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 /**
@@ -62,31 +62,32 @@ function getTopPlayers($mysqli, $dbPrefix, $stat, $page)
     case "broken":
     case "placed":
       $query = "SELECT player_id,SUM(amount) AS value FROM {$dbPrefix}block WHERE "
-        . "break=" . ($stat == "broken" ? "1" : "0")
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "")
-        . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . "break=" . ($stat == "broken" ? "1" : "0")
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "")
+          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
       break;
     case "kill":
       $query = "SELECT player_id,SUM(amount) AS value FROM {$dbPrefix}kill "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-        . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
       break;
     case "death":
       $query = "SELECT player_id,SUM(amount) AS value FROM {$dbPrefix}death "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-        . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
       break;
     case "move":
       $query = "SELECT player_id,SUM(distance) AS value FROM {$dbPrefix}move "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-        . " GROUP BY player_id ORDER BY SUM(distance) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+          . " GROUP BY player_id ORDER BY SUM(distance) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
       break;
     default:
       $query = "SELECT player_id,SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM {$dbPrefix}player "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-        . " GROUP BY player_id ORDER BY SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+          . " GROUP BY player_id ORDER BY SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
   }
   $result = $mysqli->query($query);
+
   return $result;
 }
 
@@ -97,38 +98,39 @@ function getPlayerStat($mysqli, $dbPrefix, $player_id, $stat)
     case "broken":
     case "placed":
       $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}block WHERE "
-        . "break=" . ($stat == "broken" ? "1" : "0")
-        . " AND player_id=" . $player_id
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+          . "break=" . ($stat == "broken" ? "1" : "0")
+          . " AND player_id=" . $player_id
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
       break;
     case "kill":
       $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}kill "
-        . " WHERE player_id=" . $player_id
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+          . " WHERE player_id=" . $player_id
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
       break;
     case "death":
       $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}death "
-        . " WHERE player_id=" . $player_id
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+          . " WHERE player_id=" . $player_id
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
       break;
     case "move":
       $query = "SELECT SUM(distance) AS value FROM {$dbPrefix}move "
-        . " WHERE player_id=" . $player_id
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+          . " WHERE player_id=" . $player_id
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
       break;
     case "lastjoin":
     case "lastleave":
       $query = "SELECT UNIX_TIMESTAMP({$stat}) AS value FROM {$dbPrefix}player "
-        . " WHERE player_id=" . $player_id
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+          . " WHERE player_id=" . $player_id
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
       break;
     default:
       $query = "SELECT SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM {$dbPrefix}player "
-        . " WHERE player_id=" . $player_id
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+          . " WHERE player_id=" . $player_id
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
   }
   $result = $mysqli->query($query);
   $arr = $result->fetch_array();
+
   return $arr['value'];
 }
 
@@ -139,30 +141,31 @@ function getServerTotal($mysqli, $dbPrefix, $stat)
     case "broken":
     case "placed":
       $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}block WHERE "
-        . "break=" . ($stat == "broken" ? "1" : "0")
-        . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+          . "break=" . ($stat == "broken" ? "1" : "0")
+          . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
       break;
     case "kill":
       $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}kill "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
       break;
     case "death":
       $query = "SELECT SUM(amount) AS value FROM {$dbPrefix}death "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
       break;
     case "move":
       $query = "SELECT SUM(distance) AS value FROM {$dbPrefix}move "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
       break;
     default:
       $query = "SELECT SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM {$dbPrefix}player "
-        . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
   }
   $result = $mysqli->query($query);
   if (!$result) {
     return $mysqli->error;
   }
   $arr = $result->fetch_array();
+
   return $arr['value'];
 }
 
@@ -170,6 +173,7 @@ function getServerAverage($mysqli, $dbPrefix, $stat, $playtimeLimiter)
 {
   $amountOfPlayers = getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter);
   $serverTotal = getServerTotal($mysqli, $dbPrefix, $stat);
+
   return $serverTotal / $amountOfPlayers;
 }
 
@@ -178,6 +182,7 @@ function getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter)
   $query = "SELECT COUNT(DISTINCT player_id) AS value FROM {$dbPrefix}player WHERE playtime>={$playtimeLimiter}";
   $result = $mysqli->query($query);
   $arr = $result->fetch_array();
+
   return $arr['value'];
 }
 
@@ -219,7 +224,8 @@ function getDatabaseColumnNameFromPlayerStat($stat)
 function usesSnapshots($mysqli, $dbPrefix)
 {
   $result = $mysqli->query("SHOW COLUMNS FROM {$dbPrefix}player LIKE 'snapshot_name'");
-  return (mysqli_num_rows($result)) ? TRUE : FALSE;
+
+  return (mysqli_num_rows($result)) ? true : false;
 }
 
 function capitalise($sentence)
@@ -280,6 +286,7 @@ function convert_playtime($pt)
   $hours = floor(($pt - $days * 86400) / 3600);
   $mins = floor(($pt - $hours * 3600 - $days * 86400) / 60);
   $secs = floor($pt - $hours * 3600 - $days * 86400 - $mins * 60);
+
   return $days . 'd:' . $hours . 'h:' . $mins . 'm:' . $secs . 's';
 }
 
@@ -294,26 +301,28 @@ function findPlayer($mysqli, $dbPrefix, $player, $page = 1)
   $ps->bind_param("s", $player);
   $ps->execute();
   $array = array();
-  $player_id = NULL;
-  $name = NULL;
+  $player_id = null;
+  $name = null;
   $ps->bind_result($player_id, $name);
   while ($ps->fetch()) {
     $array[] = array("player_id" => $player_id, "name" => $name);
   }
   $ps->close();
+
   return $array;
 }
 
 function findPlayerAmount($mysqli, $dbPrefix, $player)
 {
-  $query = "SELECT COUNT(*) FROM {$dbPrefix}players " . ($player != NULL ? "WHERE name LIKE ?" : "");
+  $query = "SELECT COUNT(*) FROM {$dbPrefix}players " . ($player != null ? "WHERE name LIKE ?" : "");
   $ps = $mysqli->prepare($query);
   $player = '%' . $player . '%';
   $ps->bind_param("s", $player);
   $ps->execute();
-  $value = NULL;
+  $value = null;
   $ps->bind_result($value);
   $ps->fetch();
   $ps->close();
+
   return $value;
 }

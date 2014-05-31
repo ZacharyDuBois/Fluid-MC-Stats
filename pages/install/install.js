@@ -1,5 +1,5 @@
 /*
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 $("#mySQLHostPort, #mcResolveAddrPort, #fmcsAdvCacheTime, #fmcsAdvGlobalNeededTime").keypress(function (event) {

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+  ~ Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
   -->
 
 <cross-domain-policy>
@@ -11,7 +11,7 @@
   <!--If you are having CSS/Font/JS loading issues when using a CDN, add your CDN domain to the commented out line and then uncomment.-->
 </cross-domain-policy>
 
-  <!--
-    ~ Make sure you always have the files being served as the right content-type applied to them. On AWS CloudFront,
-    ~ you will need to make sure your CSS have the content type of `text/css` and JS files have `text/javascript`.
-  -->
+    <!--
+      ~ Make sure you always have the files being served as the right content-type applied to them. On AWS CloudFront,
+      ~ you will need to make sure your CSS have the content type of `text/css` and JS files have `text/javascript`.
+    -->

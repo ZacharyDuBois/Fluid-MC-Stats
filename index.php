@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
-  ~ Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+  ~ Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
 -->
 <?php
 /**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 $navPage = "home";
@@ -53,14 +53,14 @@ include 'inc/navbar.php';
           <div class="jumbotron">
             <h1>Welcome!</h1>
 
-            <p>to the new Fluid MC Stats interface for the <?php echo $server_name; ?> server, powered by <a href="http://developgravity.com/">DevelopGravity</a> and <a href="http://lolmewn.nl">Lolmewn</a>.</p>
+            <p>to the new Fluid MC Stats interface for the <?php echo $server_name; ?> server, powered by <a href="http://developgravity.com/">DevelopGravity</a> and <a
+                  href="http://lolmewn.nl">Lolmewn</a>.</p>
 
             <p>Get started by searching for your stats on this server or...</p>
 
             <form role="search" action='pages/search.php'>
               <div class="input-group input-group-lg">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input name='name' type="text" class="form-control" placeholder="Username">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> <input name='name' type="text" class="form-control" placeholder="Username">
                 <span class="input-group-btn">
                   <button type="submit" class="btn btn-default">
                     Find <i class="fa fa-chevron-right"></i>
@@ -71,10 +71,10 @@ include 'inc/navbar.php';
             <p>Explore...</p>
 
             <div class="list-group">
-              <a href="index.php" title="Home" class="list-group-item active"><i class="fa fa-home"></i> Home</a>
-              <a href="pages/server-stats.php" title="Server Statistics" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
-              <a href="pages/top-players.php" title="Top Players" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-              <a href="pages/player-list.php" title="Player List" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
+              <a href="index.php" title="Home" class="list-group-item active"><i class="fa fa-home"></i> Home</a> <a href="pages/server-stats.php" title="Server Statistics"
+                                                                                                                     class="list-group-item"><i class="fa fa-hdd-o"></i> Server
+                Stats</a> <a href="pages/top-players.php" title="Top Players" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a> <a
+                  href="pages/player-list.php" title="Player List" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
             </div>
             <?php if (isset($custom_links) && !empty($custom_links)) { ?>
               <div class="list-group">

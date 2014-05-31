@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) AccountProductions and Lolmewn 2014. All Rights Reserved.
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
 /**
@@ -31,9 +31,9 @@ $player_top_calc_stat = ''; // Stat that gets used to sort the players
 $player_on_top = ''; //Number of player on top list.
 $custom_footer_text = ''; // Custom text added into the footer.
 $custom_links = array( // Links displayed in navbar and sidebar. Add as many as you need (Only add up to 5 from the auto install).
-  "Develop Gravity" => "http://developgravity.com/",
-  "Lolmewn" => "http://lolmewn.nl/",
-  "Mojang" => "http://mojang.com/",
+    "Develop Gravity" => "http://developgravity.com/",
+    "Lolmewn"         => "http://lolmewn.nl/",
+    "Mojang"          => "http://mojang.com/",
 );
 $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If not set, we will use the server-icon.png on your Minecraft server.
 
