@@ -22,7 +22,7 @@ include_once '../config.php';
       <img src="<?php if (!empty($mc_custom_icon)) {
         echo($mc_custom_icon);
       } else {
-        echo "http" . $_SERVER['SERVER_NAME'] . "/img/64.png";
+        echo "http://" . $_SERVER['SERVER_NAME'] . "/img/64.png";
       } ?>" alt="<?php echo $server_name; ?>&apos;s Icon" class="img-circle server-sidebar-icon">
     </div>
     <hr>
