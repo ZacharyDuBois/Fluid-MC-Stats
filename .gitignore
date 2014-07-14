@@ -1,16 +1,18 @@
-# NetBeans
-/nbproject/private/
-/nbproject/
-
 # Mac
 *~
 .DS_Store
 
-# intellij
+# IntelliJ IDEA
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# Fluid MC Stats Config File
-config.php
+# VIM
+*~
+*.swp
+*.swo
+
+# NetBeans
+/nbproject/private/
+/nbproject/
