@@ -5,7 +5,7 @@
 
 include_once '../config.php';
 
-error_reporting(0);
+error_reporting(E_ALL);
 ?>
 
 <title><?php echo $site_name; ?> - <?php if ($navPage == "home") {
