@@ -15,6 +15,7 @@
 
 # Eclipse
 .project
+.buildpath
 
 # NetBeans
 /nbproject/private/
