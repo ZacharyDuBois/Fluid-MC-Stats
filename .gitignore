@@ -13,6 +13,9 @@
 *.swp
 *.swo
 
+# Eclipse
+.project
+
 # NetBeans
 /nbproject/private/
 /nbproject/
