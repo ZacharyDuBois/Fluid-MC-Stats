@@ -6,11 +6,11 @@
 $navPage = "search";
 
 if (!isset($_GET['name'])) {
-  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='../index.php' title='Back'>Go Home</a>?</p>");
+  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='".LINKBASE."' title='Back'>Go Home</a>?</p>");
   die();
 }
-include_once '../inc/db.php';
-include_once '../inc/util.php';
+include_once 'inc/db.php';
+include_once 'inc/util.php';
 
 $playerName = $_GET['name'];
 
@@ -34,7 +34,7 @@ if ($pagenr > $totalPages && $totalPages != 0) {
 <head>
   <!-- Header -->
   <?php
-  include '../inc/header.php';
+  include 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -42,7 +42,7 @@ if ($pagenr > $totalPages && $totalPages != 0) {
 
 <!-- Navbar -->
 <?php
-include "../inc/navbar.php";
+include "inc/navbar.php";
 ?>
 <!-- /Navbar -->
 
@@ -54,8 +54,8 @@ include "../inc/navbar.php";
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php" title="Home"><i class="fa fa-home"></i> Home</a></li>
-          <li><a href="player-list.php" title="Player List"><i class="fa fa-list"></i> Player List</a></li>
+          <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="<?php echo LINKBASE; ?>player-list" title="Player List"><i class="fa fa-list"></i> Player List</a></li>
           <li class="active"><i class="fa fa-search"></i> Search</li>
         </ol>
       </div>
@@ -74,7 +74,7 @@ include "../inc/navbar.php";
         <div class="panel-body">
           <p>Search for players here.</p>
 
-          <form role="search" action='search.php'>
+          <form role="search" action='<?php echo LINKBASE; ?>search'>
             <div class="input-group input-group-lg">
               <span class="input-group-addon"><i class="fa fa-user"></i></span> <input name='name' type="text" class="form-control" placeholder="Find A Player">
               <span class="input-group-btn">
@@ -109,7 +109,7 @@ include "../inc/navbar.php";
               } else {
                 foreach ($players as $player) {
                   echo "<tr>";
-                  echo "<td><img src='" . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
+                  echo "<td><img src='" . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> <a href='".LINKBASE."players/" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
                       . $player['name'] . "</a></td>";
                   $lastjoin = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastjoin");
                   $lastleave = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastleave");
@@ -173,9 +173,9 @@ include "../inc/navbar.php";
 
       <!-- Server status -->
       <?php
-      include '../inc/serverstatusui.php';
+      include 'inc/serverstatusui.php';
 
-      include '../inc/quicklinksui.php';
+      include 'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -187,7 +187,7 @@ include "../inc/navbar.php";
 
   <!-- Footer -->
   <?php
-  include '../inc/footer.php';
+  include 'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

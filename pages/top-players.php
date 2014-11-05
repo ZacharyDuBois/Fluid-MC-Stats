@@ -5,10 +5,10 @@
 
 $navPage = "top-players";
 
-include_once '../config.php';
-include_once '../inc/db.php';
-include_once '../inc/util.php';
-include_once '../inc/queries.php';
+include_once 'config.php';
+include_once 'inc/db.php';
+include_once 'inc/util.php';
+include_once 'inc/queries.php';
 
 ?>
 
@@ -21,7 +21,7 @@ include_once '../inc/queries.php';
 <head>
   <!-- Header -->
   <?php
-  include '../inc/header.php';
+  include 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -29,7 +29,7 @@ include_once '../inc/queries.php';
 
 <!-- Navbar -->
 <?php
-include '../inc/navbar.php';
+include 'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -39,7 +39,7 @@ include '../inc/navbar.php';
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php" title="Home"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
           <li class="active"><i class="fa fa-bar-chart-o"></i> Top Players</li>
         </ol>
       </div>
@@ -81,7 +81,7 @@ include '../inc/navbar.php';
                 echo "<th>&num;" . $i++ . "</th>";
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $arr['player_id']);
                 echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' "
-                    . "class='img-circle avatar-list-icon'> <a href='player.php?id="
+                    . "class='img-circle avatar-list-icon'> <a href='".LINKBASE."players/"
                     . $arr['player_id'] . "' title='" . $playerName . "&apos;s Stats'> " . $playerName . "</a></td>";
                 echo "<td>" . translateValue($player_top_calc_stat, $arr['value']) . "</td>";
               }
@@ -99,8 +99,8 @@ include '../inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include '../inc/serverstatusui.php';
-      include '../inc/quicklinksui.php';
+      include 'inc/serverstatusui.php';
+      include 'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -112,7 +112,7 @@ include '../inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include '../inc/footer.php';
+  include 'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>
