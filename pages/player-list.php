@@ -5,10 +5,10 @@
 
 $navPage = "player-list";
 
-include_once '../config.php';
-include_once '../inc/db.php';
-include_once '../inc/queries.php';
-include_once '../inc/util.php';
+include_once 'config.php';
+include_once 'inc/db.php';
+include_once 'inc/queries.php';
+include_once 'inc/util.php';
 
 $pagenr = isset($_GET['page']) ? $_GET['page'] : 1;
 $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
@@ -23,14 +23,14 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
 <head>
   <!-- Header -->
   <?php
-  include '../inc/header.php';
+  include 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
 <body>
 
 <?php
-include '../inc/navbar.php';
+include 'inc/navbar.php';
 ?>
 
 <!-- Location -->
@@ -39,7 +39,7 @@ include '../inc/navbar.php';
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php" title="Home"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
           <li class="active"><i class="fa fa-list"></i> Player List</li>
         </ol>
       </div>
@@ -84,12 +84,12 @@ include '../inc/navbar.php';
 
               <tbody id='player-list'> <!-- ZACH NTS: Add in tooltips instead of abbr (don't forget to do it in player-list-search.js too then -->
               <?php
-              include "../inc/pages/player-list-getter.php";
+              include "inc/pages/player-list-getter.php";
               $players = getPlayerList($mysqli, $mysql_table_prefix, $pagenr);
               while ($player = $players->fetch_array()) {
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
                 echo "<tr>";
-                echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon'> <a href='player.php?id=" . $player['player_id'] . "' title='" . $playerName . "&apos;s Stats'>"
+                echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' class='img-circle avatar-list-icon'> <a href='".LINKBASE."players/" . $player['player_id'] . "' title='" . $playerName . "&apos;s Stats'>"
                     . $playerName . "</a></td>";
                 echo "<td>";
                 if ($player['lastjoin'] > $player['lastleave']) {
@@ -153,9 +153,9 @@ include '../inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include '../inc/serverstatusui.php';
+      include 'inc/serverstatusui.php';
 
-      include '../inc/quicklinksui.php';
+      include 'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -167,7 +167,7 @@ include '../inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include '../inc/footer.php';
+  include 'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>
