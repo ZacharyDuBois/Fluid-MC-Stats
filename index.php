@@ -71,10 +71,11 @@ include 'inc/navbar.php';
             <p>Explore...</p>
 
             <div class="list-group">
-              <a href="index.php" title="Home" class="list-group-item active"><i class="fa fa-home"></i> Home</a> <a href="pages/server-stats.php" title="Server Statistics"
-                                                                                                                     class="list-group-item"><i class="fa fa-hdd-o"></i> Server
-                Stats</a> <a href="pages/top-players.php" title="Top Players" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a> <a
-                  href="pages/player-list.php" title="Player List" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
+              <a href="index.php" title="Home" class="list-group-item active"><i class="fa fa-home"></i> Home</a>
+              <a href="pages/server-stats.php" title="Server Statistics" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
+              <a href="pages/top-lists.php" title="Top Lists" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Lists</a>
+              <a href="pages/top-players.php" title="Top Players" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
+              <a href="pages/player-list.php" title="Player List" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
             </div>
             <?php if (isset($custom_links) && !empty($custom_links)) { ?>
               <div class="list-group">
