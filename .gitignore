@@ -13,6 +13,12 @@
 *.swp
 *.swo
 
+# Eclipse
+.project
+.buildpath
+
 # NetBeans
 /nbproject/private/
 /nbproject/
+/build.xml
+/.settings/

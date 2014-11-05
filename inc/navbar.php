@@ -22,6 +22,8 @@ include_once __DIR__ . '/../config.php';
           Home</a></li>
       <li<?php if ($navPage == "server-stats") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>server-stats.php" title="Server Stats"><i
               class="fa fa-hdd-o"></i> Server Stats</a></li>
+      <li<?php if ($navPage == "top-lists") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>top-lists.php" title="Top Lists"><i
+              class="fa fa-bar-chart-o"></i> Top Lists</a></li>
       <li<?php if ($navPage == "top-players") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>top-players.php" title="Top Players"><i
               class="fa fa-bar-chart-o"></i> Top Players</a></li>
       <li<?php if ($navPage == "player-list") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>player-list.php" title="Player List"><i
