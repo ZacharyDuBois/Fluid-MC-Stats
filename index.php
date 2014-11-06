@@ -2,11 +2,10 @@
 
 $base = str_replace('index.php', '', $_SERVER['PHP_SELF']);
 if ($base === '') {
-  $base == '/';
+  $base = '/';
 
 }
 define('LINKBASE', $base);
-var_dump(LINKBASE)
 
 switch (strtolower($_GET['view'])) {
   case '':
