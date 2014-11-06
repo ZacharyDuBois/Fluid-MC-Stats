@@ -73,7 +73,7 @@ include 'inc/navbar.php';
             <?php if ($key % 2 === 0) : ?>
               <div class="row">
             <?php endif; ?>
-            <div class="table-responsive col-xs-12 col-sm-6">
+            <div class="table-responsive col-lg-6">
               <table class="table table-hover table-striped table-bordered">
                 <!-- TODO: Unit conversions + Plural wording & words. -->
                 <thead>
