@@ -18,8 +18,7 @@ include_once __DIR__ . '/../config.php';
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li<?php if ($navPage == "home") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i>
-          Home</a></li>
+      <li<?php if ($navPage == "home") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
       <li<?php if ($navPage == "server-stats") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>server-stats" title="Server Stats"><i
               class="fa fa-hdd-o"></i> Server Stats</a></li>
       <li<?php if ($navPage == "top-lists") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>top-lists" title="Top Lists"><i

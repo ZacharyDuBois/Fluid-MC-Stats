@@ -81,7 +81,7 @@ include 'inc/navbar.php';
                 echo "<th>&num;" . $i++ . "</th>";
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $arr['player_id']);
                 echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' "
-                    . "class='img-circle avatar-list-icon'> <a href='".LINKBASE."players/"
+                    . "class='img-circle avatar-list-icon'> <a href='" . LINKBASE . "players/"
                     . $arr['player_id'] . "' title='" . $playerName . "&apos;s Stats'> " . $playerName . "</a></td>";
                 echo "<td>" . translateValue($player_top_calc_stat, $arr['value']) . "</td>";
               }

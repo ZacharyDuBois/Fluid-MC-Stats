@@ -6,7 +6,7 @@
 $navPage = "player";
 
 if (!isset($_GET['params']) || $_GET['params'] === '/') {
-  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='".LINKBASE."' title='Back'>Go Home</a>?</p>");
+  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='" . LINKBASE . "' title='Back'>Go Home</a>?</p>");
   die();
 }
 include_once 'inc/db.php';

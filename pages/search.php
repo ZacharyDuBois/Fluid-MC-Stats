@@ -6,7 +6,7 @@
 $navPage = "search";
 
 if (!isset($_GET['name'])) {
-  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='".LINKBASE."' title='Back'>Go Home</a>?</p>");
+  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='" . LINKBASE . "' title='Back'>Go Home</a>?</p>");
   die();
 }
 include_once 'inc/db.php';
@@ -109,7 +109,7 @@ include "inc/navbar.php";
               } else {
                 foreach ($players as $player) {
                   echo "<tr>";
-                  echo "<td><img src='" . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> <a href='".LINKBASE."players/" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
+                  echo "<td><img src='" . $avatar_service_uri . $player['name'] . "/16' class='img-circle avatar-list-icon'> <a href='" . LINKBASE . "players/" . $player['player_id'] . "' title='" . $player['name'] . "&apos;s Stats'>"
                       . $player['name'] . "</a></td>";
                   $lastjoin = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastjoin");
                   $lastleave = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], "lastleave");

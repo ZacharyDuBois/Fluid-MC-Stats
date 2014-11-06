@@ -43,8 +43,8 @@
   <h3 class="panel-title"><i class="fa fa-wrench"></i> Install &amp; Configure</h3>
 </div>
 <div class="panel-body">
-<div class="alert alert-warning"><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take a backup of everything before connecting you're database. Also
-  note, this is pre-alpha software. You cannot complain about it. If you don't like it, open a issue and we may try and fix it.
+<div class="alert alert-warning"><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take a backup of everything before connecting you're database. Also note, this is pre-alpha software. You cannot complain about it. If you
+  don't like it, open a issue and we may try and fix it.
 </div>
 <?php
 /*
@@ -57,16 +57,15 @@ if (file_exists('../../config.php')) {
   if (!is_writable('../../config.php')) {
     $faultFound = true;
     ?>
-    <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not writable
-      in <?php echo realpath("../../config.php"); ?>. <br/> Please use command <code>chmod 666 <?php echo realpath("../../config.php"); ?></code> to make the file writable.
+    <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not writable in <?php echo realpath("../../config.php"); ?>. <br/> Please use command <code>chmod
+        666 <?php echo realpath("../../config.php"); ?></code> to make the file writable.
     </div>
   <?php
   }
 } else {
   $faultFound = true;
   ?>
-  <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not found
-    in <?php echo realpath("../../config.php"); ?>. Please make sure the file exists and has not been deleted.
+  <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not found in <?php echo realpath("../../config.php"); ?>. Please make sure the file exists and has not been deleted.
   </div>
 <?php
 }
@@ -401,8 +400,8 @@ $configFile = fopen('../../config.php', $mode)
 }
 ?>
 <div class="panel-footer"><i class="fa fa-info-circle"></i> Fluid MC Stats <?php echo($fmcs_version); ?> is &copy; Copyright <a
-      href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a> and <a href="http://lolmewn.nl" title="Lolmwen&apos;s Website">Lolmewn</a>, 2014.
-  All rights reserved.<!-- DND: Keep this link here! This is copyrighted content -->
+      href="http://accountproductions.com/" title="AccountProductions">AccountProductions</a> and <a href="http://lolmewn.nl" title="Lolmwen&apos;s Website">Lolmewn</a>, 2014. All rights reserved.
+  <!-- DND: Keep this link here! This is copyrighted content -->
 </div>
 </div>
 </div>
