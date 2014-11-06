@@ -5,15 +5,15 @@
 
 $navPage = "player";
 
-if (!isset($_GET['id'])) {
-  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='../index.php' title='Back'>Go Home</a>?</p>");
+if (!isset($_GET['params']) || $_GET['params'] === '/') {
+  echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='" . LINKBASE . "' title='Back'>Go Home</a>?</p>");
   die();
 }
-include_once '../inc/db.php';
-include_once '../inc/queries.php';
-include_once '../inc/util.php';
+include_once 'inc/db.php';
+include_once 'inc/queries.php';
+include_once 'inc/util.php';
 
-$player_id = $_GET['id'];
+$player_id = substr($_GET['params'], 1);
 $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 <head>
   <!-- Header -->
   <?php
-  include '../inc/header.php';
+  include 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -32,7 +32,7 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 
 <!-- Navbar -->
 <?php
-include '../inc/navbar.php';
+include 'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -42,8 +42,8 @@ include '../inc/navbar.php';
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
-          <li><a href="../index.php" title="Home">Home</a></li>
-          <li><a href="player-list.php" title="Player List">Player List</a></li>
+          <li><a href="<?php echo LINKBASE; ?>" title="Home">Home</a></li>
+          <li><a href="<?php echo LINKBASE; ?>player-list" title="Player List">Player List</a></li>
           <li class="active"><i class="fa fa-user"></i> <?php echo $player ?></li>
         </ol>
       </div>
@@ -187,9 +187,9 @@ include '../inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include '../inc/serverstatusui.php';
+      include 'inc/serverstatusui.php';
 
-      include '../inc/quicklinksui.php';
+      include 'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -201,7 +201,7 @@ include '../inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include '../inc/footer.php';
+  include 'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

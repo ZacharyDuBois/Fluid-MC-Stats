@@ -3,26 +3,22 @@
 /**
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
-class serverStatus
-{
+class serverStatus {
 
   private $serverAddress;
   private $serverData;
 
-  function __construct($address, $port)
-  {
+  function __construct($address, $port) {
     $this->serverAddress = $address . ":" . $port;
   }
 
-  function fetchServerData()
-  {
+  function fetchServerData() {
     $this->serverData = json_decode(file_get_contents('http://minecraft-api.com/v1/get/?server=' . $this->serverAddress), true);
 
     return $this->serverData;
   }
 
-  function isOnline()
-  {
+  function isOnline() {
     if (isset ($this->serverData['status'])) {
       return true;
     } else {
@@ -30,8 +26,7 @@ class serverStatus
     }
   }
 
-  function isDead()
-  {
+  function isDead() {
     if (isset ($this->serverData['status'])) {
       return false;
     } else {
@@ -39,8 +34,7 @@ class serverStatus
     }
   }
 
-  function getOnlinePlayerCount()
-  {
+  function getOnlinePlayerCount() {
     if (isset ($this->serverData['status'])) {
       return $this->serverData['players']['online'];
     } else {
@@ -48,8 +42,7 @@ class serverStatus
     }
   }
 
-  function getMaxPlayerCount()
-  {
+  function getMaxPlayerCount() {
     if (isset ($this->serverData['status'])) {
       return $this->serverData['players']['max'];
     } else {

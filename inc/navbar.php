@@ -12,24 +12,23 @@ include_once __DIR__ . '/../config.php';
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="<?php if ($navPage != "home") echo "../" ?>index.php" title="Home"><i class="fa <?php echo $fa_icon; ?>"></i> <?php echo $site_name; ?></a>
+    <a class="navbar-brand" href="<?php echo LINKBASE; ?>" title="Home"><i class="fa <?php echo $fa_icon; ?>"></i> <?php echo $site_name; ?></a>
   </div>
   <!-- /Mobile -->
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li<?php if ($navPage == "home") echo " class='active'" ?>><a href="<?php if ($navPage != "home") echo "../" ?>index.php" title="Home"><i class="fa fa-home"></i>
-          Home</a></li>
-      <li<?php if ($navPage == "server-stats") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>server-stats.php" title="Server Stats"><i
+      <li<?php if ($navPage == "home") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
+      <li<?php if ($navPage == "server-stats") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>server-stats" title="Server Stats"><i
               class="fa fa-hdd-o"></i> Server Stats</a></li>
-      <li<?php if ($navPage == "top-lists") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>top-lists.php" title="Top Lists"><i
+      <li<?php if ($navPage == "top-lists") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>top-lists" title="Top Lists"><i
               class="fa fa-bar-chart-o"></i> Top Lists</a></li>
-      <li<?php if ($navPage == "top-players") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>top-players.php" title="Top Players"><i
+      <li<?php if ($navPage == "top-players") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>top-players" title="Top Players"><i
               class="fa fa-bar-chart-o"></i> Top Players</a></li>
-      <li<?php if ($navPage == "player-list") echo " class='active'" ?>><a href="<?php if ($navPage == "home") echo "pages/" ?>player-list.php" title="Player List"><i
+      <li<?php if ($navPage == "player-list") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>player-list" title="Player List"><i
               class="fa fa-list"></i> Player List</a></li>
     </ul>
-    <form class="navbar-form navbar-right" role="search" action="<?php if ($navPage == "home") echo "pages/" ?>search.php">
+    <form class="navbar-form navbar-right" role="search" action="<?php echo LINKBASE; ?>search">
       <div class="form-group">
         <input name="name" type="text" class="form-control" placeholder="Player Name">
       </div>

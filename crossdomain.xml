@@ -4,7 +4,7 @@
   -->
 
 <cross-domain-policy>
-  <allow-access-from domain="static.apservers.io"/>
+  <allow-access-from domain="pub.static.apservers.io"/>
   <!--Always allow access from static.apservers.io for one-click CDN.-->
 
   <!--<allow-access-from domain="sub.yourdomain.tld" />-->

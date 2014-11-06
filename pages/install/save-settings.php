@@ -55,8 +55,7 @@ if ($replaced) {
 
 echo "Success";
 
-function getDefault($key)
-{
+function getDefault($key) {
   //required fields have a value anyway, only need non-required fields
   switch ($key) {
     case "mc_server_disp_addr":
@@ -69,8 +68,7 @@ function getDefault($key)
   }
 }
 
-function writeCustoms($writing)
-{
+function writeCustoms($writing) {
   writeCustom($writing, $_POST['customname1'], $_POST['customvalue1']);
   writeCustom($writing, $_POST['customname2'], $_POST['customvalue2']);
   writeCustom($writing, $_POST['customname3'], $_POST['customvalue3']);
@@ -78,8 +76,7 @@ function writeCustoms($writing)
   writeCustom($writing, $_POST['customname5'], $_POST['customvalue5']);
 }
 
-function writeCustom($writing, $key, $value)
-{
+function writeCustom($writing, $key, $value) {
   if ($key == "") {
     return;
   }

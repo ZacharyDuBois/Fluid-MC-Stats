@@ -5,10 +5,10 @@
 
 $navPage = "server-stats";
 
-include_once '../config.php';
-include_once '../inc/db.php';
-include_once '../inc/util.php';
-include_once '../inc/queries.php';
+include_once 'config.php';
+include_once 'inc/db.php';
+include_once 'inc/util.php';
+include_once 'inc/queries.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include_once '../inc/queries.php';
 <head>
   <!-- Header -->
   <?php
-  include '../inc/header.php';
+  include 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -28,7 +28,7 @@ include_once '../inc/queries.php';
 
 <!-- Navbar -->
 <?php
-include "../inc/navbar.php";
+include "inc/navbar.php";
 ?>
 <!-- /Navbar -->
 
@@ -38,7 +38,7 @@ include "../inc/navbar.php";
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <ol class="breadcrumb">
-        <li><a href="../index.php" title="Home"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
         <li class="active"><i class="fa fa-hdd-o"></i> Server Stats</li>
       </ol>
     </div>
@@ -249,9 +249,9 @@ include "../inc/navbar.php";
 
   <!-- Server status -->
   <?php
-  include '../inc/serverstatusui.php';
+  include 'inc/serverstatusui.php';
 
-  include '../inc/quicklinksui.php';
+  include 'inc/quicklinksui.php';
   ?>
   <!-- /Quick Links -->
 
@@ -263,7 +263,7 @@ include "../inc/navbar.php";
 
 <!-- Footer -->
 <?php
-include '../inc/footer.php';
+include 'inc/footer.php';
 ?>
 <!-- /Footer -->
 </body>

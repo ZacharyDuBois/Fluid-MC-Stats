@@ -8,8 +8,7 @@
  * @param type $date
  * @return string
  */
-function nicetime($date)
-{
+function nicetime($date) {
   if (empty($date)) {
     return "No date provided";
   }
@@ -19,12 +18,12 @@ function nicetime($date)
   $now = time();
   $unix_date = strtotime($date);
 
-// check validity of date
+  // check validity of date
   if (empty($unix_date)) {
     return "Bad date";
   }
 
-// is it future date or past date
+  // is it future date or past date
   if ($now > $unix_date) {
     $difference = $now - $unix_date;
     $tense = "ago";
@@ -46,8 +45,7 @@ function nicetime($date)
   return "$difference $periods[$j] {$tense}";
 }
 
-function shorten($string, $length)
-{
+function shorten($string, $length) {
   if (strlen($string) > $length) {
     return "<abbr title='" . $string . "'>" . substr($string, 0, $length - 3) . "...</abbr>";
   } else {
@@ -55,8 +53,7 @@ function shorten($string, $length)
   }
 }
 
-function getTopPlayers($mysqli, $dbPrefix, $stat, $page)
-{
+function getTopPlayers($mysqli, $dbPrefix, $stat, $page) {
   $query;
   switch ($stat) {
     case "broken":
@@ -91,8 +88,7 @@ function getTopPlayers($mysqli, $dbPrefix, $stat, $page)
   return $result;
 }
 
-function getPlayerStat($mysqli, $dbPrefix, $player_id, $stat)
-{
+function getPlayerStat($mysqli, $dbPrefix, $player_id, $stat) {
   $query;
   switch ($stat) {
     case "broken":
@@ -134,8 +130,7 @@ function getPlayerStat($mysqli, $dbPrefix, $player_id, $stat)
   return $arr['value'];
 }
 
-function getServerTotal($mysqli, $dbPrefix, $stat)
-{
+function getServerTotal($mysqli, $dbPrefix, $stat) {
   $query;
   switch ($stat) {
     case "broken":
@@ -169,16 +164,14 @@ function getServerTotal($mysqli, $dbPrefix, $stat)
   return $arr['value'];
 }
 
-function getServerAverage($mysqli, $dbPrefix, $stat, $playtimeLimiter)
-{
+function getServerAverage($mysqli, $dbPrefix, $stat, $playtimeLimiter) {
   $amountOfPlayers = getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter);
   $serverTotal = getServerTotal($mysqli, $dbPrefix, $stat);
 
   return $serverTotal / $amountOfPlayers;
 }
 
-function getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter)
-{
+function getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter) {
   $query = "SELECT COUNT(DISTINCT player_id) AS value FROM {$dbPrefix}player WHERE playtime>={$playtimeLimiter}";
   $result = $mysqli->query($query);
   $arr = $result->fetch_array();
@@ -190,8 +183,7 @@ function getAmountOfPlayers($mysqli, $dbPrefix, $playtimeLimiter)
  * This function converts a stat from the player table to the column name where that stat is stored
  * @param type $stat Stat to look up
  */
-function getDatabaseColumnNameFromPlayerStat($stat)
-{
+function getDatabaseColumnNameFromPlayerStat($stat) {
   if ($stat == "") {
     return "playtime"; //probably misconfigured, go for the safest option.
   }
@@ -221,20 +213,17 @@ function getDatabaseColumnNameFromPlayerStat($stat)
   }
 }
 
-function usesSnapshots($mysqli, $dbPrefix)
-{
+function usesSnapshots($mysqli, $dbPrefix) {
   $result = $mysqli->query("SHOW COLUMNS FROM {$dbPrefix}player LIKE 'snapshot_name'");
 
   return (mysqli_num_rows($result)) ? true : false;
 }
 
-function capitalise($sentence)
-{
+function capitalise($sentence) {
   return ucfirst(strtolower($sentence));
 }
 
-function getHumanFriendlyStatName($stat)
-{
+function getHumanFriendlyStatName($stat) {
   switch ($stat) {
     case "broken":
       return "Blocks broken";
@@ -271,8 +260,7 @@ function getHumanFriendlyStatName($stat)
   }
 }
 
-function translateValue($stat, $value)
-{
+function translateValue($stat, $value) {
   switch ($stat) {
     case "playtime":
       return convert_playtime($value);
@@ -280,8 +268,7 @@ function translateValue($stat, $value)
   return $value;
 }
 
-function convert_playtime($pt)
-{
+function convert_playtime($pt) {
   $days = floor($pt / 86400);
   $hours = floor(($pt - $days * 86400) / 3600);
   $mins = floor(($pt - $hours * 3600 - $days * 86400) / 60);
@@ -290,8 +277,7 @@ function convert_playtime($pt)
   return $days . 'd:' . $hours . 'h:' . $mins . 'm:' . $secs . 's';
 }
 
-function findPlayer($mysqli, $dbPrefix, $player, $page = 1)
-{
+function findPlayer($mysqli, $dbPrefix, $player, $page = 1) {
   $query = "SELECT player_id,name FROM {$dbPrefix}players WHERE name LIKE ? LIMIT 15 OFFSET " . (($page - 1) * 15);
   $ps;
   if (!($ps = $mysqli->prepare($query))) {
@@ -312,8 +298,7 @@ function findPlayer($mysqli, $dbPrefix, $player, $page = 1)
   return $array;
 }
 
-function findPlayerAmount($mysqli, $dbPrefix, $player)
-{
+function findPlayerAmount($mysqli, $dbPrefix, $player) {
   $query = "SELECT COUNT(*) FROM {$dbPrefix}players " . ($player != null ? "WHERE name LIKE ?" : "");
   $ps = $mysqli->prepare($query);
   $player = '%' . $player . '%';

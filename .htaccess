@@ -5,6 +5,12 @@
 # NOTE: Do not edit, change, delete, or `attempt to fix this file`. We will not provide support for it.
 
 # BEGIN Fluid MC Stats
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^([^/]*)(.*)$ index.php?view=$1&params=$2 [L,QSA]
 # END Fluid MC Stats
 
 # BEGIN Security Features
