@@ -2,7 +2,10 @@
 define('LINKBASE', str_replace('index.php', '', $_SERVER['PHP_SELF']));
 
 switch (strtolower($_GET['view'])) {
-  case '' or 'index':
+  case '':
+    include_once 'pages/front-page.php';
+    break;
+  case 'index':
     include_once 'pages/front-page.php';
     break;
 
