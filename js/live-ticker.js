@@ -42,24 +42,16 @@ liveticker.update = function(){
 						brokediff = parseInt(brokediff, 10);
 						
 						if (traveldiff !== 0) {
-							$row = $('<tr />');
-							$row.append('<td>' + data.name + '</td>');
-							$row.append('<td>moved ' + traveldiff + ' blocks</td>');
-							liveticker.item.prepend($row);
+							liveticker.utils.addPlayerAction(data.name, 'traveled ' + traveldiff + ' blocks');
 						}
 
 						if (placediff !== 0) {
-							$row = $('<tr />');
-							$row.append('<td>' + data.name + '</td>');
-							$row.append('<td>placed ' + placediff + ' blocks</td>');
-							liveticker.item.prepend($row);
+							liveticker.utils.addPlayerAction(data.name, 'placed ' + placediff + ' blocks');
 						}
 
 						if (brokediff !== 0) {
-							$row = $('<tr />');
-							$row.append('<td>' + data.name + '</td>');
-							$row.append('<td>borke ' + brokediff + ' blocks</td>');
-							liveticker.item.prepend($row);
+							liveticker.utils.addPlayerAction(data.name, 'broke ' + brokediff + ' blocks');
+							
 						}
 					}
 					
@@ -68,20 +60,14 @@ liveticker.update = function(){
 						
 						// Player is online, check if he was offline.
 						if (liveticker.onlinePlayers[data.player_id] === undefined) {
-							$row = $('<tr />');
-							$row.append('<td>' + data.name + '</td>');
-							$row.append('<td>came online</td>');
-							liveticker.item.prepend($row);
+							liveticker.utils.addPlayerAction(data.name, 'came online');
 							
 							liveticker.onlinePlayers[data.player_id] = true;
 						}
 					} else {
 						// Player is offline, check if he was online.
 						if (liveticker.onlinePlayers[data.player_id] !== undefined) {
-							$row = $('<tr />');
-							$row.append('<td>' + data.name + '</td>');
-							$row.append('<td>went offline</td>');
-							liveticker.item.prepend($row);
+							liveticker.utils.addPlayerAction(data.name, 'went offline');
 							
 							liveticker.onlinePlayers[data.player_id] = undefined;
 						}
@@ -91,19 +77,13 @@ liveticker.update = function(){
 				});
 				
 				if (online === 0) {
-					$row = $('<tr />');
-					$row.append('<td colspan="2">Currently there is no one playing on this server.</td>');
-					liveticker.item.prepend($row);
+					liveticker.utils.addInfo('Currently there is no one playing on this server.');
 				}
 				
 				liveticker.schedule();
 			},
 			error: function(jqXHR, textStatus, errorThrown){
-				$row = $('<tr />');
-				
-				$row.append('<td colspan="2">There was an problem while loading the data. Please try again later.</td>');
-				
-				liveticker.item.prepend($row);
+				liveticker.utils.addInfo('There was an problem while loading the data. Please try again later.');
 			}
 		}
 	);
@@ -127,4 +107,17 @@ liveticker.utils.isOnline = function (playerdata) {
 	}
 	
 	return ret;
+};
+
+liveticker.utils.addPlayerAction = function (name, action) {
+	$row = $('<tr />');
+	$row.append('<td>' + name + '</td>');
+	$row.append('<td>' + action + '</td>');
+	liveticker.item.prepend($row);
+};
+
+liveticker.utils.addInfo = function (info) {
+	$row = $('<tr />');
+	$row.append('<td colspan="2">' + info + '</td>');
+	liveticker.item.prepend($row);
 };
