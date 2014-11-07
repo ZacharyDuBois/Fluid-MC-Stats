@@ -71,8 +71,8 @@ include 'inc/navbar.php';
             <p>Explore...</p>
 
             <div class="list-group">
-              <?php foreach ($MENULINKS as $key => $link) : ?>                
-                <a href="<?php echo $link->getTarget(); ?>" title="<?php echo $link->getName(); ?>" class="list-group-item <?php if ($key === 0) : ?>active<?php endif; ?>"><i class="fa <?php echo $link->getIcon(); ?>"></i> <?php echo $link->getName(); ?></a>
+              <?php foreach ($MENULINKS as $link) : ?>                
+                <a href="<?php echo $link->getTarget(); ?>" title="<?php echo $link->getName(); ?>" class="list-group-item <?php if ($link->isActive($navPage) === TRUE) : ?>active<?php endif; ?>"><i class="fa <?php echo $link->getIcon(); ?>"></i> <?php echo $link->getName(); ?></a>
               <?php endforeach; ?>
             </div>
             <?php if (isset($custom_links) && !empty($custom_links)) { ?>
