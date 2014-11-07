@@ -1,3 +1,11 @@
+/**
+ * Provides the live-ticker-client.
+ * 
+ * @package    FluidMCStats
+ * @subpackage Logic
+ * @author     Oliver Lippert <info@lipperts-web.de>
+ * @copyright  2014-2014 AccountProductions, Sybren Gjaltema and Oliver Lippert
+ */
 var liveticker = {
 	config: {
 		interval: 10,
