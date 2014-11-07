@@ -107,8 +107,8 @@ liveticker.schedule = function(){
 liveticker.utils.isOnline = function (playerdata) {
 	ret = false;
 	
-	var lastJoined = new Date(playerdata.lastjoin.replace('-', '/'));
-	var lastLeft   = new Date(playerdata.lastleave.replace('-', '/'));
+	var lastJoined = new Date(playerdata.lastjoin.replace(/-/g, '/'));
+	var lastLeft   = new Date(playerdata.lastleave.replace(/-/g, '/'));
 	
 	if (lastLeft < lastJoined) {
 		ret = true;
