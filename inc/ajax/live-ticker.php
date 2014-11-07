@@ -24,6 +24,8 @@ while ($player = $players->fetch_array()) {
   $newPlayer['lastjoin'] = $player['lastjoin'];
   $newPlayer['lastleave'] = $player['lastleave'];
   $newPlayer['traveled'] = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'move');
+  $newPlayer['broke'] = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'broken');
+  $newPlayer['placed'] = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'placed');
   
   $arr[] = $newPlayer;
 }

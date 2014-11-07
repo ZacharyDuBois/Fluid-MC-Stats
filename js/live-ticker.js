@@ -28,15 +28,37 @@ liveticker.update = function(){
 				var online = 0;
 				$(data).each(function(index, data){
 					if (liveticker.players[data.player_id] !== undefined) {
-						var blockdiff = 0;
+						var traveldiff = 0;
+						var placediff  = 0;
+						var brokediff  = 0;
+
+						traveldiff = (data.traveled - liveticker.players[data.player_id].traveled);
+						traveldiff = parseInt(traveldiff, 10);
 						
-						if (liveticker.players[data.player_id].traveled !== data.traveled) {
-							blockdiff = (data.traveled - liveticker.players[data.player_id].traveled);
-							blockdiff = parseInt(blockdiff, 10);
-							
+						placediff = (data.placed - liveticker.players[data.player_id].placed);
+						placediff = parseInt(placediff, 10);
+						
+						brokediff = (data.broke - liveticker.players[data.player_id].broke);
+						brokediff = parseInt(brokediff, 10);
+						
+						if (traveldiff !== 0) {
 							$row = $('<tr />');
 							$row.append('<td>' + data.name + '</td>');
-							$row.append('<td>moved ' + blockdiff + ' blocks</td>');
+							$row.append('<td>moved ' + traveldiff + ' blocks</td>');
+							liveticker.item.prepend($row);
+						}
+
+						if (placediff !== 0) {
+							$row = $('<tr />');
+							$row.append('<td>' + data.name + '</td>');
+							$row.append('<td>placed ' + placediff + ' blocks</td>');
+							liveticker.item.prepend($row);
+						}
+
+						if (brokediff !== 0) {
+							$row = $('<tr />');
+							$row.append('<td>' + data.name + '</td>');
+							$row.append('<td>borke ' + brokediff + ' blocks</td>');
 							liveticker.item.prepend($row);
 						}
 					}
