@@ -71,11 +71,9 @@ include 'inc/navbar.php';
             <p>Explore...</p>
 
             <div class="list-group">
-              <a href="<?php echo LINKBASE; ?>" title="Home" class="list-group-item active"><i class="fa fa-home"></i> Home</a>
-              <a href="<?php echo LINKBASE; ?>server-stats" title="Server Statistics" class="list-group-item"><i class="fa fa-hdd-o"></i> Server Stats</a>
-              <a href="<?php echo LINKBASE; ?>top-lists" title="Top Lists" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Lists</a>
-              <a href="<?php echo LINKBASE; ?>top-players" title="Top Players" class="list-group-item"><i class="fa fa-bar-chart-o"></i> Top Players</a>
-              <a href="<?php echo LINKBASE; ?>player-list" title="Player List" class="list-group-item"><i class="fa fa-list"></i> Player List</a>
+              <?php foreach ($MENULINKS as $key => $link) : ?>                
+                <a href="<?php echo $link->getTarget(); ?>" title="<?php echo $link->getName(); ?>" class="list-group-item <?php if ($key === 0) : ?>active<?php endif; ?>"><i class="fa <?php echo $link->getIcon(); ?>"></i> <?php echo $link->getName(); ?></a>
+              <?php endforeach; ?>
             </div>
             <?php if (isset($custom_links) && !empty($custom_links)) { ?>
               <div class="list-group">
