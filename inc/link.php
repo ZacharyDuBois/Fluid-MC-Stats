@@ -1,4 +1,27 @@
 <?php 
+  /**
+   * Provides the Link-Class.
+   *
+   * PHP version 5
+   *
+   * @category   Fluid MC Stats
+   * @package    Fluid MC Stats
+   * @subpackage Fluid MC Stats
+   * @author     Oliver Lippert <info@lipperts-web.de>
+   * @copyright  2014-2014 Lipperts WEB
+   * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
+   * @link       http://dev.bukkit.org/bukkit-plugins/lolmewnstats/
+   */
+ 
+  /**
+   * The Link-Class describes an normal hyperlinks wich may occure in the nav or elsewhere in the APP.
+   *
+   * @category Fluid MC Stats
+   * @package  Fluid MC Stats
+   * @author   Oliver Lippert <oliver@lipperts-web.de>
+   * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+   * @link     http://dev.bukkit.org/bukkit-plugins/lolmewnstats/
+   */
   class Link {
     private $icon = '';
     
