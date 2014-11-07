@@ -9,11 +9,11 @@ if ($base === '') {
 define('LINKBASE', $base);
 
 $MENULINKS = array(
-  new Link('Home', LINKBASE.'/', 'fa-home'),
-  new Link('Server Stats', LINKBASE.'/server-stats', 'fa-hdd-o'),
-  new Link('Top Lists', LINKBASE.'/top-lists', 'fa-bar-chart-o'),
-  new Link('Top Players', LINKBASE.'/top-players', 'fa-bar-chart-o'),
-  new Link('Player List', LINKBASE.'/player-list', 'fa-list'),
+  new Link('Home', LINKBASE, 'fa-home', 'home'),
+  new Link('Server Stats', LINKBASE.'server-stats', 'fa-hdd-o', 'server-stats'),
+  new Link('Top Lists', LINKBASE.'top-lists', 'fa-bar-chart-o', 'top-lists'),
+  new Link('Top Players', LINKBASE.'top-players', 'fa-bar-chart-o', 'top-players'),
+  new Link('Player List', LINKBASE.'player-list', 'fa-list', 'player-list'),
 );
 
 switch (strtolower($_GET['view'])) {

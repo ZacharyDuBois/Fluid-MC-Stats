@@ -18,15 +18,11 @@ include_once __DIR__ . '/../config.php';
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li<?php if ($navPage == "home") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
-      <li<?php if ($navPage == "server-stats") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>server-stats" title="Server Stats"><i
-              class="fa fa-hdd-o"></i> Server Stats</a></li>
-      <li<?php if ($navPage == "top-lists") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>top-lists" title="Top Lists"><i
-              class="fa fa-bar-chart-o"></i> Top Lists</a></li>
-      <li<?php if ($navPage == "top-players") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>top-players" title="Top Players"><i
-              class="fa fa-bar-chart-o"></i> Top Players</a></li>
-      <li<?php if ($navPage == "player-list") echo " class='active'" ?>><a href="<?php echo LINKBASE; ?>player-list" title="Player List"><i
-              class="fa fa-list"></i> Player List</a></li>
+      <?php foreach ($MENULINKS as $link) : ?>
+        <li <?php if ($link->isActive($navPage) === TRUE) : ?>class="active"<?php endif; ?>>
+          <?php echo $link; ?>
+        </li>
+      <?php endforeach; ?>
     </ul>
     <form class="navbar-form navbar-right" role="search" action="<?php echo LINKBASE; ?>search">
       <div class="form-group">

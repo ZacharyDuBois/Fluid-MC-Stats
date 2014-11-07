@@ -6,6 +6,8 @@
     
     private $target = '';
     
+    private $activeText = '';
+    
     /**
      * Generates an new link-object.
      * 
@@ -13,10 +15,11 @@
      * @param unknown $target The link-target (e.g. /player-list).
      * @param unknown $icon   The icon-class (e.g. fa-list).
      */
-    public function __construct($name, $target, $icon) {
+    public function __construct($name, $target, $icon, $activeText) {
       $this->name = $name;
       $this->icon = $icon;
       $this->target = $target;
+      $this->activeText = $activeText;
     }
     
     
@@ -56,7 +59,19 @@
      * @return string
      */
     public function __toString() {
-      return '<a href="'.$this->getTarget().'"><i class="fa '.$this->getIcon().'"></i>'.$this->getName().'</a>';
+      return '<a href="'.$this->getTarget().'"><i class="fa '.$this->getIcon().'"></i> '.$this->getName().'</a>';
+    }
+    
+    
+    /**
+     * Returns whether this link is active or whether not, pending on the given value in param 1.
+     * 
+     * @param string $activeLink The name of the current active link.
+     * 
+     * @return boolean
+     */
+    public function isActive($activeLink) {
+      return strtolower($activeLink) === strtolower($this->activeText);
     }
   }
 ?>
