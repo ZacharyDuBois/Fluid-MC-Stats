@@ -8,7 +8,7 @@
    * @package    Fluid MC Stats
    * @subpackage Fluid MC Stats
    * @author     Oliver Lippert <info@lipperts-web.de>
-   * @copyright  2014-2014 Lipperts WEB
+   * @copyright  2014-2014 AccountProductions, Sybren Gjaltema and Oliver Lippert
    * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
    * @link       http://dev.bukkit.org/bukkit-plugins/lolmewnstats/
    */
