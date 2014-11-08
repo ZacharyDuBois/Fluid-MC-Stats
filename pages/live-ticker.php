@@ -43,7 +43,7 @@ $navPage = "live-ticker";
           <div class="col-md-10 col-md-offset-1">
             <ol class="breadcrumb">
               <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
-              <li class="active"><i class="fa fa-list"></i> Player List</li>
+              <li class="active"><i class="fa fa-list"></i> Live Ticker</li>
             </ol>
           </div>
         </div>
