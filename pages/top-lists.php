@@ -5,10 +5,10 @@
 
 $navPage = "top-lists";
 
-include_once 'config.php';
-include_once 'inc/db.php';
-include_once 'inc/util.php';
-include_once 'inc/queries.php';
+include_once APPPATH.'config.php';
+include_once APPPATH.'inc/db.php';
+include_once APPPATH.'inc/util.php';
+include_once APPPATH.'inc/queries.php';
 
 $stats = array(
     'playtime',
@@ -32,7 +32,7 @@ $stats = array(
 <head>
   <!-- Header -->
   <?php
-  include 'inc/header.php';
+  include APPPATH.'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -40,7 +40,7 @@ $stats = array(
 
 <!-- Navbar -->
 <?php
-include 'inc/navbar.php';
+include APPPATH.'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -125,8 +125,8 @@ include 'inc/navbar.php';
   <div class="col-md-3 col-md-offset-1">
     <!-- Server status -->
     <?php
-    include 'inc/serverstatusui.php';
-    include 'inc/quicklinksui.php';
+    include APPPATH.'inc/serverstatusui.php';
+    include APPPATH.'inc/quicklinksui.php';
     ?>
     <!-- /Quick Links -->
   </div>
@@ -136,7 +136,7 @@ include 'inc/navbar.php';
 
 <!-- Footer -->
 <?php
-include 'inc/footer.php';
+include APPPATH.'inc/footer.php';
 ?>
 <!-- /Footer -->
 </body>

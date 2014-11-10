@@ -15,7 +15,7 @@ $navPage = "live-ticker";
   <head>
     <!-- Header -->
     <?php
-    include 'inc/header.php';
+    include APPPATH.'inc/header.php';
     ?>
     <!-- /Header -->
     
@@ -38,7 +38,7 @@ $navPage = "live-ticker";
   
   <body>
     <?php
-    include 'inc/navbar.php';
+    include APPPATH.'inc/navbar.php';
     ?>
     
     <!-- Location -->
@@ -104,8 +104,8 @@ $navPage = "live-ticker";
     
           <!-- Server status -->
           <?php
-          include 'inc/serverstatusui.php';
-          include 'inc/quicklinksui.php';
+          include APPPATH.'inc/serverstatusui.php';
+          include APPPATH.'inc/quicklinksui.php';
           ?>
           <!-- /Quick Links -->
     
@@ -117,7 +117,7 @@ $navPage = "live-ticker";
     
       <!-- Footer -->
       <?php
-      include 'inc/footer.php';
+      include APPPATH.'inc/footer.php';
       ?>
       <!-- /Footer -->
       <script type="text/javascript" src="<?php echo LINKBASE?>js/live-ticker.js"></script>

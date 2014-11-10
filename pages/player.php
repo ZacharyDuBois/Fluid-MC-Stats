@@ -9,9 +9,9 @@ if (!isset($_GET['params']) || $_GET['params'] === '/') {
   echo("<p style='color: #f00; padding: 20px;'>Something isn&apos;t right with that URI! <a href='" . LINKBASE . "' title='Back'>Go Home</a>?</p>");
   die();
 }
-include_once 'inc/db.php';
-include_once 'inc/queries.php';
-include_once 'inc/util.php';
+include_once APPPATH.'inc/db.php';
+include_once APPPATH.'inc/queries.php';
+include_once APPPATH.'inc/util.php';
 
 $player_id = substr($_GET['params'], 1);
 $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
@@ -24,7 +24,7 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 <head>
   <!-- Header -->
   <?php
-  include 'inc/header.php';
+  include APPPATH.'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -32,7 +32,7 @@ $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
 
 <!-- Navbar -->
 <?php
-include 'inc/navbar.php';
+include APPPATH.'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -187,9 +187,9 @@ include 'inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include 'inc/serverstatusui.php';
+      include APPPATH.'inc/serverstatusui.php';
 
-      include 'inc/quicklinksui.php';
+      include APPPATH.'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -201,7 +201,7 @@ include 'inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include 'inc/footer.php';
+  include APPPATH.'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

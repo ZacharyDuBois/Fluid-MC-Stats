@@ -5,10 +5,10 @@
 
 $navPage = "server-stats";
 
-include_once 'config.php';
-include_once 'inc/db.php';
-include_once 'inc/util.php';
-include_once 'inc/queries.php';
+include_once APPPATH.'config.php';
+include_once APPPATH.'inc/db.php';
+include_once APPPATH.'inc/util.php';
+include_once APPPATH.'inc/queries.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include_once 'inc/queries.php';
 <head>
   <!-- Header -->
   <?php
-  include 'inc/header.php';
+  include APPPATH.'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -28,7 +28,7 @@ include_once 'inc/queries.php';
 
 <!-- Navbar -->
 <?php
-include "inc/navbar.php";
+include APPPATH."inc/navbar.php";
 ?>
 <!-- /Navbar -->
 
@@ -249,9 +249,9 @@ include "inc/navbar.php";
 
   <!-- Server status -->
   <?php
-  include 'inc/serverstatusui.php';
+  include APPPATH.'inc/serverstatusui.php';
 
-  include 'inc/quicklinksui.php';
+  include APPPATH.'inc/quicklinksui.php';
   ?>
   <!-- /Quick Links -->
 
@@ -263,7 +263,7 @@ include "inc/navbar.php";
 
 <!-- Footer -->
 <?php
-include 'inc/footer.php';
+include APPPATH.'inc/footer.php';
 ?>
 <!-- /Footer -->
 </body>
