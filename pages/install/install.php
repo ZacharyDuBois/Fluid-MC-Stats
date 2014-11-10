@@ -57,6 +57,18 @@
 $faultFound = false;
 if (file_exists(CONFIGFILE)) {
   //file exists, check if writable
+  if (!is_writable(dirname(CONFIGFILE))) {
+	$faultFound = true;
+	?>
+    <div class="alert alert-danger">
+      <strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong>
+      root-directory is not writable: <?php echo dirname(CONFIGFILE); ?>. <br/>
+      Please make sure you set the correct owner.
+    </div>
+  <?php
+  }
+  
+  //file exists, check if writable
   if (!is_writable(CONFIGFILE)) {
     $faultFound = true;
     ?>
