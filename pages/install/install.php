@@ -153,7 +153,7 @@ $configFile = fopen(CONFIGFILE, 'r');
   <label for="mySQLPassword" class="col-sm-3 control-label">Password&ast;</label>
 
   <div class="col-sm-9">
-    <input name="mysql_pwd" type="password" class="form-control" id="mySQLPassword" placeholder="Password" needed>
+    <input name="mysql_pwd" type="password" class="form-control" id="mySQLPassword" placeholder="Password">
     <span class="help-block">
       The password for your MySQL user.
     </span>

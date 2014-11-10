@@ -47,10 +47,16 @@ $MENULINKS = array(
   ),
 );
 
-switch (strtolower($_GET['view'])) {
+$view = '';
+if (isset($_GET) === TRUE && isset($_GET['view']) === TRUE) {
+	$view = $_GET['view'];
+}
+
+switch (strtolower($view)) {
   case '':
     include_once 'pages/front-page.php';
     break;
+    
   case 'index':
     include_once 'pages/front-page.php';
     break;

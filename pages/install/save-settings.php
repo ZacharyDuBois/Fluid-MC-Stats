@@ -3,7 +3,7 @@
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
-$file = "../../config.php";
+$file = realpath("../../config.php");
 
 $reading = fopen($file, 'r');
 $writing = fopen($file . ".tmp", 'w');
