@@ -20,12 +20,13 @@ $arr = array();
 while ($player = $players->fetch_array()) {
   $newPlayer = array();
   $newPlayer['player_id'] = $player['player_id'];
-  $newPlayer['name'] = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
-  $newPlayer['lastjoin'] = $player['lastjoin'];
+  $newPlayer['name']      = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
+  $newPlayer['lastjoin']  = $player['lastjoin'];
   $newPlayer['lastleave'] = $player['lastleave'];
-  $newPlayer['traveled'] = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'move');
-  $newPlayer['broke'] = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'broken');
-  $newPlayer['placed'] = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'placed');
+  $newPlayer['traveled']  = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'move');
+  $newPlayer['broke']     = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'broken');
+  $newPlayer['placed']    = getPlayerStat($mysqli, $mysql_table_prefix, $player['player_id'], 'placed');
+  $newPlayer['playtime']  = getPlaytime($mysqli, $mysql_table_prefix, $player['player_id']);
   
   $arr[] = $newPlayer;
 }

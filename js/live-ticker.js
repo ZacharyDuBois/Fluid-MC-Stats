@@ -23,6 +23,30 @@ var liveticker = {
 		    500000,
 		    750000,
 		    1000000
+		],
+		placed: [
+		    1000,
+		    50000,
+		    100000,
+		    250000,
+		    500000,
+		    750000,
+		    1000000
+		],
+		broke: [
+		    1000,
+		    50000,
+		    100000,
+		    250000,
+		    500000,
+		    750000,
+		    1000000
+		],
+		playtime: [
+        	(0.5 * 60 * 60),
+		    (1 * 60 * 60),
+		    (5 * 60 * 60),
+		    (10 * 60 * 60),
 		]
 	}
 };
@@ -52,6 +76,9 @@ liveticker.update = function(){
 						liveticker.utils.logStat(data.name, 'broke', data.broke, liveticker.players[data.player_id].broke);
 						
 						liveticker.utils.logBlockHighscore(data.name, 'traveled', liveticker.steps.traveled, data.traveled, liveticker.players[data.player_id].traveled);
+						liveticker.utils.logBlockHighscore(data.name, 'placed', liveticker.steps.placed, data.placed, liveticker.players[data.player_id].placed);
+						liveticker.utils.logBlockHighscore(data.name, 'broke', liveticker.steps.broke, data.broke, liveticker.players[data.player_id].broke);
+						liveticker.utils.logPlaytimeHighscore(data.name, data.playtime, liveticker.players[data.player_id].playtime);
 					}
 					
 					if (liveticker.utils.isOnline(data) === true) {
@@ -152,6 +179,30 @@ liveticker.utils.logBlockHighscore = function (name, stat, steps, curValue, last
 		
 		if (curValue !== lastValue) {
 			liveticker.utils.addInfo(name + ' ' + stat + ' ' + (curValue * maxVal) + ' blocks');
+		}
+	}
+}
+
+liveticker.utils.logPlaytimeHighscore = function (name, curValue, lastValue) {
+var logged = false;
+	
+	$(liveticker.steps.playtime).each(function(index, value){
+		if (lastValue < value && curValue >= value) {
+			logged = true;
+			
+			liveticker.utils.addInfo(name + ' played ' + (value / 60 / 60) + ' hours');
+		}
+	});
+
+	if (logged === false) {
+		lastValue = (lastValue / 86400) - 0.5;
+		curValue  = (curValue / 86400) - 0.5;
+		
+		lastValue = Math.round(lastValue, 0);
+		curValue  = Math.round(curValue, 0);
+		
+		if (curValue !== lastValue) {
+			liveticker.utils.addInfo(name + ' played ' + curValue + ' days');
 		}
 	}
 }
