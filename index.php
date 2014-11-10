@@ -39,6 +39,12 @@ $MENULINKS = array(
     'fa-list',
     'player-list'
   ),
+  new Link(
+    'Live Ticker',
+    LINKBASE.'live-ticker',
+    'fa-bullhorn',
+    'live-ticker'
+  ),
 );
 
 switch (strtolower($_GET['view'])) {

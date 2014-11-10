@@ -4,9 +4,9 @@
    *
    * PHP version 5
    *
-   * @category   Fluid MC Stats
-   * @package    Fluid MC Stats
-   * @subpackage Fluid MC Stats
+   * @category   FluidMCStats
+   * @package    FluidMCStats
+   * @subpackage FluidMCStats
    * @author     Oliver Lippert <info@lipperts-web.de>
    * @copyright  2014-2014 AccountProductions, Sybren Gjaltema and Oliver Lippert
    * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
@@ -16,8 +16,8 @@
   /**
    * The Link-Class describes an normal hyperlinks wich may occure in the nav or elsewhere in the APP.
    *
-   * @category Fluid MC Stats
-   * @package  Fluid MC Stats
+   * @category FluidMCStats
+   * @package  FluidMCStats
    * @author   Oliver Lippert <oliver@lipperts-web.de>
    * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
    * @link     http://dev.bukkit.org/bukkit-plugins/lolmewnstats/
