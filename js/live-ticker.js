@@ -142,8 +142,13 @@ liveticker.utils.addPlayerAction = function (name, action) {
 	liveticker.item.prepend($row);
 };
 
-liveticker.utils.addInfo = function (info) {
-	$row = $('<tr />');
+liveticker.utils.addInfo = function (info, highlight) {
+	if (highlight === undefined) {
+		$row = $('<tr />');
+	} else {
+		$row = $('<tr class="highlight" />');
+	}
+	
 	$row.append('<td colspan="2">' + info + '</td>');
 	liveticker.item.prepend($row);
 };
@@ -178,7 +183,7 @@ liveticker.utils.logBlockHighscore = function (name, stat, steps, curValue, last
 		curValue  = Math.round(curValue, 0);
 		
 		if (curValue !== lastValue) {
-			liveticker.utils.addInfo(name + ' ' + stat + ' ' + (curValue * maxVal) + ' blocks');
+			liveticker.utils.addInfo(name + ' ' + stat + ' ' + (curValue * maxVal) + ' blocks', true);
 		}
 	}
 }
@@ -202,7 +207,7 @@ var logged = false;
 		curValue  = Math.round(curValue, 0);
 		
 		if (curValue !== lastValue) {
-			liveticker.utils.addInfo(name + ' played ' + curValue + ' days');
+			liveticker.utils.addInfo(name + ' played for ' + curValue + ' days', true);
 		}
 	}
 }

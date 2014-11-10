@@ -28,6 +28,11 @@ $navPage = "live-ticker";
         color:       #ccc;
         font-weight: normal;
       }
+      
+      #live-ticker .highlight,
+      #live-ticker .highlight.old {
+        color: #428bca;
+      }
     </style>
   </head>
   
