@@ -13,7 +13,18 @@ var liveticker = {
 	},
 	players: {},
 	utils: {},
-	onlinePlayers: {}
+	onlinePlayers: {},
+	steps: {
+		traveled: [
+		    1000,
+		    50000,
+		    100000,
+		    250000,
+		    500000,
+		    750000,
+		    1000000
+		]
+	}
 };
 
 liveticker.init = (function(){
@@ -36,31 +47,11 @@ liveticker.update = function(){
 				var online = 0;
 				$(data).each(function(index, data){
 					if (liveticker.players[data.player_id] !== undefined) {
-						var traveldiff = 0;
-						var placediff  = 0;
-						var brokediff  = 0;
-
-						traveldiff = (data.traveled - liveticker.players[data.player_id].traveled);
-						traveldiff = parseInt(traveldiff, 10);
+						liveticker.utils.logStat(data.name, 'traveled', data.traveled, liveticker.players[data.player_id].traveled);
+						liveticker.utils.logStat(data.name, 'placed', data.placed, liveticker.players[data.player_id].placed);
+						liveticker.utils.logStat(data.name, 'broke', data.broke, liveticker.players[data.player_id].broke);
 						
-						placediff = (data.placed - liveticker.players[data.player_id].placed);
-						placediff = parseInt(placediff, 10);
-						
-						brokediff = (data.broke - liveticker.players[data.player_id].broke);
-						brokediff = parseInt(brokediff, 10);
-						
-						if (traveldiff !== 0) {
-							liveticker.utils.addPlayerAction(data.name, 'traveled ' + traveldiff + ' blocks');
-						}
-
-						if (placediff !== 0) {
-							liveticker.utils.addPlayerAction(data.name, 'placed ' + placediff + ' blocks');
-						}
-
-						if (brokediff !== 0) {
-							liveticker.utils.addPlayerAction(data.name, 'broke ' + brokediff + ' blocks');
-							
-						}
+						liveticker.utils.logBlockHighscore(data.name, 'traveled', liveticker.steps.traveled, data.traveled, liveticker.players[data.player_id].traveled);
 					}
 					
 					if (liveticker.utils.isOnline(data) === true) {
@@ -68,14 +59,14 @@ liveticker.update = function(){
 						
 						// Player is online, check if he was offline.
 						if (liveticker.onlinePlayers[data.player_id] === undefined) {
-							liveticker.utils.addPlayerAction(data.name, 'came online');
+							liveticker.utils.addInfo(data.name + ' came online');
 							
 							liveticker.onlinePlayers[data.player_id] = true;
 						}
 					} else {
 						// Player is offline, check if he was online.
 						if (liveticker.onlinePlayers[data.player_id] !== undefined) {
-							liveticker.utils.addPlayerAction(data.name, 'went offline');
+							liveticker.utils.addInfo(data.name + ' went offline');
 							
 							liveticker.onlinePlayers[data.player_id] = undefined;
 						}
@@ -129,3 +120,38 @@ liveticker.utils.addInfo = function (info) {
 	$row.append('<td colspan="2">' + info + '</td>');
 	liveticker.item.prepend($row);
 };
+
+liveticker.utils.logStat = function (name, stat, curValue, lastValue) {
+	var diff = (curValue - lastValue);
+	diff = parseInt(diff, 10);
+	
+	if (diff !== 0) {
+		liveticker.utils.addPlayerAction(name, stat + ' ' + diff + ' blocks');
+	}
+}
+
+liveticker.utils.logBlockHighscore = function (name, stat, steps, curValue, lastValue) {
+	var logged = false;
+	
+	$(steps).each(function(index, value){
+		if (lastValue < value && curValue >= value) {
+			logged = true;
+			
+			liveticker.utils.addInfo(name + ' ' + stat + ' ' + value + ' blocks');
+		}
+	});
+
+	if (logged === false) {
+		var maxVal = steps[steps.length - 1];
+		
+		lastValue = (lastValue / maxVal) - 0.5;
+		curValue  = (curValue / maxVal) - 0.5;
+		
+		lastValue = Math.round(lastValue, 0);
+		curValue  = Math.round(curValue, 0);
+		
+		if (curValue !== lastValue) {
+			liveticker.utils.addInfo(name + ' ' + stat + ' ' + (curValue * maxVal) + ' blocks');
+		}
+	}
+}
