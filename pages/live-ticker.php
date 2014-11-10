@@ -68,6 +68,16 @@ $navPage = "live-ticker";
                 This is an automaticly reloaded page wich lists the newest activitys on the server.
               </p>
               
+              <p>
+                <label for="liveTickerIntervall">Interval :</label>
+                <select name="liveTickerIntervall" id="liveTickerIntervall">
+                	<option value="10">10 seconds</option>
+                	<option value="30">30 seconds</option>
+                	<option value="60">60 seconds</option>
+                </select>
+                (reloading in <span id="reloadLivetickerSeconds"></span> seconds)
+              </p>
+              
               <div class="table-responsive">
                 <table class="table table-hover table-striped table-bordered">
                   <thead>
