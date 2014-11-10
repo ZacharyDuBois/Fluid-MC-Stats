@@ -53,7 +53,7 @@ include APPPATH.'inc/navbar.php';
     <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Top Players</h3>
+          <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Top Lists</h3>
         </div>
         <div class="panel-body">
           <p>These are users with current top rankings on the server.</p>
