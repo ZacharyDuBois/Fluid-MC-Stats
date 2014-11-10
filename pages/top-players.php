@@ -40,7 +40,7 @@ include APPPATH.'inc/navbar.php';
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
           <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
-          <li class="active"><i class="fa fa-bar-chart-o"></i> Top Players</li>
+          <li class="active"><i class="fa fa-bar-chart-o"></i> Top Lists</li>
         </ol>
       </div>
     </div>
