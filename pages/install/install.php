@@ -1,3 +1,6 @@
+<?php 
+	define('CONFIGFILE', realpath('../../config.php'));
+?>
 <!DOCTYPE html>
 <!--
   ~ Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
@@ -52,20 +55,20 @@
  */
 
 $faultFound = false;
-if (file_exists('../../config.php')) {
+if (file_exists(CONFIGFILE)) {
   //file exists, check if writable
-  if (!is_writable('../../config.php')) {
+  if (!is_writable(CONFIGFILE)) {
     $faultFound = true;
     ?>
-    <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not writable in <?php echo realpath("../../config.php"); ?>. <br/> Please use command <code>chmod
-        666 <?php echo realpath("../../config.php"); ?></code> to make the file writable.
+    <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not writable in <?php echo CONFIGFILE ?>. <br/> Please use command <code>chmod
+        666 <?php echo CONFIGFILE; ?></code> to make the file writable.
     </div>
   <?php
   }
 } else {
   $faultFound = true;
   ?>
-  <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not found in <?php echo realpath("../../config.php"); ?>. Please make sure the file exists and has not been deleted.
+  <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Configuration Warning:</strong> config.php is not found in <?php echo CONFIGFILE; ?>. Please make sure the file exists and has not been deleted.
   </div>
 <?php
 }
@@ -82,7 +85,7 @@ if ($faultFound) {
 <?php
 } else {
 include '../../inc/version.php';
-$configFile = fopen('../../config.php', $mode)
+$configFile = fopen(CONFIGFILE, 'r');
 ?>
 <div class="jumbotron">
   <h1>Welcome!</h1>
