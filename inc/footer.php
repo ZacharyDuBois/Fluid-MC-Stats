@@ -3,8 +3,8 @@
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
-include_once __DIR__ . '/../config.php';
-include 'version.php';
+include_once APPPATH.'config.php';
+include APPPATH.'version.php';
 ?>
 <!-- Infobar -->
 <div class="row">

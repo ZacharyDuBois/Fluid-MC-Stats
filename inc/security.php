@@ -9,7 +9,7 @@ if (!file_exists(__DIR__ . '/../config.php')) {
   die();
 }
 // Then include it.
-include __DIR__ . '/../config.php';
+include APPPATH.'config.php';
 
 // Check if MySQL has been set and the install folder exists so we can redirect safely.
 if ($mysql_host == '' && file_exists(__DIR__ . "/../pages/install/")) {
