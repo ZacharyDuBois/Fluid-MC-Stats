@@ -12,6 +12,10 @@ error_reporting(0);
     echo "Home";
   } elseif ($navPage == "top-players") {
     echo "Top Players";
+  } elseif ($navPage == "top-lists") {
+    echo "Top Lists";
+  } elseif ($navPage == "live-ticker") {
+    echo "Live-Ticker";
   } elseif ($navPage == "server-stats") {
     echo "Server Statistics";
   } elseif ($navPage == "search") {
@@ -19,7 +23,7 @@ error_reporting(0);
   } elseif ($navPage == "player-list") {
     echo("Player List");
   } elseif ($navPage == "player") {
-    echo("Player - " . $player);
+    echo("Player");
   } else {
     echo("Unknown Title");
   } ?></title>
