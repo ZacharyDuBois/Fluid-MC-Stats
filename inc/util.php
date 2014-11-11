@@ -264,6 +264,9 @@ function translateValue($stat, $value) {
   switch ($stat) {
     case "playtime":
       return convert_playtime($value);
+
+    case "move":
+    	return round($value);
   }
   return $value;
 }
