@@ -51,7 +51,7 @@ include APPPATH.'inc/navbar.php';
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
           <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
-          <li class="active"><i class="fa fa-bar-chart-o"></i> Top Players</li>
+          <li class="active"><i class="fa fa-bar-chart-o"></i> Top Lists</li>
         </ol>
       </div>
     </div>
@@ -64,7 +64,7 @@ include APPPATH.'inc/navbar.php';
     <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Top Players</h3>
+          <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Top Lists</h3>
         </div>
 
         <div class="panel-body">
