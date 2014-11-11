@@ -11,7 +11,7 @@ include_once APPPATH.'inc/queries.php';
 include_once APPPATH.'inc/util.php';
 
 $pagenr = isset($_GET['page']) ? $_GET['page'] : 1;
-$totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
+$totalPages = intval(getAmountOfPlayers($mysqli, $mysql_table_prefix, 0) / 15);
 ?>
 
 <!DOCTYPE html>
