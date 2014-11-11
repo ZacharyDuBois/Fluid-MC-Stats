@@ -12,7 +12,7 @@ include_once APPPATH.'inc/queries.php';
 
 $stats = array(
     'playtime',
-    'exp',
+    'move',
     'placed',
     'broken',
     'crafted',
