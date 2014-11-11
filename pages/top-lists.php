@@ -94,6 +94,7 @@ include APPPATH.'inc/navbar.php';
                   echo $mysqli->error;
                 }
 
+                $lastVal = 0;
                 while (($arr = $result->fetch_array()) != null) {
                   echo "<tr>";
                   echo "<th>&num;" . $i++ . "</th>";
@@ -101,7 +102,15 @@ include APPPATH.'inc/navbar.php';
                   echo "<td><img src='" . $avatar_service_uri . $playerName . "/16' "
                       . "class='img-circle avatar-list-icon'> <a href='" . LINKBASE . "players/"
                       . $arr['player_id'] . "' title='" . $playerName . "&apos;s Stats'> " . $playerName . "</a></td>";
-                  echo "<td>" . translateValue($stat, $arr['value']) . "</td>";
+                  echo "<td>" . translateValue($stat, $arr['value']);
+                  
+                  if ($stat !== 'playtime' && $lastVal !== 0) {
+                    echo  " <i><small>(". (intval(translateValue($stat, $arr['value'])) - $lastVal) .")</small></i>";
+                  }
+                  
+                  echo "</td>";
+                  
+                  $lastVal = translateValue($stat, $arr['value']);
                 }
                 ?>
                 </tbody>
