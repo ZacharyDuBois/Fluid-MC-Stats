@@ -5,10 +5,10 @@
 
 $navPage = "player-list";
 
-include_once 'config.php';
-include_once 'inc/db.php';
-include_once 'inc/queries.php';
-include_once 'inc/util.php';
+include_once APPPATH.'config.php';
+include_once APPPATH.'inc/db.php';
+include_once APPPATH.'inc/queries.php';
+include_once APPPATH.'inc/util.php';
 
 $pagenr = isset($_GET['page']) ? $_GET['page'] : 1;
 $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
@@ -23,14 +23,14 @@ $totalPages = getAmountOfPlayers($mysqli, $mysql_table_prefix, 0);
 <head>
   <!-- Header -->
   <?php
-  include 'inc/header.php';
+  include APPPATH.'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
 <body>
 
 <?php
-include 'inc/navbar.php';
+include APPPATH.'inc/navbar.php';
 ?>
 
 <!-- Location -->
@@ -84,7 +84,7 @@ include 'inc/navbar.php';
 
               <tbody id='player-list'> <!-- ZACH NTS: Add in tooltips instead of abbr (don't forget to do it in player-list-search.js too then -->
               <?php
-              include "inc/pages/player-list-getter.php";
+              include APPPATH."inc/pages/player-list-getter.php";
               $players = getPlayerList($mysqli, $mysql_table_prefix, $pagenr);
               while ($player = $players->fetch_array()) {
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
@@ -153,9 +153,9 @@ include 'inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include 'inc/serverstatusui.php';
+      include APPPATH.'inc/serverstatusui.php';
 
-      include 'inc/quicklinksui.php';
+      include APPPATH.'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -167,7 +167,7 @@ include 'inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include 'inc/footer.php';
+  include APPPATH.'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

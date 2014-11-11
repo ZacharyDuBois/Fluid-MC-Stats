@@ -3,7 +3,7 @@
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
-include_once '../config.php';
+include_once APPPATH.'config.php';
 
 /**
  * Discontinued because Minecraft-API is no-longer in service.

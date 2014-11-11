@@ -9,14 +9,14 @@
 
 $navPage = "home";
 
-include 'inc/security.php';
-include 'config.php';
+include APPPATH.'inc/security.php';
+include APPPATH.'config.php';
 ?>
 <html>
 <head>
   <!-- Header -->
   <?php
-  include 'inc/header.php';
+  include APPPATH.'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -24,7 +24,7 @@ include 'config.php';
 
 <!-- Navbar -->
 <?php
-include 'inc/navbar.php';
+include APPPATH.'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -94,9 +94,9 @@ include 'inc/navbar.php';
     <div class="col-md-3 col-md-offset-1">
 
       <?php
-      include 'inc/serverstatusui.php';
+      include APPPATH.'inc/serverstatusui.php';
 
-      include 'inc/quicklinksui.php';
+      include APPPATH.'inc/quicklinksui.php';
       ?>
 
     </div>
@@ -107,7 +107,7 @@ include 'inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include 'inc/footer.php';
+  include APPPATH.'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

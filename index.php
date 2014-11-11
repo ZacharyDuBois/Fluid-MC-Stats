@@ -1,5 +1,4 @@
 <?php
-include_once 'inc/link.php';
 
 $base = str_replace('index.php', '', $_SERVER['PHP_SELF']);
 if ($base === '') {
@@ -7,6 +6,9 @@ if ($base === '') {
 
 }
 define('LINKBASE', $base);
+define('APPPATH', dirname(__FILE__).'/');
+
+include_once APPPATH.'inc/link.php';
 
 $MENULINKS = array(
   new Link(
@@ -54,18 +56,18 @@ if (isset($_GET) === TRUE && isset($_GET['view']) === TRUE) {
 
 switch (strtolower($view)) {
   case '':
-    include_once 'pages/front-page.php';
+    include_once APPPATH.'pages/front-page.php';
     break;
     
   case 'index':
-    include_once 'pages/front-page.php';
+    include_once APPPATH.'pages/front-page.php';
     break;
 
   case 'players':
-    include_once 'pages/player.php';
+    include_once APPPATH.'pages/player.php';
     break;
 
   default:
-    include_once 'pages/' . strtolower($_GET['view']) . '.php';
+    include_once APPPATH.'pages/' . strtolower($_GET['view']) . '.php';
     break;
 }

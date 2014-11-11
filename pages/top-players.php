@@ -5,10 +5,10 @@
 
 $navPage = "top-players";
 
-include_once 'config.php';
-include_once 'inc/db.php';
-include_once 'inc/util.php';
-include_once 'inc/queries.php';
+include_once APPPATH.'config.php';
+include_once APPPATH.'inc/db.php';
+include_once APPPATH.'inc/util.php';
+include_once APPPATH.'inc/queries.php';
 
 ?>
 
@@ -21,7 +21,7 @@ include_once 'inc/queries.php';
 <head>
   <!-- Header -->
   <?php
-  include 'inc/header.php';
+  include APPPATH.'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -29,7 +29,7 @@ include_once 'inc/queries.php';
 
 <!-- Navbar -->
 <?php
-include 'inc/navbar.php';
+include APPPATH.'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -40,7 +40,7 @@ include 'inc/navbar.php';
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
           <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
-          <li class="active"><i class="fa fa-bar-chart-o"></i> Top Players</li>
+          <li class="active"><i class="fa fa-bar-chart-o"></i> Top Lists</li>
         </ol>
       </div>
     </div>
@@ -53,7 +53,7 @@ include 'inc/navbar.php';
     <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Top Players</h3>
+          <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Top Lists</h3>
         </div>
         <div class="panel-body">
           <p>These are users with current top rankings on the server.</p>
@@ -99,8 +99,8 @@ include 'inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include 'inc/serverstatusui.php';
-      include 'inc/quicklinksui.php';
+      include APPPATH.'inc/serverstatusui.php';
+      include APPPATH.'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -112,7 +112,7 @@ include 'inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include 'inc/footer.php';
+  include APPPATH.'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

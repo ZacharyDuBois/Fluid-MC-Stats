@@ -3,7 +3,7 @@
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
-include_once __DIR__ . '/../config.php';
+include_once APPPATH.'config.php';
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
