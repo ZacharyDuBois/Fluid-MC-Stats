@@ -15,7 +15,6 @@ include_once APPPATH . 'inc/util.php';
 
 $player_id = substr($_GET['params'], 1);
 $player = getPlayerName($mysqli, $mysql_table_prefix, $player_id);
-$site_name = $player;
 ?>
 <!DOCTYPE html>
 <!--

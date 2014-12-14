@@ -23,7 +23,7 @@ error_reporting(0);
   } elseif ($navPage == "player-list") {
     echo("Player List");
   } elseif ($navPage == "player") {
-    echo("Player");
+    echo("Player - " . $player);
   } else {
     echo("Unknown Title");
   } ?></title>

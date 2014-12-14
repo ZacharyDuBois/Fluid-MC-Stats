@@ -3,8 +3,8 @@
 $base = str_replace('index.php', '', $_SERVER['PHP_SELF']);
 if ($base === '') {
   $base = '/';
-
 }
+
 define('LINKBASE', $base);
 define('APPPATH', dirname(__FILE__) . '/');
 
