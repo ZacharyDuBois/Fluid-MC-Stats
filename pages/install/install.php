@@ -477,7 +477,6 @@ define('CONFIGFILE', realpath('../../config.php'));
 </div>
 <script src="../../js/jquery-2.1.0.min.js"></script>
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
-<script src="../../js/d3.v3.min.js"></script>
 <script src="credentials-test.js"></script>
 <script src="install.js"></script>
 </body>

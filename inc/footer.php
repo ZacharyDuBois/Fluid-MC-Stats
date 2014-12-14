@@ -41,13 +41,6 @@ include APPPATH . 'inc/version.php';
 } else {
   echo("");
 } ?>bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>js/d3.v3.min.js"></script>
 <?php if ($navPage == "search") { ?>
   <script src="<?php if (!empty($custom_hosted_uri)) {
     echo($custom_hosted_uri);

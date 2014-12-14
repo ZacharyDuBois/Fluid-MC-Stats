@@ -49,7 +49,7 @@ $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If
  * It is recommended not to delete these directories off of this server in-case we forget to implement this in some files.
  * These are also still required to be on the local server as the install requires them.
  * You are allowed to use our CDN, please don't use it for popular sites :)
- * $custom_hosted_uri = 'http://static.apservers.io/Fluid-MC-Stats/VersionNumber/';
+ * http://static.apservers.io/Fluid-MC-Stats/VersionNumber/
  */
 $custom_hosted_uri = '';
 
