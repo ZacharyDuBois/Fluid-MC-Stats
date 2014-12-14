@@ -9,7 +9,6 @@
 
 $navPage = "home";
 
-include APPPATH . 'inc/security.php';
 include APPPATH . 'config.php';
 ?>
 <html>

@@ -9,6 +9,7 @@ define('LINKBASE', $base);
 define('APPPATH', dirname(__FILE__) . '/');
 
 include_once APPPATH . 'inc/link.php';
+include_once APPPATH . 'inc/security.php';
 
 $MENULINKS = array(
     new Link(
