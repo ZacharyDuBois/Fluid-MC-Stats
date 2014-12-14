@@ -41,6 +41,21 @@ include APPPATH . 'inc/version.php';
 } else {
   echo("");
 } ?>bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php if (!empty($custom_hosted_uri)) {
+  echo($custom_hosted_uri);
+} elseif ($navPage != "home") {
+  echo "../";
+} else {
+  echo("");
+} ?>js/jquery.timeago.js"></script>
+<?php if ($navPage == "search" or $navPage == "player-list") { ?>
+  <script type="text/javascript">
+    var avatarURI = '<?php echo($avatar_service_uri); ?>';
+    jQuery(document).ready(function () {
+      jQuery("abbr.timeago").timeago();
+    });
+  </script>
+<?php } ?>
 <?php if ($navPage == "search") { ?>
   <script src="<?php if (!empty($custom_hosted_uri)) {
     echo($custom_hosted_uri);
@@ -59,22 +74,8 @@ include APPPATH . 'inc/version.php';
     echo("");
   } ?>js/player-list-script.js"></script>
 <?php } ?>
-<script type="text/javascript" src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>js/jquery.timeago.js"></script>
-<?php if ($navPage == "search" or $navPage == "player-list") { ?>
-  <script type="text/javascript">
-    jQuery(document).ready(function () {
-      jQuery("abbr.timeago").timeago();
-    });
-  </script>
-<?php } ?>
 <!-- /SCRIPTS -->
 
-<!-- Antilitic codes normally would be here. Gaug.es and Google Analytics -->
+<!-- Analytic codes normally would be here. -->
 
 <!-- /body would be here -->
