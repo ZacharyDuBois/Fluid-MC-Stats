@@ -48,8 +48,6 @@ $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If
  * To use, upload the img, font-awesome, bootstrap, css, js, and less directories to the server of your choice and put the URI to them below.
  * It is recommended not to delete these directories off of this server in-case we forget to implement this in some files.
  * These are also still required to be on the local server as the install requires them.
- * You are allowed to use our CDN, please don't use it for popular sites :)
- * http://static.apservers.io/Fluid-MC-Stats/VersionNumber/
  */
 $custom_hosted_uri = '';
 

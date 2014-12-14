@@ -421,7 +421,7 @@ define('CONFIGFILE', realpath('../../config.php'));
 
               <div class="col-sm-9">
                 <input name="custom_hosted_uri" type="text" class="form-control" id="fmcsAdvCDN"
-                       placeholder="http&colon;//static.apservers.io/Fluid-MC-Stats/<?php echo($fmcs_version_number); ?>/">
+                       placeholder="http&colon;//cdn.domain.tld/">
     <span class="help-block">
       This is for support for hosting static files externally. To use, upload the <code>bootstrap</code>, <code>css</code>, <code>font-awesome</code>, <code>img</code>, and
       <code>js</code> directories to a remote web-server/CDN and put the path to all of them below. Be sure to include the trailing slash.
