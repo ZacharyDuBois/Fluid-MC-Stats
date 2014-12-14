@@ -98,14 +98,14 @@ liveticker.update = function () {
 
               // Player is online, check if he was offline.
               if (liveticker.onlinePlayers[data.player_id] === undefined) {
-                liveticker.utils.addInfo(data.name + ' came online');
+                liveticker.utils.addInfo(data.name + ' connected');
 
                 liveticker.onlinePlayers[data.player_id] = true;
               }
             } else {
               // Player is offline, check if he was online.
               if (liveticker.onlinePlayers[data.player_id] !== undefined) {
-                liveticker.utils.addInfo(data.name + ' went offline');
+                liveticker.utils.addInfo(data.name + ' disconnected');
 
                 liveticker.onlinePlayers[data.player_id] = undefined;
               }
@@ -115,7 +115,7 @@ liveticker.update = function () {
           });
 
           if (online === 0) {
-            liveticker.utils.addInfo('Currently there is no one playing on this server.');
+            liveticker.utils.addInfo('Currently, there is no one playing on this server.');
           }
 
           liveticker.schedule();

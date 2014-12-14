@@ -19,6 +19,12 @@ $MENULINKS = array(
         'home'
     ),
     new Link(
+        'Live Ticker',
+        LINKBASE . 'live-ticker',
+        'fa-bullhorn',
+        'live-ticker'
+    ),
+    new Link(
         'Server Stats',
         LINKBASE . 'server-stats',
         'fa-hdd-o',
@@ -41,12 +47,6 @@ $MENULINKS = array(
         LINKBASE . 'player-list',
         'fa-list',
         'player-list'
-    ),
-    new Link(
-        'Live Ticker',
-        LINKBASE . 'live-ticker',
-        'fa-bullhorn',
-        'live-ticker'
     ),
 );
 
