@@ -83,14 +83,14 @@ liveticker.update = function () {
           var online = 0;
           $(data).each(function (index, data) {
             if (liveticker.players[data.player_id] !== undefined) {
-              liveticker.utils.logStat(data.name, 'traveled', data.traveled, liveticker.players[data.player_id].traveled);
-              liveticker.utils.logStat(data.name, 'placed', data.placed, liveticker.players[data.player_id].placed);
-              liveticker.utils.logStat(data.name, 'broke', data.broke, liveticker.players[data.player_id].broke);
+              liveticker.utils.logStat(data.name, data.player_id, 'traveled', data.traveled, liveticker.players[data.player_id].traveled);
+              liveticker.utils.logStat(data.name, data.player_id, 'placed', data.placed, liveticker.players[data.player_id].placed);
+              liveticker.utils.logStat(data.name, data.player_id, 'broke', data.broke, liveticker.players[data.player_id].broke);
 
-              liveticker.utils.logBlockHighscore(data.name, 'traveled', liveticker.steps.traveled, data.traveled, liveticker.players[data.player_id].traveled);
-              liveticker.utils.logBlockHighscore(data.name, 'placed', liveticker.steps.placed, data.placed, liveticker.players[data.player_id].placed);
-              liveticker.utils.logBlockHighscore(data.name, 'broke', liveticker.steps.broke, data.broke, liveticker.players[data.player_id].broke);
-              liveticker.utils.logPlaytimeHighscore(data.name, data.playtime, liveticker.players[data.player_id].playtime);
+              liveticker.utils.logBlockHighscore(data.name, data.player_id, 'traveled', liveticker.steps.traveled, data.traveled, liveticker.players[data.player_id].traveled);
+              liveticker.utils.logBlockHighscore(data.name, data.player_id, 'placed', liveticker.steps.placed, data.placed, liveticker.players[data.player_id].placed);
+              liveticker.utils.logBlockHighscore(data.name, data.player_id, 'broke', liveticker.steps.broke, data.broke, liveticker.players[data.player_id].broke);
+              liveticker.utils.logPlaytimeHighscore(data.name, data.player_id, data.playtime, liveticker.players[data.player_id].playtime);
             }
 
             if (liveticker.utils.isOnline(data) === true) {
@@ -148,9 +148,9 @@ liveticker.utils.isOnline = function (playerdata) {
   return ret;
 };
 
-liveticker.utils.addPlayerAction = function (name, action) {
+liveticker.utils.addPlayerAction = function (name, id, action) {
   $row = $('<tr />');
-  $row.append('<td>' + name + '</td>');
+  $row.append('<td><img src="' + avatarURI + name + '/16" class="img-circle avatar-list-icon"> <a href="/players/' + id + '" title="' + name + '&apos;s Stats">' + name + '</td>');
   $row.append('<td>' + action + '</td>');
   liveticker.item.prepend($row);
 };
@@ -166,16 +166,16 @@ liveticker.utils.addInfo = function (info, highlight) {
   liveticker.item.prepend($row);
 };
 
-liveticker.utils.logStat = function (name, stat, curValue, lastValue) {
+liveticker.utils.logStat = function (name, id, stat, curValue, lastValue) {
   var diff = (curValue - lastValue);
   diff = parseInt(diff, 10);
 
   if (diff !== 0) {
-    liveticker.utils.addPlayerAction(name, stat + ' ' + diff + ' blocks');
+    liveticker.utils.addPlayerAction(name, id, stat + ' ' + diff + ' blocks');
   }
-}
+};
 
-liveticker.utils.logBlockHighscore = function (name, stat, steps, curValue, lastValue) {
+liveticker.utils.logBlockHighscore = function (name, id, stat, steps, curValue, lastValue) {
   var logged = false;
 
   $(steps).each(function (index, value) {
@@ -199,9 +199,9 @@ liveticker.utils.logBlockHighscore = function (name, stat, steps, curValue, last
       liveticker.utils.addInfo(name + ' ' + stat + ' ' + (curValue * maxVal) + ' blocks', true);
     }
   }
-}
+};
 
-liveticker.utils.logPlaytimeHighscore = function (name, curValue, lastValue) {
+liveticker.utils.logPlaytimeHighscore = function (name, id, curValue, lastValue) {
   var logged = false;
 
   $(liveticker.steps.playtime).each(function (index, value) {
@@ -223,4 +223,4 @@ liveticker.utils.logPlaytimeHighscore = function (name, curValue, lastValue) {
       liveticker.utils.addInfo(name + ' played for ' + curValue + ' days', true);
     }
   }
-}
+};

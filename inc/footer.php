@@ -50,10 +50,14 @@ include APPPATH . 'inc/version.php';
 } ?>js/jquery.timeago.js"></script>
 <?php if ($navPage == "search" or $navPage == "player-list") { ?>
   <script type="text/javascript">
-    var avatarURI = '<?php echo($avatar_service_uri); ?>';
     jQuery(document).ready(function () {
       jQuery("abbr.timeago").timeago();
     });
+  </script>
+<?php } ?>
+<?php if ($navPage == "live-ticker") { ?>
+  <script type="text/javascript">
+    var avatarURI = '<?php echo($avatar_service_uri); ?>';
   </script>
 <?php } ?>
 <?php if ($navPage == "search") { ?>
@@ -73,6 +77,15 @@ include APPPATH . 'inc/version.php';
   } else {
     echo("");
   } ?>js/player-list-script.js"></script>
+<?php } ?>
+<?php if ($navPage == "live-ticker") { ?>
+  <script src="<?php if (!empty($custom_hosted_uri)) {
+    echo($custom_hosted_uri);
+  } elseif ($navPage != "home") {
+    echo "../";
+  } else {
+    echo("");
+  } ?>js/live-ticker.js"></script>
 <?php } ?>
 <!-- /SCRIPTS -->
 
