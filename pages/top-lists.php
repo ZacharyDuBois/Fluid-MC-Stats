@@ -5,10 +5,10 @@
 
 $navPage = "top-lists";
 
-include_once APPPATH.'config.php';
-include_once APPPATH.'inc/db.php';
-include_once APPPATH.'inc/util.php';
-include_once APPPATH.'inc/queries.php';
+include_once APPPATH . 'config.php';
+include_once APPPATH . 'inc/db.php';
+include_once APPPATH . 'inc/util.php';
+include_once APPPATH . 'inc/queries.php';
 
 $stats = array(
     'playtime',
@@ -32,7 +32,7 @@ $stats = array(
 <head>
   <!-- Header -->
   <?php
-  include APPPATH.'inc/header.php';
+  include APPPATH . 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -40,7 +40,7 @@ $stats = array(
 
 <!-- Navbar -->
 <?php
-include APPPATH.'inc/navbar.php';
+include APPPATH . 'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -103,13 +103,13 @@ include APPPATH.'inc/navbar.php';
                       . "class='img-circle avatar-list-icon'> <a href='" . LINKBASE . "players/"
                       . $arr['player_id'] . "' title='" . $playerName . "&apos;s Stats'> " . $playerName . "</a></td>";
                   echo "<td>" . translateValue($stat, $arr['value']);
-                  
+
                   if ($stat !== 'playtime' && $lastVal !== 0) {
-                    echo  " <i><small>(". (intval(translateValue($stat, $arr['value'])) - $lastVal) .")</small></i>";
+                    echo " <i><small>(" . (intval(translateValue($stat, $arr['value'])) - $lastVal) . ")</small></i>";
                   }
-                  
+
                   echo "</td>";
-                  
+
                   $lastVal = translateValue($stat, $arr['value']);
                 }
                 ?>
@@ -134,8 +134,8 @@ include APPPATH.'inc/navbar.php';
   <div class="col-md-3 col-md-offset-1">
     <!-- Server status -->
     <?php
-    include APPPATH.'inc/serverstatusui.php';
-    include APPPATH.'inc/quicklinksui.php';
+    include APPPATH . 'inc/serverstatusui.php';
+    include APPPATH . 'inc/quicklinksui.php';
     ?>
     <!-- /Quick Links -->
   </div>
@@ -145,7 +145,7 @@ include APPPATH.'inc/navbar.php';
 
 <!-- Footer -->
 <?php
-include APPPATH.'inc/footer.php';
+include APPPATH . 'inc/footer.php';
 ?>
 <!-- /Footer -->
 </body>
