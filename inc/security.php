@@ -13,12 +13,7 @@ include APPPATH . 'config.php';
 
 // Check if MySQL has been set and the install folder exists so we can redirect safely.
 if ($mysql_host == '' && file_exists(__DIR__ . "/../pages/install/")) {
-  $http = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://');
-  $installLoc = $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . "pages/install/install.php";
-  $installLoc = str_replace('index.php', '', $installLoc);
-  $installLoc = str_replace('//', '/', $installLoc);
-  $installLoc = $http . $installLoc;
-  header("Location: " . $installLoc);
+  header("Location: /pages/install/install.php", true, 302);
   die();
 }
 
