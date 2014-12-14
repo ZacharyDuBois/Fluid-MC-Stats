@@ -65,17 +65,18 @@ include APPPATH . 'inc/navbar.php';
         </div>
         <div class="panel-body">
           <p>
-            This is an automaticly reloaded page wich lists the newest activitys on the server.
+            This is an automatically reloaded page which lists the newest activity on the server.
           </p>
 
           <p>
-            <label for="liveTickerIntervall">Interval :</label>
-            <select name="liveTickerIntervall" id="liveTickerIntervall">
-              <option value="10">10 seconds</option>
+            <label for="liveTickerInterval">Interval :</label>
+            <select name="Live Ticker Interval" id="liveTickerInterval">
+              <option value="5">5 seconds</option>
+              <option value="10" selected>10 seconds</option>
               <option value="30">30 seconds</option>
               <option value="60">60 seconds</option>
             </select>
-            (reloading in <span id="reloadLivetickerSeconds"></span> seconds)
+            (reloading in <span id="reloadLiveTickerSeconds"></span> seconds)
           </p>
 
           <div class="table-responsive">
@@ -90,7 +91,7 @@ include APPPATH . 'inc/navbar.php';
               <tbody id='live-ticker'>
               <!-- ZACH NTS: Add in tooltips instead of abbr (don't forget to do it in player-list-search.js too then -->
               <tr>
-                <td colspan="2">started listening to the live-ticker</td>
+                <td colspan="2"><i class="fa fa-clock-o"></i> Started viewing the live ticker.</td>
               </tr>
               </tbody>
             </table>

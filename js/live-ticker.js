@@ -55,14 +55,14 @@ liveticker.init = (function () {
   $(document).ready(function () {
     liveticker.item = $('#live-ticker');
 
-    $('#liveTickerIntervall').change(function () {
+    $('#liveTickerInterval').change(function () {
       liveticker.config.interval = parseInt($(this).val(), 10);
     });
 
-    $('#reloadLivetickerSeconds').text(liveticker.config.interval);
+    $('#reloadLiveTickerSeconds').text(liveticker.config.interval);
     setInterval(
         function () {
-          $('#reloadLivetickerSeconds').text(parseInt($('#reloadLivetickerSeconds').text(), 10) - 1);
+          $('#reloadLiveTickerSeconds').text(parseInt($('#reloadLiveTickerSeconds').text(), 10) - 1);
         },
         1000
     );
@@ -132,7 +132,7 @@ liveticker.schedule = function () {
       liveticker.update,
       liveticker.config.interval * 1000
   );
-  $('#reloadLivetickerSeconds').text(liveticker.config.interval);
+  $('#reloadLiveTickerSeconds').text(liveticker.config.interval);
 };
 
 liveticker.utils.isOnline = function (playerdata) {

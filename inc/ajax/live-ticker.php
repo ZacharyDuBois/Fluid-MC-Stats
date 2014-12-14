@@ -32,4 +32,3 @@ while ($player = $players->fetch_array()) {
 }
 
 echo json_encode($arr);
-?>
