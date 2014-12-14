@@ -3,7 +3,7 @@
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
-include_once APPPATH.'config.php';
+include_once APPPATH . 'config.php';
 
 if (!isset($mysql_host)) {
   die("MySQL host not set - Config is probably not set up yet.");

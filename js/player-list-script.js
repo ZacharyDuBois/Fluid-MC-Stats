@@ -18,10 +18,10 @@ function fetchPage(pageNr, element) {
   }
   var players;
   $.ajax({
-    type: "GET",
-    url: "../inc/ajax/player-list.php",
+    type    : "GET",
+    url     : "../inc/ajax/player-list.php",
     dataType: 'json',
-    data: {
+    data    : {
       page: page
     }
   })

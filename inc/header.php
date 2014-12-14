@@ -3,7 +3,7 @@
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
-include_once APPPATH.'config.php';
+include_once APPPATH . 'config.php';
 
 error_reporting(0);
 ?>
@@ -31,7 +31,8 @@ error_reporting(0);
 <meta charset="utf-8">
 
 <?php if ($navPage == "home") { ?>
-  <meta name="description" content="A Minecraft server statistics interface for <?php echo($server_name); ?>. Powered by Fluid MC Stats.">
+  <meta name="description"
+        content="A Minecraft server statistics interface for <?php echo($server_name); ?>. Powered by Fluid MC Stats.">
 <?php } elseif ($navPage == "top-players") { ?>
   <meta name="description" content="Top players on <?php echo($server_name); ?>. Powered by Fluid MC Stats.">
 <?php } elseif ($navPage == "server-stats") { ?>
@@ -41,7 +42,8 @@ error_reporting(0);
 <?php } elseif ($navPage == "player-list") { ?>
   <meta name="description" content="Player list for <?php echo($server_name); ?>. Powered by Fluid MC Stats.">
 <?php } elseif ($navPage == "player") { ?>
-  <meta name="description" content="<?php echo($player); ?>&apos;s statistics on <?php echo($server_name); ?>. Powered by Fluid MC Stats.">
+  <meta name="description"
+        content="<?php echo($player); ?>&apos;s statistics on <?php echo($server_name); ?>. Powered by Fluid MC Stats.">
 <?php } else { ?>
   <meta name="description" content="Unknown page. Powered by Fluid MC Stats.">
 <?php } ?>

@@ -19,11 +19,11 @@ function fetchPage(pageNr, element) {
   var players;
   var finder = $("#key").text();
   $.ajax({
-    type: "GET",
-    url: "../inc/ajax/search.php",
+    type    : "GET",
+    url     : "../inc/ajax/search.php",
     dataType: 'json',
-    data: {
-      page: page,
+    data    : {
+      page  : page,
       finder: finder
     }
   })

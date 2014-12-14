@@ -5,10 +5,10 @@
 
 $navPage = "top-players";
 
-include_once APPPATH.'config.php';
-include_once APPPATH.'inc/db.php';
-include_once APPPATH.'inc/util.php';
-include_once APPPATH.'inc/queries.php';
+include_once APPPATH . 'config.php';
+include_once APPPATH . 'inc/db.php';
+include_once APPPATH . 'inc/util.php';
+include_once APPPATH . 'inc/queries.php';
 
 ?>
 
@@ -21,7 +21,7 @@ include_once APPPATH.'inc/queries.php';
 <head>
   <!-- Header -->
   <?php
-  include APPPATH.'inc/header.php';
+  include APPPATH . 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -29,7 +29,7 @@ include_once APPPATH.'inc/queries.php';
 
 <!-- Navbar -->
 <?php
-include APPPATH.'inc/navbar.php';
+include APPPATH . 'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -99,8 +99,8 @@ include APPPATH.'inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include APPPATH.'inc/serverstatusui.php';
-      include APPPATH.'inc/quicklinksui.php';
+      include APPPATH . 'inc/serverstatusui.php';
+      include APPPATH . 'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -112,7 +112,7 @@ include APPPATH.'inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include APPPATH.'inc/footer.php';
+  include APPPATH . 'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

@@ -266,7 +266,7 @@ function translateValue($stat, $value) {
       return convert_playtime($value);
 
     case "move":
-    	return round($value);
+      return round($value);
   }
   return $value;
 }

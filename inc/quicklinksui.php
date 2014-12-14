@@ -10,7 +10,9 @@
   <div class="panel-body">
     <div class="list-group">
       <?php foreach ($MENULINKS as $link) : ?>
-        <a href="<?php echo $link->getTarget(); ?>" title="<?php echo $link->getName(); ?>" class="list-group-item <?php if ($link->isActive($navPage) === TRUE) : ?>active<?php endif; ?>"><i class="fa <?php echo $link->getIcon(); ?>"></i> <?php echo $link->getName(); ?></a>
+        <a href="<?php echo $link->getTarget(); ?>" title="<?php echo $link->getName(); ?>"
+           class="list-group-item <?php if ($link->isActive($navPage) === TRUE) : ?>active<?php endif; ?>"><i
+              class="fa <?php echo $link->getIcon(); ?>"></i> <?php echo $link->getName(); ?></a>
       <?php endforeach; ?>
     </div>
     <div class="list-group">

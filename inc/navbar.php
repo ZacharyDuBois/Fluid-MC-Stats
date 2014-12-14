@@ -3,16 +3,18 @@
  * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
  */
 
-include_once APPPATH.'config.php';
+include_once APPPATH . 'config.php';
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
   <!-- Mobile -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="<?php echo LINKBASE; ?>" title="Home"><i class="fa <?php echo $fa_icon; ?>"></i> <?php echo $site_name; ?></a>
+    <a class="navbar-brand" href="<?php echo LINKBASE; ?>" title="Home"><i
+          class="fa <?php echo $fa_icon; ?>"></i> <?php echo $site_name; ?></a>
   </div>
   <!-- /Mobile -->
 

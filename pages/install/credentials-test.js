@@ -4,13 +4,13 @@
 
 $("#mysql-test").click(function () {
   $.ajax({
-    url: "mysql-test.php",
+    url : "mysql-test.php",
     type: "POST",
     data: {
-      mh: $("#mySQLHost").val(),
-      mp: $("#mySQLHostPort").val(),
+      mh : $("#mySQLHost").val(),
+      mp : $("#mySQLHostPort").val(),
       mdb: $("#mySQLDatabaseName").val(),
-      mu: $("#mySQLUser").val(),
+      mu : $("#mySQLUser").val(),
       mpa: $("#mySQLPassword").val()
     }
   }).done(function (msg) {

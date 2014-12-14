@@ -9,14 +9,14 @@
 
 $navPage = "home";
 
-include APPPATH.'inc/security.php';
-include APPPATH.'config.php';
+include APPPATH . 'inc/security.php';
+include APPPATH . 'config.php';
 ?>
 <html>
 <head>
   <!-- Header -->
   <?php
-  include APPPATH.'inc/header.php';
+  include APPPATH . 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
@@ -24,7 +24,7 @@ include APPPATH.'config.php';
 
 <!-- Navbar -->
 <?php
-include APPPATH.'inc/navbar.php';
+include APPPATH . 'inc/navbar.php';
 ?>
 <!-- /Navbar -->
 
@@ -53,14 +53,17 @@ include APPPATH.'inc/navbar.php';
           <div class="jumbotron">
             <h1>Welcome!</h1>
 
-            <p>to the new Fluid MC Stats interface for the <?php echo $server_name; ?> server, powered by <a href="http://developgravity.com/">DevelopGravity</a> and <a
+            <p>to the new Fluid MC Stats interface for the <?php echo $server_name; ?> server, powered by <a
+                  href="http://developgravity.com/">DevelopGravity</a> and <a
                   href="http://lolmewn.nl">Lolmewn</a>.</p>
 
             <p>Get started by searching for your stats on this server or...</p>
 
             <form role="search" action='<?php echo LINKBASE; ?>search'>
               <div class="input-group input-group-lg">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> <input name='name' type="text" class="form-control" placeholder="Username">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> <input name='name' type="text"
+                                                                                         class="form-control"
+                                                                                         placeholder="Username">
                 <span class="input-group-btn">
                   <button type="submit" class="btn btn-default">
                     Find <i class="fa fa-chevron-right"></i>
@@ -71,8 +74,10 @@ include APPPATH.'inc/navbar.php';
             <p>Explore...</p>
 
             <div class="list-group">
-              <?php foreach ($MENULINKS as $link) : ?>                
-                <a href="<?php echo $link->getTarget(); ?>" title="<?php echo $link->getName(); ?>" class="list-group-item <?php if ($link->isActive($navPage) === TRUE) : ?>active<?php endif; ?>"><i class="fa <?php echo $link->getIcon(); ?>"></i> <?php echo $link->getName(); ?></a>
+              <?php foreach ($MENULINKS as $link) : ?>
+                <a href="<?php echo $link->getTarget(); ?>" title="<?php echo $link->getName(); ?>"
+                   class="list-group-item <?php if ($link->isActive($navPage) === TRUE) : ?>active<?php endif; ?>"><i
+                      class="fa <?php echo $link->getIcon(); ?>"></i> <?php echo $link->getName(); ?></a>
               <?php endforeach; ?>
             </div>
             <?php if (isset($custom_links) && !empty($custom_links)) { ?>
@@ -94,9 +99,9 @@ include APPPATH.'inc/navbar.php';
     <div class="col-md-3 col-md-offset-1">
 
       <?php
-      include APPPATH.'inc/serverstatusui.php';
+      include APPPATH . 'inc/serverstatusui.php';
 
-      include APPPATH.'inc/quicklinksui.php';
+      include APPPATH . 'inc/quicklinksui.php';
       ?>
 
     </div>
@@ -107,7 +112,7 @@ include APPPATH.'inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include APPPATH.'inc/footer.php';
+  include APPPATH . 'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>

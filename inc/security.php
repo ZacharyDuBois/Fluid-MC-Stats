@@ -9,7 +9,7 @@ if (!file_exists(__DIR__ . '/../config.php')) {
   die();
 }
 // Then include it.
-include APPPATH.'config.php';
+include APPPATH . 'config.php';
 
 // Check if MySQL has been set and the install folder exists so we can redirect safely.
 if ($mysql_host == '' && file_exists(__DIR__ . "/../pages/install/")) {
@@ -17,7 +17,7 @@ if ($mysql_host == '' && file_exists(__DIR__ . "/../pages/install/")) {
   $installLoc = $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . "pages/install/install.php";
   $installLoc = str_replace('index.php', '', $installLoc);
   $installLoc = str_replace('//', '/', $installLoc);
-  $installLoc = $http.$installLoc;
+  $installLoc = $http . $installLoc;
   header("Location: " . $installLoc);
   die();
 }

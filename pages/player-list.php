@@ -5,10 +5,10 @@
 
 $navPage = "player-list";
 
-include_once APPPATH.'config.php';
-include_once APPPATH.'inc/db.php';
-include_once APPPATH.'inc/queries.php';
-include_once APPPATH.'inc/util.php';
+include_once APPPATH . 'config.php';
+include_once APPPATH . 'inc/db.php';
+include_once APPPATH . 'inc/queries.php';
+include_once APPPATH . 'inc/util.php';
 
 $pagenr = isset($_GET['page']) ? $_GET['page'] : 1;
 $totalPages = intval(getAmountOfPlayers($mysqli, $mysql_table_prefix, 0) / 15);
@@ -23,14 +23,14 @@ $totalPages = intval(getAmountOfPlayers($mysqli, $mysql_table_prefix, 0) / 15);
 <head>
   <!-- Header -->
   <?php
-  include APPPATH.'inc/header.php';
+  include APPPATH . 'inc/header.php';
   ?>
   <!-- /Header -->
 </head>
 <body>
 
 <?php
-include APPPATH.'inc/navbar.php';
+include APPPATH . 'inc/navbar.php';
 ?>
 
 <!-- Location -->
@@ -60,7 +60,9 @@ include APPPATH.'inc/navbar.php';
 
           <form role="search" action='search.php'>
             <div class="input-group input-group-lg">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span> <input name="name" type="text" class="form-control" placeholder="Find A Player">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span> <input name="name" type="text"
+                                                                                       class="form-control"
+                                                                                       placeholder="Find A Player">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">
                   Find <i class="fa fa-chevron-right"></i>
@@ -69,9 +71,12 @@ include APPPATH.'inc/navbar.php';
             </div>
           </form>
           <ul class="pager">
-            <li class="previous<?php if ($pagenr == 1) echo ' disabled'; ?>"><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr - 1 ?>)">&larr; Older</a></li>
-            <li class="next<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' disabled'; ?>"><a href="javascript:void(0)"
-                                                                                                          onclick="fetchPage(<?php echo $pagenr + 1 ?>)">Newer &rarr;</a></li>
+            <li class="previous<?php if ($pagenr == 1) echo ' disabled'; ?>"><a href="javascript:void(0)"
+                                                                                onclick="fetchPage(<?php echo $pagenr - 1 ?>)">&larr;
+                Older</a></li>
+            <li class="next<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' disabled'; ?>"><a
+                  href="javascript:void(0)"
+                  onclick="fetchPage(<?php echo $pagenr + 1 ?>)">Newer &rarr;</a></li>
           </ul>
           <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered">
@@ -82,9 +87,10 @@ include APPPATH.'inc/navbar.php';
               </tr>
               </thead>
 
-              <tbody id='player-list'> <!-- ZACH NTS: Add in tooltips instead of abbr (don't forget to do it in player-list-search.js too then -->
+              <tbody id='player-list'>
+              <!-- ZACH NTS: Add in tooltips instead of abbr (don't forget to do it in player-list-search.js too then -->
               <?php
-              include APPPATH."inc/pages/player-list-getter.php";
+              include APPPATH . "inc/pages/player-list-getter.php";
               $players = getPlayerList($mysqli, $mysql_table_prefix, $pagenr);
               while ($player = $players->fetch_array()) {
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
@@ -111,7 +117,9 @@ include APPPATH.'inc/navbar.php';
           </div>
           <div class="make-center">
             <ul class="pagination pagination-lg">
-              <li<?php if ($pagenr == 1) echo ' class="disabled"'; ?>><a href="javascript:void(0)" onclick="fetchPage(<?php echo $pagenr - 1 ?>)">&laquo;</a></li>
+              <li<?php if ($pagenr == 1) echo ' class="disabled"'; ?>><a href="javascript:void(0)"
+                                                                         onclick="fetchPage(<?php echo $pagenr - 1 ?>)">&laquo;</a>
+              </li>
               <!-- Only disable when page one -->
               <li<?php if ($pagenr == 1) echo ' class="active"'; ?>><a href="javascript:void(0)"
                                                                        onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "1" : ($totalPages - $pagenr <= 1 ? $totalPages - 4 : $pagenr - 2) ?></a>
@@ -124,8 +132,9 @@ include APPPATH.'inc/navbar.php';
               }
               ?>
               <?php if ($totalPages > 3) { ?>
-                <li<?php if ($pagenr != 1 && $pagenr != 2 && $pagenr != $totalPages && $pagenr != $totalPages - 1) echo ' class="active"'; ?>><a href="javascript:void(0)"
-                                                                                                                                                 onclick="fetchPage(this)"><?php echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3") ?></a>
+                <li<?php if ($pagenr != 1 && $pagenr != 2 && $pagenr != $totalPages && $pagenr != $totalPages - 1) echo ' class="active"'; ?>>
+                  <a href="javascript:void(0)"
+                     onclick="fetchPage(this)"><?php echo ($totalPages - $pagenr) <= 2 ? ($totalPages - 2) : ($pagenr > 2 ? $pagenr : "3") ?></a>
                 </li>
               <?php } ?>
               <?php if ($totalPages > 4) { ?>
@@ -138,8 +147,9 @@ include APPPATH.'inc/navbar.php';
                                                                                    onclick="fetchPage(this)"><?php echo $pagenr <= 2 ? "5" : ($totalPages - $pagenr <= 1 ? $totalPages : $pagenr + 2) ?></a>
                 </li>
               <?php } ?>
-              <li<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' class="disabled"'; ?>><a href="javascript:void(0)"
-                                                                                                       onclick="fetchPage(<?php echo $pagenr + 1 ?>)">&raquo;</a></li>
+              <li<?php if ($pagenr == $totalPages || $totalPages == 0) echo ' class="disabled"'; ?>><a
+                    href="javascript:void(0)"
+                    onclick="fetchPage(<?php echo $pagenr + 1 ?>)">&raquo;</a></li>
             </ul>
           </div>
         </div>
@@ -153,9 +163,9 @@ include APPPATH.'inc/navbar.php';
 
       <!-- Server status -->
       <?php
-      include APPPATH.'inc/serverstatusui.php';
+      include APPPATH . 'inc/serverstatusui.php';
 
-      include APPPATH.'inc/quicklinksui.php';
+      include APPPATH . 'inc/quicklinksui.php';
       ?>
       <!-- /Quick Links -->
 
@@ -167,7 +177,7 @@ include APPPATH.'inc/navbar.php';
 
   <!-- Footer -->
   <?php
-  include APPPATH.'inc/footer.php';
+  include APPPATH . 'inc/footer.php';
   ?>
   <!-- /Footer -->
 </body>
