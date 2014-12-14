@@ -14,7 +14,7 @@
  */
 
 /**
- * The Link-Class describes an normal hyperlinks wich may occure in the nav or elsewhere in the APP.
+ * The Link-Class describes an normal hyperlinks which may occur in the nav or elsewhere in the APP.
  *
  * @category FluidMCStats
  * @package  FluidMCStats
