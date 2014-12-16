@@ -61,7 +61,7 @@ function fetchPage(pageNr, element) {
               .append($('<tr>')
                   .append($('<td>')
                       .append($('<img>')
-                          .attr('src', avatarURI + player["name"] + "/16") //TODO make this dynamic
+                          .attr('src', avatarURI + player["name"] + "/16")
                           .addClass("img-rounded").addClass("avatar-list-icon")
                   )
                       .append(" ")

@@ -48,26 +48,7 @@ define('CONFIGFILE', realpath('../../config.php'));
         <h3 class="panel-title"><i class="fa fa-wrench"></i> Install &amp; Configure</h3>
       </div>
       <div class="panel-body">
-        <div class="alert alert-warning"><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take
-                                                                                                            a backup of
-                                                                                                            everything
-                                                                                                            before
-                                                                                                            connecting
-                                                                                                            you're
-                                                                                                            database.
-                                                                                                            Also note,
-                                                                                                            this is
-                                                                                                            pre-alpha
-                                                                                                            software.
-                                                                                                            You cannot
-                                                                                                            complain
-                                                                                                            about it. If
-                                                                                                            you
-                                                                                                            don't like
-                                                                                                            it, open a
-                                                                                                            issue and we
-                                                                                                            may try and
-                                                                                                            fix it.
+        <div class="alert alert-warning"><p><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take a backup of everything before connecting you're database. Also note, this is pre-alpha software. You cannot complain about it. If you don't like it, open  issue and we may try and fix it.</p>
         </div>
         <?php
         /*
@@ -340,8 +321,7 @@ define('CONFIGFILE', realpath('../../config.php'));
                   <option value="50">50 (Max)</option>
                 </select>
     <span class="help-block">
-      The number of players you want to be considered to be &apos;top&apos; players. These will be displayed on the <em>Top
-                                                                                                                        Players</em> page.
+      The number of players you want to be considered to be &apos;top&apos; players. These will be displayed on the <em>Top Players</em> page.
     </span>
               </div>
             </div>
