@@ -123,7 +123,7 @@ include APPPATH . 'inc/navbar.php';
   ?>
   <!-- /Footer -->
   <script type="text/javascript">
-    liveticker.config.url = "//<?php echo $_SERVER["SERVER_NAME"].LINKBASE; ?>inc/ajax/live-ticker.php";
+    liveticker.config.url = "//<?php echo $_SERVER["SERVER_NAME"] . LINKBASE; ?>inc/ajax/live-ticker.php";
   </script>
 </div>
 </body>

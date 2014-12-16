@@ -6,7 +6,7 @@ include_once APPPATH . 'inc/link.php';
 include_once APPPATH . 'inc/security.php';
 include_once APPPATH . 'config.php';
 
-define('LINKBASE', $base_URL);
+define('LINKBASE', '/' . $base_URL);
 
 
 $MENULINKS = array(

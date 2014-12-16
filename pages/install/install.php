@@ -450,7 +450,7 @@ define('CONFIGFILE', realpath('../../config.php'));
               <?php
               $curURL = explode('/', $_SERVER['REQUEST_URI']);
               if ($curURL[1] == "pages") {
-                $sugBaseURL = "/";
+                $sugBaseURL = "";
               } else {
                 $sugBaseURL = $curURL[1] . "/";
               }
@@ -461,7 +461,7 @@ define('CONFIGFILE', realpath('../../config.php'));
                 <input name="base_URL" type="text" class="form-control" id="fmcsBaseURL"
                        placeholder="<?php echo $sugBaseURL ?>" value="<?php echo $sugBaseURL ?>" needed>
     <span class="help-block">
-      If your install is located in a subdirectory, this will be the directory it is in. If it is a subdomain, this should be left as a <code>/</code>. It should be set but, the suggestion might be wrong depeneding on your setup.
+      If your install is located in a subdirectory, this will be the directory it is in. If it is a subdomain, this should be left blank. It should be set but, the suggestion might be wrong depending on your setup. Do not prefix with a <code>/</code> if using subdirectories.
     </span>
               </div>
             </div>
