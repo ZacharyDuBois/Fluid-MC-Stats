@@ -27,9 +27,9 @@ include APPPATH . 'inc/version.php';
 <!-- /Infobar -->
 
 <!-- SCRIPTS -->
-<script src="<?php echo LINKBASE ?>js/jquery-2.1.0.min.js"></script>
-<script src="<?php echo LINKBASE ?>bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?php echo LINKBASE ?>js/jquery.timeago.js"></script>
+<script src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>js/jquery-2.1.0.min.js"></script>
+<script src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>js/jquery.timeago.js"></script>
 <script type="text/javascript">
 <?php if ($navPage == "search" or $navPage == "player-list") { ?>
     jQuery(document).ready(function () {
@@ -41,13 +41,13 @@ include APPPATH . 'inc/version.php';
 <?php } ?>
   </script>
 <?php if ($navPage == "search") { ?>
-  <script src="<?php echo LINKBASE ?>js/search-script.js"></script>
+  <script src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>js/search-script.js"></script>
 <?php } ?>
 <?php if ($navPage == "player-list") { ?>
-  <script src="<?php echo LINKBASE ?>js/player-list-script.js"></script>
+  <script src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>js/player-list-script.js"></script>
 <?php } ?>
 <?php if ($navPage == "live-ticker") { ?>
-  <script src="<?php echo LINKBASE ?>js/live-ticker.js"></script>
+  <script src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>js/live-ticker.js"></script>
 <?php } ?>
 <!-- /SCRIPTS -->
 

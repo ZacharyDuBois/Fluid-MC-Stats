@@ -53,6 +53,6 @@ error_reporting(0);
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="<?php echo LINKBASE ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="<?php echo LINKBASE ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="<?php echo LINKBASE ?>css/custom.css" rel="stylesheet">
+<link href="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>css/custom.css" rel="stylesheet">
