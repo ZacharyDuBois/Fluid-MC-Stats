@@ -30,18 +30,16 @@ include APPPATH . 'inc/version.php';
 <script src="<?php echo LINKBASE ?>js/jquery-2.1.0.min.js"></script>
 <script src="<?php echo LINKBASE ?>bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo LINKBASE ?>js/jquery.timeago.js"></script>
+<script type="text/javascript">
 <?php if ($navPage == "search" or $navPage == "player-list") { ?>
-  <script type="text/javascript">
     jQuery(document).ready(function () {
       jQuery("abbr.timeago").timeago();
     });
-  </script>
 <?php } ?>
-<?php if ($navPage == "live-ticker") { ?>
-  <script type="text/javascript">
-    var avatarURI = '<?php echo($avatar_service_uri); ?>';
-  </script>
+<?php if ($navPage == "live-ticker" or $navPage = 'player-list' or $navPage = 'search') { ?>
+    var avatarURI = '<?php echo $avatar_service_uri; ?>';
 <?php } ?>
+  </script>
 <?php if ($navPage == "search") { ?>
   <script src="<?php echo LINKBASE ?>js/search-script.js"></script>
 <?php } ?>
