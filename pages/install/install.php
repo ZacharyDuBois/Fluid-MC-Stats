@@ -223,7 +223,7 @@ define('CONFIGFILE', realpath('../../config.php'));
               </div>
               <div class="col-sm-2">
                 <input name="mc_server_port" type="text" class="form-control" id="mcResolveAddrPort" placeholder="25565"
-                       needed>
+                       value="25565" needed>
               </div>
             </div>
             <div class="form-group">
