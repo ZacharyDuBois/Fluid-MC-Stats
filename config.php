@@ -36,7 +36,7 @@ $custom_links = array( // Links displayed in navbar and sidebar. Add as many as 
     "Mojang"          => "http://mojang.com/",
 );
 $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If not set, we will use the server-icon.png on your Minecraft server.
-$base_URL = '/'; // This setting defines the base URL to your FMCS install.
+$base_URL = '/'; // This setting defines the base URL to your FMCS install. Leave blank for subdoamin install. For subdirectories, put the full URI to the install root without beginning slash.
 
 /**
  * Advanced User's Options
