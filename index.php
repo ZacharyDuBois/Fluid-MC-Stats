@@ -1,15 +1,13 @@
 <?php
 
-$base = str_replace('index.php', '', $_SERVER['PHP_SELF']);
-if ($base === '') {
-  $base = '/';
-}
-
-define('LINKBASE', $base);
 define('APPPATH', dirname(__FILE__) . '/');
 
 include_once APPPATH . 'inc/link.php';
 include_once APPPATH . 'inc/security.php';
+include_once APPPATH . 'config.php';
+
+define('LINKBASE', $base_URL);
+
 
 $MENULINKS = array(
     new Link(

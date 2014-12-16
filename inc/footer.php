@@ -27,27 +27,9 @@ include APPPATH . 'inc/version.php';
 <!-- /Infobar -->
 
 <!-- SCRIPTS -->
-<script src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>js/jquery-2.1.0.min.js"></script>
-<script src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>js/jquery.timeago.js"></script>
+<script src="/<?php echo LINKBASE ?>js/jquery-2.1.0.min.js"></script>
+<script src="/<?php echo LINKBASE ?>bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/<?php echo LINKBASE ?>js/jquery.timeago.js"></script>
 <?php if ($navPage == "search" or $navPage == "player-list") { ?>
   <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -61,31 +43,13 @@ include APPPATH . 'inc/version.php';
   </script>
 <?php } ?>
 <?php if ($navPage == "search") { ?>
-  <script src="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } elseif ($navPage != "home") {
-    echo "../";
-  } else {
-    echo("");
-  } ?>js/search-script.js"></script>
+  <script src="/<?php echo LINKBASE ?>js/search-script.js"></script>
 <?php } ?>
 <?php if ($navPage == "player-list") { ?>
-  <script src="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } elseif ($navPage != "home") {
-    echo "../";
-  } else {
-    echo("");
-  } ?>js/player-list-script.js"></script>
+  <script src="/<?php echo LINKBASE ?>js/player-list-script.js"></script>
 <?php } ?>
 <?php if ($navPage == "live-ticker") { ?>
-  <script src="<?php if (!empty($custom_hosted_uri)) {
-    echo($custom_hosted_uri);
-  } elseif ($navPage != "home") {
-    echo "../";
-  } else {
-    echo("");
-  } ?>js/live-ticker.js"></script>
+  <script src="/<?php echo LINKBASE ?>js/live-ticker.js"></script>
 <?php } ?>
 <!-- /SCRIPTS -->
 

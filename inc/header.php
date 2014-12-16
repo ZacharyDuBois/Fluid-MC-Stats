@@ -53,24 +53,6 @@ error_reporting(0);
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="<?php if (!empty($custom_hosted_uri)) {
-  echo($custom_hosted_uri);
-} elseif ($navPage != "home") {
-  echo "../";
-} else {
-  echo("");
-} ?>css/custom.css" rel="stylesheet">
+<link href="/<?php echo LINKBASE ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/<?php echo LINKBASE ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/<?php echo LINKBASE ?>css/custom.css" rel="stylesheet">

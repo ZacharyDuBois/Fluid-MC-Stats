@@ -48,7 +48,32 @@ define('CONFIGFILE', realpath('../../config.php'));
         <h3 class="panel-title"><i class="fa fa-wrench"></i> Install &amp; Configure</h3>
       </div>
       <div class="panel-body">
-        <div class="alert alert-warning"><p><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take a backup of everything before connecting you're database. Also note, this is pre-alpha software. You cannot complain about it. If you don't like it, open  issue and we may try and fix it.</p>
+        <div class="alert alert-warning"><p><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please
+                                                                                                               take a
+                                                                                                               backup of
+                                                                                                               everything
+                                                                                                               before
+                                                                                                               connecting
+                                                                                                               you're
+                                                                                                               database.
+                                                                                                               Also
+                                                                                                               note,
+                                                                                                               this is
+                                                                                                               pre-alpha
+                                                                                                               software.
+                                                                                                               You
+                                                                                                               cannot
+                                                                                                               complain
+                                                                                                               about it.
+                                                                                                               If you
+                                                                                                               don't
+                                                                                                               like it,
+                                                                                                               open
+                                                                                                               issue and
+                                                                                                               we may
+                                                                                                               try and
+                                                                                                               fix it.
+          </p>
         </div>
         <?php
         /*
@@ -321,7 +346,8 @@ define('CONFIGFILE', realpath('../../config.php'));
                   <option value="50">50 (Max)</option>
                 </select>
     <span class="help-block">
-      The number of players you want to be considered to be &apos;top&apos; players. These will be displayed on the <em>Top Players</em> page.
+      The number of players you want to be considered to be &apos;top&apos; players. These will be displayed on the <em>Top
+                                                                                                                        Players</em> page.
     </span>
               </div>
             </div>
@@ -417,6 +443,25 @@ define('CONFIGFILE', realpath('../../config.php'));
                        placeholder="3600 (1 Hour)" value="3600" needed>
     <span class="help-block">
       This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 1 hour.
+    </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <?php
+              $curURL = explode('/', $_SERVER['REQUEST_URI']);
+              if ($curURL[1] == "pages") {
+                $sugBaseURL = "/";
+              } else {
+                $sugBaseURL = $curURL[1] . "/";
+              }
+              ?>
+              <label for="fmcsBaseURL" class="col-sm-3 control-label">Base URL&ast;</label>
+
+              <div class="col-sm-9">
+                <input name="base_URL" type="text" class="form-control" id="fmcsBaseURL"
+                       placeholder="<?php echo $sugBaseURL ?>" value="<?php echo $sugBaseURL ?>" needed>
+    <span class="help-block">
+      If your install is located in a subdirectory, this will be the directory it is in. If it is a subdomain, this should be left as a <code>/</code>. It should be set but, the suggestion might be wrong depeneding on your setup.
     </span>
               </div>
             </div>
