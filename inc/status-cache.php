@@ -37,5 +37,6 @@ if (!file_exists($cacheFile)) {
   }
 } else {
   $offline = false;
-  $data = json_decode(file_get_contents($cacheFile), true);
 }
+
+$data = json_decode(file_get_contents($cacheFile), true);
