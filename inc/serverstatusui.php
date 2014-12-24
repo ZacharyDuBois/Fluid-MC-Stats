@@ -4,14 +4,10 @@
  */
 
 include_once APPPATH . 'config.php';
+include_once APPPATH . 'inc/status.php';
 
-/**
- * Discontinued because Minecraft-API is no-longer in service.
- */
-//include_once 'serverstatus.php';
-
-//$serverStatus = new serverstatus($mc_server_ip, $mc_server_port);
-//$serverStatus->fetchServerData();
+$serverStatus = new MinecraftServerStatus();
+$serverStatus->fetchServerData();
 ?>
 <div class="panel panel-danger">
   <div class="panel-heading">
