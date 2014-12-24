@@ -457,9 +457,9 @@ define('CONFIGFILE', realpath('../../config.php'));
 
               <div class="col-sm-9">
                 <input name="required_global_stats_time" type="text" class="form-control" id="fmcsAdvGlobalNeededTime"
-                       placeholder="3600 (1 Hour)" value="3600" needed>
+                       placeholder="300 (5 minutes)" value="300" needed>
     <span class="help-block">
-      This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 1 hour.
+      This is how long a player has to play for (in seconds) to be included in the server stats data. Defaults to 5 minutes.
     </span>
               </div>
             </div>
@@ -487,11 +487,11 @@ define('CONFIGFILE', realpath('../../config.php'));
 
               <div class="col-sm-9">
                 <input name="avatar_service_uri" type="text" class="form-control" id="fmcsAdvAvatarService"
-                       placeholder="https&colon;//minotar.net/avatar/" value="https://minotar.net/avatar/" needed>
+                       placeholder="http&colon;//cravatar.eu/avatar/" value="http://cravatar.eu/avatar/" needed>
     <span class="help-block">
       The URI for the avatar service you want to use. The URI must follow <code>http://domain.tld/directory/playername/pixelsize</code>.
       Known supported are <code>http://mctar.ws/</code> <span
-          class="label label-danger">Offline For Now</span> and <code>https://minotar.net/avatar/</code>.
+          class="label label-danger">Offline For Now</span> and <code>http://cravatar.eu/avatar/</code>.
     </span>
               </div>
             </div>
