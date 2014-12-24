@@ -22,7 +22,7 @@ include_once APPPATH . 'inc/status-cache.php';
     </div>
     <hr>
 
-    <?php if ($offline = true) { ?>
+    <?php if ($offline == true) { ?>
       <h3 class="mc-offline"><i class="fa fa-times-circle-o"></i> Offline</h3>
       <p><strong>Name:</strong> <?php echo $server_name; ?></p>
       <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>

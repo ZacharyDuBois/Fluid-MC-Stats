@@ -35,6 +35,7 @@ if (!file_exists($cacheFile)) {
     fwrite($fp, json_encode($rdata));
     fclose($fp);
   }
+} else {
+  $offline = false;
+  $data = json_decode(file_get_contents($cacheFile), true);
 }
-
-$data = json_decode(file_get_contents($cacheFile));
