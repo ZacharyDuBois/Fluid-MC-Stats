@@ -55,4 +55,12 @@ class serverStatus
       return false;
     }
   }
+  function getFavicon()
+  {
+    if (isset ($this->serverData['favicon'])) {
+      return $this->serverData['favicon'];
+    } else {
+      return false;
+    }
+  }
 }
