@@ -6,8 +6,8 @@
 include_once APPPATH . 'config.php';
 include_once APPPATH . 'inc/status.php';
 
-$serverStatus = new MinecraftServerStatus();
-$serverStatus->fetchServerData();
+$status = new MinecraftServerStatus();
+$r = $status->getStatus( $mc_server_ip, null, $mc_server_port);
 ?>
 <div class="panel panel-danger">
   <div class="panel-heading">
@@ -17,8 +17,10 @@ $serverStatus->fetchServerData();
     <div>
       <img src="<?php if (!empty($mc_custom_icon)) {
         echo($mc_custom_icon);
-      } else {
+      } elseif (!$r) {
         echo LINKBASE . "img/64.png";
+      } else {
+        echo $r['favicon'];
       } ?>" alt="<?php echo $server_name; ?>&apos;s Icon" class="img-circle server-sidebar-icon">
     </div>
     <hr>
