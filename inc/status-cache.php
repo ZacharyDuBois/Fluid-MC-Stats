@@ -1,0 +1,40 @@
+<?php
+/**
+ * status-cache.php
+ * Created for Fluid-MC-Stats.
+ */
+
+include_once APPPATH . 'config.php';
+include_once APPPATH . 'inc/status.php';
+
+$cacheFile = APPPATH . 'tmp/query.json';
+if (file_exists($cacheFile)) {
+  $creation_time = filemtime($cacheFile);
+  if ((time() - $creation_time) >= 60) {
+    // If file is older than 60 seconds, make a new query.
+    unlink($cacheFile);
+  }
+}
+
+if (!file_exists($cacheFile)) {
+  $status = new MinecraftServerStatus();
+  $r = $status->getStatus($mc_server_ip, $mc_server_port);
+  if (!$r) {
+    $offline = true;
+  } else {
+    $offline = false;
+    $rdata = array(
+        'favicon'    => $r['favicon'],
+        'ping'       => $r['ping'],
+        'version'    => $r['version'],
+        'players'    => $r['players'],
+        'maxplayers' => $r['maxplayers'],
+        'motd'       => $r['motd'],
+    );
+    $fp = fopen($cacheFile, 'w');
+    fwrite($fp, json_encode($rdata));
+    fclose($fp);
+  }
+}
+
+$data = json_decode(file_get_contents($cacheFile));

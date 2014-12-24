@@ -40,4 +40,10 @@ RewriteRule ^([^/]*)(.*)$ index.php?view=$1&params=$2 [L,QSA]
   deny from all
   satisfy all
 </files>
+
+<files tmp>
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
 # END Security Features
