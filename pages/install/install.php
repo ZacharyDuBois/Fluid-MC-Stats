@@ -252,7 +252,7 @@ define('CONFIGFILE', realpath('../../config.php'));
               </div>
             </div>
             <div class="form-group">
-              <label for="mcDispAddr" class="col-sm-3 control-label">Display Address</label>
+              <label for="mcDispAddr" class="col-sm-3 control-label">Display Address&ast;</label>
 
               <div class="col-sm-9">
                 <input name="mc_server_disp_addr" type="text" class="form-control" id="mcDispAddr"
