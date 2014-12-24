@@ -114,8 +114,25 @@ define('CONFIGFILE', realpath('../../config.php'));
             config.php is not found in <?php echo CONFIGFILE; ?>. Please make sure the file exists and has not been
             deleted.
           </div>
+        <?php } ?>
         <?php
-        }
+        if (file_exists('../../tmp/')) {
+          if (!is_writable('../../tmp/')) {
+            $faultFound = true;
+            ?>
+            <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Query Warning:</strong>
+              The folder <code>tmp</code> is not writeable by the webserver.
+            </div>
+          <?php
+          }
+        } else {
+          $faultFound = true;
+          ?>
+          <div class="alert alert-danger"><strong><i class="fa fa-exclamation-triangle"></i> Query Warning:</strong>
+            The folder <code>tmp</code> is not writeable by the webserver.
+          </div>
+        <?php } ?>
+        <?php
         if ($faultFound) {
           ?>
           <div class="jumbotron">
