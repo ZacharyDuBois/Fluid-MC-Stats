@@ -14,7 +14,7 @@ include_once APPPATH . 'inc/status-cache.php';
     <div>
       <img src="<?php if (!empty($mc_custom_icon)) {
         echo($mc_custom_icon);
-      } elseif ($offline = true) {
+      } elseif ($offline == true) {
         echo LINKBASE . "img/64.png";
       } else {
         echo $data['favicon'];
