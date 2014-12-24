@@ -7,7 +7,7 @@ include_once APPPATH . 'config.php';
 include_once APPPATH . 'inc/status.php';
 
 $status = new MinecraftServerStatus();
-$r = $status->getStatus( $mc_server_ip, null, $mc_server_port);
+$r = $status->getStatus($mc_server_ip, $mc_server_port);
 ?>
 <div class="panel panel-danger">
   <div class="panel-heading">
@@ -24,9 +24,21 @@ $r = $status->getStatus( $mc_server_ip, null, $mc_server_port);
       } ?>" alt="<?php echo $server_name; ?>&apos;s Icon" class="img-circle server-sidebar-icon">
     </div>
     <hr>
-    <p><strong>Name:</strong> <?php echo $server_name; ?></p>
 
-    <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
+    <?php if (!$r) { ?>
+      <h3 class="mc-offline"><i class="fa fa-times-circle-o"></i> Offline</h3>
+      <p><strong>Name:</strong> <?php echo $server_name; ?></p>
+      <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
+    <?php } else { ?>
+      <h3 class="mc-online"><i class="fa fa-check"></i> Online
+        <small>(<?php echo $r['ping']; ?>ms)</small>
+      </h3>
+      <p><strong>Name:</strong> <?php echo $server_name; ?></p>
+      <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
+
+      <p><strong>Players:</strong> <?php echo $r['players'] . " of " . $r['maxplayers'] . " max"; ?></p>
+      <p><strong><abbr title="Message Of The Day">MOTD</abbr>:</strong> <?php echo $r['motd']; ?></p>
+    <?php } ?>
 
   </div>
 </div>
