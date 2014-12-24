@@ -4,14 +4,10 @@
  */
 
 include_once APPPATH . 'config.php';
+include_once 'serverstatus.php';
 
-/**
- * Discontinued because Minecraft-API is no-longer in service.
- */
-//include_once 'serverstatus.php';
-
-//$serverStatus = new serverstatus($mc_server_ip, $mc_server_port);
-//$serverStatus->fetchServerData();
+$serverStatus = new serverstatus($mc_server_ip, $mc_server_port);
+$serverStatus->fetchServerData();
 ?>
 <div class="panel panel-danger">
   <div class="panel-heading">
@@ -22,7 +18,7 @@ include_once APPPATH . 'config.php';
       <img src="<?php if (!empty($mc_custom_icon)) {
         echo($mc_custom_icon);
       } else {
-        echo "http://" . $_SERVER['SERVER_NAME'] . "/img/64.png";
+        echo "$serverStatus->getFavicon();
       } ?>" alt="<?php echo $server_name; ?>&apos;s Icon" class="img-circle server-sidebar-icon">
     </div>
     <hr>
