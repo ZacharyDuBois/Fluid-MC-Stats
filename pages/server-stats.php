@@ -237,7 +237,7 @@ include APPPATH . "inc/navbar.php";
           <!--<em>*Only includes data of players with more than 1 hour of playtime.</em>-->
         </div>
         <div class="panel-footer">
-          <p><em>Please note that this only containts players with a time of more
+          <p><em>Please note that this only contains players with a time of more
                  than <?php echo convert_playtime("$required_global_stats_time"); ?></em></p>
         </div>
       </div>
