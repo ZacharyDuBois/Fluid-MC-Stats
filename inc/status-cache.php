@@ -24,12 +24,13 @@ if (!file_exists($cacheFile)) {
   } else {
     $offline = false;
     $rdata = array(
-        'favicon'    => $r['favicon'],
         'ping'       => $r['ping'],
         'version'    => $r['version'],
         'players'    => $r['players'],
         'maxplayers' => $r['maxplayers'],
         'motd'       => $r['motd'],
+        'favicon'    => $r['favicon'],
+        'lastupdate' => date("Y-m-d H:i:s"),
     );
     $fp = fopen($cacheFile, 'w');
     fwrite($fp, json_encode($rdata));
