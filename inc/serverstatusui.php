@@ -28,14 +28,15 @@ include_once APPPATH . 'inc/status-cache.php';
       <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
     <?php } else { ?>
       <h3 class="mc-online"><i class="fa fa-check"></i> Online
-        <?php if($data['ping'] >= 10) { ?><small>(<?php echo $data['ping']; ?>ms)</small><?php } ?>
+        <?php if ($data['ping'] >= 10) { ?>
+          <small>(<?php echo $data['ping']; ?>ms)</small><?php } ?>
       </h3>
       <p><strong>Name:</strong> <?php echo $server_name; ?></p>
       <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
+      <p><strong><abbr title="Message Of The Day">MOTD</abbr>:</strong> <?php echo $data['motd']; ?></p>
 
       <p><strong>Version:</strong> <?php echo $data['version']; ?></p>
       <p><strong>Players:</strong> <?php echo $data['players'] . " of " . $data['maxplayers'] . " max"; ?></p>
-      <p><strong><abbr title="Message Of The Day">MOTD</abbr>:</strong> <?php echo $data['motd']; ?></p>
 
       <div class="progress progress-striped active">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php
