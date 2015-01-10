@@ -28,7 +28,7 @@ include_once APPPATH . 'inc/status-cache.php';
       <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
     <?php } else { ?>
       <h3 class="mc-online"><i class="fa fa-check"></i> Online
-        <small>(<?php echo $data['ping']; ?>ms)</small>
+        <?php if($data['ping'] >= 10) { ?><small>(<?php echo $data['ping']; ?>ms)</small><?php } ?>
       </h3>
       <p><strong>Name:</strong> <?php echo $server_name; ?></p>
       <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
