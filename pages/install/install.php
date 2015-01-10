@@ -478,7 +478,7 @@ define('CONFIGFILE', realpath('../../config.php'));
                 <input name="base_URL" type="text" class="form-control" id="fmcsBaseURL"
                        placeholder="<?php echo $sugBaseURL ?>" value="<?php echo $sugBaseURL ?>">
     <span class="help-block">
-      If your install is located in a subdirectory, this will be the directory it is in. If it is a subdomain, this should be left blank. It should be set but, the suggestion might be wrong depending on your setup. Do not prefix with a <code>/</code> if using subdirectories.
+      If your install is located in a subdirectory, this will be the directory it is in. If it is a subdomain, this should be left blank. It should be set but, the suggestion might be wrong depending on your setup. Do not prefix with a <code>/</code> if using subdirectories. Also, you NEED to edit the <code>.htaccess</code> or your Nginx config file. Aditional information can be found in there.
     </span>
               </div>
             </div>

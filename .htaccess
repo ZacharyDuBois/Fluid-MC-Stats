@@ -7,6 +7,13 @@
 # BEGIN Fluid MC Stats
 RewriteEngine on
 
+##
+# Subdirectory install:
+# Change the line following this comment to the URI leading to your Fluid MC Stats installation. You may want to edit
+# the other lines to reflect the subdirectory the installation may be located in.
+##
+RewriteBase /
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
