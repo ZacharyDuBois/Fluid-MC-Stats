@@ -71,7 +71,7 @@ include APPPATH . 'inc/navbar.php';
               <tbody>
               <?php
               $page = 1;
-              $result = getTopPlayers($mysqli, $mysql_table_prefix, $player_top_calc_stat, $page);
+              $result = getTopPlayers($mysqli, $mysql_table_prefix, $player_top_calc_stat, $page, $player_on_top);
               $i = 1 * $page;
               if (!$result) {
                 echo $mysqli->error;

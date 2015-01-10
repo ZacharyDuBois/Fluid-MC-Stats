@@ -53,7 +53,7 @@ function shorten($string, $length) {
   }
 }
 
-function getTopPlayers($mysqli, $dbPrefix, $stat, $page) {
+function getTopPlayers($mysqli, $dbPrefix, $stat, $page, $limit) {
   $query;
   switch ($stat) {
     case "broken":
@@ -61,27 +61,27 @@ function getTopPlayers($mysqli, $dbPrefix, $stat, $page) {
       $query = "SELECT player_id,SUM(amount) AS value FROM {$dbPrefix}block WHERE "
           . "break=" . ($stat == "broken" ? "1" : "0")
           . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "")
-          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT " . $limit . " OFFSET " . (($page - 1) * $limit);
       break;
     case "kill":
       $query = "SELECT player_id,SUM(amount) AS value FROM {$dbPrefix}kill "
           . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT " . $limit . " OFFSET " . (($page - 1) * $limit);
       break;
     case "death":
       $query = "SELECT player_id,SUM(amount) AS value FROM {$dbPrefix}death "
           . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . " GROUP BY player_id ORDER BY SUM(amount) DESC LIMIT " . $limit . " OFFSET " . (($page - 1) * $limit);
       break;
     case "move":
       $query = "SELECT player_id,SUM(distance) AS value FROM {$dbPrefix}move "
           . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-          . " GROUP BY player_id ORDER BY SUM(distance) DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . " GROUP BY player_id ORDER BY SUM(distance) DESC LIMIT " . $limit . " OFFSET " . (($page - 1) * $limit);
       break;
     default:
       $query = "SELECT player_id,SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM {$dbPrefix}player "
           . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
-          . " GROUP BY player_id ORDER BY SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") DESC LIMIT 15 OFFSET " . (($page - 1) * 15);
+          . " GROUP BY player_id ORDER BY SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") DESC LIMIT " . $limit . " OFFSET " . (($page - 1) * $limit);
   }
   $result = $mysqli->query($query);
 
