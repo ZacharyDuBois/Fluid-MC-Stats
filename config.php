@@ -56,3 +56,8 @@ $custom_hosted_uri = '';
  * Specify required time, in seconds, players need to be included in global stats generation.
  */
 $required_global_stats_time = '3600'; // 1 Hour
+
+/**
+ * Enable the debugging script.
+ */
+$debug = false;

@@ -8,6 +8,9 @@ include_once APPPATH . 'config.php';
 
 define('LINKBASE', '/' . $base_URL);
 
+if ($debug == true) {
+  include_once APPPATH . 'inc/debug.php';
+}
 
 $MENULINKS = array(
     new Link(
