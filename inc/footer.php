@@ -35,6 +35,7 @@ include APPPATH . 'inc/version.php';
     jQuery(document).ready(function () {
       jQuery("abbr.timeago").timeago();
     });
+    var installDir = '<?php echo LINKBASE; ?>';
 <?php } ?>
 <?php if ($navPage == "live-ticker" or $navPage = 'player-list' or $navPage = 'search') { ?>
     var avatarURI = '<?php echo $avatar_service_uri; ?>';

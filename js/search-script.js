@@ -20,7 +20,7 @@ function fetchPage(pageNr, element) {
   var finder = $("#key").text();
   $.ajax({
     type    : "GET",
-    url     : "../inc/ajax/search.php",
+    url     : installDir + "inc/ajax/search.php",
     dataType: 'json',
     data    : {
       page  : page,

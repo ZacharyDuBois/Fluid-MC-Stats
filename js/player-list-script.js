@@ -19,7 +19,7 @@ function fetchPage(pageNr, element) {
   var players;
   $.ajax({
     type    : "GET",
-    url     : "../inc/ajax/player-list.php",
+    url     : installDir + "inc/ajax/player-list.php",
     dataType: 'json',
     data    : {
       page: page
