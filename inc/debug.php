@@ -12,6 +12,7 @@ $output = array(
     'serverName'        => $_SERVER['SERVER_NAME'],
     'requestURI'        => $_SERVER['REQUEST_URI'],
     'serverSoft'        => $_SERVER['SERVER_SOFTWARE'],
+    'jsonEnabled'       => extension_loaded("json"),
     'cdnURI'            => $custom_hosted_uri,
     'baseURI'           => $base_URL,
     'avatarURI'         => $avatar_service_uri,
