@@ -1,6 +1,6 @@
 # Fluid MC Stats
 
-*v0.2.0*
+*v0.2.1*
 
 ## Features
 
@@ -16,19 +16,18 @@
 ## Requirements
 
 - Apache or Nginx.
-- A non-locally hosted server (Meaning you are hosting from your house).
+- A Linux server running a LEMP or LAMP setup (We will not provide support for Windows servers or locally hosted servers with XAMPP, WAMP, MAMP, etc).
 - PHP5+.
 - MySQL.
 - A Minecraft server running Stats.
 
 ## Installation
 
-1. Add the files to your server like a normal website.
-2. Open `http://example.tld/` (It should redirect you to the installer).
-3. Fill out the install information.
-4. Submit.
-5. Delete `/pages/install/`.
-6. You're ready to go!
+1. Upload everything.
+2. Load where you installed it in a browser. If you are not redirected to the installer, go to `/pages/install/install.php`.
+3. Fill out the installer.
+4. Delete `pages/install/`.
+5. Done :)
 
 ## Notices
 

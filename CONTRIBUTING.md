@@ -2,13 +2,12 @@
 
 ## Rules
 
-- Do not assign a milestone, we will do that after reviewing.
-- Do not assign to someone, we will do that.
 - Do not spam comment.
 - Do not bump issues.
 - Make sure you are using the latest version of both, the plugin and interface.
 - Attach images of the errors.
 - Copy the error text if any.
+- Open `config.php` and set debug to `true`. Copy the output on the site.
 
 If you want to make issues and help us out, please follow this template to speed things up.
 
@@ -23,3 +22,9 @@ If you want to make issues and help us out, please follow this template to speed
     ###  Expected Behavior:
     
     How I think it should work.
+    
+    ### Debug Output:
+    
+    ```json
+    {paste the debug output here}
+    ```
