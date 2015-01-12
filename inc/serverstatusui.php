@@ -13,7 +13,7 @@ include_once APPPATH . 'inc/status-cache.php';
 $favicon = $data['mcPing']['query']['favicon'];
 $avgPing = $data['pingTimes']['avgPing'];
 $motd = $data['mcQuery']['getInfo']['HostName'];
-$mcVersion = $data['mcQuery']['Version'];
+$mcVersion = $data['mcQuery']['getInfo']['Version'];
 $curPlayers = $data['mcQuery']['getInfo']['Players'];
 $maxPlayers = $data['mcQuery']['getInfo']['MaxPlayers'];
 $listPlayers = $data['mcQuery']['getPlayers'];
