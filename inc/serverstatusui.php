@@ -29,6 +29,9 @@ $lastUpdate = $data['lastUpdate'];
         echo($mc_custom_icon);
       } elseif ($isOffline == true) {
         echo LINKBASE . "img/64.png";
+      }
+      if ($favicon == null) {
+        echo LINKBASE . "img/64.png";
       } else {
         echo $favicon;
       } ?>" alt="<?php echo $server_name; ?>&apos;s Icon" class="img-circle server-sidebar-icon">
@@ -72,7 +75,10 @@ $lastUpdate = $data['lastUpdate'];
             <img class="img-circle avatar-list-icon" src="<?php echo $avatar_service_uri . $player . '/16' ?>">
             <?php
             $i++;
-            if ($i == 15) break;
+            if ($i == 15) {
+              echo '...';
+              break;
+            }
           }
         } else { ?>
           <p>Looks like no one is online!</p>
