@@ -64,6 +64,20 @@ $lastUpdate = $data['lastUpdate'];
           <span class="sr-only"><?php echo $percentageFilled; ?>% Complete</span>
         </div>
       </div>
+      <div class="well well-sm">
+        <?php
+        if ($listPlayers != false and $curPlayers != 0) {
+          $i = 0;
+          foreach ($listPlayers as $player) { ?>
+            <img class="img-circle avatar-list-icon" src="<?php echo $avatar_service_uri . $player . '/16' ?>">
+            <?php
+            $i++;
+            if ($i == 15) break;
+          }
+        } else { ?>
+          <p>Looks like no one is online!</p>
+        <?php } ?>
+      </div>
     <?php } ?>
   </div>
   <div class="panel-footer">
