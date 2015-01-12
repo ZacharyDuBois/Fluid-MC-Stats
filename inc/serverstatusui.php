@@ -34,8 +34,7 @@ $lastUpdate = $data['lastUpdate'];
         echo($mc_custom_icon);
       } elseif ($isOffline == true) {
         echo LINKBASE . "img/64.png";
-      }
-      if ($favicon == null) {
+      } elseif ($favicon == null) {
         echo LINKBASE . "img/64.png";
       } else {
         echo $favicon;
