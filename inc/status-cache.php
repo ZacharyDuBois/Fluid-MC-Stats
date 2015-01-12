@@ -5,7 +5,7 @@
  */
 
 include_once APPPATH . 'config.php';
-include_once APPPATH . 'inc/status.php';
+//include_once APPPATH . 'inc/status.php';
 
 $cacheFile = APPPATH . 'tmp/query.json';
 if (file_exists($cacheFile)) {
