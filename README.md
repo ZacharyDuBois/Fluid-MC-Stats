@@ -11,6 +11,7 @@
 - Live ticker.
 - Top lists.
 - Nice URLs :)
+- Online player icon list.
 - *More coming*
 
 ## Requirements
@@ -32,5 +33,6 @@
 ## Notices
 
 - This is currently beta.
+- When opening an issue, read `CONTRIBUTING.md` to have your problem solved faster.
 
 Copyright (c) AccountProductions, 2014. All Rights Reserved.
