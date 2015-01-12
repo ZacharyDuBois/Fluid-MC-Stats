@@ -11,12 +11,17 @@ include_once APPPATH . 'inc/status-cache.php';
  */
 
 $favicon = $data['mcPing']['query']['favicon'];
-$avgPing = $data['pingTimes']['avgPing'];
-$motd = $data['mcQuery']['getInfo']['HostName'];
-$mcVersion = $data['mcQuery']['getInfo']['Version'];
-$curPlayers = $data['mcQuery']['getInfo']['Players'];
-$maxPlayers = $data['mcQuery']['getInfo']['MaxPlayers'];
+$motd = $data['mcPing']['query']['description'];
+$mcVersion = $data['mcPing']['query']['version']['name'];
+$curPlayers = $data['mcPing']['query']['players']['online'];
+$maxPlayers = $data['mcPing']['query']['players']['max'];
 $listPlayers = $data['mcQuery']['getPlayers'];
+
+if ($limitedSupport == true) {
+  $pingTime = $data['pingTimes']['pingPing'];
+} else {
+  $pingTime = $data['pingTimes']['avgPing'];
+}
 $lastUpdate = $data['lastUpdate'];
 ?>
 <div class="panel panel-danger">
@@ -46,8 +51,8 @@ $lastUpdate = $data['lastUpdate'];
       <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
     <?php } else { ?>
       <h3 class="mc-online"><i class="fa fa-check"></i> Online
-        <?php if ($avgPing >= 35) { ?>
-          <small>(<?php echo $avgPing; ?>ms)</small><?php } ?>
+        <?php if ($pingTime >= 35) { ?>
+          <small>(<?php echo $pingTime; ?>ms)</small><?php } ?>
       </h3>
       <p><strong>Name:</strong> <?php echo $server_name; ?></p>
 
@@ -67,10 +72,12 @@ $lastUpdate = $data['lastUpdate'];
           <span class="sr-only"><?php echo $percentageFilled; ?>% Complete</span>
         </div>
       </div>
-      <div class="well well-sm">
-        <?php
-        if ($listPlayers != false and $curPlayers != 0) {
-          $i = 0;
+      <?php
+      if ($listPlayers != false and $curPlayers != 0 and $limitedSupport == false) {
+        $i = 0;
+        ?>
+        <div class="well well-sm">
+          <?php
           foreach ($listPlayers as $player) { ?>
             <img class="img-circle avatar-list-icon" src="<?php echo $avatar_service_uri . $player . '/16' ?>">
             <?php
@@ -80,11 +87,25 @@ $lastUpdate = $data['lastUpdate'];
               break;
             }
           }
-        } else { ?>
+          ?>
+        </div>
+      <?php
+      } elseif ($listPlayers == false and $curPlayers == 0 and $limitedSupport == false) { ?>
+        <div class="well well-sm">
           <p>Looks like no one is online!</p>
-        <?php } ?>
-      </div>
-    <?php } ?>
+        </div>
+      <?php
+      } elseif ($listPlayers == false and $limitedSupport == true and $hide_limited_feature_warning == false) { ?>
+        <div class="well well-sm">
+          <p>Oh no! <code>MinecraftQuery.php</code> cannot query your server. If you find this as an error, open an
+             issue
+             on GitHub. Otherwise, edit the config value <code>$hide_limited_feature_warning</code> to <code>true</code>.
+          </p>
+        </div>
+      <?php
+      }
+    }
+    ?>
   </div>
   <div class="panel-footer">
     <em>Last Query: <?php echo $lastUpdate; ?></em>

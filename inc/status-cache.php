@@ -105,8 +105,13 @@ if (!file_exists($cacheFile)) {
 
 $data = json_decode(file_get_contents($cacheFile), true);
 
-if ($data['mcQuery']['getInfo'] == false or $data['mcPing']['query'] == null) {
+if ($data['mcQuery']['getInfo'] == false and $data['mcPing']['query'] == null) {
   $isOffline = true;
+  $limitedSupport = true;
+} elseif ($data['mcQuery']['getInfo'] == false and $data['mcPing']['query'] != null) {
+  $isOffline = false;
+  $limitedSupport = true;
 } else {
   $isOffline = false;
+  $limitedSupport = false;
 }
