@@ -1,0 +1,13 @@
+# Deny access to version file
+<files version.php>
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
+
+# Deny access to security file
+<files security.php>
+  order allow,deny
+  deny from all
+  satisfy all
+</files>

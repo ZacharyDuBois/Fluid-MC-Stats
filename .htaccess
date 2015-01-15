@@ -34,23 +34,8 @@ RewriteRule ^([^/]*)(.*)$ index.php?view=$1&params=$2 [L,QSA]
   satisfy all
 </files>
 
-# Deny access to version file
-<files inc/version.php>
-  order allow,deny
-  deny from all
-  satisfy all
-</files>
+# Other htaccess files:
+# tmp/.htaccess
+# inc/.htaccess
 
-# Deny access to security file
-<files inc/security.php>
-  order allow,deny
-  deny from all
-  satisfy all
-</files>
-
-<files tmp>
-  order allow,deny
-  deny from all
-  satisfy all
-</files>
 # END Security Features
