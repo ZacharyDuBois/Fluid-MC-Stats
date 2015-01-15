@@ -66,7 +66,7 @@ function fetchPage(pageNr, element) {
                   )
                       .append(" ")
                       .append($('<a>')
-                          .attr('href', 'players/' + player['player_id'])
+                          .attr('href', installDir + 'players/' + player['player_id'])
                           .append(player["name"])
                           .attr('title', player["name"] + "&apos;s Stats")
                   )

@@ -9,7 +9,7 @@
 var liveticker = {
   config       : {
     interval: 10,
-    url     : ''
+    url     : installDir + 'inc/ajax/live-ticker.php'
   },
   players      : {},
   utils        : {},
@@ -150,7 +150,7 @@ liveticker.utils.isOnline = function (playerdata) {
 
 liveticker.utils.addPlayerAction = function (name, id, action) {
   $row = $('<tr />');
-  $row.append('<td><img src="' + avatarURI + name + '/16" class="img-circle avatar-list-icon"> <a href="/players/' + id + '" title="' + name + '&apos;s Stats">' + name + '</td>');
+  $row.append('<td><img src="' + avatarURI + name + '/16" class="img-circle avatar-list-icon"> <a href="' + installDir + 'players/' + id + '" title="' + name + '&apos;s Stats">' + name + '</td>');
   $row.append('<td>' + action + '</td>');
   liveticker.item.prepend($row);
 };
