@@ -18,21 +18,14 @@
 
 - Apache or Nginx.
 - A Linux server running a LEMP or LAMP setup (We will not provide support for Windows servers or locally hosted servers with XAMPP, WAMP, MAMP, etc).
-- PHP5+.
+- PHP5+ (`mysqli` and `json` enabled).
 - MySQL.
 - A Minecraft server running Stats.
-
-## Installation
-
-1. Upload everything.
-2. Load where you installed it in a browser. If you are not redirected to the installer, go to `/pages/install/install.php`.
-3. Fill out the installer.
-4. Delete `pages/install/`.
-5. Done :)
 
 ## Notices
 
 - This is currently beta.
 - When opening an issue, read `CONTRIBUTING.md` to have your problem solved faster.
+- Install docs can be found in `INSTALL.md`.
 
 Copyright (c) AccountProductions, 2014. All Rights Reserved.
