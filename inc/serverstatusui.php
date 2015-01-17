@@ -5,6 +5,7 @@
 
 include_once APPPATH . 'config.php';
 include_once APPPATH . 'inc/status-cache.php';
+include_once APPPATH . 'inc/MinecraftColors.php';
 
 /**
  * Data
@@ -58,7 +59,8 @@ $lastUpdate = $data['lastUpdate'];
 
       <p><strong>IP:</strong> <?php echo $mc_server_disp_addr; ?></p>
 
-      <p><strong><abbr title="Message Of The Day">MOTD</abbr>:</strong> <?php echo $motd; ?></p>
+      <p><strong><abbr
+              title="Message Of The Day">MOTD</abbr>:</strong> <?php echo MinecraftColors::convertToHTML($motd); ?></p>
 
       <p><strong>Version:</strong> <?php echo $mcVersion; ?></p>
 
