@@ -12,6 +12,7 @@
 - Top lists.
 - Nice URLs :)
 - Online player icon list.
+- Sort player list.
 - *More coming*
 
 ## Requirements
