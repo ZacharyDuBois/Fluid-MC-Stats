@@ -78,6 +78,11 @@ function getTopPlayers($mysqli, $dbPrefix, $stat, $page, $limit) {
           . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
           . " GROUP BY player_id ORDER BY SUM(distance) DESC LIMIT " . $limit . " OFFSET " . (($page - 1) * $limit);
       break;
+    case "money":
+      $query = "SELECT player_id,max(money) AS value FROM {$dbPrefix}player "
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
+          . "GROUP BY player_id ORDER BY max(money) DESC LIMIT " . $limit . " OFFSET " . (($page - 1) * $limit);
+      break;
     default:
       $query = "SELECT player_id,SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM {$dbPrefix}player "
           . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "")
@@ -119,6 +124,11 @@ function getPlayerStat($mysqli, $dbPrefix, $player_id, $stat) {
           . " WHERE player_id=" . $player_id
           . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
       break;
+    case "money":
+     $query = "SELECT max(money) AS value FROM {$dbPrefix}player "
+         . " WHERE player_id=" . $player_id
+         . (usesSnapshots($mysqli, $dbPrefix) ? " AND snapshot_name='main_snapshot'" : "");
+      break;
     default:
       $query = "SELECT SUM(" . getDatabaseColumnNameFromPlayerStat($stat) . ") AS value FROM {$dbPrefix}player "
           . " WHERE player_id=" . $player_id
@@ -149,6 +159,10 @@ function getServerTotal($mysqli, $dbPrefix, $stat) {
       break;
     case "move":
       $query = "SELECT SUM(distance) AS value FROM {$dbPrefix}move "
+          . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
+      break;
+    case "money":
+      $query = "SELECT SUM(max(money)) AS value FROM {$dbPrefix}player "
           . (usesSnapshots($mysqli, $dbPrefix) ? " WHERE snapshot_name='main_snapshot'" : "");
       break;
     default:

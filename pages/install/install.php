@@ -324,6 +324,7 @@ define('CONFIGFILE', realpath('../../config.php'));
                   <option value="dropped">Items Dropped</option>
                   <option value="pickedup">Items Picked Up</option>
                   <option value="teleport">Teleports</option>
+                  <option value="money">Money</option>
                 </select>
     <span class="help-block">
       Some text you want to include next to the footer text. Keep it short as it looks better when it doesn't need to wrap lines.
@@ -465,6 +466,7 @@ define('CONFIGFILE', realpath('../../config.php'));
                   <option value="dropped">Items Dropped</option>
                   <option value="pickedup">Items Picked Up</option>
                   <option value="teleport">Teleports</option>
+                  <option value="money">Money</option>
                 </select>
                 <span class="help-block">
       This is how the player list will be sorted. Defaults to online time.

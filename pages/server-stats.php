@@ -231,6 +231,14 @@ include APPPATH . "inc/navbar.php";
                 echo "<td>" . round($value / $amountOfPlayers, 2) . " Teleports</td>";
                 ?>
               </tr>
+              <tr>
+                <th>Money</th>
+                <?php
+                $value = getServerTotal($mysqli, $mysql_table_prefix, "money");
+                echo "<td>" . $value . "</td>";
+                echo "<td>" . round($value / $amountOfPlayers, 2) . "</td>";
+                ?>
+              </tr>
               </tbody>
             </table>
           </div>

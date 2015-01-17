@@ -19,6 +19,7 @@ $stats = array(
     'toolsbroken',
     'pickedup',
     'dropped',
+    'money',
 );
 
 ?>

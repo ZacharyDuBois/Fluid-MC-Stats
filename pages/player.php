@@ -210,6 +210,11 @@ include APPPATH . 'inc/navbar.php';
                   Teleports
                 </td>
               </tr>
+              <tr>
+                <th>Money</th>
+                <td><?php echo getPlayerStat($mysqli, $mysql_table_prefix, $player_id, "money") ?></td>
+                <td><?php echo round(getServerAverage($mysqli, $mysql_table_prefix, "money", $required_global_stats_time), 2); ?></td>
+              </tr>
               </tbody>
             </table>
           </div>
