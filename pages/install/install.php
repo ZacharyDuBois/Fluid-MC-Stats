@@ -440,6 +440,50 @@ define('CONFIGFILE', realpath('../../config.php'));
     </span>
               </div>
             </div>
+            <div class="form-group">
+              <label for="fmcsListSort" class="col-sm-3 control-label">Sort Player List By&ast;</label>
+
+              <div class="col-sm-9">
+                <select name="player_list_sort_by" class="form-control" id="fmcsListSort" needed>
+                  <option value="online" selected>Online</option>
+                  <option value="id">Player ID</option>
+                  <option value="playtime">Playtime</option>
+                  <option value="broken">Blocks Broken</option>
+                  <option value="placed">Blocks Placed</option>
+                  <option value="deaths">Deaths</option>
+                  <option value="kills">Kills</option>
+                  <option value="arrows">Arrows Fired</option>
+                  <option value="exp">Collected EXP</option>
+                  <option value="fish">Fish Cought</option>
+                  <option value="damage">Total Damage Taken</option>
+                  <option value="consumed">Food Consumed</option>
+                  <option value="crafted">Crafted Items</option>
+                  <option value="eggs">Eggs Thrown</option>
+                  <option value="toolsbroken">Tools Broken</option>
+                  <option value="commands">Commands</option>
+                  <option value="votes">Votes</option>
+                  <option value="dropped">Items Dropped</option>
+                  <option value="pickedup">Items Picked Up</option>
+                  <option value="teleport">Teleports</option>
+                </select>
+                <span class="help-block">
+      This is how the player list will be sorted. Defaults to online time.
+    </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fmcsListOrder" class="col-sm-3 control-label">Order Player List By&ast;</label>
+
+              <div class="col-sm-9">
+                <select name="player_list_sort_order" class="form-control" id="fmcsListOrder" needed>
+                  <option value="asc">Ascending</option>
+                  <option value="desc" selected>Descending</option>
+                </select>
+                <span class="help-block">
+      Order results by ascending or descending order.
+    </span>
+              </div>
+            </div>
             <h4><i class="fa fa-lock"></i> Fluid MC Stats Advanced Settings</h4>
 
             <p>These settings are for advanced users only. Please leave them alone if you do not know what they do.</p>

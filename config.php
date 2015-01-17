@@ -59,6 +59,10 @@ $custom_links = array(
 $map_url = '';
 // If map_url is set, would you like to use it as a background?
 $map_bg = true;
+// How to sort the player list
+$player_list_sort_by = '';
+// Order player list (asc)ending or (desc)ending
+$player_list_sort_order = '';
 // Hides the limited feature box when MinecraftQuery.php cannot query your server.
 $hide_limited_feature_warning = false;
 

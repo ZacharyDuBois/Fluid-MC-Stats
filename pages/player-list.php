@@ -91,7 +91,7 @@ include APPPATH . 'inc/navbar.php';
               <!-- ZACH NTS: Add in tooltips instead of abbr (don't forget to do it in player-list-search.js too then -->
               <?php
               include APPPATH . "inc/pages/player-list-getter.php";
-              $players = getPlayerList($mysqli, $mysql_table_prefix, $pagenr);
+              $players = getPlayerList($mysqli, $mysql_table_prefix, $player_list_sort_by, $player_list_sort_order, $pagenr);
               while ($player = $players->fetch_array()) {
                 $playerName = getPlayerName($mysqli, $mysql_table_prefix, $player['player_id']);
                 echo "<tr>";

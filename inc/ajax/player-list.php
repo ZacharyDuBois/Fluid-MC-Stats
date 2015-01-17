@@ -27,7 +27,7 @@ if (!is_numeric($page)) {
   die(json_encode("Page is not a number (???)"));
 }
 
-$players = getPlayerList($mysqli, $mysql_table_prefix, $page);
+$players = getPlayerList($mysqli, $mysql_table_prefix, $player_list_sort_by, $player_list_sort_order, $page);
 if (!$players || empty($players)) {
   die(json_encode("Query failed, or no players are found"));
 }

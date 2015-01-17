@@ -11,7 +11,7 @@ include '../util.php';
 include '../pages/player-list-getter.php';
 include '../queries.php';
 
-$players = getPlayerList($mysqli, $mysql_table_prefix, 1);
+$players = getPlayerList($mysqli, $mysql_table_prefix, "online", "desc", 1);
 if (!$players || empty($players)) {
   die(json_encode("Query failed, or no players are found"));
 }
