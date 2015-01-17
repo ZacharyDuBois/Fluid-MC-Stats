@@ -18,22 +18,6 @@ $navPage = "live-ticker";
   include APPPATH . 'inc/header.php';
   ?>
   <!-- /Header -->
-
-  <style type="text/css">
-    #live-ticker {
-      font-weight: bold;
-    }
-
-    #live-ticker .old {
-      color: #ccc;
-      font-weight: normal;
-    }
-
-    #live-ticker .highlight,
-    #live-ticker .highlight.old {
-      color: #428bca;
-    }
-  </style>
 </head>
 
 <body>
