@@ -9,16 +9,16 @@
 
 // MySQL Host.
 $mysql_host = '';
-// MySQL Database.
-$mysql_database = '';
 // MySQL Port.
 $mysql_port = '';
+// MySQL Database.
+$mysql_database = '';
+// Stats prefix - Found in Stats plugin config.
+$mysql_table_prefix = 'Stats_';
 // MySQL User.
 $mysql_user = '';
 // MySQL Password.
 $mysql_pwd = '';
-// Stats prefix - Found in Stats plugin config.
-$mysql_table_prefix = '';
 
 /**
  * Minecraft Server
@@ -32,6 +32,8 @@ $mc_server_ip = '';
 $mc_server_port = '';
 // A 'nice' address for your Minecraft server. This will be the address that is displayed on the web interface.
 $mc_server_disp_addr = '';
+// The URL to a custom image to use as the server icon. If not set, we will use the server-icon.png on your Minecraft server.
+$mc_custom_icon = '';
 
 /**
  * Fluid MC Stats Interface Config
@@ -41,12 +43,10 @@ $mc_server_disp_addr = '';
 $site_name = '';
 // The FontAwesome icon you want to be next to your web end title. Use ending only. Ex: Icon you want to use "fa-bookmark-o" Just enter "bookmark-o".
 $fa_icon = '';
-// URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mctar.ws/ for ours.
-$avatar_service_uri = '';
 // Stat that gets used to sort the players
 $player_top_calc_stat = '';
 // Number of player on top list.
-$player_on_top = '';
+$player_on_top = 10;
 // Custom text added into the footer.
 $custom_footer_text = '';
 // Links displayed in navbar and sidebar. Add as many as you need (Only add up to 5 from the auto install).
@@ -55,10 +55,6 @@ $custom_links = array(
     "Lolmewn"         => "http://lolmewn.nl/",
     "Mojang"          => "http://mojang.com/",
 );
-// The URL to a custom image to use as the server icon. If not set, we will use the server-icon.png on your Minecraft server.
-$mc_custom_icon = '';
-// This setting defines the base URL to your FMCS install. Leave blank for subdoamin install. For subdirectories, put the full URI to the install root without beginning slash.
-$base_URL = '/';
 // Hides the limited feature box when MinecraftQuery.php cannot query your server.
 $hide_limited_feature_warning = false;
 
@@ -76,7 +72,10 @@ $hide_limited_feature_warning = false;
  */
 $custom_hosted_uri = '';
 // Specify required time, in seconds, players need to be included in global stats generation.
-$required_global_stats_time = '3600'; // 1 Hour
-
+$required_global_stats_time = 3600; // 1 Hour
+// This setting defines the base URL to your FMCS install. Leave blank for subdoamin (root) install. For subdirectories, put the full URI to the install root without beginning slash.
+$base_URL = '/';
+// URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mctar.ws/ for ours.
+$avatar_service_uri = '';
 // Enable the debugging script.
 $debug = false;
