@@ -28,7 +28,7 @@ include APPPATH . 'inc/version.php';
 
 <!-- Map -->
 <?php
-if (!empty($map_url) and $map_bg == "true" or !empty($map_url) and $map_bg == true) {
+if (!empty($map_url) and $map_bg == "true" and $navPage != "map") {
   ?>
   <!-- Block clicks -->
   <div class="bg-blocker"></div>
