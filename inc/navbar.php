@@ -39,7 +39,7 @@ include_once APPPATH . 'config.php';
         <ul class="dropdown-menu">
           <?php
           if (empty($custom_links)) {
-            echo "No links here!";
+            echo "<li><a href='#'>No links here!</a></li>";
           }
           foreach ($custom_links as $key => $link) {
             echo "<li><a href='" . $link . "' title='" . $key . "'>" . $key . "</a></li>";
