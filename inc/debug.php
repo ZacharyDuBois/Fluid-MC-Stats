@@ -35,6 +35,8 @@ $output = array(
         'hideLimitedWarning' => $hide_limited_feature_warning,
         'mapURL'             => $map_url,
         'mapBg'              => $map_bg,
+        'playerListSort'     => $player_list_sort_by,
+        'playerListOrder'    => $player_list_sort_order,
     ),
     'envInfo'    => array(
         'APPPATH'     => APPPATH,
