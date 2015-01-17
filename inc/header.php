@@ -22,6 +22,8 @@ error_reporting(0);
     echo("Search");
   } elseif ($navPage == "player-list") {
     echo("Player List");
+  } elseif ($navPage == "map") {
+    echo("Map");
   } elseif ($navPage == "player") {
     echo("Player - " . $player);
   } else {

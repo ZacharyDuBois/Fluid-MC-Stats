@@ -2,9 +2,9 @@
 
 define('APPPATH', dirname(__FILE__) . '/');
 
-include_once APPPATH . 'inc/link.php';
-include_once APPPATH . 'inc/security.php';
 include_once APPPATH . 'config.php';
+include_once APPPATH . 'inc/security.php';
+include_once APPPATH . 'inc/link.php';
 
 define('LINKBASE', '/' . $base_URL);
 
@@ -50,6 +50,15 @@ $MENULINKS = array(
         'player-list'
     ),
 );
+
+if (!empty($map_url)) {
+  $MENULINKS[] = new Link(
+      'Map',
+      LINKBASE . 'map',
+      'fa-globe',
+      'map'
+  );
+}
 
 $view = '';
 if (isset($_GET) === TRUE && isset($_GET['view']) === TRUE) {

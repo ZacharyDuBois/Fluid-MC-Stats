@@ -55,6 +55,10 @@ $custom_links = array(
     "Lolmewn"         => "http://lolmewn.nl/",
     "Mojang"          => "http://mojang.com/",
 );
+// Map URL to what you want displayed. Filling this in will create a page for it
+$map_url = '';
+// If map_url is set, would you like to use it as a background?
+$map_bg = true;
 // Hides the limited feature box when MinecraftQuery.php cannot query your server.
 $hide_limited_feature_warning = false;
 

@@ -48,31 +48,12 @@ define('CONFIGFILE', realpath('../../config.php'));
         <h3 class="panel-title"><i class="fa fa-wrench"></i> Install &amp; Configure</h3>
       </div>
       <div class="panel-body">
-        <div class="alert alert-warning"><p><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please
-                                                                                                               take a
-                                                                                                               backup of
-                                                                                                               everything
-                                                                                                               before
-                                                                                                               connecting
-                                                                                                               you're
-                                                                                                               database.
-                                                                                                               Also
-                                                                                                               note,
-                                                                                                               this is
-                                                                                                               pre-alpha
-                                                                                                               software.
-                                                                                                               You
-                                                                                                               cannot
-                                                                                                               complain
-                                                                                                               about it.
-                                                                                                               If you
-                                                                                                               don't
-                                                                                                               like it,
-                                                                                                               open
-                                                                                                               issue and
-                                                                                                               we may
-                                                                                                               try and
-                                                                                                               fix it.
+        <div class="alert alert-warning">
+          <p><strong><i class="fa fa-exclamation-circle"></i> Warning:</strong> Please take a backup of everything
+                                                                                before connecting you're database Also
+                                                                                note, this is beta software. You cannot
+                                                                                complain about it. If you don't like it,
+                                                                                open issue and we may try and fix it.
           </p>
         </div>
         <?php
@@ -433,6 +414,30 @@ define('CONFIGFILE', realpath('../../config.php'));
               <div class="col-sm-6">
                 <input name="customvalue5" type="text" class="form-control" id="fmcsLink5URL"
                        placeholder="http&colon;//example.com/">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fmcsMapURL" class="col-sm-3 control-label">URL to a Map</label>
+
+              <div class="col-sm-9">
+                <input name="map_url" type="text" class="form-control" id="fmcsMapURL"
+                       placeholder="http&colon;//domain.tld/my/map/&num;x/y/z/">
+    <span class="help-block">
+      If you have a map generator (Dynmap, Overviewer, etc), you can set a URL to it here and it will make a page on the Fluid MC Stats interface for it
+    </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fmcsMapBg" class="col-sm-3 control-label">Use Map as Background?&ast;</label>
+
+              <div class="col-sm-9">
+                <select name="map_bg" class="form-control" id="fmcsMapBg" needed>
+                  <option value="false" selected>No</option>
+                  <option value="true">Yes</option>
+                </select>
+                <span class="help-block">
+      If you set a map URL above, you can use it as the background. This makes a cool effect but, this also will cause load where the map is hosted.
+    </span>
               </div>
             </div>
             <h4><i class="fa fa-lock"></i> Fluid MC Stats Advanced Settings</h4>

@@ -72,3 +72,9 @@ img.server-sidebar-icon {
 #live-ticker .highlight.old {
   color: #428bca;
 }
+
+iframe.map {
+  border: none;
+  width: 100%;
+  min-height: 600px;
+}
