@@ -36,7 +36,7 @@ include APPPATH . 'inc/navbar.php';
       <div class="col-md-10 col-md-offset-1">
         <ol class="breadcrumb">
           <li><a href="<?php echo LINKBASE; ?>" title="Home"><i class="fa fa-home"></i> Home</a></li>
-          <li class="active"><i class="fa fa-list"></i> Live Ticker</li>
+          <li class="active"><i class="fa fa-globe"></i> Map</li>
         </ol>
       </div>
     </div>
@@ -49,7 +49,7 @@ include APPPATH . 'inc/navbar.php';
     <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title"><i class="fa fa-list"></i> Live Ticker</h3>
+          <h3 class="panel-title"><i class="fa fa-globe"></i> Map</h3>
         </div>
         <div class="panel-body">
           <p>This page lets you look at the map of the server. Click <a href="<?php echo $map_url; ?>" title="Full Map">here</a>
