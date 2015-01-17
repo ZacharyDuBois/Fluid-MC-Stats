@@ -16,6 +16,7 @@ $mcVersion = $data['mcPing']['query']['version']['name'];
 $curPlayers = $data['mcPing']['query']['players']['online'];
 $maxPlayers = $data['mcPing']['query']['players']['max'];
 $listPlayers = $data['mcQuery']['getPlayers'];
+$listPlayersPing = $data['mcPing']['query']['players']['sample'];
 
 if ($limitedSupport == true) {
   $pingTime = $data['pingTimes']['pingPing'];
@@ -72,12 +73,21 @@ $lastUpdate = $data['lastUpdate'];
         </div>
       </div>
       <?php
-      if ($listPlayers != false and $curPlayers != 0 and $limitedSupport == false) {
+      if (($listPlayers != false or $listPlayersPing != null) and $curPlayers != 0 and $limitedSupport == false) {
         $i = 0;
+        if ($listPlayers == false) {
+          $players = $listPlayersPing;
+        } else {
+          $players = $listPlayers;
+        }
         ?>
         <div class="well well-sm">
           <?php
-          foreach ($listPlayers as $player) { ?>
+          foreach ($players as $player) {
+            if ($listPlayers == false) {
+              $player = $player['name'];
+            }
+            ?>
             <img class="img-circle avatar-list-icon" src="<?php echo $avatar_service_uri . $player . '/16' ?>">
             <?php
             $i++;

@@ -106,12 +106,23 @@ if (!file_exists($cacheFile)) {
 $data = json_decode(file_get_contents($cacheFile), true);
 
 if ($data['mcQuery']['getInfo'] == false and $data['mcPing']['query'] == null) {
+  // No data
   $isOffline = true;
-  $limitedSupport = true;
-} elseif ($data['mcQuery']['getInfo'] == false and $data['mcPing']['query'] != null) {
+  $limitedSupport = false;
+} elseif ($data['mcQuery']['getInfo'] == false and $data['mcPing']['query'] != null and $data['mcPing']['query']['players']['sample'] != null and $data['mcPing']['query']['players']['online'] != 0) {
+  // Cannot mcQuery, can mcPing. mcPing has a player list and there are players online.
+  $isOffline = false;
+  $limitedSupport = false;
+} elseif ($data['mcQuery']['getInfo'] == false and $data['mcPing']['query'] != null and $data['mcPing']['query']['players']['sample'] == null and $data['mcPing']['query']['players']['online'] == 0) {
+  // Cannot mcQuery, can mcPing. mcPing does not have a player list and there are no online players.
+  $isOffline = false;
+  $limitedSupport = false;
+} elseif ($data['mcQuery']['getInfo'] == false and $data['mcPing']['query'] != null and $data['mcPing']['query']['players']['sample'] == null and $data['mcPing']['query']['players']['online'] != 0) {
+  // Cannot mcQuery, can mcPing. mcPing does not have a player list and there are online players.
   $isOffline = false;
   $limitedSupport = true;
-} else {
+} elseif ($data['mcQuery']['getInfo'] != false and $data['mcPing']['query'] != null) {
+  // Can mcQuery and mcPing
   $isOffline = false;
   $limitedSupport = false;
 }
