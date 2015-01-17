@@ -33,6 +33,8 @@ $output = array(
         'topStatCalType'     => $player_top_calc_stat,
         'numberOfTopPlayer'  => $player_on_top,
         'hideLimitedWarning' => $hide_limited_feature_warning,
+        'mapURL'             => $map_url,
+        'mapBg'              => $map_bg,
     ),
     'envInfo'    => array(
         'APPPATH'     => APPPATH,
