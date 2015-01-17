@@ -78,3 +78,30 @@ iframe.map {
   width: 100%;
   min-height: 600px;
 }
+
+iframe.bg-map {
+  border: none;
+  width: 100%;
+  min-height: 100%;
+  height: auto; !important;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+div.bg-blocker {
+  width: 100%;
+  min-height: 100%;
+  height: auto; !important;
+  top: 0;
+  left: 0;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+}

@@ -26,6 +26,16 @@ include APPPATH . 'inc/version.php';
 </div>
 <!-- /Infobar -->
 
+<!-- Map -->
+<?php
+if (!empty($map_url) and $map_bg == "true" or !empty($map_url) and $map_bg == true) {
+  ?>
+  <!-- Block clicks -->
+  <div class="bg-blocker"></div>
+  <iframe class="bg-map" scrolling="no" allowtransparency="true" src="<?php echo $map_url; ?>" frameborder="0"></iframe>
+<?php } ?>
+<!-- /Map -->
+
 <!-- SCRIPTS -->
 <script src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>js/jquery-2.1.0.min.js"></script>
 <script src="<?php if ($custom_hosted_uri == '') { echo LINKBASE; } else { echo $custom_hosted_uri; } ?>bootstrap/js/bootstrap.min.js"></script>
