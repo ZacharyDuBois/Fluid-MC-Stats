@@ -1,6 +1,6 @@
 {
     "config": {
-        "vendor-dir": "dfp/vendor"
+        "vendor-dir": "fmcs/vendor"
     },
     "require": {
         "mustache/mustache": "~2.5",
