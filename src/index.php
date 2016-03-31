@@ -7,7 +7,12 @@
  * Project: Fluid-MC-Stats
  */
 
-// Do not edit any of the following unless you know what you're doing.
+// Enable debug.
+define('DEBUG', false);
+
+/////////////////////////////////////////////////////////////////////////
+// Do not edit any of the following unless you know what you're doing. //
+/////////////////////////////////////////////////////////////////////////
 
 // Set version.
 define('VERSION', 'v0.3.0');
@@ -22,7 +27,11 @@ define('PATH', __DIR__ . DS);
 define('APP', PATH . DS . 'fmcs' . DS);
 
 // Define config.
-define('CONFIG', PATH . DS . 'storage' . DS . 'config.php');
+define('CONFIG', PATH . DS . 'storage' . DS . 'config.json');
 
 // Define temporary directory.
 define('TMP', PATH . DS . 'temporary' . DS);
+
+
+// Load the stuffs!
+require APP . 'inc' . DS . 'Run.php';
