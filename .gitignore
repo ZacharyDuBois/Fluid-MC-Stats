@@ -1,24 +1,5 @@
-# Mac
-*~
-.DS_Store
-
-# IntelliJ IDEA
+# IntelliJ project files
+.idea
 *.iml
-*.ipr
-*.iws
-.idea/
-
-# VIM
-*~
-*.swp
-*.swo
-
-# Eclipse
-.project
-.buildpath
-
-# NetBeans
-/nbproject/private/
-/nbproject/
-/build.xml
-/.settings/
+out
+gen
