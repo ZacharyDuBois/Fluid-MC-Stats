@@ -1,0 +1,9 @@
+{
+    "config": {
+        "vendor-dir": "dfp/vendor"
+    },
+    "require": {
+        "mustache/mustache": "~2.5",
+        "xpaw/php-minecraft-query": "^1.0"
+    }
+}
