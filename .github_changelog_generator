@@ -1,0 +1,6 @@
+user=ZacharyDuBois
+project=Fluid-MC-Stats
+include-labels="apache,bug,enhancement,html/css/js,installer,nginx,php,security"
+exclude-labels="changelog-exclude,contributing.md,duplicate,invalid,needs information,question,wontfix"
+bug-labels="bug,security"
+enhancement-labels="enhancement"
