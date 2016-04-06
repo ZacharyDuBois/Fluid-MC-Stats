@@ -7,4 +7,6 @@
  * Project: Fluid-MC-Stats
  */
 
+namespace fmcs;
+
 require APP . 'inc' . DS . 'Load.php';

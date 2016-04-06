@@ -12,7 +12,6 @@ namespace fmcs;
 // Array from which to load
 $paths = array(
     'vendor/autoload.php',
-    'inc',
     'controller'
 );
 

@@ -7,6 +7,8 @@
  * Project: Fluid-MC-Stats
  */
 
+namespace fmcs;
+
 // Enable debug.
 define('DEBUG', false);
 
@@ -15,7 +17,7 @@ define('DEBUG', false);
 /////////////////////////////////////////////////////////////////////////
 
 // Set version.
-define('VERSION', 'v0.3.0');
+define('VERSION', '0.3.0');
 
 // Shortcut directory separators.
 define('DS', DIRECTORY_SEPARATOR);
