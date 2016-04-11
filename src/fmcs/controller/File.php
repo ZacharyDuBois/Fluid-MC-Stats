@@ -10,6 +10,13 @@
 namespace fmcs;
 
 
+/**
+ * Class File
+ *
+ * Handles all file actions in Fluid MC Stats.
+ *
+ * @package fmcs
+ */
 class File {
     /**
      * Read File
@@ -41,6 +48,10 @@ class File {
     }
 
     /**
+     * Write File
+     *
+     * Writes a file with file_put_contents and the given payload after checking permissions.
+     *
      * @param string $file
      * @param string $payload
      * @return false|int
@@ -55,7 +66,7 @@ class File {
             throw new Exception("Could not write file (check permissions): " . $file, 4);
         }
 
-        // Check directory permissions if file does not.
+        // Check directory permissions if file does not exist.
         if (!is_readable(dirname($file)) && !is_writable(dirname($file)) && !file_exists($file)) {
             throw new Exception("Could not write file (check permissions): " . $file, 4);
         }
