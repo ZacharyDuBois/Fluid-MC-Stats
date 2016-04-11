@@ -85,4 +85,34 @@ class File {
         // Return bytes.
         return $status;
     }
+
+    /**
+     * Delete File
+     *
+     * Deletes a file after checking permissions.
+     *
+     * @param string $file
+     * @return true
+     * @throws Exception
+     */
+    public static function del(string $file) {
+        // Set absolute path to storage.
+        $file = STORAGE . $file;
+
+        if (!file_exists($file)) {
+            throw new Exception("File does not exist: " . $file, 6);
+        }
+
+        if (!is_readable($file) && !is_writable($file)) {
+            throw new Exception("Could not delete file (check permissions): " . $file, 7);
+        }
+
+        $status = unlink($file);
+
+        if (!$status) {
+            throw new Exception("Error deleting file (false): " . $file, 8);
+        }
+
+        return true;
+    }
 }
