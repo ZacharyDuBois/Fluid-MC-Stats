@@ -32,6 +32,10 @@ class File {
         // Make the path absolute to storage.
         $file = STORAGE . $file;
 
+        if (!file_exists($file)) {
+            throw new Exception("File does not exist: " . $file, 6);
+        }
+
         if (!is_readable($file)) {
             throw new Exception("Could not read file (check permissions): " . $file, 2);
         }
