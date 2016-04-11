@@ -9,4 +9,11 @@
 
 namespace fmcs;
 
+// Load everything.
 require APP . 'inc' . DS . 'Load.php';
+
+try {
+
+} catch (Exception $e) {
+    print $e->serveMSG();
+}

@@ -28,12 +28,14 @@ define('PATH', __DIR__ . DS);
 // Define app path.
 define('APP', PATH . DS . 'fmcs' . DS);
 
+// Define storage
+define('STORAGE', PATH . 'storage' . DS);
+
 // Define config.
-define('CONFIG', PATH . DS . 'storage' . DS . 'config.json');
+define('CONFIG', STORAGE . 'config.json');
 
 // Define temporary directory.
-define('TMP', PATH . DS . 'temporary' . DS);
-
+define('TMP', STORAGE . 'temporary' . DS);
 
 // Load the stuffs!
 require APP . 'inc' . DS . 'Run.php';
