@@ -10,6 +10,13 @@
 namespace fmcs;
 
 
+/**
+ * Class Configuration
+ *
+ * Handles the configuration for FMCS.
+ *
+ * @package fmcs
+ */
 class Configuration {
     /**
      * Holds path to configuration file

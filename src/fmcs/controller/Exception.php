@@ -10,6 +10,13 @@
 namespace fmcs;
 
 
+/**
+ * Class Exception
+ *
+ * Adds custom exception to improve security (by not displaying specific information) and implement custom output.
+ *
+ * @package fmcs
+ */
 class Exception extends \Exception {
     /**
      * Serve Message
