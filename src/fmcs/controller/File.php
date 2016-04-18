@@ -33,18 +33,18 @@ class File {
         $file = STORAGE . $file;
 
         if (!file_exists($file)) {
-            throw new Exception("File does not exist: " . $file, 6);
+            throw new Exception("File does not exist: " . basename($file), 6);
         }
 
         if (!is_readable($file)) {
-            throw new Exception("Could not read file (check permissions): " . $file, 2);
+            throw new Exception("Could not read file (check permissions): " . basename($file), 2);
         }
 
         // Get the file contents
         $status = file_get_contents($file);
 
         if ($status === false) {
-            throw new Exception("Error reading file (false): " . $file, 3);
+            throw new Exception("Error reading file (false): " . basename($file), 3);
         }
 
         // Return them.
@@ -67,19 +67,19 @@ class File {
 
         // Check permissions if file exists.
         if (!is_readable($file) && !is_writable($file) && file_exists($file)) {
-            throw new Exception("Could not write file (check permissions): " . $file, 4);
+            throw new Exception("Could not write file (check permissions): " . basename($file), 4);
         }
 
         // Check directory permissions if file does not exist.
         if (!is_readable(dirname($file)) && !is_writable(dirname($file)) && !file_exists($file)) {
-            throw new Exception("Could not write file (check permissions): " . $file, 4);
+            throw new Exception("Could not write file (check permissions): " . basename($file), 4);
         }
 
         // Get the file contents
         $status = file_put_contents($file, $payload);
 
         if ($status === false) {
-            throw new Exception("Error writing file (false): " . $file, 5);
+            throw new Exception("Error writing file (false): " . basename($file), 5);
         }
 
         // Return bytes.
@@ -100,17 +100,17 @@ class File {
         $file = STORAGE . $file;
 
         if (!file_exists($file)) {
-            throw new Exception("File does not exist: " . $file, 6);
+            throw new Exception("File does not exist: " . basename($file), 6);
         }
 
         if (!is_readable($file) && !is_writable($file)) {
-            throw new Exception("Could not delete file (check permissions): " . $file, 7);
+            throw new Exception("Could not delete file (check permissions): " . basename($file), 7);
         }
 
         $status = unlink($file);
 
         if (!$status) {
-            throw new Exception("Error deleting file (false): " . $file, 8);
+            throw new Exception("Error deleting file (false): " . basename($file), 8);
         }
 
         return true;
