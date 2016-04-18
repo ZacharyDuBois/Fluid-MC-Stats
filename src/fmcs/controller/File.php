@@ -58,7 +58,7 @@ class File {
      *
      * @param string $file
      * @param string $payload
-     * @return false|int
+     * @return int
      * @throws Exception
      */
     public static function write(string $file, string $payload) {

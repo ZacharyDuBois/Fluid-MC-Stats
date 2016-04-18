@@ -31,9 +31,6 @@ define('APP', PATH . DS . 'fmcs' . DS);
 // Define storage
 define('STORAGE', PATH . 'storage' . DS);
 
-// Define config.
-define('CONFIG', STORAGE . 'config.json');
-
 // Define temporary directory.
 define('TMP', STORAGE . 'temporary' . DS);
 
